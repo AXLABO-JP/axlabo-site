@@ -1,0 +1,326 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>AXLABO ｜ AI駆動のWeb・LP制作</title>
+<meta name="description" content="AXLABOはAIを活用した制作フローで、Webサイト・ランディングページを最短3営業日で制作します。" />
+<style>
+  :root {
+    --bg: #eef0ee;
+    --surface: #ffffff;
+    --ink: #14181a;
+    --ink-soft: #4b5559;
+    --accent: #c8642f;
+    --accent-deep: #9c4a1f;
+    --accent-soft: #f3e2d5;
+    --line: #d8dcd8;
+    --shadow: 0 1px 2px rgba(20, 24, 26, 0.06);
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #10141a;
+      --surface: #171d22;
+      --ink: #eef1f0;
+      --ink-soft: #9aa7ac;
+      --accent: #e0975a;
+      --accent-deep: #f0b378;
+      --accent-soft: #2a2019;
+      --line: #262d33;
+      --shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #10141a; --surface: #171d22; --ink: #eef1f0; --ink-soft: #9aa7ac;
+    --accent: #e0975a; --accent-deep: #f0b378; --accent-soft: #2a2019; --line: #262d33;
+    --shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
+  }
+  :root[data-theme="light"] {
+    --bg: #eef0ee; --surface: #ffffff; --ink: #14181a; --ink-soft: #4b5559;
+    --accent: #c8642f; --accent-deep: #9c4a1f; --accent-soft: #f3e2d5; --line: #d8dcd8;
+    --shadow: 0 1px 2px rgba(20, 24, 26, 0.06);
+  }
+
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; background: var(--bg); color: var(--ink); overflow-x: hidden; }
+  body {
+    font-family: "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Yu Gothic", "Noto Sans JP", sans-serif;
+    line-height: 1.85;
+    -webkit-font-smoothing: antialiased;
+  }
+  h1, h2, h3, .display {
+    font-family: "Hiragino Sans", "Yu Gothic", "Noto Sans JP", sans-serif;
+    font-weight: 800;
+    letter-spacing: -0.01em;
+    text-wrap: balance;
+    color: var(--ink);
+  }
+  a { color: inherit; }
+  .wrap { max-width: 1040px; margin: 0 auto; padding: 0 clamp(20px, 5vw, 56px); }
+  .label {
+    font-size: 0.72rem; letter-spacing: 0.2em; text-transform: uppercase;
+    color: var(--accent-deep); font-weight: 700;
+  }
+  tt, .tabular { font-variant-numeric: tabular-nums; }
+
+  /* ===== Header ===== */
+  header { padding: 22px 0; border-bottom: 1px solid var(--line); }
+  header .wrap { display: flex; align-items: center; justify-content: space-between; }
+  .logo { font-weight: 800; font-size: 1.15rem; letter-spacing: 0.02em; }
+  .logo span { color: var(--accent); }
+  nav a {
+    text-decoration: none; font-size: 0.88rem; color: var(--ink-soft); margin-left: 28px;
+  }
+  nav a:hover { color: var(--accent-deep); }
+
+  /* ===== Hero ===== */
+  .hero { padding: clamp(56px, 10vw, 108px) 0 clamp(48px, 8vw, 84px); }
+  .hero .label { margin-bottom: 18px; display: block; }
+  .hero h1 {
+    font-size: clamp(2.1rem, 5vw, 3.4rem);
+    line-height: 1.3;
+    margin: 0 0 22px;
+  }
+  .hero h1 em { font-style: normal; color: var(--accent); }
+  .hero p.lead {
+    font-size: 1.05rem; color: var(--ink-soft); max-width: 46ch; margin: 0 0 36px;
+  }
+  .hero-actions { display: flex; gap: 14px; flex-wrap: wrap; }
+  .btn {
+    display: inline-flex; align-items: center; gap: 8px; padding: 14px 26px;
+    border-radius: 3px; font-weight: 700; font-size: 0.95rem; text-decoration: none;
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+  }
+  .btn-primary { background: var(--accent); color: #fff8f2; }
+  .btn-primary:hover { transform: translateY(-1px); box-shadow: 0 6px 18px rgba(200, 100, 47, 0.28); }
+  .btn-ghost { border: 1px solid var(--line); color: var(--ink); }
+  .btn-ghost:hover { border-color: var(--accent-deep); color: var(--accent-deep); }
+
+  /* ===== Section shell ===== */
+  section { padding: clamp(48px, 8vw, 84px) 0; border-top: 1px solid var(--line); }
+  section > .wrap > .label { display: block; margin-bottom: 14px; }
+  section h2 { font-size: clamp(1.5rem, 3vw, 2rem); margin: 0 0 40px; }
+
+  /* ===== Pain points ===== */
+  .pains { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 20px; }
+  .pain {
+    background: var(--surface); border: 1px solid var(--line); border-radius: 4px;
+    padding: 26px 24px; box-shadow: var(--shadow);
+  }
+  .pain p { margin: 0; color: var(--ink-soft); font-size: 0.95rem; }
+
+  /* ===== Process (真に順序を持つため番号付けが妥当) ===== */
+  .process { display: grid; gap: 0; }
+  .step {
+    display: grid; grid-template-columns: 64px 1fr; gap: 20px; padding: 22px 0;
+    border-top: 1px solid var(--line);
+  }
+  .step:first-child { border-top: none; }
+  .step .num {
+    font-family: "Hiragino Sans", sans-serif; font-weight: 800; font-size: 1.6rem;
+    color: var(--accent); font-variant-numeric: tabular-nums;
+  }
+  .step h3 { margin: 0 0 6px; font-size: 1.05rem; }
+  .step p { margin: 0; color: var(--ink-soft); font-size: 0.92rem; }
+
+  /* ===== Portfolio proof ===== */
+  .proof {
+    display: grid; grid-template-columns: 1.1fr 1fr; gap: 32px; align-items: center;
+  }
+  @media (max-width: 720px) { .proof { grid-template-columns: 1fr; } }
+  .proof-card {
+    border: 1px solid var(--line); border-radius: 6px; overflow: hidden; box-shadow: var(--shadow);
+    background: var(--surface);
+  }
+  .proof-card iframe { width: 100%; height: 360px; border: 0; display: block; background: var(--surface); }
+  .proof-card .cap {
+    padding: 12px 16px; font-size: 0.82rem; color: var(--ink-soft); border-top: 1px solid var(--line);
+  }
+  .proof-text h3 { margin: 0 0 14px; font-size: 1.2rem; }
+  .proof-text p { color: var(--ink-soft); font-size: 0.95rem; margin: 0 0 18px; }
+
+  /* ===== Pricing ===== */
+  .plans { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 22px; }
+  .plan {
+    background: var(--surface); border: 1px solid var(--line); border-radius: 6px;
+    padding: 32px 28px; box-shadow: var(--shadow); position: relative;
+  }
+  .plan.featured { border-color: var(--accent); }
+  .plan .badge {
+    position: absolute; top: -12px; right: 24px; background: var(--accent); color: #fff8f2;
+    font-size: 0.72rem; font-weight: 700; padding: 4px 12px; border-radius: 20px;
+  }
+  .plan h3 { margin: 0 0 4px; font-size: 1.05rem; }
+  .plan .price { font-size: 2rem; font-weight: 800; margin: 10px 0 20px; }
+  .plan .price small { font-size: 0.95rem; font-weight: 600; color: var(--ink-soft); }
+  .plan ul { list-style: none; padding: 0; margin: 0; }
+  .plan li {
+    padding: 9px 0; border-top: 1px solid var(--line); font-size: 0.92rem; color: var(--ink-soft);
+  }
+  .plan li:first-child { border-top: none; }
+  .fine { font-size: 0.85rem; color: var(--ink-soft); margin-top: 22px; }
+
+  /* ===== Notes ===== */
+  .notes { color: var(--ink-soft); font-size: 0.88rem; }
+  .notes ul { padding-left: 1.2em; margin: 0; }
+  .notes li { margin-bottom: 8px; }
+
+  /* ===== CTA ===== */
+  .cta { text-align: center; }
+  .cta h2 { margin-bottom: 16px; }
+  .cta p.lead { color: var(--ink-soft); max-width: 42ch; margin: 0 auto 32px; }
+
+  footer {
+    border-top: 1px solid var(--line); padding: 28px 0; font-size: 0.82rem; color: var(--ink-soft);
+  }
+  footer .wrap { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 10px; }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <div class="logo">AX<span>LABO</span></div>
+    <nav>
+      <a href="#service">サービス</a>
+      <a href="#price">料金</a>
+      <a href="#contact">お問い合わせ</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap">
+    <span class="label">AI Web / LP Production</span>
+    <h1>Webサイト・LPを、<br /><em>最短3営業日</em>で形にする。</h1>
+    <p class="lead">
+      AXLABOは、AIを活用した制作フローでWebサイト・ランディングページ制作を行っています。
+      ヒアリングから構成設計・実装まで、通常より短い期間での納品が可能です。
+    </p>
+    <div class="hero-actions">
+      <a class="btn btn-primary" href="#contact">お問い合わせをする</a>
+      <a class="btn btn-ghost" href="#service">制作事例を見る</a>
+    </div>
+  </div>
+</section>
+
+<section id="service">
+  <div class="wrap">
+    <span class="label">こんな方におすすめ</span>
+    <h2>「LPが欲しい」を、後回しにしていませんか。</h2>
+    <div class="pains">
+      <div class="pain"><p>自分のサービスを紹介するLP(ランディングページ)が欲しいが、まだ作れていない。</p></div>
+      <div class="pain"><p>制作会社に頼むと高額・長納期になりがちで、もっと早く形にしたい。</p></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <span class="label">納品までの流れ</span>
+    <h2>ご依頼から納品まで、4ステップ。</h2>
+    <div class="process">
+      <div class="step">
+        <div class="num">01</div>
+        <div><h3>ヒアリング</h3><p>サービス内容・伝えたいこと・希望の雰囲気をお伺いします。</p></div>
+      </div>
+      <div class="step">
+        <div class="num">02</div>
+        <div><h3>構成案のご提示</h3><p>ヒアリング完了から1営業日以内に構成案をご提示します。</p></div>
+      </div>
+      <div class="step">
+        <div class="num">03</div>
+        <div><h3>制作</h3><p>構成確定後、2〜3営業日で制作します。</p></div>
+      </div>
+      <div class="step">
+        <div class="num">04</div>
+        <div><h3>納品・修正</h3><p>そのまま公開できる形式で納品します。文章修正は1回まで無料です。</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <span class="label">制作事例</span>
+    <h2>実際に制作したLPサンプル</h2>
+    <div class="proof">
+      <div class="proof-card">
+        <iframe src="portfolio-sample-sumu.html" title="制作サンプル: SUMU(整理収納コンサルティング)" loading="lazy"></iframe>
+        <div class="cap">サンプル: 整理収納コンサルティング業を想定したLP(架空の屋号です)</div>
+      </div>
+      <div class="proof-text">
+        <h3>業種の世界観から設計する</h3>
+        <p>
+          テンプレートの使い回しはせず、業種の素材・所作から配色とレイアウトを個別に設計します。
+          どの業種でも同じ構成にはしません。
+        </p>
+        <a class="btn btn-ghost" href="portfolio-sample-sumu.html" target="_blank" rel="noopener">サンプルを別タブで開く</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="price">
+  <div class="wrap">
+    <span class="label">料金プラン</span>
+    <h2>シンプルな2プラン</h2>
+    <div class="plans">
+      <div class="plan">
+        <h3>ライト</h3>
+        <div class="price tabular">¥49,800</div>
+        <ul>
+          <li>1ページ構成(3〜4セクション)</li>
+          <li>レスポンシブ対応(スマートフォン表示)</li>
+          <li>文章修正1回無料</li>
+        </ul>
+      </div>
+      <div class="plan featured">
+        <span class="badge">おすすめ</span>
+        <h3>スタンダード</h3>
+        <div class="price tabular">¥98,000</div>
+        <ul>
+          <li>1ページ構成(5〜8セクション)</li>
+          <li>お問い合わせフォーム付き</li>
+          <li>SEO基本対応</li>
+          <li>文章修正1回無料</li>
+        </ul>
+      </div>
+    </div>
+    <p class="fine">納期: ご購入・ヒアリング完了から3営業日</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <span class="label">納品物 / ご注意</span>
+    <div class="notes">
+      <ul>
+        <li>納品物: LP一式(そのまま公開できる形式)・スマートフォン対応・簡単な公開手順書</li>
+        <li>ロゴ・お写真等の素材はお客様にてご用意いただくか、著作権フリー素材を使用します</li>
+        <li>効果(集客数・売上等)を保証するものではありません</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section id="contact" class="cta">
+  <div class="wrap">
+    <span class="label">お問い合わせ</span>
+    <h2>まずはお気軽にご相談ください。</h2>
+    <p class="lead">サービス内容・ご希望の雰囲気をお送りいただくだけで、1営業日以内に構成案の目安をご案内します。</p>
+    <a class="btn btn-primary" href="mailto:admin@axlabo.com?subject=Web%2FLP制作のお問い合わせ">
+      admin@axlabo.com へメールする
+    </a>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div>AXLABO</div>
+    <div>© 2026 AXLABO. All rights reserved.</div>
+  </div>
+</footer>
+
+</body>
+</html>

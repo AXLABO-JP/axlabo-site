@@ -1,0 +1,492 @@
+<title>SUMU｜整理収納コンサルティング</title>
+<style>
+  :root {
+    --bg: #ece8e0;
+    --surface: #f8f6f1;
+    --ink: #23241f;
+    --ink-soft: #55564c;
+    --accent: #5f6f52;
+    --accent-deep: #414f37;
+    --accent-soft: #dde3d3;
+    --line: #cdc6b5;
+    --shadow: 0 1px 2px rgba(35, 36, 31, 0.06);
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #1c1d18;
+      --surface: #24251f;
+      --ink: #eae7de;
+      --ink-soft: #b3b09f;
+      --accent: #93a880;
+      --accent-deep: #b8c8a8;
+      --accent-soft: #333a29;
+      --line: #3a3b32;
+      --shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #1c1d18;
+    --surface: #24251f;
+    --ink: #eae7de;
+    --ink-soft: #b3b09f;
+    --accent: #93a880;
+    --accent-deep: #b8c8a8;
+    --accent-soft: #333a29;
+    --line: #3a3b32;
+    --shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+  }
+  :root[data-theme="light"] {
+    --bg: #ece8e0;
+    --surface: #f8f6f1;
+    --ink: #23241f;
+    --ink-soft: #55564c;
+    --accent: #5f6f52;
+    --accent-deep: #414f37;
+    --accent-soft: #dde3d3;
+    --line: #cdc6b5;
+    --shadow: 0 1px 2px rgba(35, 36, 31, 0.06);
+  }
+
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0;
+    padding: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Yu Gothic", "Noto Sans JP", sans-serif;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
+  body { line-height: 1.8; }
+
+  h1, h2, h3, .display {
+    font-family: "Yu Mincho", "YuMincho", "Hiragino Mincho ProN", "Noto Serif JP", serif;
+    font-weight: 500;
+    text-wrap: balance;
+    letter-spacing: 0.02em;
+    color: var(--ink);
+  }
+
+  .wrap { max-width: 1080px; margin: 0 auto; padding: 0 clamp(20px, 5vw, 56px); }
+
+  a { color: inherit; }
+
+  .label {
+    font-size: 0.72rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--accent-deep);
+    font-weight: 600;
+  }
+
+  /* ---------- Nav ---------- */
+  nav {
+    position: sticky;
+    top: 0;
+    z-index: 20;
+    background: color-mix(in srgb, var(--bg) 88%, transparent);
+    backdrop-filter: blur(6px);
+    border-bottom: 1px solid var(--line);
+  }
+  nav .wrap {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 68px;
+  }
+  .brand {
+    font-family: "Yu Mincho", "Hiragino Mincho ProN", serif;
+    font-size: 1.3rem;
+    letter-spacing: 0.14em;
+  }
+  .brand small {
+    display: block;
+    font-family: "Hiragino Kaku Gothic ProN", sans-serif;
+    font-size: 0.6rem;
+    letter-spacing: 0.18em;
+    color: var(--ink-soft);
+    margin-top: 2px;
+  }
+  nav .cta {
+    font-size: 0.82rem;
+    padding: 9px 20px;
+    border: 1px solid var(--ink);
+    border-radius: 999px;
+    white-space: nowrap;
+  }
+
+  /* ---------- Hero ---------- */
+  .hero {
+    position: relative;
+    padding: clamp(64px, 12vw, 128px) 0 clamp(48px, 8vw, 96px);
+    overflow: hidden;
+  }
+  .hero .wrap {
+    display: grid;
+    grid-template-columns: 1.15fr 0.85fr;
+    gap: clamp(32px, 6vw, 64px);
+    align-items: center;
+  }
+  .hero-eyebrow { margin-bottom: 18px; }
+  .hero h1 {
+    font-size: clamp(2.1rem, 4.6vw, 3.4rem);
+    line-height: 1.42;
+    margin: 0 0 28px;
+  }
+  .hero h1 em {
+    font-style: normal;
+    color: var(--accent-deep);
+    border-bottom: 1px solid var(--accent);
+  }
+  .hero p.lead {
+    font-size: 1.02rem;
+    color: var(--ink-soft);
+    max-width: 46ch;
+    margin: 0 0 36px;
+  }
+  .hero-ctas { display: flex; gap: 14px; flex-wrap: wrap; }
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 14px 28px;
+    border-radius: 999px;
+    font-size: 0.92rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: transform 0.15s ease, background 0.15s ease;
+  }
+  .btn-primary { background: var(--accent-deep); color: var(--surface); }
+  .btn-primary:hover { transform: translateY(-1px); background: var(--ink); }
+  .btn-ghost { border: 1px solid var(--line); color: var(--ink); }
+  .btn-ghost:hover { border-color: var(--ink); }
+
+  /* shelf visual */
+  .shelf {
+    position: relative;
+    height: clamp(280px, 34vw, 420px);
+  }
+  .shelf-row {
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: var(--line);
+    transform-origin: left center;
+    animation: draw 1.1s cubic-bezier(0.22, 1, 0.36, 1) both;
+  }
+  .shelf-row.r1 { top: 8%; }
+  .shelf-row.r2 { top: 40%; animation-delay: 0.12s; }
+  .shelf-row.r3 { top: 72%; animation-delay: 0.24s; }
+  @keyframes draw {
+    from { transform: scaleX(0); opacity: 0; }
+    to { transform: scaleX(1); opacity: 1; }
+  }
+  .item {
+    position: absolute;
+    border-radius: 6px;
+    background: var(--surface);
+    box-shadow: var(--shadow);
+    border: 1px solid var(--line);
+    opacity: 0;
+    animation: rise 0.7s ease both;
+  }
+  @keyframes rise {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  .item.i1 { width: 15%; height: 30%; left: 6%;  bottom: 60%; background: var(--accent-soft); animation-delay: 0.5s; }
+  .item.i2 { width: 22%; height: 22%; left: 24%; bottom: 62%; animation-delay: 0.62s; }
+  .item.i3 { width: 12%; height: 40%; left: 52%; bottom: 28%; background: var(--accent-soft); animation-delay: 0.74s; }
+  .item.i4 { width: 26%; height: 26%; left: 68%; bottom: 30%; animation-delay: 0.86s; }
+  .item.i5 { width: 18%; height: 28%; left: 10%; bottom: -4%; animation-delay: 0.98s; }
+  .item.i6 { width: 30%; height: 24%; left: 34%; bottom: -2%; background: var(--accent-soft); animation-delay: 1.1s; }
+  @media (prefers-reduced-motion: reduce) {
+    .shelf-row, .item { animation: none !important; opacity: 1 !important; transform: none !important; }
+  }
+
+  /* ---------- Empathy ---------- */
+  .empathy { padding: clamp(48px, 8vw, 88px) 0; border-top: 1px solid var(--line); }
+  .empathy .wrap { display: grid; grid-template-columns: 0.9fr 1.6fr; gap: clamp(24px, 5vw, 56px); }
+  .empathy h2 { font-size: clamp(1.5rem, 2.6vw, 2rem); margin: 10px 0 0; max-width: 16ch; }
+  .empathy-list { display: grid; gap: 18px; margin: 0; padding: 0; list-style: none; }
+  .empathy-list li {
+    display: flex;
+    gap: 14px;
+    padding: 18px 20px;
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    font-size: 0.95rem;
+  }
+  .empathy-list li::before {
+    content: "";
+    flex: none;
+    width: 6px;
+    border-radius: 3px;
+    background: var(--accent);
+  }
+
+  /* ---------- Process ---------- */
+  .process { padding: clamp(48px, 8vw, 88px) 0; background: var(--surface); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+  .process h2 { font-size: clamp(1.6rem, 2.8vw, 2.1rem); margin: 10px 0 40px; }
+  .steps {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1px;
+    background: var(--line);
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    overflow: hidden;
+  }
+  .step { background: var(--surface); padding: 26px 22px; }
+  .step .num {
+    font-family: "Yu Mincho", serif;
+    font-size: 0.85rem;
+    color: var(--accent-deep);
+    display: block;
+    margin-bottom: 14px;
+  }
+  .step h3 { font-size: 1.02rem; margin: 0 0 8px; }
+  .step p { margin: 0; font-size: 0.86rem; color: var(--ink-soft); }
+  @media (max-width: 760px) {
+    .steps { grid-template-columns: 1fr 1fr; }
+  }
+
+  /* ---------- Plans ---------- */
+  .plans { padding: clamp(48px, 8vw, 88px) 0; }
+  .plans h2 { font-size: clamp(1.6rem, 2.8vw, 2.1rem); margin: 10px 0 40px; }
+  .plan-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+  .plan {
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 28px 26px;
+    background: var(--surface);
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+  .plan.featured { border-color: var(--accent-deep); box-shadow: 0 0 0 1px var(--accent-deep); position: relative; }
+  .plan.featured::before {
+    content: "人気";
+    position: absolute;
+    top: -12px;
+    left: 24px;
+    background: var(--accent-deep);
+    color: var(--surface);
+    font-size: 0.68rem;
+    letter-spacing: 0.1em;
+    padding: 4px 12px;
+    border-radius: 999px;
+  }
+  .plan h3 { margin: 0; font-size: 1.1rem; }
+  .plan .price { font-size: 1.7rem; font-variant-numeric: tabular-nums; }
+  .plan .price small { font-size: 0.7rem; color: var(--ink-soft); font-weight: 400; }
+  .plan ul { margin: 0; padding: 0; list-style: none; display: grid; gap: 8px; font-size: 0.86rem; color: var(--ink-soft); }
+  .plan ul li::before { content: "・"; color: var(--accent-deep); }
+  @media (max-width: 860px) {
+    .plan-grid { grid-template-columns: 1fr; }
+  }
+
+  /* ---------- Testimonial ---------- */
+  .testimonial { padding: clamp(40px, 7vw, 72px) 0; background: var(--accent-soft); }
+  .testimonial blockquote {
+    margin: 0;
+    font-family: "Yu Mincho", serif;
+    font-size: clamp(1.15rem, 2.2vw, 1.5rem);
+    line-height: 1.7;
+    max-width: 34ch;
+  }
+  .testimonial cite { display: block; margin-top: 18px; font-style: normal; font-size: 0.85rem; color: var(--ink-soft); }
+
+  /* ---------- FAQ ---------- */
+  .faq { padding: clamp(48px, 8vw, 88px) 0; }
+  .faq h2 { font-size: clamp(1.6rem, 2.8vw, 2.1rem); margin: 10px 0 32px; }
+  details {
+    border-top: 1px solid var(--line);
+    padding: 18px 0;
+  }
+  details:last-child { border-bottom: 1px solid var(--line); }
+  summary {
+    cursor: pointer;
+    font-size: 0.98rem;
+    font-weight: 600;
+    display: flex;
+    justify-content: space-between;
+    list-style: none;
+  }
+  summary::-webkit-details-marker { display: none; }
+  summary::after { content: "+"; color: var(--accent-deep); font-size: 1.1rem; }
+  details[open] summary::after { content: "−"; }
+  details p { margin: 12px 0 0; color: var(--ink-soft); font-size: 0.9rem; max-width: 62ch; }
+
+  /* ---------- Final CTA ---------- */
+  .final { padding: clamp(56px, 10vw, 104px) 0; text-align: center; border-top: 1px solid var(--line); }
+  .final h2 { font-size: clamp(1.7rem, 3.4vw, 2.4rem); margin: 0 0 16px; }
+  .final p { color: var(--ink-soft); margin: 0 0 32px; }
+
+  footer {
+    padding: 28px 0 40px;
+    text-align: center;
+    font-size: 0.78rem;
+    color: var(--ink-soft);
+  }
+
+  :focus-visible { outline: 2px solid var(--accent-deep); outline-offset: 2px; }
+</style>
+
+<nav>
+  <div class="wrap">
+    <div class="brand">SUMU<small>整理収納コンサルティング</small></div>
+    <a class="cta" href="#contact">無料相談を予約</a>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="wrap">
+    <div>
+      <div class="label hero-eyebrow">HOME ORGANIZING CONSULTING</div>
+      <h1>モノを減らすのではなく、<br /><em>暮らしを</em>整える。</h1>
+      <p class="lead">
+        散らかる部屋には、たいてい理由があります。SUMUは「収納の型」を押しつけず、
+        あなたの暮らし方に合わせて仕組みを一緒に設計する、訪問型の整理収納サービスです。
+      </p>
+      <div class="hero-ctas">
+        <a class="btn btn-primary" href="#contact">無料相談を予約する</a>
+        <a class="btn btn-ghost" href="#plans">プランを見る</a>
+      </div>
+    </div>
+    <div class="shelf" aria-hidden="true">
+      <div class="shelf-row r1"></div>
+      <div class="shelf-row r2"></div>
+      <div class="shelf-row r3"></div>
+      <div class="item i1"></div>
+      <div class="item i2"></div>
+      <div class="item i3"></div>
+      <div class="item i4"></div>
+      <div class="item i5"></div>
+      <div class="item i6"></div>
+    </div>
+  </div>
+</section>
+
+<section class="empathy">
+  <div class="wrap">
+    <div>
+      <div class="label">こんなお悩みありませんか</div>
+      <h2>片づけても、<br />すぐに元通りになる。</h2>
+    </div>
+    <ul class="empathy-list">
+      <li>収納グッズを買っても、結局使わなくなってしまう</li>
+      <li>家族に「元の場所に戻して」と言っても伝わらない</li>
+      <li>引っ越し・在宅ワーク・出産などで生活が変わり、今のままでは回らない</li>
+      <li>そもそも「自分にとっての正解」が分からないまま我流でやってきた</li>
+    </ul>
+  </div>
+</section>
+
+<section class="process">
+  <div class="wrap">
+    <div class="label">SUPPORT FLOW</div>
+    <h2>ご依頼から完了までの流れ</h2>
+    <div class="steps">
+      <div class="step">
+        <span class="num">01</span>
+        <h3>ヒアリング</h3>
+        <p>暮らし方・家族構成・お困りごとを30分ほどお伺いします(オンライン可)。</p>
+      </div>
+      <div class="step">
+        <span class="num">02</span>
+        <h3>プラン設計</h3>
+        <p>間取りと動線に合わせた収納プランをご提案。無理な物の処分は前提にしません。</p>
+      </div>
+      <div class="step">
+        <span class="num">03</span>
+        <h3>同行サポート</h3>
+        <p>実際の仕分け・配置換えに立ち会い、続けやすい「仕組み」まで一緒に作ります。</p>
+      </div>
+      <div class="step">
+        <span class="num">04</span>
+        <h3>アフターフォロー</h3>
+        <p>2週間後に振り返りのご連絡。維持できているかを一緒に確認します。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="plans" id="plans">
+  <div class="wrap">
+    <div class="label">PLANS</div>
+    <h2>プラン・料金</h2>
+    <div class="plan-grid">
+      <div class="plan">
+        <h3>単発相談</h3>
+        <div class="price">¥8,000<small>/ 60分・オンライン</small></div>
+        <ul>
+          <li>お悩みのヒアリング</li>
+          <li>収納の考え方を整理</li>
+          <li>今日から使えるアドバイス</li>
+        </ul>
+      </div>
+      <div class="plan featured">
+        <h3>収納プラン設計</h3>
+        <div class="price">¥28,000<small>/ 1部屋</small></div>
+        <ul>
+          <li>間取り・動線のヒアリング</li>
+          <li>収納プランのご提案(図面付き)</li>
+          <li>買い足しグッズのご提案</li>
+          <li>ご購入後2週間のチャットサポート</li>
+        </ul>
+      </div>
+      <div class="plan">
+        <h3>丸ごと同行サポート</h3>
+        <div class="price">¥54,000<small>/ 1日(4時間)</small></div>
+        <ul>
+          <li>プラン設計を含む一式</li>
+          <li>仕分け・配置換えへの同行</li>
+          <li>アフターフォロー(2週間後)</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="testimonial">
+  <div class="wrap">
+    <blockquote>
+      「収納グッズを増やすのではなく、まず減らす順番を教えてもらえたのが良かったです。
+      子どもが自分でおもちゃを片づけられるようになりました。」
+      <cite>— 30代・お子様2人のご家庭</cite>
+    </blockquote>
+  </div>
+</section>
+
+<section class="faq">
+  <div class="wrap">
+    <div class="label">FAQ</div>
+    <h2>よくあるご質問</h2>
+    <details open>
+      <summary>持ち物を捨てることを強要されますか?</summary>
+      <p>いいえ。SUMUは「減らすこと」を目的にしていません。ご自身の判断を尊重し、残すものを気持ちよく使える仕組みづくりをお手伝いします。</p>
+    </details>
+    <details>
+      <summary>対応エリアはどこまでですか?</summary>
+      <p>同行サポートは首都圏近郊が対象です。オンライン相談は全国どこからでもご利用いただけます。</p>
+    </details>
+    <details>
+      <summary>収納グッズの購入費用は料金に含まれますか?</summary>
+      <p>含まれません。プラン設計時に必要なものをご提案し、購入はお客様ご自身で行っていただきます。</p>
+    </details>
+  </div>
+</section>
+
+<section class="final" id="contact">
+  <div class="wrap">
+    <h2>まずは、話すことから。</h2>
+    <p>無理な提案はいたしません。今の暮らしを聞かせてください。</p>
+    <a class="btn btn-primary" href="#">無料相談を予約する</a>
+  </div>
+</section>
+
+<footer>SUMU 整理収納コンサルティング — 本ページはAXLABOの制作サンプルです</footer>
