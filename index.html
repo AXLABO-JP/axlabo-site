@@ -3,45 +3,61 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>AXLABO ｜ AI駆動のWeb・LP制作</title>
-<meta name="description" content="AXLABOはAIを活用した制作フローで、Webサイト・ランディングページを最短3営業日で制作します。" />
+<title>AXLABO ｜ AIが作る、最短3営業日のWeb・LP制作</title>
+<meta name="description" content="AXLABOはAIを活用した制作フローで、Webサイト・ランディングページを最短3営業日・¥49,800から制作します。24時間365日対応、明朝な2プラン。" />
+<meta name="theme-color" content="#c8622c" />
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%23161311'/%3E%3Cpath d='M50 22 L78 78 L61 78 L50 54 L39 78 L22 78 Z' fill='%23c8622c'/%3E%3C/svg%3E" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="AXLABO ｜ AIが作る、最短3営業日のWeb・LP制作" />
+<meta property="og:description" content="AXLABOはAIを活用した制作フローで、Webサイト・ランディングページを最短3営業日・¥49,800から制作します。" />
+<meta property="og:url" content="https://axlabo.com/" />
+<meta property="og:site_name" content="AXLABO" />
+<meta name="twitter:card" content="summary" />
 <style>
   :root {
-    --bg: #eef0ee;
+    --bg: #f5f3ef;
     --surface: #ffffff;
-    --ink: #14181a;
-    --ink-soft: #4b5559;
-    --accent: #c8642f;
+    --surface-alt: #eeece5;
+    --ink: #161311;
+    --ink-soft: #5a5650;
+    --accent: #c8622c;
     --accent-deep: #9c4a1f;
     --accent-soft: #f3e2d5;
-    --line: #d8dcd8;
-    --shadow: 0 1px 2px rgba(20, 24, 26, 0.06);
+    --line: #e1ddd3;
+    --focus: #2b6cb0;
+    --shadow: 0 1px 2px rgba(22, 19, 17, 0.06);
+    --shadow-lg: 0 12px 32px rgba(22, 19, 17, 0.1);
   }
   @media (prefers-color-scheme: dark) {
     :root {
-      --bg: #10141a;
-      --surface: #171d22;
-      --ink: #eef1f0;
-      --ink-soft: #9aa7ac;
-      --accent: #e0975a;
-      --accent-deep: #f0b378;
-      --accent-soft: #2a2019;
-      --line: #262d33;
-      --shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
+      --bg: #0d1115; --surface: #161b20; --surface-alt: #1d2329;
+      --ink: #f2efe9; --ink-soft: #a3a09a;
+      --accent: #e59660; --accent-deep: #f2b184; --accent-soft: #2a2019;
+      --line: #262c32; --focus: #7cb3f0;
+      --shadow: 0 1px 2px rgba(0, 0, 0, 0.4); --shadow-lg: 0 16px 40px rgba(0, 0, 0, 0.45);
     }
   }
   :root[data-theme="dark"] {
-    --bg: #10141a; --surface: #171d22; --ink: #eef1f0; --ink-soft: #9aa7ac;
-    --accent: #e0975a; --accent-deep: #f0b378; --accent-soft: #2a2019; --line: #262d33;
-    --shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
+    --bg: #0d1115; --surface: #161b20; --surface-alt: #1d2329;
+    --ink: #f2efe9; --ink-soft: #a3a09a;
+    --accent: #e59660; --accent-deep: #f2b184; --accent-soft: #2a2019;
+    --line: #262c32; --focus: #7cb3f0;
+    --shadow: 0 1px 2px rgba(0, 0, 0, 0.4); --shadow-lg: 0 16px 40px rgba(0, 0, 0, 0.45);
   }
   :root[data-theme="light"] {
-    --bg: #eef0ee; --surface: #ffffff; --ink: #14181a; --ink-soft: #4b5559;
-    --accent: #c8642f; --accent-deep: #9c4a1f; --accent-soft: #f3e2d5; --line: #d8dcd8;
-    --shadow: 0 1px 2px rgba(20, 24, 26, 0.06);
+    --bg: #f5f3ef; --surface: #ffffff; --surface-alt: #eeece5;
+    --ink: #161311; --ink-soft: #5a5650;
+    --accent: #c8622c; --accent-deep: #9c4a1f; --accent-soft: #f3e2d5;
+    --line: #e1ddd3; --focus: #2b6cb0;
+    --shadow: 0 1px 2px rgba(22, 19, 17, 0.06); --shadow-lg: 0 12px 32px rgba(22, 19, 17, 0.1);
   }
 
   * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    * { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; }
+  }
   html, body { margin: 0; padding: 0; background: var(--bg); color: var(--ink); overflow-x: hidden; }
   body {
     font-family: "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Yu Gothic", "Noto Sans JP", sans-serif;
@@ -54,137 +70,174 @@
     letter-spacing: -0.01em;
     text-wrap: balance;
     color: var(--ink);
+    line-height: 1.3;
   }
   a { color: inherit; }
-  .wrap { max-width: 1040px; margin: 0 auto; padding: 0 clamp(20px, 5vw, 56px); }
-  .label {
-    font-size: 0.72rem; letter-spacing: 0.2em; text-transform: uppercase;
-    color: var(--accent-deep); font-weight: 700;
+  a:focus-visible, button:focus-visible, [tabindex]:focus-visible {
+    outline: 2px solid var(--focus); outline-offset: 2px; border-radius: 2px;
   }
-  tt, .tabular { font-variant-numeric: tabular-nums; }
+  img, iframe { max-width: 100%; }
+  .wrap { max-width: 1080px; margin: 0 auto; padding: 0 clamp(20px, 5vw, 56px); }
+  .label {
+    font-size: 0.74rem; letter-spacing: 0.18em; text-transform: uppercase;
+    color: var(--accent-deep); font-weight: 700; display: block;
+  }
+  .tabular { font-variant-numeric: tabular-nums; }
+  .visually-hidden {
+    position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
+    overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0;
+  }
+
+  /* ===== Reveal-on-scroll (控えめな演出、prefers-reduced-motionでは即表示) ===== */
+  .reveal { opacity: 0; transform: translateY(14px); transition: opacity 0.6s ease, transform 0.6s ease; }
+  .reveal.in-view { opacity: 1; transform: translateY(0); }
+  @media (prefers-reduced-motion: reduce) { .reveal { opacity: 1; transform: none; transition: none; } }
 
   /* ===== Header ===== */
-  header { padding: 22px 0; border-bottom: 1px solid var(--line); }
+  header {
+    position: sticky; top: 0; z-index: 50; padding: 18px 0;
+    background: color-mix(in srgb, var(--bg) 88%, transparent);
+    backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
+    border-bottom: 1px solid transparent; transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  }
+  header.scrolled { border-bottom-color: var(--line); box-shadow: var(--shadow); }
   header .wrap { display: flex; align-items: center; justify-content: space-between; }
-  .logo { font-weight: 800; font-size: 1.15rem; letter-spacing: 0.02em; }
+  .logo { font-weight: 800; font-size: 1.15rem; letter-spacing: 0.02em; text-decoration: none; }
   .logo span { color: var(--accent); }
+  nav { display: flex; align-items: center; gap: 8px; }
   nav a {
-    text-decoration: none; font-size: 0.88rem; color: var(--ink-soft); margin-left: 28px;
+    text-decoration: none; font-size: 0.88rem; color: var(--ink-soft); padding: 8px 12px; border-radius: 4px;
+    transition: color 0.15s ease, background 0.15s ease;
   }
-  nav a:hover { color: var(--accent-deep); }
+  nav a:hover { color: var(--accent-deep); background: var(--surface-alt); }
+  nav a.btn-primary { color: #fff8f2; }
+  nav a.btn-primary:hover { color: #fff8f2; }
 
-  /* ===== Hero ===== */
-  .hero { padding: clamp(56px, 10vw, 108px) 0 clamp(48px, 8vw, 84px); }
-  .hero .label { margin-bottom: 18px; display: block; }
-  .hero h1 {
-    font-size: clamp(2.1rem, 5vw, 3.4rem);
-    line-height: 1.3;
-    margin: 0 0 22px;
-  }
-  .hero h1 em { font-style: normal; color: var(--accent); }
-  .hero p.lead {
-    font-size: 1.05rem; color: var(--ink-soft); max-width: 46ch; margin: 0 0 36px;
-  }
-  .hero-actions { display: flex; gap: 14px; flex-wrap: wrap; }
+  /* ===== Buttons ===== */
   .btn {
-    display: inline-flex; align-items: center; gap: 8px; padding: 14px 26px;
-    border-radius: 3px; font-weight: 700; font-size: 0.95rem; text-decoration: none;
-    transition: transform 0.15s ease, box-shadow 0.15s ease;
+    display: inline-flex; align-items: center; gap: 8px; padding: 15px 28px;
+    border-radius: 4px; font-weight: 700; font-size: 0.95rem; text-decoration: none; border: 1px solid transparent;
+    transition: transform 0.15s ease, box-shadow 0.15s ease, border-color 0.15s ease, color 0.15s ease;
+    cursor: pointer;
   }
   .btn-primary { background: var(--accent); color: #fff8f2; }
-  .btn-primary:hover { transform: translateY(-1px); box-shadow: 0 6px 18px rgba(200, 100, 47, 0.28); }
-  .btn-ghost { border: 1px solid var(--line); color: var(--ink); }
+  .btn-primary:hover { transform: translateY(-1px); box-shadow: 0 8px 22px rgba(200, 98, 44, 0.32); }
+  .btn-ghost { border-color: var(--line); color: var(--ink); background: transparent; }
   .btn-ghost:hover { border-color: var(--accent-deep); color: var(--accent-deep); }
+  .btn-sm { padding: 10px 18px; font-size: 0.86rem; }
+
+  /* ===== Hero ===== */
+  .hero { padding: clamp(64px, 11vw, 120px) 0 clamp(48px, 8vw, 90px); position: relative; overflow: hidden; }
+  .hero::before {
+    content: ""; position: absolute; inset: -20% -10% auto -10%; height: 70%;
+    background: radial-gradient(60% 60% at 30% 20%, var(--accent-soft), transparent 70%);
+    opacity: 0.7; pointer-events: none; z-index: -1;
+  }
+  .hero .label { margin-bottom: 20px; }
+  .hero h1 { font-size: clamp(2.3rem, 6vw, 4rem); margin: 0 0 24px; max-width: 18ch; }
+  .hero h1 em { font-style: normal; color: var(--accent); }
+  .hero p.lead { font-size: clamp(1rem, 1.6vw, 1.15rem); color: var(--ink-soft); max-width: 48ch; margin: 0 0 36px; }
+  .hero-actions { display: flex; gap: 14px; flex-wrap: wrap; margin-bottom: 44px; }
+  .hero-facts { display: flex; gap: clamp(24px, 5vw, 48px); flex-wrap: wrap; border-top: 1px solid var(--line); padding-top: 28px; }
+  .hero-facts dt { font-size: 1.7rem; font-weight: 800; color: var(--ink); }
+  .hero-facts dd { margin: 4px 0 0; font-size: 0.85rem; color: var(--ink-soft); }
 
   /* ===== Section shell ===== */
-  section { padding: clamp(48px, 8vw, 84px) 0; border-top: 1px solid var(--line); }
-  section > .wrap > .label { display: block; margin-bottom: 14px; }
-  section h2 { font-size: clamp(1.5rem, 3vw, 2rem); margin: 0 0 40px; }
+  section { padding: clamp(56px, 9vw, 96px) 0; border-top: 1px solid var(--line); }
+  section.alt { background: var(--surface-alt); }
+  section > .wrap > .label { margin-bottom: 14px; }
+  section h2 { font-size: clamp(1.6rem, 3.4vw, 2.3rem); margin: 0 0 16px; max-width: 22ch; }
+  section p.section-lead { color: var(--ink-soft); max-width: 56ch; margin: 0 0 44px; font-size: 1rem; }
 
-  /* ===== Pain points ===== */
-  .pains { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 20px; }
-  .pain {
-    background: var(--surface); border: 1px solid var(--line); border-radius: 4px;
-    padding: 26px 24px; box-shadow: var(--shadow);
+  /* ===== Bento pains ===== */
+  .bento { display: grid; grid-template-columns: repeat(6, 1fr); gap: 18px; }
+  .bento > div { grid-column: span 6; }
+  @media (min-width: 640px) { .bento > div { grid-column: span 3; } .bento > div.wide { grid-column: span 6; } }
+  @media (min-width: 960px) { .bento > div.wide { grid-column: span 4; } .bento > div.narrow { grid-column: span 2; } }
+  .card {
+    background: var(--surface); border: 1px solid var(--line); border-radius: 10px;
+    padding: 30px 28px; box-shadow: var(--shadow); transition: box-shadow 0.2s ease, transform 0.2s ease;
   }
-  .pain p { margin: 0; color: var(--ink-soft); font-size: 0.95rem; }
+  .card:hover { box-shadow: var(--shadow-lg); transform: translateY(-2px); }
+  .card h3 { margin: 0 0 10px; font-size: 1.05rem; }
+  .card p { margin: 0; color: var(--ink-soft); font-size: 0.94rem; }
 
-  /* ===== Process (真に順序を持つため番号付けが妥当) ===== */
+  /* ===== Trust bar ===== */
+  .trust-bar { display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 24px; }
+  .trust-item { display: flex; align-items: flex-start; gap: 14px; }
+  .trust-item .ico {
+    flex: none; width: 40px; height: 40px; border-radius: 8px; background: var(--accent-soft);
+    display: flex; align-items: center; justify-content: center; color: var(--accent-deep);
+  }
+  .trust-item h4 { margin: 0 0 4px; font-size: 0.96rem; }
+  .trust-item p { margin: 0; font-size: 0.86rem; color: var(--ink-soft); }
+
+  /* ===== Process ===== */
   .process { display: grid; gap: 0; }
-  .step {
-    display: grid; grid-template-columns: 64px 1fr; gap: 20px; padding: 22px 0;
-    border-top: 1px solid var(--line);
-  }
+  .step { display: grid; grid-template-columns: 60px 1fr; gap: 20px; padding: 24px 0; border-top: 1px solid var(--line); }
   .step:first-child { border-top: none; }
-  .step .num {
-    font-family: "Hiragino Sans", sans-serif; font-weight: 800; font-size: 1.6rem;
-    color: var(--accent); font-variant-numeric: tabular-nums;
-  }
+  .step .num { font-weight: 800; font-size: 1.6rem; color: var(--accent); }
   .step h3 { margin: 0 0 6px; font-size: 1.05rem; }
   .step p { margin: 0; color: var(--ink-soft); font-size: 0.92rem; }
 
   /* ===== Portfolio proof ===== */
-  .proof {
-    display: grid; grid-template-columns: 1.1fr 1fr; gap: 32px; align-items: center;
-  }
+  .proof { display: grid; grid-template-columns: 1.1fr 1fr; gap: 32px; align-items: center; }
   @media (max-width: 720px) { .proof { grid-template-columns: 1fr; } }
-  .proof-card {
-    border: 1px solid var(--line); border-radius: 6px; overflow: hidden; box-shadow: var(--shadow);
-    background: var(--surface);
-  }
+  .proof-card { border: 1px solid var(--line); border-radius: 10px; overflow: hidden; box-shadow: var(--shadow-lg); background: var(--surface); }
   .proof-card iframe { width: 100%; height: 360px; border: 0; display: block; background: var(--surface); }
-  .proof-card .cap {
-    padding: 12px 16px; font-size: 0.82rem; color: var(--ink-soft); border-top: 1px solid var(--line);
-  }
-  .proof-text h3 { margin: 0 0 14px; font-size: 1.2rem; }
+  .proof-card .cap { padding: 12px 16px; font-size: 0.82rem; color: var(--ink-soft); border-top: 1px solid var(--line); }
+  .proof-text h3 { margin: 0 0 14px; font-size: 1.25rem; }
   .proof-text p { color: var(--ink-soft); font-size: 0.95rem; margin: 0 0 18px; }
 
   /* ===== Pricing ===== */
-  .plans { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 22px; }
-  .plan {
-    background: var(--surface); border: 1px solid var(--line); border-radius: 6px;
-    padding: 32px 28px; box-shadow: var(--shadow); position: relative;
-  }
-  .plan.featured { border-color: var(--accent); }
-  .plan .badge {
-    position: absolute; top: -12px; right: 24px; background: var(--accent); color: #fff8f2;
-    font-size: 0.72rem; font-weight: 700; padding: 4px 12px; border-radius: 20px;
-  }
-  .plan h3 { margin: 0 0 4px; font-size: 1.05rem; }
-  .plan .price { font-size: 2rem; font-weight: 800; margin: 10px 0 20px; }
+  .plans { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 22px; margin-bottom: 24px; }
+  .plan { background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: 34px 30px; box-shadow: var(--shadow); position: relative; }
+  .plan.featured { border-color: var(--accent); box-shadow: var(--shadow-lg); }
+  .plan .badge { position: absolute; top: -12px; right: 26px; background: var(--accent); color: #fff8f2; font-size: 0.72rem; font-weight: 700; padding: 5px 14px; border-radius: 20px; }
+  .plan h3 { margin: 0 0 4px; font-size: 1.08rem; }
+  .plan .price { font-size: 2.1rem; font-weight: 800; margin: 12px 0 22px; }
   .plan .price small { font-size: 0.95rem; font-weight: 600; color: var(--ink-soft); }
-  .plan ul { list-style: none; padding: 0; margin: 0; }
-  .plan li {
-    padding: 9px 0; border-top: 1px solid var(--line); font-size: 0.92rem; color: var(--ink-soft);
-  }
+  .plan ul { list-style: none; padding: 0; margin: 0 0 24px; }
+  .plan li { padding: 10px 0; border-top: 1px solid var(--line); font-size: 0.92rem; color: var(--ink-soft); }
   .plan li:first-child { border-top: none; }
-  .fine { font-size: 0.85rem; color: var(--ink-soft); margin-top: 22px; }
-
-  /* ===== Notes ===== */
-  .notes { color: var(--ink-soft); font-size: 0.88rem; }
-  .notes ul { padding-left: 1.2em; margin: 0; }
+  .fine { font-size: 0.85rem; color: var(--ink-soft); margin: 0; }
+  .notes ul { padding-left: 1.2em; margin: 0; color: var(--ink-soft); font-size: 0.88rem; }
   .notes li { margin-bottom: 8px; }
 
-  /* ===== CTA ===== */
-  .cta { text-align: center; }
-  .cta h2 { margin-bottom: 16px; }
-  .cta p.lead { color: var(--ink-soft); max-width: 42ch; margin: 0 auto 32px; }
-
-  footer {
-    border-top: 1px solid var(--line); padding: 28px 0; font-size: 0.82rem; color: var(--ink-soft);
+  /* ===== FAQ ===== */
+  .faq-list { display: grid; gap: 12px; max-width: 720px; }
+  .faq-item { background: var(--surface); border: 1px solid var(--line); border-radius: 8px; overflow: hidden; }
+  .faq-item summary {
+    padding: 20px 24px; font-weight: 700; font-size: 0.98rem; cursor: pointer; list-style: none;
+    display: flex; justify-content: space-between; align-items: center; gap: 16px;
   }
-  footer .wrap { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 10px; }
+  .faq-item summary::-webkit-details-marker { display: none; }
+  .faq-item summary::after { content: "+"; font-size: 1.3rem; color: var(--accent); transition: transform 0.2s ease; flex: none; }
+  .faq-item[open] summary::after { transform: rotate(45deg); }
+  .faq-item p { margin: 0; padding: 0 24px 22px; color: var(--ink-soft); font-size: 0.92rem; }
+
+  /* ===== Final CTA ===== */
+  .cta { text-align: center; }
+  .cta h2 { margin: 0 auto 16px; }
+  .cta p.lead { color: var(--ink-soft); max-width: 42ch; margin: 0 auto 32px; }
+  .cta .hero-actions { justify-content: center; }
+
+  footer { border-top: 1px solid var(--line); padding: 32px 0 44px; font-size: 0.82rem; color: var(--ink-soft); }
+  footer .wrap { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 12px; }
+  footer .legal-links a { margin-right: 16px; text-decoration: none; color: var(--ink-soft); }
+  footer .legal-links a:hover { color: var(--accent-deep); }
 </style>
 </head>
 <body>
 
-<header>
+<header id="site-header">
   <div class="wrap">
-    <div class="logo">AX<span>LABO</span></div>
+    <a class="logo" href="/">AX<span>LABO</span></a>
     <nav>
       <a href="#service">サービス</a>
       <a href="#price">料金</a>
-      <a href="#contact">お問い合わせ</a>
+      <a href="#faq">よくある質問</a>
+      <a class="btn btn-primary btn-sm" href="mailto:info@axlabo.com?subject=Web%2FLP制作のお問い合わせ">相談する</a>
     </nav>
   </div>
 </header>
@@ -194,77 +247,109 @@
     <span class="label">AI Web / LP Production</span>
     <h1>Webサイト・LPを、<br /><em>最短3営業日</em>で形にする。</h1>
     <p class="lead">
-      AXLABOは、AIを活用した制作フローでWebサイト・ランディングページ制作を行っています。
-      ヒアリングから構成設計・実装まで、通常より短い期間での納品が可能です。
+      AXLABOは、AIを活用した制作フローでWebサイト・ランディングページを制作しています。
+      ヒアリングから構成設計・実装・公開まで一貫して対応し、通常より短い期間・明朗な価格での納品が可能です。
     </p>
     <div class="hero-actions">
-      <a class="btn btn-primary" href="#contact">お問い合わせをする</a>
+      <a class="btn btn-primary" href="mailto:info@axlabo.com?subject=Web%2FLP制作のお問い合わせ">今すぐ相談する(1営業日以内に返信)</a>
       <a class="btn btn-ghost" href="#service">制作事例を見る</a>
     </div>
+    <dl class="hero-facts">
+      <div><dt class="tabular">3営業日</dt><dd>ヒアリング完了からの標準納期</dd></div>
+      <div><dt class="tabular">¥49,800〜</dt><dd>明朗な2プラン料金</dd></div>
+      <div><dt>24/365</dt><dd>AIによる問い合わせ受付</dd></div>
+    </dl>
   </div>
 </section>
 
-<section id="service">
-  <div class="wrap">
-    <span class="label">こんな方におすすめ</span>
+<section id="service" class="alt">
+  <div class="wrap reveal">
+    <span class="label">こんな課題はありませんか</span>
     <h2>「LPが欲しい」を、後回しにしていませんか。</h2>
-    <div class="pains">
-      <div class="pain"><p>自分のサービスを紹介するLP(ランディングページ)が欲しいが、まだ作れていない。</p></div>
-      <div class="pain"><p>制作会社に頼むと高額・長納期になりがちで、もっと早く形にしたい。</p></div>
+    <p class="section-lead">よくあるお悩みと、AXLABOが解決できることです。</p>
+    <div class="bento">
+      <div class="wide card">
+        <h3>自社サイトが無い、または何年も更新していない</h3>
+        <p>名刺代わりの簡易ページのみ、あるいは未公開のまま。まずは「今の事業を正しく伝えるページ」を最短で用意します。</p>
+      </div>
+      <div class="wide card">
+        <h3>制作会社に頼むと高額・長納期になりがち</h3>
+        <p>AIを活用した制作フローにより、通常数週間かかる工程を標準3営業日に短縮。価格も明朗な2プランのみです。</p>
+      </div>
+      <div class="narrow card">
+        <h3>問い合わせが電話・紹介経由に偏っている</h3>
+        <p>Web経由の反響を増やす、最初の一歩として。</p>
+      </div>
+      <div class="narrow card">
+        <h3>効果を誇張されるのが不安</h3>
+        <p>集客数・売上等の成果は保証しません。制作物の品質のみを誠実にお約束します。</p>
+      </div>
     </div>
   </div>
 </section>
 
 <section>
-  <div class="wrap">
+  <div class="wrap reveal">
+    <span class="label">AXLABOが選ばれる理由</span>
+    <h2>AIだからこそ、速く・正確に。</h2>
+    <p class="section-lead">実績数やロゴの誇示ではなく、実際にお約束できる事実だけをお伝えします。</p>
+    <div class="trust-bar">
+      <div class="trust-item">
+        <div class="ico" aria-hidden="true">◆</div>
+        <div><h4>明朗な価格</h4><p>追加費用なしの2プランのみ。個別要望のみ別途お見積り。</p></div>
+      </div>
+      <div class="trust-item">
+        <div class="ico" aria-hidden="true">◆</div>
+        <div><h4>最短3営業日</h4><p>ヒアリング完了から標準3営業日で納品します。</p></div>
+      </div>
+      <div class="trust-item">
+        <div class="ico" aria-hidden="true">◆</div>
+        <div><h4>24時間365日受付</h4><p>お問い合わせはAIが即時受付・1営業日以内に返信します。</p></div>
+      </div>
+      <div class="trust-item">
+        <div class="ico" aria-hidden="true">◆</div>
+        <div><h4>業種ごとに個別設計</h4><p>テンプレートの使い回しはせず、業種の世界観から配色・構成を設計します。</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="alt">
+  <div class="wrap reveal">
     <span class="label">納品までの流れ</span>
     <h2>ご依頼から納品まで、4ステップ。</h2>
     <div class="process">
-      <div class="step">
-        <div class="num">01</div>
-        <div><h3>ヒアリング</h3><p>サービス内容・伝えたいこと・希望の雰囲気をお伺いします。</p></div>
-      </div>
-      <div class="step">
-        <div class="num">02</div>
-        <div><h3>構成案のご提示</h3><p>ヒアリング完了から1営業日以内に構成案をご提示します。</p></div>
-      </div>
-      <div class="step">
-        <div class="num">03</div>
-        <div><h3>制作</h3><p>構成確定後、2〜3営業日で制作します。</p></div>
-      </div>
-      <div class="step">
-        <div class="num">04</div>
-        <div><h3>納品・修正</h3><p>そのまま公開できる形式で納品します。文章修正は1回まで無料です。</p></div>
-      </div>
+      <div class="step"><div class="num tabular">01</div><div><h3>ヒアリング</h3><p>サービス内容・伝えたいこと・希望の雰囲気をお伺いします。</p></div></div>
+      <div class="step"><div class="num tabular">02</div><div><h3>構成案のご提示</h3><p>ヒアリング完了から1営業日以内に構成案をご提示します。</p></div></div>
+      <div class="step"><div class="num tabular">03</div><div><h3>制作</h3><p>構成確定後、2〜3営業日で制作します。</p></div></div>
+      <div class="step"><div class="num tabular">04</div><div><h3>納品・修正</h3><p>そのまま公開できる形式で納品します。文章修正は1回まで無料です。</p></div></div>
     </div>
   </div>
 </section>
 
 <section>
-  <div class="wrap">
+  <div class="wrap reveal">
     <span class="label">制作事例</span>
     <h2>実際に制作したLPサンプル</h2>
     <div class="proof">
       <div class="proof-card">
-        <iframe src="portfolio-sample-sumu.html" title="制作サンプル: SUMU(整理収納コンサルティング)" loading="lazy"></iframe>
+        <iframe src="portfolio-sample-sumu.html" title="制作サンプル: SUMU(整理収納コンサルティング業を想定したLP)" loading="lazy"></iframe>
         <div class="cap">サンプル: 整理収納コンサルティング業を想定したLP(架空の屋号です)</div>
       </div>
       <div class="proof-text">
         <h3>業種の世界観から設計する</h3>
-        <p>
-          テンプレートの使い回しはせず、業種の素材・所作から配色とレイアウトを個別に設計します。
-          どの業種でも同じ構成にはしません。
-        </p>
+        <p>テンプレートの使い回しはせず、業種の素材・所作から配色とレイアウトを個別に設計します。どの業種でも同じ構成にはしません。</p>
         <a class="btn btn-ghost" href="portfolio-sample-sumu.html" target="_blank" rel="noopener">サンプルを別タブで開く</a>
       </div>
     </div>
   </div>
 </section>
 
-<section id="price">
-  <div class="wrap">
+<section id="price" class="alt">
+  <div class="wrap reveal">
     <span class="label">料金プラン</span>
     <h2>シンプルな2プラン</h2>
+    <p class="section-lead">追加費用が発生しない、明朗な価格です。</p>
     <div class="plans">
       <div class="plan">
         <h3>ライト</h3>
@@ -288,13 +373,7 @@
       </div>
     </div>
     <p class="fine">納期: ご購入・ヒアリング完了から3営業日</p>
-  </div>
-</section>
-
-<section>
-  <div class="wrap">
-    <span class="label">納品物 / ご注意</span>
-    <div class="notes">
+    <div class="notes" style="margin-top: 32px;">
       <ul>
         <li>納品物: LP一式(そのまま公開できる形式)・スマートフォン対応・簡単な公開手順書</li>
         <li>ロゴ・お写真等の素材はお客様にてご用意いただくか、著作権フリー素材を使用します</li>
@@ -304,28 +383,84 @@
   </div>
 </section>
 
-<section id="contact" class="cta">
-  <div class="wrap">
+<section id="faq">
+  <div class="wrap reveal">
+    <span class="label">よくあるご質問</span>
+    <h2>ご不安な点にお答えします。</h2>
+    <div class="faq-list">
+      <details class="faq-item">
+        <summary>AIが作ると聞くと、品質が心配です。</summary>
+        <p>構成設計・実装をAIが担い、最終的な内容確認までを一貫して行っています。派手な演出よりも、業種ごとに個別設計した誠実な仕上がりを重視しています。実際の制作サンプルをぜひご確認ください。</p>
+      </details>
+      <details class="faq-item">
+        <summary>ページ数を増やしたい・特殊な機能(EC・会員機能等)が必要です。</summary>
+        <p>料金表にある2プラン以外の内容は個別お見積りとなります。まずはご要望をお聞かせください。</p>
+      </details>
+      <details class="faq-item">
+        <summary>写真やロゴが用意できません。</summary>
+        <p>著作権フリー素材を使用して制作することも可能です。お気軽にご相談ください。</p>
+      </details>
+      <details class="faq-item">
+        <summary>支払い方法・タイミングを教えてください。</summary>
+        <p>お見積り内容のご確認・ご契約成立後に、請求書と合わせてお振込先をご案内します。ご契約前にお振込先をお伝えすることはありません。</p>
+      </details>
+      <details class="faq-item">
+        <summary>公開後の更新・修正はできますか?</summary>
+        <p>文章修正は1回まで無料です。それ以降の修正・追加ページ制作は別途お見積りとなります。</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<section id="contact" class="cta alt">
+  <div class="wrap reveal">
     <span class="label">お問い合わせ</span>
     <h2>まずはお気軽にご相談ください。</h2>
     <p class="lead">サービス内容・ご希望の雰囲気をお送りいただくだけで、1営業日以内に構成案の目安をご案内します。</p>
-    <a class="btn btn-primary" href="mailto:info@axlabo.com?subject=Web%2FLP制作のお問い合わせ">
-      info@axlabo.com へメールする
-    </a>
+    <div class="hero-actions">
+      <a class="btn btn-primary" href="mailto:info@axlabo.com?subject=Web%2FLP制作のお問い合わせ">info@axlabo.com へメールする</a>
+    </div>
   </div>
 </section>
 
 <footer>
   <div class="wrap">
     <div>AXLABO</div>
-    <div class="legal-links" style="margin: 8px 0;">
+    <div class="legal-links">
       <a href="/tokushoho.html">特定商取引法に基づく表記</a>
-      <a href="/privacy.html" style="margin-left: 16px;">プライバシーポリシー</a>
-      <a href="/terms.html" style="margin-left: 16px;">利用規約</a>
+      <a href="/privacy.html">プライバシーポリシー</a>
+      <a href="/terms.html">利用規約</a>
     </div>
     <div>© 2026 AXLABO. All rights reserved.</div>
   </div>
 </footer>
+
+<script>
+(function () {
+  var header = document.getElementById('site-header');
+  var onScroll = function () {
+    if (window.scrollY > 8) header.classList.add('scrolled');
+    else header.classList.remove('scrolled');
+  };
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+
+  var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (!reduceMotion && 'IntersectionObserver' in window) {
+    var observer = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('in-view');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12 });
+    document.querySelectorAll('.reveal').forEach(function (el) { observer.observe(el); });
+  } else {
+    document.querySelectorAll('.reveal').forEach(function (el) { el.classList.add('in-view'); });
+  }
+})();
+</script>
 
 </body>
 </html>
