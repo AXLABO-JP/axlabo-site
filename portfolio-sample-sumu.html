@@ -452,12 +452,22 @@
   </div>
 </section>
 
+<!-- 2026-08-07 CEO指示「BIZ-001最終販売準備」LP最終品質確認で発見・修正。
+     AXLABO OS Constitution「実在しない実績・お客様の声は使用しない」に反する、
+     架空の顧客の声(blockquote)がこのデザインサンプル内に含まれていた。
+     このページ自体はSUMUという架空の屋号を用いたAXLABOの制作サンプルであることは
+     axlabo.com側(iframeのキャプション)で示しているが、直接このURLへ来た訪問者には
+     その注記が見えないため、サンプル内にも明示し、実在の声として提示しないよう修正した。 -->
 <section class="testimonial">
   <div class="wrap">
+    <p style="text-align:center; font-size:0.78rem; color:var(--ink-soft); margin-bottom:16px;">
+      ※このページはAXLABOの制作サンプルです。「SUMU」は架空の屋号であり、以下はデザイン確認用に
+      AIが作成した例文です。実在するお客様の声ではありません。
+    </p>
     <blockquote>
       「収納グッズを増やすのではなく、まず減らす順番を教えてもらえたのが良かったです。
       子どもが自分でおもちゃを片づけられるようになりました。」
-      <cite>— 30代・お子様2人のご家庭</cite>
+      <cite>— 例文(架空、SUMUは実在の事業者ではありません)</cite>
     </blockquote>
   </div>
 </section>
@@ -485,7 +495,10 @@
   <div class="wrap">
     <h2>まずは、話すことから。</h2>
     <p>無理な提案はいたしません。今の暮らしを聞かせてください。</p>
-    <a class="btn btn-primary" href="#">無料相談を予約する</a>
+    <!-- 2026-08-07修正: href="#"は遷移先の無い死んだCTAだった(CEO指示「CTA動作」確認で発見)。
+         このサンプル自体に予約機能は無いため、興味を持った訪問者を実際のAXLABOへの
+         問い合わせへ誘導するCTAへ差し替えた。 -->
+    <a class="btn btn-primary" href="mailto:info@axlabo.com?subject=制作サンプルについて">このようなLPの制作をAXLABOに相談する</a>
   </div>
 </section>
 
