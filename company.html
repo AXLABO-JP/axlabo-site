@@ -48,6 +48,7 @@
   header { position: sticky; top: 0; z-index: 50; padding: 18px 0; background: color-mix(in srgb, var(--bg) 88%, transparent); backdrop-filter: blur(10px); border-bottom: 1px solid var(--line); }
   header .wrap { display: flex; align-items: center; justify-content: space-between; }
   .brand { display: inline-flex; align-items: center; text-decoration: none; font-weight: 800; font-size: 1.15rem; }
+  .brand img { height: 40px; width: auto; display: block; }
   nav { display: flex; align-items: center; gap: 8px; }
   nav a { text-decoration: none; font-size: 0.88rem; color: var(--ink-soft); padding: 8px 12px; border-radius: 4px; }
   nav a:hover { color: var(--accent-deep); background: var(--surface-alt); }
@@ -76,7 +77,7 @@
 
 <header id="site-header">
   <div class="wrap">
-    <a class="brand" href="/">AXLABO</a>
+    <a class="brand" href="/" aria-label="AXLABO"><img src="/axlabo-logo-horizontal.png" alt="AXLABO" /></a>
     <nav>
       <a href="/">Web制作</a>
       <a href="/company.html#mission">理念</a>
