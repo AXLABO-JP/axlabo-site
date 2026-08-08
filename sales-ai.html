@@ -1,0 +1,308 @@
+<!-- AXLABO-APPROVED -->
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>AXLABO ｜ 営業AI導入支援で新規開拓を加速</title>
+<meta name="description" content="営業担当者の負担を軽減し、顧客との関係構築に集中できる環境を提供します。" />
+<!-- LP Builderにより生成(生成日時: 2026-08-07T14:29:37.193Z)。docs/business/lp-builder参照。
+     ブランドデザインシステム(docs/design/axlabo-brand-design-system.md)を
+     apps/executive-manager-daemon/src/lp-builder/brand-tokens.tsから適用。
+     実在しない実績・お客様の声・写真・ロゴ生成は一切使用しない(AXLABO OS Constitution)。 -->
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Service","serviceType":"営業AI導入支援","provider":{"@type":"Organization","name":"AXLABO","url":"https://axlabo.com/","email":"info@axlabo.com"},"areaServed":"JP","description":"営業担当者の負担を軽減し、顧客との関係構築に集中できる環境を提供します。"}</script>
+<style>
+  :root {
+    --bg: #f5f3ef; --surface: #ffffff; --surface-alt: #eeece5;
+    --ink: #161311; --ink-soft: #5a5650; --ink-faint: #8a8578;
+    --accent: #c8622c; --accent-deep: #9c4a1f;
+    --line: #e1ddd3; --focus: #2b6cb0;
+    --radius-sm: 4px; --radius-md: 6px; --radius-lg: 8px;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #0d1115; --surface: #161b20; --surface-alt: #1d2329;
+      --ink: #f2efe9; --ink-soft: #a3a09a; --ink-faint: #6b7278;
+      --accent: #e59660; --accent-deep: #f2b184;
+      --line: #262c32; --focus: #7cb3f0;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #0d1115; --surface: #161b20; --surface-alt: #1d2329;
+    --ink: #f2efe9; --ink-soft: #a3a09a; --ink-faint: #6b7278;
+    --accent: #e59660; --accent-deep: #f2b184;
+    --line: #262c32; --focus: #7cb3f0;
+  }
+  :root[data-theme="light"] {
+    --bg: #f5f3ef; --surface: #ffffff; --surface-alt: #eeece5;
+    --ink: #161311; --ink-soft: #5a5650; --ink-faint: #8a8578;
+    --accent: #c8622c; --accent-deep: #9c4a1f;
+    --line: #e1ddd3; --focus: #2b6cb0;
+  }
+
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+  body {
+    margin: 0; background: var(--bg); color: var(--ink);
+    font-family: "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Yu Gothic", "Noto Sans JP", sans-serif;
+    line-height: 1.85; font-variant-numeric: tabular-nums;
+    -webkit-font-smoothing: antialiased;
+  }
+  .wrap { max-width: 1080px; margin: 0 auto; padding: 0 24px; }
+  section { padding: clamp(64px, 10vw, 128px) 0; }
+  h1, h2, h3 { line-height: 1.2; font-weight: 800; margin: 0 0 16px; }
+  h1 { font-size: clamp(2.4rem, 6vw, 4.2rem); }
+  h2 { font-size: clamp(1.6rem, 3.2vw, 2.3rem); }
+  h3 { font-size: clamp(1.05rem, 1.6vw, 1.2rem); }
+  p { color: var(--ink-soft); }
+  .label {
+    font-size: 0.78rem; letter-spacing: 0.18em; text-transform: uppercase;
+    color: var(--accent); font-weight: 700; margin-bottom: 12px; display: block;
+  }
+
+  header {
+    position: sticky; top: 0; z-index: 50; background: color-mix(in srgb, var(--bg) 88%, transparent);
+    backdrop-filter: blur(8px); border-bottom: 1px solid transparent; transition: border-color .2s, box-shadow .2s;
+  }
+  header.scrolled { border-bottom-color: var(--line); box-shadow: 0 1px 2px rgba(0,0,0,.04); }
+  header .wrap { display: flex; align-items: center; justify-content: space-between; padding: 16px 24px; }
+  .brand { font-weight: 800; font-size: 1.1rem; letter-spacing: -0.01em; color: var(--ink); text-decoration: none; display: inline-flex; align-items: center; }
+  .brand svg { height: 40px; width: auto; display: block; }
+
+  .btn {
+    display: inline-flex; align-items: center; gap: 8px; padding: 13px 26px;
+    border-radius: var(--radius-sm); font-weight: 700; font-size: 0.95rem;
+    text-decoration: none; min-height: 44px; transition: transform .15s, box-shadow .15s, border-color .15s;
+    cursor: pointer; border: 1px solid transparent;
+  }
+  .btn-primary { background: var(--accent); color: #fff; }
+  .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 20px color-mix(in srgb, var(--accent) 40%, transparent); background: var(--accent-deep); }
+  .btn-ghost { border-color: var(--line); color: var(--ink); background: transparent; }
+  .btn-ghost:hover { border-color: var(--accent); }
+  .btn:focus-visible { outline: 2px solid var(--focus); outline-offset: 2px; }
+
+  .card {
+    background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius-lg);
+    padding: 28px 32px; box-shadow: 0 1px 2px rgba(0,0,0,.03); transition: box-shadow .2s, transform .2s;
+  }
+  .card:hover { box-shadow: 0 8px 24px rgba(0,0,0,.06); }
+
+  .bento { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px; }
+  .trust-band {
+    display: flex; flex-wrap: wrap; gap: 24px; justify-content: center; padding: 20px 0;
+    border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); color: var(--ink-soft); font-size: .9rem;
+  }
+  .steps { counter-reset: step; display: grid; gap: 20px; }
+  .step { display: flex; gap: 20px; align-items: flex-start; }
+  .step-num {
+    counter-increment: step; content: counter(step); flex-shrink: 0; width: 40px; height: 40px;
+    border-radius: 50%; background: var(--surface-alt); border: 1px solid var(--line);
+    display: flex; align-items: center; justify-content: center; font-weight: 800; color: var(--accent);
+  }
+  .step-num::before { content: counter(step); }
+
+  .price-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
+  .price-num { font-size: 2.4rem; font-weight: 800; color: var(--ink); }
+
+  .faq-item { border-bottom: 1px solid var(--line); padding: 20px 0; }
+  .faq-item summary { cursor: pointer; font-weight: 700; list-style: none; }
+  .faq-item summary::-webkit-details-marker { display: none; }
+
+  footer { border-top: 1px solid var(--line); padding: 40px 0; color: var(--ink-faint); font-size: .85rem; }
+
+  .reveal { opacity: 0; transform: translateY(16px); transition: opacity .5s ease, transform .5s ease; }
+  .reveal.in-view { opacity: 1; transform: translateY(0); }
+  @media (prefers-reduced-motion: reduce) { .reveal { opacity: 1; transform: none; transition: none; } }
+
+  @media (max-width: 640px) { .wrap { padding: 0 18px; } }
+</style>
+</head>
+<body>
+
+<header id="site-header">
+  <div class="wrap">
+    <a class="brand" href="/" aria-label="AXLABO"><?xml version="1.0" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 20010904//EN"
+ "http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd">
+<svg version="1.0" xmlns="http://www.w3.org/2000/svg"
+ width="1536.000000pt" height="1024.000000pt" viewBox="0 0 1536.000000 1024.000000"
+ preserveAspectRatio="xMidYMid meet">
+<metadata>
+Created by potrace 1.16, written by Peter Selinger 2001-2019
+</metadata>
+<g transform="translate(0.000000,1024.000000) scale(0.100000,-0.100000)"
+fill="#0E2846" stroke="none">
+<path d="M7652 8253 c-17 -38 -97 -207 -177 -378 -127 -269 -330 -700 -765
+-1630 -120 -256 -386 -828 -535 -1150 -53 -115 -103 -222 -110 -237 l-13 -28
+77 0 c144 0 543 48 562 67 4 4 117 256 252 558 135 303 304 683 377 845 73
+162 186 413 250 558 l118 262 15 -37 c8 -21 53 -119 100 -218 104 -221 224
+-478 265 -565 222 -482 357 -767 368 -779 6 -6 494 240 490 247 -2 4 -20 41
+-39 82 -19 41 -110 228 -202 415 -215 437 -459 940 -693 1425 -282 587 -303
+630 -306 630 -1 0 -16 -30 -34 -67z"/>
+<path d="M9155 6720 c-103 -12 -245 -38 -289 -53 -29 -10 7 -12 212 -12 196 0
+265 -4 335 -18 196 -40 303 -120 323 -243 21 -135 -117 -323 -386 -525 -445
+-333 -1023 -619 -1745 -865 -556 -190 -1124 -304 -1511 -304 -344 0 -514 127
+-459 341 37 146 167 313 405 523 l55 48 -60 -32 c-310 -167 -613 -458 -696
+-667 -19 -47 -23 -78 -24 -158 0 -92 2 -104 30 -154 36 -66 94 -118 183 -164
+132 -69 284 -97 527 -97 358 0 744 63 1200 195 516 150 1048 370 1552 641 524
+282 848 504 1059 726 211 223 271 427 177 600 -34 63 -76 99 -166 144 -111 56
+-218 75 -447 79 -107 2 -231 0 -275 -5z"/>
+<path d="M9165 5211 c-6 -5 -104 -59 -220 -121 -115 -61 -214 -116 -219 -121
+-10 -9 40 -119 202 -446 l95 -193 304 0 c167 0 303 2 303 4 0 1 -90 187 -201
+412 -110 225 -207 424 -214 442 -14 32 -32 40 -50 23z"/>
+<path d="M10331 3690 c-144 -21 -261 -103 -315 -219 -33 -72 -30 -198 7 -272
+66 -135 208 -209 402 -209 183 0 327 79 395 215 20 41 25 65 25 135 0 76 -3
+92 -33 152 -56 115 -160 181 -313 198 -92 11 -91 11 -168 0z m207 -115 c179
+-53 231 -283 92 -408 -72 -65 -183 -90 -293 -67 -257 53 -280 381 -32 477 44
+17 173 16 233 -2z"/>
+<path d="M4722 3668 c-5 -7 -63 -101 -127 -208 -115 -191 -232 -380 -262 -427
+l-15 -23 73 0 74 0 127 214 c70 118 133 226 139 240 7 14 15 26 18 26 3 0 29
+-40 57 -88 186 -317 227 -384 238 -388 7 -3 41 -4 75 -2 l61 3 -68 110 c-37
+61 -128 210 -202 333 -109 182 -137 222 -156 222 -12 0 -26 -6 -32 -12z"/>
+<path d="M5490 3674 c0 -3 67 -76 150 -161 l150 -156 -151 -159 c-84 -87 -156
+-161 -160 -164 -26 -15 -1 -24 70 -24 l78 0 114 123 c62 67 118 128 124 135 9
+10 38 -16 136 -122 l124 -136 83 0 c45 0 82 4 82 8 0 5 -14 21 -31 38 -17 16
+-90 91 -162 167 l-130 138 151 152 c84 84 152 156 152 160 0 4 -37 7 -82 7
+l-83 0 -109 -120 c-60 -66 -114 -120 -120 -120 -6 0 -60 54 -119 120 l-107
+120 -80 0 c-44 0 -80 -3 -80 -6z"/>
+<path d="M6680 3345 l0 -335 315 0 315 0 0 55 0 56 -250 -3 -250 -3 0 283 0
+282 -65 0 -65 0 0 -335z"/>
+<path d="M7838 3351 c-109 -181 -198 -331 -198 -335 0 -3 30 -6 68 -6 l67 0
+140 240 c77 132 142 240 145 240 6 0 53 -76 175 -285 48 -82 94 -160 102 -172
+12 -21 22 -23 87 -23 l74 0 -204 333 c-182 296 -207 332 -232 334 -25 3 -38
+-15 -224 -326z"/>
+<path d="M8910 3345 l0 -336 283 3 c273 3 284 4 330 26 84 42 123 152 82 231
+-17 34 -70 81 -91 81 -21 0 -18 6 23 44 34 31 37 39 41 97 3 55 0 69 -20 99
+-13 19 -44 46 -68 60 -44 25 -49 25 -312 28 l-268 3 0 -336z m504 204 c36 -28
+36 -86 0 -120 -25 -23 -31 -24 -200 -27 l-174 -3 0 85 0 86 174 0 c160 0 175
+-2 200 -21z m-2 -259 c44 -13 68 -43 68 -85 -1 -77 -51 -95 -270 -95 l-170 0
+0 95 0 95 168 0 c92 0 184 -5 204 -10z"/>
+</g>
+</svg>
+</a>
+    <a class="btn btn-primary" href="#cta">無料相談を申し込む</a>
+  </div>
+</header>
+
+<main id="top">
+
+  <section class="hero">
+    <div class="wrap">
+      <span class="label">営業AI導入支援</span>
+      <h1>営業AI導入支援で新規開拓を加速</h1>
+      <p>営業担当者の負担を軽減し、顧客との関係構築に集中できる環境を提供します。</p>
+      <a class="btn btn-primary" href="#cta">無料相談を申し込む</a>
+    </div>
+  </section>
+
+  <section class="problem">
+    <div class="wrap">
+      <span class="label">Problem</span>
+      <h2>小規模事業者が直面する営業の課題とは？</h2>
+      <div class="bento"><div class="card reveal"><p>問い合わせ対応や資料作成に多くの時間を取られている</p></div>
+<div class="card reveal"><p>新規開拓に十分な時間を割けず機会損失が発生している</p></div>
+<div class="card reveal"><p>夜間・休日の問い合わせに即対応できない</p></div></div>
+    </div>
+  </section>
+
+  <section class="solution">
+    <div class="wrap">
+      <span class="label">Solution</span>
+      <h2>AXLABOの営業AIが提供する解決策</h2>
+      <ul><li>AIによる自動化で問い合わせ対応の効率化を実現</li>
+<li>営業資料の自動生成により、時間を有効活用</li>
+<li>24時間対応可能なシステムで機会損失を防止</li></ul>
+    </div>
+  </section>
+
+  <section class="features">
+    <div class="wrap">
+      <span class="label">Features</span>
+      <div class="bento"><div class="card reveal"><h3>自動問い合わせ対応</h3><p>AIが顧客からの問い合わせを自動で処理し、営業担当者の負担を軽減します。</p></div>
+<div class="card reveal"><h3>資料自動生成機能</h3><p>必要な営業資料を瞬時に生成し、迅速な提案を可能にします。</p></div>
+<div class="card reveal"><h3>24時間対応システム</h3><p>夜間や休日でも顧客からの問い合わせに自動で対応します。</p></div>
+<div class="card reveal"><h3>業種特化型のカスタマイズ</h3><p>士業やコンサルタント向けに特化した機能を提供し、業界のニーズに応えます。</p></div>
+<div class="card reveal"><h3>ユーザーフレンドリーなインターフェース</h3><p>直感的に操作できるデザインで、導入のハードルを下げます。</p></div></div>
+    </div>
+  </section>
+
+  <section class="strength">
+    <div class="wrap">
+      <span class="label">Strength</span>
+      <div class="bento"><div class="card reveal"><h3>競合よりも柔軟な価格設定</h3><p>従来型の営業代行とAIツールの中間価格で、コストパフォーマンスに優れています。</p></div>
+<div class="card reveal"><h3>地域密着型のサービス</h3><p>地元の小規模事業者に特化したコンテンツ戦略で、信頼感を築きます。</p></div>
+<div class="card reveal"><h3>高い顧客満足度</h3><p>導入後のサポート体制が充実しており、顧客の声を反映した改善を行っています。</p></div></div>
+    </div>
+  </section>
+
+  <section class="flow">
+    <div class="wrap">
+      <span class="label">Flow</span>
+      <div class="steps"><div class="step reveal"><div class="step-num"></div><p>競合分析を実施し、サービスの差別化ポイントを明確化</p></div>
+<div class="step reveal"><div class="step-num"></div><p>LPのSEO設計を行い、効果的なマーケティング準備を進める</p></div>
+<div class="step reveal"><div class="step-num"></div><p>営業チームのトレーニングを行い、初期顧客獲得に向けた活動を開始</p></div></div>
+    </div>
+  </section>
+
+  <section class="price">
+    <div class="wrap">
+      <span class="label">Price</span>
+      <div class="price-grid"><div class="card reveal"><span class="label">月額プラン</span><div class="price-num">要見積</div><p>初期費用と月額運用費が含まれるプランです。</p><ul><li>自動問い合わせ対応</li><li>資料自動生成機能</li><li>24時間対応システム</li></ul></div></div>
+    </div>
+  </section>
+
+  <section class="faq">
+    <div class="wrap">
+      <span class="label">FAQ</span>
+      <details class="faq-item"><summary>AI導入の効果はどのくらいありますか？</summary><p>導入後、営業担当者の業務効率が大幅に向上することが期待されます。</p></details>
+<details class="faq-item"><summary>導入までのプロセスはどのようになりますか？</summary><p>競合分析、SEO設計、営業チームのトレーニングを経て、スムーズに導入します。</p></details>
+<details class="faq-item"><summary>サポートはどのように受けられますか？</summary><p>導入後のサポートも充実しており、専用のサポートチームが対応します。</p></details>
+<details class="faq-item"><summary>契約はどのように行いますか？</summary><p>詳細な見積もりを行った後、契約を進めます。</p></details>
+    </div>
+  </section>
+
+  <section class="cta" id="cta">
+    <div class="wrap">
+      <h2>今すぐお問い合わせを！</h2>
+      <a class="btn btn-primary" href="mailto:info@axlabo.com?subject=%E5%96%B6%E6%A5%ADAI%E5%B0%8E%E5%85%A5%E6%94%AF%E6%8F%B4%E3%81%AE%E3%81%8A%E5%95%8F%E3%81%84%E5%90%88%E3%82%8F%E3%81%9B">無料相談を申し込む</a>
+      <p>お問い合わせフォームまたはお電話でご連絡ください。</p>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    &copy; AXLABO
+    <span class="legal-links">
+      <a href="https://axlabo.com/tokushoho.html">特定商取引法に基づく表記</a> /
+      <a href="https://axlabo.com/privacy.html">プライバシーポリシー</a> /
+      <a href="https://axlabo.com/terms.html">利用規約</a>
+    </span>
+  </div>
+</footer>
+
+<script>
+  // 静かな動き(意味のある最小限)。prefers-reduced-motionは既にCSS側で無効化済み。
+  document.addEventListener("DOMContentLoaded", () => {
+    const header = document.getElementById("site-header");
+    window.addEventListener("scroll", () => {
+      header.classList.toggle("scrolled", window.scrollY > 8);
+    }, { passive: true });
+
+    if ("IntersectionObserver" in window) {
+      const io = new IntersectionObserver((entries) => {
+        for (const entry of entries) {
+          if (entry.isIntersecting) entry.target.classList.add("in-view");
+        }
+      }, { threshold: 0.15 });
+      document.querySelectorAll(".reveal").forEach((el) => io.observe(el));
+    } else {
+      document.querySelectorAll(".reveal").forEach((el) => el.classList.add("in-view"));
+    }
+  });
+</script>
+
+</body>
+</html>
