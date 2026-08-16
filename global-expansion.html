@@ -99,6 +99,10 @@
     linear-gradient(160deg, var(--bg) 0%, var(--alt) 100%);}
   .hero-map{position:absolute;inset:0;opacity:.5;background-image:radial-gradient(color-mix(in srgb, var(--ink) 10%, transparent) 1.4px, transparent 1.4px);background-size:22px 22px;
     mask-image:radial-gradient(ellipse 70% 70% at 75% 35%, black 30%, transparent 72%);}
+  .hero-photo{position:absolute;right:-4%;top:8%;width:56%;max-width:640px;opacity:.85;
+    mask-image:linear-gradient(to left, black 55%, transparent 96%);-webkit-mask-image:linear-gradient(to left, black 55%, transparent 96%);}
+  .hero-photo img{width:100%;height:auto;display:block;}
+  @media (max-width:860px){.hero-photo{display:none;}}
   .hero .wrap{position:relative;padding:64px 28px 52px;}
   .eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:12px;font-weight:700;letter-spacing:.05em;color:var(--accent-2,var(--accent2));
     background:color-mix(in srgb, var(--accent) 12%, transparent);border:1px solid color-mix(in srgb, var(--accent) 30%, transparent);
@@ -242,6 +246,7 @@
   <section class="hero">
     <div class="hero-bg"></div>
     <div class="hero-map" aria-hidden="true"></div>
+    <div class="hero-photo" aria-hidden="true"><img src="img-biz004-hero-globe.png" alt="" /></div>
     <div class="wrap">
       <span class="eyebrow">海外進出支援(日本⇄海外 双方向)</span>
       <h1>海外進出の最初の整理を、<br>小さく始める。</h1>
