@@ -4,7 +4,7 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>AXLABO ｜ AIが作る、最短3営業日のWeb・LP制作</title>
-<meta name="description" content="AXLABOはAIを活用した制作フローで、Webサイト・ランディングページを最短3営業日・¥49,800から制作します。24時間365日対応、明快な2プラン。" />
+<meta name="description" content="AXLABOはAIを活用した制作フローで、Webサイト・ランディングページを最短3営業日・¥49,800から制作します。24時間365日対応、明快な3プラン。" />
 <meta name="theme-color" content="#c8622c" />
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%23161311'/%3E%3Cpath d='M50 22 L78 78 L61 78 L50 54 L39 78 L22 78 Z' fill='%23c8622c'/%3E%3C/svg%3E" />
 <meta property="og:type" content="website" />
@@ -44,6 +44,13 @@
       "price": "98000",
       "priceCurrency": "JPY",
       "description": "1ページ構成(5〜8セクション)、お問い合わせフォーム付き、SEO基本対応、文章修正1回無料"
+    },
+    {
+      "@type": "Offer",
+      "name": "プレミアムプラン",
+      "price": "198000",
+      "priceCurrency": "JPY",
+      "description": "1ページ構成(9セクション以上・大規模LP)、複数ページ・特殊機能のご相談可、SEO本格対応、文章修正2回無料"
     }
   ]
 }
@@ -182,6 +189,9 @@
   .hero-facts { display: flex; gap: clamp(24px, 5vw, 48px); flex-wrap: wrap; border-top: 1px solid var(--line); padding-top: 28px; }
   .hero-facts dt { font-size: 1.7rem; font-weight: 800; color: var(--ink); }
   .hero-facts dd { margin: 4px 0 0; font-size: 0.85rem; color: var(--ink-soft); }
+  .hero-grid { display: grid; grid-template-columns: 1.15fr 1fr; gap: 48px; align-items: center; }
+  .hero-media img { width: 100%; height: auto; display: block; border-radius: 14px; box-shadow: var(--shadow-lg); }
+  @media (max-width: 860px) { .hero-grid { grid-template-columns: 1fr; } .hero-media { order: 2; margin-top: 4px; max-width: 420px; } }
 
   /* ===== Section shell ===== */
   section { padding: clamp(56px, 9vw, 96px) 0; border-top: 1px solid var(--line); }
@@ -269,10 +279,20 @@
   .cta p.lead { color: var(--ink-soft); max-width: 42ch; margin: 0 auto 32px; }
   .cta .hero-actions { justify-content: center; }
 
-  footer { border-top: 1px solid var(--line); padding: 32px 0 44px; font-size: 0.82rem; color: var(--ink-soft); }
+  footer { border-top: 1px solid var(--line); padding: 48px 0 24px; font-size: 0.86rem; color: var(--ink-soft); }
   footer .wrap { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 12px; }
   footer .legal-links a { margin-right: 16px; text-decoration: none; color: var(--ink-soft); }
   footer .legal-links a:hover { color: var(--accent-deep); }
+  .footer-grid { display: grid; grid-template-columns: 1.4fr repeat(3, 1fr); gap: 32px; padding-bottom: 36px; }
+  .footer-brand .logo { font-weight: 800; font-size: 1.05rem; color: var(--ink); margin-bottom: 10px; }
+  .footer-brand .logo span { color: var(--accent); font-weight: 700; }
+  .footer-brand p { max-width: 32ch; margin: 0; }
+  .footer-col h4 { font-size: 0.78rem; letter-spacing: 0.05em; color: var(--ink); margin: 0 0 14px; font-weight: 700; }
+  .footer-col a { display: block; text-decoration: none; color: var(--ink-soft); margin-bottom: 10px; }
+  .footer-col a:hover { color: var(--accent-deep); }
+  .footer-bottom { border-top: 1px solid var(--line); padding-top: 20px; font-size: 0.8rem; }
+  @media (max-width: 780px) { .footer-grid { grid-template-columns: 1fr 1fr; } }
+  @media (max-width: 480px) { .footer-grid { grid-template-columns: 1fr; } }
 </style>
 </head>
 <body>
@@ -281,36 +301,41 @@
   <div class="wrap">
     <a class="logo brand" href="/" aria-label="AXLABO"><img src="/axlabo-logo-horizontal.png?v=2" alt="AXLABO" /></a>
     <nav>
-      <a href="/company.html">会社概要</a>
-      <a href="/businesses.html">事業一覧</a>
-      <a href="/flow.html">ご契約の流れ</a>
-      <a href="#service">サービス</a>
-      <a href="#price">料金</a>
+      <a href="#plans">サービスの特徴</a>
+      <a href="#price">料金プラン</a>
+      <a href="#flow">制作の流れ</a>
+      <a href="#works">制作事例</a>
       <a href="#faq">よくある質問</a>
+      <a href="/company.html">会社概要</a>
       <a href="/company-en.html">EN</a>
-      <a class="btn btn-primary btn-sm" href="mailto:info@axlabo.com?subject=Web%2FLP制作のお問い合わせ">相談する</a>
+      <a class="btn btn-primary btn-sm" href="mailto:info@axlabo.com?subject=Web%2FLP制作のお問い合わせ">まずは要件を整理する</a>
     </nav>
   </div>
 </header>
 
 <main>
 <section class="hero">
-  <div class="wrap">
-    <span class="label">AI Web / LP Production</span>
-    <h1>必要なWebサイトを、<br /><em>必要以上に複雑にしない。</em></h1>
-    <p class="lead">
-      AXLABOは、AIを活用した制作フローでWebサイト・ランディングページを制作しています。
-      ヒアリングから構成設計・実装・公開まで一貫して対応し、通常より短い期間・明朗な価格での納品が可能です。
-    </p>
-    <div class="hero-actions">
-      <a class="btn btn-primary" href="mailto:info@axlabo.com?subject=Web%2FLP制作のお問い合わせ">今すぐ相談する(1営業日以内に返信)</a>
-      <a class="btn btn-ghost" href="#service">制作事例を見る</a>
+  <div class="wrap hero-grid">
+    <div class="hero-content">
+      <span class="label">AI Web / LP Production</span>
+      <h1>必要なWebサイトを、<br /><em>必要以上に複雑にしない。</em></h1>
+      <p class="lead">
+        AXLABOは、AIを活用した制作フローでWebサイト・ランディングページを制作しています。
+        ヒアリングから構成設計・実装・公開まで一貫して対応し、通常より短い期間・明朗な価格での納品が可能です。
+      </p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="mailto:info@axlabo.com?subject=Web%2FLP制作のお問い合わせ">今すぐ相談する(1営業日以内に返信)</a>
+        <a class="btn btn-ghost" href="#service">制作事例を見る</a>
+      </div>
+      <dl class="hero-facts">
+        <div><dt class="tabular">3営業日</dt><dd>ヒアリング完了からの標準納期</dd></div>
+        <div><dt class="tabular">¥49,800〜</dt><dd>明朗な3プラン料金</dd></div>
+        <div><dt>24/365</dt><dd>AIによる問い合わせ受付</dd></div>
+      </dl>
     </div>
-    <dl class="hero-facts">
-      <div><dt class="tabular">3営業日</dt><dd>ヒアリング完了からの標準納期</dd></div>
-      <div><dt class="tabular">¥49,800〜</dt><dd>明朗な3プラン料金</dd></div>
-      <div><dt>24/365</dt><dd>AIによる問い合わせ受付</dd></div>
-    </dl>
+    <div class="hero-media reveal">
+      <img src="img-hero-device-mockup.png" width="420" height="245" alt="AXLABOが制作するWebサイトの仕上がりイメージ(デバイス表示イメージ)" loading="eager" />
+    </div>
   </div>
 </section>
 
@@ -326,7 +351,7 @@
       </div>
       <div class="wide card">
         <h3>制作会社に頼むと高額・長納期になりがち</h3>
-        <p>AIを活用した制作フローにより、通常数週間かかる工程を標準3営業日に短縮。価格も明朗な2プランのみです。</p>
+        <p>AIを活用した制作フローにより、通常数週間かかる工程を標準3営業日に短縮。価格も明朗な3プランのみです。</p>
       </div>
       <div class="narrow card">
         <h3>問い合わせが電話・紹介経由に偏っている</h3>
@@ -340,33 +365,8 @@
   </div>
 </section>
 
-<section>
-  <div class="wrap reveal">
-    <span class="label">AXLABOが選ばれる理由</span>
-    <h2>AIだからこそ、速く・正確に。</h2>
-    <p class="section-lead">実績数やロゴの誇示ではなく、実際にお約束できる事実だけをお伝えします。</p>
-    <div class="trust-bar">
-      <div class="trust-item">
-        <div class="ico" aria-hidden="true">◆</div>
-        <div><h4>明朗な価格</h4><p>追加費用なしの2プランのみ。個別要望のみ別途お見積り。</p></div>
-      </div>
-      <div class="trust-item">
-        <div class="ico" aria-hidden="true">◆</div>
-        <div><h4>最短3営業日</h4><p>ヒアリング完了から標準3営業日で納品します。</p></div>
-      </div>
-      <div class="trust-item">
-        <div class="ico" aria-hidden="true">◆</div>
-        <div><h4>24時間365日受付</h4><p>お問い合わせはAIが即時受付・1営業日以内に返信します。</p></div>
-      </div>
-      <div class="trust-item">
-        <div class="ico" aria-hidden="true">◆</div>
-        <div><h4>業種ごとに個別設計</h4><p>テンプレートの使い回しはせず、業種の世界観から配色・構成を設計します。</p></div>
-      </div>
-    </div>
-  </div>
-</section>
 
-<section class="alt">
+<section id="flow" class="alt">
   <div class="wrap reveal">
     <span class="label">納品までの流れ</span>
     <h2>ご依頼から納品まで、4ステップ。</h2>
@@ -379,7 +379,7 @@
   </div>
 </section>
 
-<section>
+<section id="works">
   <div class="wrap reveal">
     <span class="label">制作事例</span>
     <h2>実際に制作したLPサンプル</h2>
@@ -509,7 +509,7 @@
       </details>
       <details class="faq-item">
         <summary>ページ数を増やしたい・特殊な機能(EC・会員機能等)が必要です。</summary>
-        <p>料金表にある2プラン以外の内容は個別お見積りとなります。まずはご要望をお聞かせください。</p>
+        <p>料金表にある3プラン以外の内容は個別お見積りとなります。まずはご要望をお聞かせください。</p>
       </details>
       <details class="faq-item">
         <summary>写真やロゴが用意できません。</summary>
@@ -540,15 +540,34 @@
 </main>
 
 <footer>
-  <div class="wrap">
-    <div>AXLABO</div>
-    <div class="legal-links">
-      <a href="/tokushoho.html">特定商取引法に基づく表記</a>
+  <div class="wrap footer-grid">
+    <div class="footer-brand">
+      <div class="logo">AXLABO <span>Web制作</span></div>
+      <p>中小企業・個人事業主のための、必要十分なWebサイト・LP制作サービス。</p>
+    </div>
+    <div class="footer-col">
+      <h4>サービス</h4>
+      <a href="#plans">サービスの特徴</a>
+      <a href="#price">料金プラン</a>
+      <a href="#flow">制作の流れ</a>
+      <a href="#works">制作事例</a>
+      <a href="#faq">よくある質問</a>
+    </div>
+    <div class="footer-col">
+      <h4>会社情報</h4>
+      <a href="/company.html">会社概要</a>
+      <a href="/businesses.html">事業一覧</a>
+      <a href="/company-en.html">English</a>
+    </div>
+    <div class="footer-col">
+      <h4>その他</h4>
       <a href="/privacy.html">プライバシーポリシー</a>
       <a href="/terms.html">利用規約</a>
+      <a href="/tokushoho.html">特定商取引法に基づく表記</a>
+      <a href="mailto:info@axlabo.com">お問い合わせ</a>
     </div>
-    <div>© 2026 AXLABO. All rights reserved.</div>
   </div>
+  <div class="wrap footer-bottom">© 2026 AXLABO. All rights reserved.</div>
 </footer>
 
 <script>
