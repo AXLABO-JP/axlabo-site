@@ -182,7 +182,7 @@
     opacity: 0.7; pointer-events: none; z-index: -1;
   }
   .hero .label { margin-bottom: 20px; }
-  .hero h1 { font-size: clamp(2.3rem, 6vw, 4rem); margin: 0 0 24px; max-width: 18ch; }
+  .hero h1 { font-size: clamp(2.1rem, 4.4vw, 3.15rem); margin: 0 0 24px; max-width: 14ch; text-wrap: balance; }
   .hero h1 em { font-style: normal; color: var(--accent); }
   .hero p.lead { font-size: clamp(1rem, 1.6vw, 1.15rem); color: var(--ink-soft); max-width: 48ch; margin: 0 0 36px; }
   .hero-actions { display: flex; gap: 14px; flex-wrap: wrap; margin-bottom: 44px; }
@@ -293,6 +293,24 @@
   .footer-bottom { border-top: 1px solid var(--line); padding-top: 20px; font-size: 0.8rem; }
   @media (max-width: 780px) { .footer-grid { grid-template-columns: 1fr 1fr; } }
   @media (max-width: 480px) { .footer-grid { grid-template-columns: 1fr; } }
+
+  /* ===== Mobile Navigation(ハンバーガーメニュー) ===== */
+  .menu-toggle { display: none; background: none; border: 1px solid var(--line); border-radius: 6px; padding: 8px 10px; cursor: pointer; flex: none; }
+  .menu-toggle span { display: block; width: 18px; height: 2px; background: var(--ink); margin: 4px 0; transition: transform 0.2s ease, opacity 0.2s ease; }
+  .menu-toggle[aria-expanded="true"] span:nth-child(1) { transform: translateY(6px) rotate(45deg); }
+  .menu-toggle[aria-expanded="true"] span:nth-child(2) { opacity: 0; }
+  .menu-toggle[aria-expanded="true"] span:nth-child(3) { transform: translateY(-6px) rotate(-45deg); }
+  @media (max-width: 860px) {
+    .menu-toggle { display: block; }
+    header .wrap { flex-wrap: wrap; }
+    nav#primary-nav {
+      display: none; flex-direction: column; align-items: stretch; width: 100%;
+      order: 3; padding-top: 14px; margin-top: 14px; border-top: 1px solid var(--line); gap: 2px;
+    }
+    nav#primary-nav.open { display: flex; }
+    nav#primary-nav a { padding: 12px 4px; border-bottom: 1px solid var(--line); border-radius: 0; }
+    nav#primary-nav a.btn-primary { margin-top: 8px; text-align: center; justify-content: center; border-bottom: none; }
+  }
 </style>
 </head>
 <body>
@@ -300,7 +318,8 @@
 <header id="site-header">
   <div class="wrap">
     <a class="logo brand" href="/" aria-label="AXLABO"><img src="/axlabo-logo-horizontal.png?v=2" alt="AXLABO" /></a>
-    <nav>
+    <button class="menu-toggle" id="menuToggle" aria-label="メニューを開く" aria-expanded="false" aria-controls="primary-nav"><span></span><span></span><span></span></button>
+    <nav id="primary-nav">
       <a href="#plans">サービスの特徴</a>
       <a href="#price">料金プラン</a>
       <a href="#flow">制作の流れ</a>
@@ -593,6 +612,21 @@
     document.querySelectorAll('.reveal').forEach(function (el) { observer.observe(el); });
   } else {
     document.querySelectorAll('.reveal').forEach(function (el) { el.classList.add('in-view'); });
+  }
+
+  var toggle = document.getElementById('menuToggle');
+  var nav = document.getElementById('primary-nav');
+  if (toggle && nav) {
+    toggle.addEventListener('click', function () {
+      var open = nav.classList.toggle('open');
+      toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+    nav.querySelectorAll('a').forEach(function (a) {
+      a.addEventListener('click', function () {
+        nav.classList.remove('open');
+        toggle.setAttribute('aria-expanded', 'false');
+      });
+    });
   }
 })();
 </script>
