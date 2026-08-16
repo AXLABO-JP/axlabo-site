@@ -229,6 +229,12 @@
   .proof-card .cap { padding: 12px 16px; font-size: 0.82rem; color: var(--ink-soft); border-top: 1px solid var(--line); }
   .proof-text h3 { margin: 0 0 14px; font-size: 1.25rem; }
   .proof-text p { color: var(--ink-soft); font-size: 0.95rem; margin: 0 0 18px; }
+  .portfolio-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; margin-top: 28px; }
+  .portfolio-card { border: 1px solid var(--line); border-radius: 10px; overflow: hidden; box-shadow: var(--shadow-lg); background: var(--surface); display: flex; flex-direction: column; }
+  .portfolio-card iframe { width: 100%; height: 220px; border: 0; display: block; background: var(--surface); pointer-events: none; }
+  .portfolio-card .cap { padding: 16px; border-top: 1px solid var(--line); }
+  .portfolio-card .cap h4 { margin: 0 0 6px; font-size: 1.02rem; }
+  .portfolio-card .cap p { margin: 0 0 14px; font-size: 0.85rem; color: var(--ink-soft); }
 
   /* ===== Pricing ===== */
   .plans { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 22px; margin-bottom: 24px; }
@@ -377,15 +383,68 @@
   <div class="wrap reveal">
     <span class="label">制作事例</span>
     <h2>実際に制作したLPサンプル</h2>
-    <div class="proof">
-      <div class="proof-card">
-        <iframe src="portfolio-sample-sumu.html" title="制作サンプル: SUMU(整理収納コンサルティング業を想定したLP)" loading="lazy"></iframe>
-        <div class="cap">サンプル: 整理収納コンサルティング業を想定したLP(架空の屋号です)</div>
+    <p class="section-lead">業種の世界観から設計する。テンプレートの使い回しはせず、業種の素材・所作から配色とレイアウトを個別に設計します。どの業種でも同じ構成にはしません。(いずれも制作イメージのサンプルであり、架空の屋号です)</p>
+    <div class="portfolio-grid">
+      <div class="portfolio-card">
+        <iframe src="portfolio-sample-corp.html" title="制作サンプル: コーポレートサイト" loading="lazy"></iframe>
+        <div class="cap"><h4>コーポレートサイト</h4><p>シンプルで信頼感のある構成</p><a class="btn btn-ghost" href="portfolio-sample-corp.html" target="_blank" rel="noopener">デモを見る</a></div>
       </div>
-      <div class="proof-text">
-        <h3>業種の世界観から設計する</h3>
-        <p>テンプレートの使い回しはせず、業種の素材・所作から配色とレイアウトを個別に設計します。どの業種でも同じ構成にはしません。</p>
-        <a class="btn btn-ghost" href="portfolio-sample-sumu.html" target="_blank" rel="noopener">サンプルを別タブで開く</a>
+      <div class="portfolio-card">
+        <iframe src="portfolio-sample-salon.html" title="制作サンプル: 店舗・サービスサイト" loading="lazy"></iframe>
+        <div class="cap"><h4>店舗・サービスサイト</h4><p>サービス内容をわかりやすく訴求</p><a class="btn btn-ghost" href="portfolio-sample-salon.html" target="_blank" rel="noopener">デモを見る</a></div>
+      </div>
+      <div class="portfolio-card">
+        <iframe src="portfolio-sample-recruit.html" title="制作サンプル: 採用サイト" loading="lazy"></iframe>
+        <div class="cap"><h4>採用サイト</h4><p>採用に特化した情報設計</p><a class="btn btn-ghost" href="portfolio-sample-recruit.html" target="_blank" rel="noopener">デモを見る</a></div>
+      </div>
+    </div>
+    <p class="fine" style="margin-top:18px;">整理収納コンサルティング業を想定したLPサンプルは<a href="portfolio-sample-sumu.html" target="_blank" rel="noopener">こちら</a>(架空の屋号です)。</p>
+  </div>
+</section>
+
+<section id="plans" class="alt">
+  <div class="wrap reveal">
+    <span class="label">サービス内容</span>
+    <h2>目的やご予算に合わせて選べる、3つのプランをご用意しています。</h2>
+    <div class="plans">
+      <div class="plan">
+        <h3>ライトプラン</h3>
+        <p class="fine">まずは基本的なWebサイトを持ちたい方に</p>
+        <ul>
+          <li>コーポレートサイト(5ページまで)</li>
+          <li>スマートフォン対応</li>
+          <li>お問い合わせフォーム</li>
+          <li>基本的なSEO設定</li>
+          <li>公開サポート</li>
+        </ul>
+        <a class="btn btn-ghost" href="#price">詳細を見る</a>
+      </div>
+      <div class="plan">
+        <h3>スタンダードプラン</h3>
+        <p class="fine">集客や信頼性を高めたい方に</p>
+        <ul>
+          <li>コーポレートサイト(10ページまで)</li>
+          <li>スマートフォン対応</li>
+          <li>お問い合わせフォーム</li>
+          <li>基本的なSEO設定</li>
+          <li>ブログ機能(お知らせ)</li>
+          <li>公開サポート</li>
+        </ul>
+        <a class="btn btn-ghost" href="#price">詳細を見る</a>
+      </div>
+      <div class="plan">
+        <h3>プレミアムプラン</h3>
+        <p class="fine">事業の成長に合わせて本格運用したい方に</p>
+        <ul>
+          <li>コーポレートサイト(15ページまで)</li>
+          <li>スマートフォン対応</li>
+          <li>お問い合わせフォーム</li>
+          <li>基本的なSEO設定</li>
+          <li>ブログ機能(お知らせ)</li>
+          <li>追加機能の実装サポート</li>
+          <li>公開サポート</li>
+        </ul>
+        <a class="btn btn-ghost" href="#price">詳細を見る</a>
       </div>
     </div>
   </div>
