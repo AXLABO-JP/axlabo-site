@@ -1,0 +1,216 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Japan Market Entry Samples | AXLABO</title>
+  <meta name="description" content="Illustrative market research contents and a practical Japan market entry readiness checklist for international founders.">
+  <style>
+    :root {
+      --bg:#ffffff; --alt:#f5f7fa; --card:#ffffff; --ink:#0b1d2a; --ink-soft:#64748b;
+      --navy:#081d2a; --navy2:#132a4d; --orange:#ff5a00; --orange2:#cc4800; --orange3:#a83c00;
+      --blue:#2563eb; --blue2:#1d4ed8; --hair:#e5e7eb; --card-line:#e5e7eb;
+      --maxw:1180px; --radius:16px; --shadow:0 18px 50px -34px rgba(8,29,42,.35);
+    }
+    *,*::before,*::after { box-sizing:border-box; }
+    html { scroll-behavior:smooth; }
+    body { margin:0; color:var(--ink); background:var(--bg); font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif; line-height:1.65; -webkit-font-smoothing:antialiased; }
+    a { color:inherit; }
+    .skip-link { position:fixed; top:-80px; left:16px; z-index:20; padding:10px 14px; border-radius:8px; color:#fff; background:var(--blue2); }
+    .skip-link:focus { top:12px; }
+    .container { width:min(calc(100% - 48px),var(--maxw)); margin-inline:auto; }
+    .masthead { overflow:hidden; padding:78px 0 68px; color:#fff; background:linear-gradient(135deg,var(--navy),var(--navy2)); }
+    .brand { margin:0 0 54px; font-size:.86rem; font-weight:900; letter-spacing:.18em; }
+    .eyebrow,.sample-label { display:inline-flex; align-items:center; gap:9px; text-transform:uppercase; font-weight:850; letter-spacing:.1em; }
+    .eyebrow { margin:0 0 18px; color:#a8c7ff; font-size:.75rem; }
+    .eyebrow::before { content:""; width:25px; height:2px; background:var(--orange); }
+    h1,h2,h3,p { margin-top:0; }
+    h1,h2,h3 { line-height:1.14; letter-spacing:-.025em; }
+    h1 { max-width:850px; margin-bottom:22px; font-size:clamp(2.65rem,6vw,5.2rem); }
+    h2 { margin-bottom:18px; font-size:clamp(2rem,4vw,3.35rem); }
+    h3 { margin-bottom:7px; font-size:1.08rem; }
+    .masthead .lead { max-width:760px; margin:0; color:#c9d5e3; font-size:clamp(1.02rem,1.8vw,1.22rem); }
+    .quick-nav { display:flex; flex-wrap:wrap; gap:10px; margin-top:32px; }
+    .quick-nav a { padding:10px 14px; border:1px solid rgba(255,255,255,.22); border-radius:9px; color:#fff; background:rgba(255,255,255,.06); font-size:.88rem; font-weight:750; text-decoration:none; }
+    .section { padding:96px 0; }
+    .section-alt { background:var(--alt); }
+    .section-head { max-width:860px; margin-bottom:38px; }
+    .sample-label { margin-bottom:18px; padding:8px 12px; border:1px solid rgba(255,90,0,.3); border-radius:999px; color:var(--orange2); background:rgba(255,90,0,.06); font-size:.72rem; }
+    .sample-label::before { content:"Sample"; padding:3px 6px; border-radius:5px; color:#fff; background:var(--orange); font-size:.62rem; }
+    .intro { max-width:780px; margin-bottom:0; color:var(--ink-soft); font-size:1.04rem; }
+    .notice { display:grid; grid-template-columns:auto 1fr; gap:14px; align-items:start; margin:28px 0 36px; padding:18px 20px; border:1px solid #bfd1fb; border-radius:12px; background:#f5f8ff; }
+    .notice-icon { display:grid; width:30px; height:30px; place-items:center; border-radius:8px; color:#fff; background:var(--blue); font-weight:900; }
+    .notice strong { display:block; margin-bottom:3px; }
+    .notice p { margin:0; color:#41536b; font-size:.92rem; }
+    .contents-list { display:grid; grid-template-columns:1fr 1fr; gap:14px; margin:0; padding:0; counter-reset:contents; list-style:none; }
+    .contents-list li { position:relative; min-height:150px; padding:26px 24px 22px 74px; border:1px solid var(--card-line); border-radius:var(--radius); background:var(--card); box-shadow:var(--shadow); }
+    .contents-list li::before { counter-increment:contents; content:counter(contents,decimal-leading-zero); position:absolute; top:25px; left:24px; color:var(--blue); font-size:.78rem; font-weight:900; letter-spacing:.08em; }
+    .contents-list p { margin:0; color:var(--ink-soft); font-size:.93rem; }
+    .sample-end { margin-top:34px; padding:17px 20px; border-left:4px solid var(--orange); color:var(--ink-soft); background:var(--alt); font-size:.9rem; }
+    .sample-end strong { color:var(--ink); }
+    .checklist { display:grid; gap:18px; }
+    .step { display:grid; grid-template-columns:190px minmax(0,1fr); border:1px solid var(--card-line); border-radius:var(--radius); overflow:hidden; background:var(--card); box-shadow:var(--shadow); }
+    .step-head { padding:24px; color:#fff; background:var(--navy); }
+    .step-number { display:block; margin-bottom:25px; color:#9fc0ff; font-size:.72rem; font-weight:900; letter-spacing:.12em; text-transform:uppercase; }
+    .step-head h3 { color:#fff; }
+    .checks { display:grid; gap:0; margin:0; padding:10px 24px; border:0; }
+    .check-item { display:grid; grid-template-columns:24px 1fr; gap:13px; align-items:start; padding:14px 0; cursor:default; }
+    .check-item + .check-item { border-top:1px solid var(--hair); }
+    .check-item input { width:20px; height:20px; margin:3px 0 0; accent-color:var(--blue); }
+    .check-item span { color:#34475b; }
+    .legal { margin-top:34px; padding:24px; border:1px solid var(--hair); border-radius:12px; background:var(--alt); }
+    .legal h3 { margin-bottom:9px; font-size:.86rem; letter-spacing:.08em; text-transform:uppercase; }
+    .legal p { margin:0; color:var(--ink-soft); font-size:.9rem; }
+    .cta { padding:76px 0; color:#fff; background:linear-gradient(135deg,var(--navy),var(--navy2)); }
+    .cta-inner { display:grid; grid-template-columns:minmax(0,1fr) auto; gap:45px; align-items:center; }
+    .cta h2 { max-width:730px; margin-bottom:12px; color:#fff; }
+    .cta p { max-width:690px; margin:0; color:#c8d3df; }
+    .button { display:inline-flex; min-height:50px; align-items:center; justify-content:center; padding:12px 19px; border-radius:10px; color:#fff; background:var(--orange2); box-shadow:0 12px 24px -14px rgba(204,72,0,.9); font-weight:800; line-height:1.2; text-decoration:none; }
+    .button:hover { background:var(--orange3); }
+    .step-icon { display:block; margin-bottom:14px; color:#fff; opacity:.92; }
+    .audience-tags { display:flex; flex-wrap:wrap; gap:9px; margin-top:20px; }
+    .audience-tags span { padding:7px 12px; border:1px solid rgba(255,255,255,.22); border-radius:999px; color:#dbe6f5; background:rgba(255,255,255,.06); font-size:.78rem; font-weight:650; }
+    .pricing-glance { margin:30px 0 0; padding:22px 24px; border:1px solid var(--card-line); border-radius:var(--radius); background:var(--card); box-shadow:var(--shadow); }
+    .pricing-glance h3 { margin-bottom:12px; font-size:.86rem; letter-spacing:.06em; text-transform:uppercase; color:var(--ink-soft); }
+    .pricing-glance ul { display:grid; grid-template-columns:repeat(3,1fr); gap:14px; margin:0 0 14px; padding:0; list-style:none; }
+    .pricing-glance li { padding:12px 14px; border:1px solid var(--card-line); border-radius:10px; background:var(--alt); }
+    .pricing-glance li strong { display:block; margin-bottom:3px; color:var(--ink); font-size:.92rem; }
+    .pricing-glance li span { color:var(--ink-soft); font-size:.82rem; }
+    .pricing-glance p { margin:0; color:var(--ink-soft); font-size:.85rem; }
+    .pricing-glance a { color:var(--blue); font-weight:700; text-decoration:underline; }
+    @media (max-width:640px) { .pricing-glance ul { grid-template-columns:1fr; } }
+    .button:focus-visible,.quick-nav a:focus-visible { outline:3px solid #8fb5ff; outline-offset:4px; }
+    footer { padding:28px 0; color:#8fa1b5; background:var(--navy); font-size:.8rem; }
+    .footer-inner { display:flex; justify-content:space-between; gap:20px; }
+    @media (max-width:760px) {
+      .masthead { padding:56px 0; }
+      .brand { margin-bottom:40px; }
+      .section { padding:72px 0; }
+      .contents-list { grid-template-columns:1fr; }
+      .step { grid-template-columns:1fr; }
+      .step-head { padding:19px 20px; }
+      .step-number { margin-bottom:7px; }
+      .cta-inner { grid-template-columns:1fr; gap:28px; }
+    }
+    @media (max-width:480px) {
+      .container { width:min(calc(100% - 28px),var(--maxw)); }
+      h1 { font-size:2.55rem; }
+      h2 { font-size:2rem; }
+      .masthead { padding:42px 0 48px; }
+      .section { padding:58px 0; }
+      .notice { grid-template-columns:1fr; }
+      .contents-list li { min-height:0; padding:22px 18px 20px 58px; }
+      .contents-list li::before { top:22px; left:18px; }
+      .checks { padding:6px 18px; }
+      .cta { padding:58px 0; }
+      .button { width:100%; text-align:center; }
+      .footer-inner { flex-direction:column; gap:6px; }
+    }
+    @media print {
+      .quick-nav { display:none; }
+      .masthead,.cta,.step-head { print-color-adjust:exact; -webkit-print-color-adjust:exact; }
+      .section { padding:42px 0; }
+      .step,.contents-list li { break-inside:avoid; box-shadow:none; }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+  <header class="masthead">
+    <div class="container">
+      <p class="brand">AXLABO</p>
+      <p class="eyebrow">Japan market entry resources</p>
+      <h1>See the work before the work begins.</h1>
+      <p class="lead">Two openly available, illustrative resources for international founders: a sample research report structure and a practical readiness checklist.</p>
+      <div class="audience-tags" aria-label="Who these resources are for">
+        <span>Startup founders</span>
+        <span>Overseas HQ expansion leads</span>
+        <span>Teams planning a Japan presence</span>
+      </div>
+      <nav class="quick-nav" aria-label="Page sections">
+        <a href="#report-sample">Sample report contents</a>
+        <a href="#readiness-checklist">Readiness checklist</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="section" id="report-sample" aria-labelledby="report-title">
+      <div class="container">
+        <div class="section-head">
+          <div class="sample-label">Illustrative table of contents only</div>
+          <h2 id="report-title">Sample Market Research Report — Table of Contents</h2>
+          <p class="intro">An example structure showing how a Japan market research engagement could be organized for an international robotics startup.</p>
+        </div>
+        <aside class="notice" aria-label="Sample status notice">
+          <span class="notice-icon" aria-hidden="true">i</span>
+          <div><strong>SAMPLE — Illustrative Table of Contents Only</strong><p>Nordholm Robotics AB is a fictional Swedish robotics startup created solely for this sample. It is not a real company or an AXLABO client, and this page does not describe an actual engagement or result.</p></div>
+        </aside>
+        <ol class="contents-list">
+          <li><h3>Executive Summary</h3><p>The report would bring together the working assumptions, major findings, decision points, and questions requiring further validation.</p></li>
+          <li><h3>Business Context &amp; Entry Objectives</h3><p>The report would clarify the proposed business scope, target customers, entry objectives, and constraints supplied by the fictional case company.</p></li>
+          <li><h3>Market Sizing Approach &amp; Competitive Landscape</h3><p>The report would define a research method for estimating relevant demand and mapping competitor categories without treating early assumptions as verified facts.</p></li>
+          <li><h3>Customer Segments &amp; Buying Process</h3><p>The report would organize potential customer profiles, likely stakeholders, procurement considerations, and topics for primary research.</p></li>
+          <li><h3>Regulatory &amp; Licensing Overview</h3><p>The report would identify regulatory areas and possible license questions to review with appropriately qualified professionals.</p></li>
+          <li><h3>Entity Structure Options</h3><p>The report would compare possible approaches to a Japan presence at a planning level and flag matters requiring licensed legal, tax, or registration advice.</p></li>
+          <li><h3>Visa &amp; Residence Status Pathway</h3><p>The report would outline information to prepare for a discussion with a licensed professional, without predicting eligibility or approval.</p></li>
+          <li><h3>Office &amp; Talent Market Snapshot</h3><p>The report would frame workspace, hiring, language, and operating considerations that may affect location and launch planning.</p></li>
+          <li><h3>Go-to-Market Localization Notes</h3><p>The report would organize questions around positioning, communication, sales pathways, customer support, and adaptation for the Japan market.</p></li>
+          <li><h3>Partner &amp; Vendor Coordination Map</h3><p>The report would identify the types of external specialists and vendors that may be needed, together with responsibilities and unresolved dependencies.</p></li>
+          <li><h3>Indicative Cost &amp; Timeline Framework</h3><p>The report would set out cost categories, sequencing assumptions, and timeline dependencies for later validation and individual quotation.</p></li>
+          <li><h3>Risks, Open Questions &amp; Next Decisions</h3><p>The report would close with material uncertainties, validation tasks, decision owners, and suggested next conversations.</p></li>
+        </ol>
+        <div class="sample-end"><strong>End of sample.</strong> This illustrative structure uses the fictional name Nordholm Robotics AB. It is not an actual client, case study, completed report, or statement of results.</div>
+      </div>
+    </section>
+
+    <section class="section section-alt" id="readiness-checklist" aria-labelledby="checklist-title">
+      <div class="container">
+        <div class="section-head">
+          <div class="sample-label">Illustrative checklist only</div>
+          <h2 id="checklist-title">Japan Market Entry Readiness Checklist</h2>
+          <p class="intro">Use this public checklist to organize an initial conversation. The right route depends on your business, founders, timeline, and professional advice.</p>
+        </div>
+        <aside class="notice" aria-label="Checklist sample status notice">
+          <span class="notice-icon" aria-hidden="true">i</span>
+          <div><strong>SAMPLE — General preparation guide only</strong><p>This checklist is illustrative, is not based on an actual client, and does not provide legal, tax, accounting, registration, immigration, or other licensed professional advice.</p></div>
+        </aside>
+
+        <div class="checklist">
+          <section class="step" aria-labelledby="step-1"><div class="step-head"><svg class="step-icon" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 5h16v11H8l-4 4V5z"/></svg><span class="step-number">Step 01</span><h3 id="step-1">Free consultation</h3></div><fieldset class="checks"><legend hidden>Free consultation checklist</legend><label class="check-item"><input type="checkbox"><span>Summarize why Japan is being considered and what decision the consultation should support.</span></label><label class="check-item"><input type="checkbox"><span>Identify the internal decision-maker, project lead, and preferred working language.</span></label><label class="check-item"><input type="checkbox"><span>Note your intended timing, current constraints, and the questions that feel most urgent.</span></label></fieldset></section>
+          <section class="step" aria-labelledby="step-2"><div class="step-head"><svg class="step-icon" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="10" cy="10" r="6"/><line x1="20" y1="20" x2="14.5" y2="14.5"/></svg><span class="step-number">Step 02</span><h3 id="step-2">Market research &amp; strategy</h3></div><fieldset class="checks"><legend hidden>Market research and strategy checklist</legend><label class="check-item"><input type="checkbox"><span>Define the customer problem, initial target segment, and the assumptions that still need validation.</span></label><label class="check-item"><input type="checkbox"><span>List known alternatives and competitor categories without assuming overseas positioning will transfer unchanged.</span></label><label class="check-item"><input type="checkbox"><span>Confirm your target business scope and whether it may require a specific license or specialist review.</span></label><label class="check-item"><input type="checkbox"><span>Draft measurable learning goals for research, interviews, or a limited market test.</span></label></fieldset></section>
+          <section class="step" aria-labelledby="step-3"><div class="step-head"><svg class="step-icon" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 21V5a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v16"/><line x1="4" y1="21" x2="20" y2="21"/><line x1="9" y1="8.5" x2="10" y2="8.5"/><line x1="14" y1="8.5" x2="15" y2="8.5"/><line x1="9" y1="13" x2="10" y2="13"/><line x1="14" y1="13" x2="15" y2="13"/></svg><span class="step-number">Step 03</span><h3 id="step-3">Company setup preparation</h3></div><fieldset class="checks"><legend hidden>Company setup preparation checklist</legend><label class="check-item"><input type="checkbox"><span>Prepare a plain-language description of the proposed activities, ownership, and management structure.</span></label><label class="check-item"><input type="checkbox"><span>Gather existing corporate and founder documents for review by an appropriately licensed professional.</span></label><label class="check-item"><input type="checkbox"><span>Compare possible forms of Japan presence with legal and tax advisers before selecting a structure.</span></label><label class="check-item"><input type="checkbox"><span>Identify banking, accounting, address, and governance questions that could affect sequencing.</span></label></fieldset></section>
+          <section class="step" aria-labelledby="step-4"><div class="step-head"><svg class="step-icon" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="3" width="14" height="18" rx="2"/><circle cx="12" cy="9.5" r="2.3"/><line x1="8.5" y1="16" x2="15.5" y2="16"/></svg><span class="step-number">Step 04</span><h3 id="step-4">Visa &amp; residence status (not offered)</h3></div><fieldset class="checks"><legend hidden>Visa &amp; residence status — not offered by AXLABO</legend><label class="check-item"><input type="checkbox"><span>Record the current residence status and intended role of each founder or team member who may relocate.</span></label><label class="check-item"><input type="checkbox"><span>Prepare the business plan, funding information, and office assumptions for professional review.</span></label><label class="check-item"><input type="checkbox"><span>Ask an independently licensed professional which residence-status pathway and supporting documents may apply. <strong>AXLABO does not offer visa or residence-status coordination at this time.</strong></span></label><label class="check-item"><input type="checkbox"><span>Build timing contingencies into the plan because eligibility, review periods, and outcomes can vary.</span></label></fieldset></section>
+          <section class="step" aria-labelledby="step-5"><div class="step-head"><svg class="step-icon" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11l9-7 9 7"/><path d="M5 10v10h14V10"/><line x1="10" y1="20" x2="10" y2="14" /><line x1="14" y1="20" x2="14" y2="14" /></svg><span class="step-number">Step 05</span><h3 id="step-5">Office &amp; housing arrangements</h3></div><fieldset class="checks"><legend hidden>Office and housing arrangements checklist</legend><label class="check-item"><input type="checkbox"><span>Define workspace needs, preferred locations, access requirements, and a provisional budget range.</span></label><label class="check-item"><input type="checkbox"><span>Check whether the proposed workspace may need to meet business, registration, or residence-status requirements.</span></label><label class="check-item"><input type="checkbox"><span>Plan temporary and longer-term housing separately, including likely documentation and guarantor questions.</span></label></fieldset></section>
+          <section class="step" aria-labelledby="step-6"><div class="step-head"><svg class="step-icon" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2.5c2.8 2 4.6 5.7 4.6 9.3 0 2-.8 3.9-1.9 5l-2.7 2.7-2.7-2.7c-1.1-1.1-1.9-3-1.9-5 0-3.6 1.8-7.3 4.6-9.3z"/><circle cx="12" cy="10.5" r="1.6"/><path d="M9 18.5c-1.5.6-2.2 1.7-2.2 3M15 18.5c1.5.6 2.2 1.7 2.2 3"/></svg><span class="step-number">Step 06</span><h3 id="step-6">Business launch support</h3></div><fieldset class="checks"><legend hidden>Business launch support checklist</legend><label class="check-item"><input type="checkbox"><span>Map the path from first inquiry to proposal, agreement, delivery, support, and follow-up.</span></label><label class="check-item"><input type="checkbox"><span>Review customer-facing language and materials for clarity, context, and practical use in Japan.</span></label><label class="check-item"><input type="checkbox"><span>Assign owners for accounting coordination, vendor management, customer support, privacy, and operational tasks.</span></label><label class="check-item"><input type="checkbox"><span>Confirm which permissions or professional reviews may be needed before beginning specific activities.</span></label></fieldset></section>
+          <section class="step" aria-labelledby="step-7"><div class="step-head"><svg class="step-icon" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="3 17 9 11 13 15 21 7"/><polyline points="14 7 21 7 21 14"/></svg><span class="step-number">Step 07</span><h3 id="step-7">Growth &amp; expansion support</h3></div><fieldset class="checks"><legend hidden>Growth and expansion support checklist</legend><label class="check-item"><input type="checkbox"><span>Choose early indicators for customer learning, sales activity, delivery quality, and operating readiness.</span></label><label class="check-item"><input type="checkbox"><span>Schedule regular reviews of assumptions, risks, customer feedback, and resource priorities.</span></label><label class="check-item"><input type="checkbox"><span>Document funding, hiring, partnership, and expansion questions without assuming any outcome.</span></label></fieldset></section>
+        </div>
+
+        <div class="legal" role="note">
+          <h3>Important professional-services notice</h3>
+          <p>AXLABO does not perform licensed professional services such as attorney, judicial scrivener, or administrative scrivener work. We coordinate with licensed partner professionals for company registration, visa/residence status applications, tax, and accounting matters. We do not guarantee company registration, visa approval, or business outcomes.</p>
+        </div>
+        <div class="sample-end"><strong>End of sample.</strong> This checklist is illustrative only, is not based on an actual client, and should be adapted to your circumstances with appropriately qualified professionals.</div>
+        <div class="pricing-glance" aria-label="Pricing at a glance">
+          <h3>Pricing at a glance</h3>
+          <ul>
+            <li><strong>Light — ¥300,000〜</strong><span>Essential setup support</span></li>
+            <li><strong>Standard — ¥800,000〜</strong><span>Recommended, full coordination</span></li>
+            <li><strong>Premium — ¥1,500,000〜</strong><span>Extended growth support</span></li>
+          </ul>
+          <p>All prices are tax-excluded, indicative, and confirmed individually after consultation. An optional initial planning session is available from ¥50,000 (tax excluded). <a href="lp-en-2026-08-24.html#pricing">Full pricing &amp; terms on the main page →</a></p>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta" aria-labelledby="cta-title">
+      <div class="container cta-inner">
+        <div><p class="eyebrow">Your next step</p><h2 id="cta-title">Talk about your Japan market entry.</h2><p>Share where you are in the process and the practical questions you want to organize.</p></div>
+        <a class="button" href="mailto:info@axlabo.com?subject=Inquiry%3A%20Japan%20Market%20Entry">Talk about your Japan market entry <span aria-hidden="true">&nbsp;→</span></a>
+      </div>
+    </section>
+  </main>
+
+  <footer><div class="container footer-inner"><span>AXLABO · Japan Market Entry Resources</span><span>Illustrative samples · 2026</span></div></footer>
+</body>
+</html>
