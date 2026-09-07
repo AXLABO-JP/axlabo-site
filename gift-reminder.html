@@ -50,29 +50,29 @@
 }
 </script>
 <style>
-  :root{
+  :root{--on-accent:#0E1116;
   /* フォントマスター axlabo-font-master.md（2026-09-01） */
   --font-heading:"Zen Kaku Gothic New", "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Noto Sans JP", sans-serif;
   --font-body:"Hiragino Sans", "Noto Sans JP", system-ui, sans-serif;
   --font-display:"Outfit", "Inter", ui-sans-serif, system-ui, sans-serif;
   --font-mono:ui-monospace, SFMono-Regular, Menlo, monospace;
 
-    --bg:#faf7f1; --alt:#f2ece0; --card:#ffffff; --ink:#241f18; --ink-soft:#6b6152;
-    --orange:#e2691a; --orange2:#c2560f; --navy:#0b1d3a; --gold:#e8b93a; --green:#2f9e6e; --gray:#6b7280;
-    --hair:#eee5d5; --card-line:#eee5d5;
+    --bg:#FFFFFF; --alt:#FFF4F3; --card:#FFFFFF; --ink:#241f18; --ink-soft:#5C6675;
+    --orange:#E9A07D; --orange2:#c2560f; --navy:#0b1d3a; --gold:#e8b93a; --green:#2f9e6e; --gray:#6b7280;
+    --hair:#DDE1E7; --card-line:#DDE1E7;
     --shadow:0 1px 2px rgba(36,31,24,.05), 0 12px 28px -14px rgba(36,31,24,.16);
     --radius:14px; --maxw:1120px; --footer-bg:#0b1d3a; --footer-ink:#eef2f8; --footer-soft:#93a3bd;
   }
   @media (prefers-color-scheme: dark){
-    :root{ --bg:#1a1610; --alt:#201b13; --card:#262019; --ink:#f3ede3; --ink-soft:#b3a692;
-      --hair:#3a3122; --card-line:#3a3122; --orange:#ff8a4d;
+    :root{ --bg:#14171C; --alt:#14171C; --card:#1C2027; --ink:#E4E7EC; --ink-soft:#B4AEA6;
+      --hair:#333A44; --card-line:#333A44; --orange:#E9A07D;
       --shadow:0 1px 2px rgba(0,0,0,.4), 0 12px 28px -14px rgba(0,0,0,.65); }
   }
-  :root[data-theme="dark"]{ --bg:#1a1610; --alt:#201b13; --card:#262019; --ink:#f3ede3; --ink-soft:#b3a692;
-    --hair:#3a3122; --card-line:#3a3122; --orange:#ff8a4d;
+  :root[data-theme="dark"]{ --bg:#14171C; --alt:#14171C; --card:#1C2027; --ink:#E4E7EC; --ink-soft:#B4AEA6;
+    --hair:#333A44; --card-line:#333A44; --orange:#E9A07D;
     --shadow:0 1px 2px rgba(0,0,0,.4), 0 12px 28px -14px rgba(0,0,0,.65); }
-  :root[data-theme="light"]{ --bg:#faf7f1; --alt:#f2ece0; --card:#ffffff; --ink:#241f18; --ink-soft:#6b6152;
-    --hair:#eee5d5; --card-line:#eee5d5; --orange:#e2691a;
+  :root[data-theme="light"]{ --bg:#FFFFFF; --alt:#FFF4F3; --card:#FFFFFF; --ink:#241f18; --ink-soft:#5C6675;
+    --hair:#DDE1E7; --card-line:#DDE1E7; --orange:#E9A07D;
     --shadow:0 1px 2px rgba(36,31,24,.05), 0 12px 28px -14px rgba(36,31,24,.16); }
 
   *{box-sizing:border-box;}
@@ -90,7 +90,7 @@
   .navlinks{display:flex;gap:16px;font-size:12.5px;color:var(--ink-soft);flex:1;justify-content:center;}
   .navlinks a{text-decoration:none;white-space:nowrap;}
   .navcta{display:flex;gap:8px;flex:none;}
-  .btn{appearance:none;border:none;cursor:pointer;background:var(--orange);color:#fff;font-weight:700;font-size:13px;padding:10px 16px;border-radius:8px;text-decoration:none;display:inline-flex;align-items:center;gap:6px;white-space:nowrap;}
+  .btn{appearance:none;border:none;cursor:pointer;background:var(--orange);color:#0E1116;font-weight:700;font-size:13px;padding:10px 16px;border-radius:8px;text-decoration:none;display:inline-flex;align-items:center;gap:6px;white-space:nowrap;}
   .btn:hover{background:var(--orange2);}
   .btn-ghost{background:transparent;color:var(--ink);border:1px solid var(--hair);font-weight:600;}
   .menu-toggle{display:none;background:none;border:1px solid var(--hair);border-radius:8px;padding:8px 10px;cursor:pointer;flex:none;}

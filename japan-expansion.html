@@ -61,26 +61,26 @@
        --brand=赤茶(メイン) / --accent=ゴールド。旧 --blue/--orange は
        --brand/--accent へ集約し、トークン名は互換のため残す。 */
     --ivory:#FBF7F2; --beige:#F1E8DD; --brand:#8F4435; --brand-dark:#733528; --accent:#D1A34B;
-    --bg:#FBF7F2; --alt:#F1E8DD; --card:#FFFFFF; --ink:#1B2330; --ink-soft:#5C6675;
-    --navy:#1B2330; --navy2:#333A44; --orange:#8F4435; --orange2:#733528; --blue:#8F4435; --blue2:#733528;
+    --bg:#FBF7F2; --alt:#F1E8DD; --card:#211B17; --ink:#F7F1E8; --ink-soft:#5C6675;
+    --navy:#1B2330; --navy2:#333A44; --orange:#8F4435; --orange2:#733528; --blue:#D1A34B; --blue2:#733528;
     --hair:#DDE1E7; --card-line:#DDE1E7;
     --shadow:0 1px 2px rgba(42,33,29,.05), 0 12px 28px -14px rgba(42,33,29,.16);
     --radius:12px; --maxw:1200px; --footer-bg:#1B2330; --footer-ink:#FBF7F2; --footer-soft:#B4AEA6;--on-accent:#0E1116;}
   @media (prefers-color-scheme: dark){
-    :root:not([data-theme="light"]){ --bg:#0E1116; --alt:#141820; --card:#141820; --ink:#F4F1EC; --ink-soft:#B4AEA6;
-      --hair:#333A44; --card-line:#333A44; --brand:#C97D66; --brand-dark:#A85F4A; --accent:#DDB86B;
-      --orange:#C97D66; --blue:#C97D66; --navy:#F4F1EC;
+    :root:not([data-theme="light"]){ --bg:#14171C; --alt:#14171C; --card:#1C2027; --ink:#E4E7EC; --ink-soft:#B4AEA6;
+      --hair:#333A44; --card-line:#333A44; --brand:#C97D66; --brand-dark:#A85F4A; --accent:#D1A34B;
+      --orange:#C97D66; --blue:#D1A34B; --navy:#F4F1EC;
       --footer-bg:#0E1116; --footer-ink:#F4F1EC; --footer-soft:#5C6675;
       --shadow:0 1px 2px rgba(28, 22, 20,.4), 0 12px 28px -14px rgba(28, 22, 20,.65);--on-accent:#0E1116;}
   }
-  :root[data-theme="dark"]{ --bg:#0E1116; --alt:#141820; --card:#141820; --ink:#F4F1EC; --ink-soft:#B4AEA6;
-    --hair:#333A44; --card-line:#333A44; --brand:#C97D66; --brand-dark:#A85F4A; --accent:#DDB86B;
-    --orange:#C97D66; --blue:#C97D66; --navy:#F4F1EC;
+  :root[data-theme="dark"]{ --bg:#14171C; --alt:#14171C; --card:#1C2027; --ink:#E4E7EC; --ink-soft:#B4AEA6;
+    --hair:#333A44; --card-line:#333A44; --brand:#C97D66; --brand-dark:#A85F4A; --accent:#D1A34B;
+    --orange:#C97D66; --blue:#D1A34B; --navy:#F4F1EC;
     --footer-bg:#0E1116; --footer-ink:#F4F1EC; --footer-soft:#5C6675;
     --shadow:0 1px 2px rgba(28, 22, 20,.4), 0 12px 28px -14px rgba(28, 22, 20,.65);--on-accent:#0E1116;}
-  :root[data-theme="light"]{ --bg:#FBF7F2; --alt:#F1E8DD; --card:#FFFFFF; --ink:#1B2330; --ink-soft:#5C6675;
+  :root[data-theme="light"]{ --bg:#FBF7F2; --alt:#F1E8DD; --card:#211B17; --ink:#F7F1E8; --ink-soft:#5C6675;
     --hair:#DDE1E7; --card-line:#DDE1E7; --brand:#8F4435; --brand-dark:#733528; --accent:#D1A34B;
-    --orange:#8F4435; --blue:#8F4435; --navy:#1B2330;
+    --orange:#8F4435; --blue:#D1A34B; --navy:#1B2330;
     --footer-bg:#1B2330; --footer-ink:#FBF7F2; --footer-soft:#B4AEA6;
     --shadow:0 1px 2px rgba(42,33,29,.05), 0 12px 28px -14px rgba(42,33,29,.16);--on-accent:#0E1116;}
   /* 2026-08-30 CEO決定: 可否をアイコンで表現しない。行頭は主張しすぎない細い縦罫、
@@ -110,7 +110,7 @@
   .navlinks{display:flex;gap:14px;font-size:12px;color:var(--ink-soft);flex:1;justify-content:center;}
   .navlinks a{text-decoration:none;white-space:nowrap;}
   .navcta{display:flex;gap:8px;flex:none;}
-  .btn{appearance:none;border:none;cursor:pointer;background:var(--blue);color:#fff;font-weight:700;font-size:13px;padding:10px 16px;border-radius:8px;text-decoration:none;display:inline-flex;align-items:center;gap:6px;white-space:nowrap;}
+  .btn{appearance:none;border:none;cursor:pointer;background:var(--blue);color:#0E1116;font-weight:700;font-size:13px;padding:10px 16px;border-radius:8px;text-decoration:none;display:inline-flex;align-items:center;gap:6px;white-space:nowrap;}
   .btn:hover{background:var(--blue2);}
   .btn-ghost{background:transparent;color:var(--navy);border:1px solid var(--hair);font-weight:600;}
   :root[data-theme="dark"] .btn-ghost{color:var(--ink);}

@@ -49,29 +49,29 @@
 }
 </script>
 <style>
-  :root{
+  :root{--on-accent:#0E1116;
   /* フォントマスター axlabo-font-master.md（2026-09-01） */
   --font-heading:"Zen Kaku Gothic New", "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Noto Sans JP", sans-serif;
   --font-body:"Hiragino Sans", "Noto Sans JP", system-ui, sans-serif;
   --font-display:"Outfit", "Inter", ui-sans-serif, system-ui, sans-serif;
   --font-mono:ui-monospace, SFMono-Regular, Menlo, monospace;
 
-    --bg:#ffffff; --alt:#f7f7fa; --card:#ffffff; --ink:#0b1d2a; --ink-soft:#64748b;
-    --purple:#582cf5; --purple2:#4620c9; --navy:#0b1d2a; --blue:#2563eb;
-    --hair:#e5e7eb; --card-line:#e5e7eb;
+    --bg:#FAFAF8; --alt:#F1F1F8; --card:#FFFFFF; --ink:#24272D; --ink-soft:#5C6675;
+    --purple:#E27355; --purple2:#4620c9; --navy:#0b1d2a; --blue:#2563eb;
+    --hair:#DDE1E7; --card-line:#DDE1E7;
     --shadow:0 1px 2px rgba(11,29,42,.05), 0 12px 28px -14px rgba(11,29,42,.14);
     --radius:12px; --maxw:1200px; --footer-bg:#0b1d2a; --footer-ink:#eef2f8; --footer-soft:#93a3bd;
   }
   @media (prefers-color-scheme: dark){
-    :root{ --bg:#0f1115; --alt:#151821; --card:#1a1e27; --ink:#f0f2f5; --ink-soft:#a3adc0;
-      --hair:#2a2f3b; --card-line:#2a2f3b; --purple:#8b6cf7;
+    :root{ --bg:#14171C; --alt:#14171C; --card:#1C2027; --ink:#E4E7EC; --ink-soft:#B4AEA6;
+      --hair:#333A44; --card-line:#333A44; --purple:#E27355;
       --shadow:0 1px 2px rgba(0,0,0,.4), 0 12px 28px -14px rgba(0,0,0,.65); }
   }
-  :root[data-theme="dark"]{ --bg:#0f1115; --alt:#151821; --card:#1a1e27; --ink:#f0f2f5; --ink-soft:#a3adc0;
-    --hair:#2a2f3b; --card-line:#2a2f3b; --purple:#8b6cf7;
+  :root[data-theme="dark"]{ --bg:#14171C; --alt:#14171C; --card:#1C2027; --ink:#E4E7EC; --ink-soft:#B4AEA6;
+    --hair:#333A44; --card-line:#333A44; --purple:#E27355;
     --shadow:0 1px 2px rgba(0,0,0,.4), 0 12px 28px -14px rgba(0,0,0,.65); }
-  :root[data-theme="light"]{ --bg:#ffffff; --alt:#f7f7fa; --card:#ffffff; --ink:#0b1d2a; --ink-soft:#64748b;
-    --hair:#e5e7eb; --card-line:#e5e7eb; --purple:#582cf5;
+  :root[data-theme="light"]{ --bg:#FAFAF8; --alt:#F1F1F8; --card:#FFFFFF; --ink:#24272D; --ink-soft:#5C6675;
+    --hair:#DDE1E7; --card-line:#DDE1E7; --purple:#E27355;
     --shadow:0 1px 2px rgba(11,29,42,.05), 0 12px 28px -14px rgba(11,29,42,.14); }
 
   *{box-sizing:border-box;}
@@ -87,7 +87,7 @@
   .navlinks{display:flex;gap:16px;font-size:12.5px;color:var(--ink-soft);flex:1;justify-content:center;}
   .navlinks a{text-decoration:none;white-space:nowrap;}
   .navcta{display:flex;gap:8px;flex:none;}
-  .btn{appearance:none;border:none;cursor:pointer;background:var(--purple);color:#fff;font-weight:700;font-size:13px;padding:10px 16px;border-radius:8px;text-decoration:none;display:inline-flex;align-items:center;gap:6px;white-space:nowrap;}
+  .btn{appearance:none;border:none;cursor:pointer;background:var(--purple);color:#0E1116;font-weight:700;font-size:13px;padding:10px 16px;border-radius:8px;text-decoration:none;display:inline-flex;align-items:center;gap:6px;white-space:nowrap;}
   .btn:hover{background:var(--purple2);}
   .btn-ghost{background:transparent;color:var(--ink);border:1px solid var(--hair);font-weight:600;}
   .menu-toggle{display:none;background:none;border:1px solid var(--hair);border-radius:8px;padding:8px 10px;cursor:pointer;flex:none;}
