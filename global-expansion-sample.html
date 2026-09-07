@@ -7,6 +7,12 @@
 <meta name="description" content="A fictional, illustrative sample showing the format of an AXLABO market hypothesis, target list, and outreach draft for a Japanese company's overseas expansion.">
 <style>
   :root {
+  /* フォントマスター axlabo-font-master.md（2026-09-01） */
+  --font-heading:"Zen Kaku Gothic New", "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Noto Sans JP", sans-serif;
+  --font-body:"Hiragino Sans", "Noto Sans JP", system-ui, sans-serif;
+  --font-display:"Outfit", "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-mono:ui-monospace, SFMono-Regular, Menlo, monospace;
+
     --bg: #f5f3ef; --surface: #ffffff; --surface-alt: #eeece5;
     --ink: #161311; --ink-soft: #5a5650; --ink-faint: #8a8578;
     --accent: #285ea8; --accent-deep: #1d456f; --accent-pale: #e7eef8;
@@ -17,7 +23,7 @@
   html { scroll-behavior: smooth; }
   body {
     margin: 0; background: var(--bg); color: var(--ink);
-    font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", "Hiragino Sans", "Yu Gothic", sans-serif;
+    font-family:var(--font-display);
     line-height: 1.65; -webkit-font-smoothing: antialiased;
   }
   .wrap { width: min(1080px, calc(100% - 48px)); margin-inline: auto; }

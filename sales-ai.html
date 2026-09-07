@@ -58,33 +58,38 @@
 </script>
 <style>
   :root{
+  /* フォントマスター axlabo-font-master.md（2026-09-01） */
+  --font-heading:"Zen Kaku Gothic New", "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Noto Sans JP", sans-serif;
+  --font-body:"Hiragino Sans", "Noto Sans JP", system-ui, sans-serif;
+  --font-display:"Outfit", "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-mono:ui-monospace, SFMono-Regular, Menlo, monospace;
+
     --bg:#f5f7fa; --alt:#eceff4; --card:#ffffff; --ink:#0b1b2a; --ink-soft:#6b7280;
     --accent:#e45a19; --accent2:#c14a12; --hair:#e2e6ec; --card-line:#e2e6ec;
     --tool:#1e6fe8; --tool-deep:#1554b3; --tool-wash:rgba(30,111,232,.1);
     --agency:#16a34a; --agency-deep:#0f7c39; --agency-wash:rgba(22,163,74,.1);
     --shadow:0 1px 2px rgba(11,27,42,.05), 0 12px 28px -14px rgba(11,27,42,.16);
-    --radius:12px; --maxw:1120px; --footer-bg:#0b1b2a; --footer-ink:#f2f5f9; --footer-soft:#8a95a6;
-  }
+    --radius:12px; --maxw:1120px; --footer-bg:#0b1b2a; --footer-ink:#f2f5f9; --footer-soft:#8a95a6;--on-accent:#0E1116;}
   @media (prefers-color-scheme: dark){
     :root{ --bg:#0d1319; --alt:#131a22; --card:#171f28; --ink:#f0f3f7; --ink-soft:#9aa4b2;
       --accent:#f0805a; --accent2:#f4a081; --hair:#242e3a; --card-line:#242e3a;
       --tool:#5b93e6; --tool-deep:#7dabee; --tool-wash:rgba(91,147,230,.16);
       --agency:#4ade80; --agency-deep:#6ee89c; --agency-wash:rgba(74,222,128,.16);
-      --shadow:0 1px 2px rgba(0,0,0,.35), 0 12px 28px -14px rgba(0,0,0,.6); }
+      --shadow:0 1px 2px rgba(0,0,0,.35), 0 12px 28px -14px rgba(0,0,0,.6);--on-accent:#0E1116;}
   }
   :root[data-theme="dark"]{ --bg:#0d1319; --alt:#131a22; --card:#171f28; --ink:#f0f3f7; --ink-soft:#9aa4b2;
     --accent:#f0805a; --accent2:#f4a081; --hair:#242e3a; --card-line:#242e3a;
     --tool:#5b93e6; --tool-deep:#7dabee; --tool-wash:rgba(91,147,230,.16);
     --agency:#4ade80; --agency-deep:#6ee89c; --agency-wash:rgba(74,222,128,.16);
-    --shadow:0 1px 2px rgba(0,0,0,.35), 0 12px 28px -14px rgba(0,0,0,.6); }
+    --shadow:0 1px 2px rgba(0,0,0,.35), 0 12px 28px -14px rgba(0,0,0,.6);--on-accent:#0E1116;}
   :root[data-theme="light"]{ --bg:#f5f7fa; --alt:#eceff4; --card:#ffffff; --ink:#0b1b2a; --ink-soft:#6b7280;
     --accent:#e45a19; --accent2:#c14a12; --hair:#e2e6ec; --card-line:#e2e6ec;
     --tool:#1e6fe8; --tool-deep:#1554b3; --tool-wash:rgba(30,111,232,.1);
     --agency:#16a34a; --agency-deep:#0f7c39; --agency-wash:rgba(22,163,74,.1);
-    --shadow:0 1px 2px rgba(11,27,42,.05), 0 12px 28px -14px rgba(11,27,42,.16); }
+    --shadow:0 1px 2px rgba(11,27,42,.05), 0 12px 28px -14px rgba(11,27,42,.16);--on-accent:#0E1116;}
 
   *{box-sizing:border-box;}
-  body{margin:0;background:var(--bg);color:var(--ink);font-family:"Hiragino Sans","Noto Sans JP",-apple-system,sans-serif;line-height:1.75;overflow-x:hidden;}
+  body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--font-body);line-height:1.75;overflow-x:hidden;}
   img{max-width:100%;display:block;}
   .wrap{max-width:var(--maxw);margin:0 auto;padding:0 28px;}
   .preview-flag{background:#000;color:#eee;text-align:center;font-size:12px;padding:8px 16px;}

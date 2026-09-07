@@ -52,30 +52,36 @@
 </script>
 <style>
   :root{
-    --bg:#f7f8fa; --alt:#eef1f5; --card:#ffffff; --ink:#0b1d3a; --ink-soft:#5c6a7e;
-    --gold:#b8862f; --gold2:#8f6a24; --navy:#0b1d3a; --navy2:#152c50;
-    --blue:#1e7ba8; --green:#22a06b; --orange:#f28c28;
-    --hair:#e3e7ee; --card-line:#e3e7ee;
+  /* フォントマスター axlabo-font-master.md（2026-09-01） */
+  --font-heading:"Zen Kaku Gothic New", "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Noto Sans JP", sans-serif;
+  --font-body:"Hiragino Sans", "Noto Sans JP", system-ui, sans-serif;
+  --font-display:"Outfit", "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-mono:ui-monospace, SFMono-Regular, Menlo, monospace;
+
+    --bg:#E4E7EC; --alt:#E4E7EC; --card:#ffffff; --ink:#1B2330; --ink-soft:#5C6675;
+    --gold:#C4A467; --gold2:#C4A467; --navy:#1B2330; --navy2:#182A42;
+    --blue:#5C6675; --green:#5C6675; --orange:#C4A467;
+    --hair:#E4E7EC; --card-line:#E4E7EC;
     --shadow:0 1px 2px rgba(11,29,58,.05), 0 12px 28px -14px rgba(11,29,58,.16);
-    --radius:14px; --maxw:1160px; --footer-bg:#0b1d3a; --footer-ink:#eef2f8; --footer-soft:#93a3bd;
+    --radius:14px; --maxw:1160px; --footer-bg:#1B2330; --footer-ink:#E4E7EC; --footer-soft:#DDE1E7;
   }
   @media (prefers-color-scheme: dark){
-    :root{ --bg:#0e1420; --alt:#131a29; --card:#182034; --ink:#eef2f8; --ink-soft:#96a2b8;
-      --hair:#26304a; --card-line:#26304a; --gold:#d9a94b;
+    :root{ --bg:#141820; --alt:#141820; --card:#1B2330; --ink:#E4E7EC; --ink-soft:#DDE1E7;
+      --hair:#333A44; --card-line:#333A44; --gold:#C4A467;
       --shadow:0 1px 2px rgba(0,0,0,.4), 0 12px 28px -14px rgba(0,0,0,.65); }
   }
-  :root[data-theme="dark"]{ --bg:#0e1420; --alt:#131a29; --card:#182034; --ink:#eef2f8; --ink-soft:#96a2b8;
-    --hair:#26304a; --card-line:#26304a; --gold:#d9a94b;
+  :root[data-theme="dark"]{ --bg:#141820; --alt:#141820; --card:#1B2330; --ink:#E4E7EC; --ink-soft:#DDE1E7;
+    --hair:#333A44; --card-line:#333A44; --gold:#C4A467;
     --shadow:0 1px 2px rgba(0,0,0,.4), 0 12px 28px -14px rgba(0,0,0,.65); }
-  :root[data-theme="light"]{ --bg:#f7f8fa; --alt:#eef1f5; --card:#ffffff; --ink:#0b1d3a; --ink-soft:#5c6a7e;
-    --hair:#e3e7ee; --card-line:#e3e7ee; --gold:#b8862f;
+  :root[data-theme="light"]{ --bg:#E4E7EC; --alt:#E4E7EC; --card:#ffffff; --ink:#1B2330; --ink-soft:#5C6675;
+    --hair:#E4E7EC; --card-line:#E4E7EC; --gold:#C4A467;
     --shadow:0 1px 2px rgba(11,29,58,.05), 0 12px 28px -14px rgba(11,29,58,.16); }
 
   *{box-sizing:border-box;}
-  body{margin:0;background:var(--bg);color:var(--ink);font-family:"Hiragino Sans","Noto Sans JP",-apple-system,sans-serif;line-height:1.75;overflow-x:hidden;}
+  body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--font-body);line-height:1.75;overflow-x:hidden;}
   img{max-width:100%;display:block;}
   .wrap{max-width:var(--maxw);margin:0 auto;padding:0 28px;}
-  .preview-flag{background:#000;color:#eee;text-align:center;font-size:12px;padding:8px 16px;}
+  .preview-flag{background:#0E1116;color:#F4F1EC;text-align:center;font-size:12px;padding:8px 16px;}
   .preview-flag b{color:var(--gold);}
 
   header{position:sticky;top:0;z-index:40;background:color-mix(in srgb, var(--bg) 90%, transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--hair);}
@@ -106,7 +112,7 @@
   .hero-actions{display:flex;gap:10px;flex-wrap:wrap;}
 
   .hero-photo-card{background:var(--card);border:1px solid var(--card-line);border-radius:18px;box-shadow:var(--shadow);padding:14px;}
-  .hero-photo{aspect-ratio:4/3;border-radius:12px;overflow:hidden;position:relative;background:linear-gradient(160deg,var(--navy),#1e3a63);display:flex;align-items:flex-end;justify-content:center;}
+  .hero-photo{aspect-ratio:4/3;border-radius:12px;overflow:hidden;position:relative;background:linear-gradient(160deg,var(--navy),#333A44);display:flex;align-items:flex-end;justify-content:center;}
   .hero-photo svg{width:100%;height:100%;position:absolute;inset:0;}
   .hero-photo-tag{position:relative;z-index:1;margin-bottom:12px;background:rgba(255,255,255,.94);color:var(--navy);font-size:10.5px;font-weight:700;padding:5px 10px;border-radius:99px;}
 
@@ -141,11 +147,11 @@
   .area-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:12px;}
   .area-card{background:var(--card);border:1px solid var(--card-line);border-radius:14px;overflow:hidden;box-shadow:var(--shadow);}
   .area-photo{aspect-ratio:4/3;display:flex;align-items:center;justify-content:center;color:#fff;}
-  .area-card:nth-child(1) .area-photo{background:linear-gradient(135deg,var(--navy),#274a7d);}
-  .area-card:nth-child(2) .area-photo{background:linear-gradient(135deg,var(--gold),#8f6a24);}
-  .area-card:nth-child(3) .area-photo{background:linear-gradient(135deg,var(--blue),#0d5a80);}
-  .area-card:nth-child(4) .area-photo{background:linear-gradient(135deg,var(--green),#166b49);}
-  .area-card:nth-child(5) .area-photo{background:linear-gradient(135deg,var(--orange),#b8641a);}
+  .area-card:nth-child(1) .area-photo{background:linear-gradient(135deg,var(--navy),#333A44);}
+  .area-card:nth-child(2) .area-photo{background:linear-gradient(135deg,var(--gold),#C4A467);}
+  .area-card:nth-child(3) .area-photo{background:linear-gradient(135deg,var(--blue),#333A44);}
+  .area-card:nth-child(4) .area-photo{background:linear-gradient(135deg,var(--green),#333A44);}
+  .area-card:nth-child(5) .area-photo{background:linear-gradient(135deg,var(--orange),#C4A467);}
   .area-photo svg{width:34%;height:34%;}
   .area-body{padding:10px 12px 12px;}
   .area-body h3{font-size:12px;font-weight:800;margin:0;}
@@ -182,17 +188,17 @@
   .boundary-card.yes li svg{color:var(--blue);}
   .boundary-card.no li svg{color:var(--orange);}
 
-  .biz-panel{background:linear-gradient(135deg,var(--navy),#16305a);border-radius:20px;padding:34px;color:#fff;}
+  .biz-panel{background:linear-gradient(135deg,var(--navy),#333A44);border-radius:20px;padding:34px;color:#fff;}
   .biz-panel .head-block h2,.biz-panel .head-block p{color:#fff;}
-  .biz-panel .head-block p{color:#c3d1ea;}
+  .biz-panel .head-block p{color:#DDE1E7;}
   .biz-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:20px;}
   .biz-item{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.14);border-radius:12px;padding:16px 18px;}
   .biz-item .amt{font-size:20px;font-weight:800;margin:4px 0;}
   .biz-item h3{font-size:12.5px;font-weight:700;margin:0 0 4px;color:#fff;}
-  .biz-item p{font-size:11.5px;color:#b9c8e3;margin:0;}
+  .biz-item p{font-size:11.5px;color:#DDE1E7;margin:0;}
   .biz-cta{text-align:center;}
   .biz-cta .btn{background:#fff;color:var(--navy);}
-  .biz-cta .btn:hover{background:#e8eef8;}
+  .biz-cta .btn:hover{background:#E4E7EC;}
 
   .faq{max-width:800px;margin:0 auto;display:flex;flex-direction:column;gap:10px;}
   .faq-item{background:var(--card);border:1px solid var(--card-line);border-radius:10px;overflow:hidden;}
@@ -275,15 +281,15 @@
         <div class="hero-photo-card">
           <div class="hero-photo">
             <svg viewBox="0 0 400 300" preserveAspectRatio="xMidYMax slice">
-              <rect width="400" height="300" fill="#0b1d3a"/>
-              <rect x="0" y="150" width="400" height="150" fill="#132a4d"/>
-              <g fill="#1e3a63">
+              <rect width="400" height="300" fill="#1B2330"/>
+              <rect x="0" y="150" width="400" height="150" fill="#182A42"/>
+              <g fill="#333A44">
                 <rect x="20" y="120" width="34" height="140"/><rect x="60" y="150" width="28" height="110"/>
                 <rect x="95" y="90" width="30" height="170"/><rect x="132" y="130" width="26" height="130"/>
                 <rect x="165" y="70" width="36" height="190"/><rect x="208" y="140" width="30" height="120"/>
                 <rect x="245" y="100" width="28" height="160"/><rect x="280" y="160" width="34" height="100"/>
                 <rect x="320" y="110" width="30" height="150"/><rect x="356" y="145" width="30" height="115"/> </g>
-              <g fill="#d9a94b" opacity=".55">
+              <g fill="#C4A467" opacity=".55">
                 <rect x="30" y="135" width="4" height="4"/><rect x="40" y="150" width="4" height="4"/><rect x="105" y="110" width="4" height="4"/>
                 <rect x="175" y="95" width="4" height="4"/><rect x="185" y="120" width="4" height="4"/><rect x="255" y="120" width="4" height="4"/>
                 <rect x="330" y="130" width="4" height="4"/><rect x="365" y="165" width="4" height="4"/> </g> </svg>

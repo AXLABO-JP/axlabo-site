@@ -60,6 +60,12 @@
 </script>
 <style>
   :root{
+  /* フォントマスター axlabo-font-master.md（2026-09-01） */
+  --font-heading:"Zen Kaku Gothic New", "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Noto Sans JP", sans-serif;
+  --font-body:"Hiragino Sans", "Noto Sans JP", system-ui, sans-serif;
+  --font-display:"Outfit", "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-mono:ui-monospace, SFMono-Regular, Menlo, monospace;
+
     --bg:#ffffff; --alt:#f7f7fa; --card:#ffffff; --ink:#0b1d2a; --ink-soft:#64748b;
     --navy:#0b1d2a; --navy2:#132a4d; --purple:#582cf5; --amber:#f59e0b; --amber2:#c2760a;
     --hair:#e5e7eb; --card-line:#e5e7eb;
@@ -79,7 +85,7 @@
     --shadow:0 1px 2px rgba(11,29,42,.05), 0 12px 28px -14px rgba(11,29,42,.14); }
 
   *{box-sizing:border-box;}
-  body{margin:0;background:var(--bg);color:var(--ink);font-family:"Hiragino Sans","Noto Sans JP",-apple-system,sans-serif;line-height:1.75;overflow-x:hidden;}
+  body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--font-body);line-height:1.75;overflow-x:hidden;}
   img{max-width:100%;display:block;}
   .wrap{max-width:var(--maxw);margin:0 auto;padding:0 28px;}
   .preview-flag{background:#000;color:#eee;text-align:center;font-size:12px;padding:8px 16px;}

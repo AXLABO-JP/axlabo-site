@@ -44,6 +44,12 @@
 </script>
 <style>
   :root{
+  /* フォントマスター axlabo-font-master.md（2026-09-01） */
+  --font-heading:"Zen Kaku Gothic New", "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Noto Sans JP", sans-serif;
+  --font-body:"Hiragino Sans", "Noto Sans JP", system-ui, sans-serif;
+  --font-display:"Outfit", "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-mono:ui-monospace, SFMono-Regular, Menlo, monospace;
+
     --bg:#fbf9f7; --alt:#f5f2ee; --card:#ffffff; --ink:#1c1a18; --ink-soft:#6b6560;
     --accent:#d5480f; --accent2:#b83a08; --hair:#ece7e1; --card-line:#ece7e1;
     --shadow:0 1px 2px rgba(28,26,24,.04), 0 12px 28px -14px rgba(28,26,24,.14);
@@ -52,17 +58,17 @@
   @media (prefers-color-scheme: dark){
     :root{ --bg:#181513; --alt:#1f1b18; --card:#231e1a; --ink:#f2ede8; --ink-soft:#a89f96;
       --accent:#ea6a2e; --accent2:#f28a56; --hair:#33291f; --card-line:#33291f;
-      --shadow:0 1px 2px rgba(0,0,0,.35), 0 12px 28px -14px rgba(0,0,0,.6); }
+      --shadow:0 1px 2px rgba(0,0,0,.35), 0 12px 28px -14px rgba(0,0,0,.6);--on-accent:#0E1116;}
   }
   :root[data-theme="dark"]{ --bg:#181513; --alt:#1f1b18; --card:#231e1a; --ink:#f2ede8; --ink-soft:#a89f96;
     --accent:#ea6a2e; --accent2:#f28a56; --hair:#33291f; --card-line:#33291f;
-    --shadow:0 1px 2px rgba(0,0,0,.35), 0 12px 28px -14px rgba(0,0,0,.6); }
+    --shadow:0 1px 2px rgba(0,0,0,.35), 0 12px 28px -14px rgba(0,0,0,.6);--on-accent:#0E1116;}
   :root[data-theme="light"]{ --bg:#fbf9f7; --alt:#f5f2ee; --card:#ffffff; --ink:#1c1a18; --ink-soft:#6b6560;
     --accent:#d5480f; --accent2:#b83a08; --hair:#ece7e1; --card-line:#ece7e1;
     --shadow:0 1px 2px rgba(28,26,24,.04), 0 12px 28px -14px rgba(28,26,24,.14); }
 
   *{box-sizing:border-box;}
-  body{margin:0;background:var(--bg);color:var(--ink);font-family:"Hiragino Sans","Noto Sans JP",-apple-system,sans-serif;line-height:1.75;overflow-x:hidden;}
+  body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--font-body);line-height:1.75;overflow-x:hidden;}
   img{max-width:100%;display:block;}
   .wrap{max-width:var(--maxw);margin:0 auto;padding:0 28px;}
   .preview-flag{background:#000;color:#eee;text-align:center;font-size:12px;padding:8px 16px;}

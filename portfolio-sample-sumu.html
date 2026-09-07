@@ -1,6 +1,12 @@
 <title>SUMU｜整理収納コンサルティング</title>
 <style>
   :root {
+  /* フォントマスター axlabo-font-master.md（2026-09-01） */
+  --font-heading:"Zen Kaku Gothic New", "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Noto Sans JP", sans-serif;
+  --font-body:"Hiragino Sans", "Noto Sans JP", system-ui, sans-serif;
+  --font-display:"Outfit", "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-mono:ui-monospace, SFMono-Regular, Menlo, monospace;
+
     --bg: #ece8e0;
     --surface: #f8f6f1;
     --ink: #23241f;
@@ -22,8 +28,7 @@
       --accent-deep: #b8c8a8;
       --accent-soft: #333a29;
       --line: #3a3b32;
-      --shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
-    }
+      --shadow: 0 1px 2px rgba(0, 0, 0, 0.3);--on-accent:#0E1116;}
   }
   :root[data-theme="dark"] {
     --bg: #1c1d18;
@@ -34,8 +39,7 @@
     --accent-deep: #b8c8a8;
     --accent-soft: #333a29;
     --line: #3a3b32;
-    --shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
-  }
+    --shadow: 0 1px 2px rgba(0, 0, 0, 0.3);--on-accent:#0E1116;}
   :root[data-theme="light"] {
     --bg: #ece8e0;
     --surface: #f8f6f1;
@@ -54,14 +58,14 @@
     padding: 0;
     background: var(--bg);
     color: var(--ink);
-    font-family: "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Yu Gothic", "Noto Sans JP", sans-serif;
+    font-family:var(--font-body);
     -webkit-font-smoothing: antialiased;
     overflow-x: hidden;
   }
   body { line-height: 1.8; }
 
   h1, h2, h3, .display {
-    font-family: "Yu Mincho", "YuMincho", "Hiragino Mincho ProN", "Noto Serif JP", serif;
+    font-family:var(--font-heading);
     font-weight: 500;
     text-wrap: balance;
     letter-spacing: 0.02em;
@@ -96,13 +100,13 @@
     height: 68px;
   }
   .brand {
-    font-family: "Yu Mincho", "Hiragino Mincho ProN", serif;
+    font-family:var(--font-heading);
     font-size: 1.3rem;
     letter-spacing: 0.14em;
   }
   .brand small {
     display: block;
-    font-family: "Hiragino Kaku Gothic ProN", sans-serif;
+    font-family:var(--font-body);
     font-size: 0.6rem;
     letter-spacing: 0.18em;
     color: var(--ink-soft);
@@ -157,7 +161,7 @@
     text-decoration: none;
     transition: transform 0.15s ease, background 0.15s ease;
   }
-  .btn-primary { background: var(--accent-deep); color: var(--surface); }
+  .btn-primary { background: var(--accent-deep); color:var(--on-accent, #FFFFFF); }
   .btn-primary:hover { transform: translateY(-1px); background: var(--ink); }
   .btn-ghost { border: 1px solid var(--line); color: var(--ink); }
   .btn-ghost:hover { border-color: var(--ink); }
@@ -242,7 +246,7 @@
   }
   .step { background: var(--surface); padding: 26px 22px; }
   .step .num {
-    font-family: "Yu Mincho", serif;
+    font-family:var(--font-heading);
     font-size: 0.85rem;
     color: var(--accent-deep);
     display: block;
@@ -274,7 +278,7 @@
     top: -12px;
     left: 24px;
     background: var(--accent-deep);
-    color: var(--surface);
+    color:var(--on-accent, #FFFFFF);
     font-size: 0.68rem;
     letter-spacing: 0.1em;
     padding: 4px 12px;
@@ -293,7 +297,7 @@
   .testimonial { padding: clamp(40px, 7vw, 72px) 0; background: var(--accent-soft); }
   .testimonial blockquote {
     margin: 0;
-    font-family: "Yu Mincho", serif;
+    font-family:var(--font-heading);
     font-size: clamp(1.15rem, 2.2vw, 1.5rem);
     line-height: 1.7;
     max-width: 34ch;

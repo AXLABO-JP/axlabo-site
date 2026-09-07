@@ -47,29 +47,35 @@
 </script>
 <style>
   :root{
-    --bg:#ffffff; --alt:#f7f7fa; --card:#ffffff; --ink:#101422; --ink-soft:#5b6478;
-    --navy:#0b1220; --navy2:#16213a; --gold:#d4a017; --gold2:#a67811; --teal:#0d9488;
-    --hair:#e5e7eb; --card-line:#e5e7eb;
-    --shadow:0 1px 2px rgba(11,18,32,.05), 0 12px 28px -14px rgba(11,18,32,.16);
-    --radius:12px; --maxw:1200px; --footer-bg:#0b1220; --footer-ink:#eef1f8; --footer-soft:#8f9ab3;
+  /* フォントマスター axlabo-font-master.md（2026-09-01） */
+  --font-heading:"Zen Kaku Gothic New", "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Noto Sans JP", sans-serif;
+  --font-body:"Hiragino Sans", "Noto Sans JP", system-ui, sans-serif;
+  --font-display:"Outfit", "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-mono:ui-monospace, SFMono-Regular, Menlo, monospace;
+
+    --bg:#ffffff; --alt:#E4E7EC; --card:#ffffff; --ink:#141820; --ink-soft:#5C6675;
+    --navy:#141820; --navy2:#1B2330; --gold:#D98A3D; --gold2:#D98A3D; --teal:#333A44;
+    --hair:#E4E7EC; --card-line:#E4E7EC;
+    --shadow:0 1px 2px rgba(20, 24, 32,.05), 0 12px 28px -14px rgba(20, 24, 32,.16);
+    --radius:12px; --maxw:1200px; --footer-bg:#141820; --footer-ink:#E4E7EC; --footer-soft:#5C6675;
   }
   @media (prefers-color-scheme: dark){
-    :root{ --bg:#0d0f16; --alt:#131622; --card:#181c2b; --ink:#f1f2f6; --ink-soft:#a3aac0;
-      --hair:#2a2f42; --card-line:#2a2f42; --gold:#e8bb3c;
+    :root{ --bg:#0E1116; --alt:#141820; --card:#141820; --ink:#E4E7EC; --ink-soft:#DDE1E7;
+      --hair:#333A44; --card-line:#333A44; --gold:#E8B45A;
       --shadow:0 1px 2px rgba(0,0,0,.4), 0 12px 28px -14px rgba(0,0,0,.65); }
   }
-  :root[data-theme="dark"]{ --bg:#0d0f16; --alt:#131622; --card:#181c2b; --ink:#f1f2f6; --ink-soft:#a3aac0;
-    --hair:#2a2f42; --card-line:#2a2f42; --gold:#e8bb3c;
+  :root[data-theme="dark"]{ --bg:#0E1116; --alt:#141820; --card:#141820; --ink:#E4E7EC; --ink-soft:#DDE1E7;
+    --hair:#333A44; --card-line:#333A44; --gold:#E8B45A;
     --shadow:0 1px 2px rgba(0,0,0,.4), 0 12px 28px -14px rgba(0,0,0,.65); }
-  :root[data-theme="light"]{ --bg:#ffffff; --alt:#f7f7fa; --card:#ffffff; --ink:#101422; --ink-soft:#5b6478;
-    --hair:#e5e7eb; --card-line:#e5e7eb; --gold:#d4a017;
-    --shadow:0 1px 2px rgba(11,18,32,.05), 0 12px 28px -14px rgba(11,18,32,.16); }
+  :root[data-theme="light"]{ --bg:#ffffff; --alt:#E4E7EC; --card:#ffffff; --ink:#141820; --ink-soft:#5C6675;
+    --hair:#E4E7EC; --card-line:#E4E7EC; --gold:#D98A3D;
+    --shadow:0 1px 2px rgba(20, 24, 32,.05), 0 12px 28px -14px rgba(20, 24, 32,.16); }
 
   *{box-sizing:border-box;}
-  body{margin:0;background:var(--bg);color:var(--ink);font-family:"Hiragino Sans","Noto Sans JP",-apple-system,sans-serif;line-height:1.75;overflow-x:hidden;}
+  body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--font-body);line-height:1.75;overflow-x:hidden;}
   img{max-width:100%;display:block;}
   .wrap{max-width:var(--maxw);margin:0 auto;padding:0 28px;}
-  .preview-flag{background:#000;color:#eee;text-align:center;font-size:12px;padding:8px 16px;}
+  .preview-flag{background:#0E1116;color:#F4F1EC;text-align:center;font-size:12px;padding:8px 16px;}
   .preview-flag b{color:var(--gold);}
 
   header{position:sticky;top:0;z-index:40;background:color-mix(in srgb, var(--bg) 90%, transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--hair);}
@@ -78,7 +84,7 @@
   .navlinks{display:flex;gap:16px;font-size:12.5px;color:var(--ink-soft);flex:1;justify-content:center;}
   .navlinks a{text-decoration:none;white-space:nowrap;}
   .navcta{display:flex;gap:8px;flex:none;}
-  .btn{appearance:none;border:none;cursor:pointer;background:var(--gold);color:#241a04;font-weight:700;font-size:13px;padding:10px 16px;border-radius:8px;text-decoration:none;display:inline-flex;align-items:center;gap:6px;white-space:nowrap;}
+  .btn{appearance:none;border:none;cursor:pointer;background:var(--gold);color:#211B17;font-weight:700;font-size:13px;padding:10px 16px;border-radius:8px;text-decoration:none;display:inline-flex;align-items:center;gap:6px;white-space:nowrap;}
   .btn:hover{background:var(--gold2);color:#fff;}
   .btn-ghost{background:transparent;color:var(--navy);border:1px solid var(--hair);font-weight:600;}
   :root[data-theme="dark"] .btn-ghost{color:var(--ink);}
@@ -92,17 +98,17 @@
   .mobile-menu.open{display:flex;}
   .mobile-menu .mm-cta{display:flex;gap:8px;margin-top:10px;}
 
-  .hero{background:linear-gradient(135deg,var(--navy),#1c1233);color:#fff;padding:46px 0;position:relative;overflow:hidden;}
+  .hero{background:linear-gradient(135deg,var(--navy),#1B2330);color:#fff;padding:46px 0;position:relative;overflow:hidden;}
   .hero .wrap{display:grid;grid-template-columns:1.05fr .95fr;gap:36px;align-items:center;position:relative;}
-  .eyebrow{display:inline-block;font-size:11px;font-weight:800;letter-spacing:.03em;color:var(--gold);background:rgba(212,160,23,.14);padding:5px 11px;border-radius:99px;margin-bottom:12px;}
+  .eyebrow{display:inline-block;font-size:11px;font-weight:800;letter-spacing:.03em;color:var(--gold);background:rgba(217, 138, 61,.14);padding:5px 11px;border-radius:99px;margin-bottom:12px;}
   .hero h1{font-size:clamp(24px,3.4vw,34px);font-weight:800;line-height:1.5;margin:0 0 10px;text-wrap:balance;color:#fff;}
-  .hero-body{font-size:13px;color:#c9cfe0;max-width:44ch;margin:0 0 20px;}
+  .hero-body{font-size:13px;color:#DDE1E7;max-width:44ch;margin:0 0 20px;}
   .hero-actions{display:flex;gap:10px;flex-wrap:wrap;}
   .hero-visual{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.14);border-radius:16px;padding:18px;}
   .hero-visual svg{width:100%;height:auto;}
   .hero-strong{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.14);border-radius:12px;padding:16px 18px;margin-top:16px;}
   .hero-strong ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:8px;}
-  .hero-strong li{display:flex;gap:8px;font-size:11.5px;color:#c9cfe0;}
+  .hero-strong li{display:flex;gap:8px;font-size:11.5px;color:#DDE1E7;}
   .hero-strong li svg{width:14px;height:14px;color:var(--gold);flex:none;margin-top:2px;}
 
   .service-def{padding:34px 0 0;}
@@ -163,9 +169,9 @@
   .faq-item[open] .plus{transform:rotate(45deg);}
   .faq-a{padding:0 18px 15px;font-size:12px;color:var(--ink-soft);}
 
-  .final-cta{background:linear-gradient(135deg,var(--navy),#1c1233);border-radius:20px;padding:44px 40px;text-align:center;color:#fff;}
+  .final-cta{background:linear-gradient(135deg,var(--navy),#1B2330);border-radius:20px;padding:44px 40px;text-align:center;color:#fff;}
   .final-cta h2{font-size:20px;font-weight:800;margin:0 0 8px;text-wrap:balance;color:#fff;}
-  .final-cta p{font-size:13px;color:#c9cfe0;margin:0 0 20px;}
+  .final-cta p{font-size:13px;color:#DDE1E7;margin:0 0 20px;}
   .final-cta-actions{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;}
 
   footer{background:var(--footer-bg);color:var(--footer-ink);padding:40px 0 90px;}
@@ -210,20 +216,20 @@
   }
 
   /* Age Gate (Global Night Business共通) */
-  .agegate-overlay{position:fixed;inset:0;z-index:999;background:rgba(8,10,16,.96);display:flex;align-items:center;justify-content:center;padding:20px;}
+  .agegate-overlay{position:fixed;inset:0;z-index:999;background:rgba(14, 17, 22,.96);display:flex;align-items:center;justify-content:center;padding:20px;}
   .agegate-card{max-width:440px;width:100%;background:var(--card);border-radius:16px;padding:32px 28px;box-shadow:0 20px 60px -20px rgba(0,0,0,.6);text-align:center;}
   .agegate-lang{display:flex;justify-content:center;gap:6px;margin-bottom:18px;}
   .agegate-lang button{appearance:none;border:1px solid var(--card-line);background:transparent;color:var(--ink-soft);font-size:11px;font-weight:700;padding:5px 12px;border-radius:99px;cursor:pointer;}
-  .agegate-lang button.active{background:var(--gold,var(--orange,#d4a017));color:#1a1206;border-color:transparent;}
+  .agegate-lang button.active{background:var(--gold,var(--orange,#D98A3D));color:#0F0D0C;border-color:transparent;}
   .agegate-card h2{font-size:18px;font-weight:800;margin:0 0 12px;}
   .agegate-card p{font-size:12.5px;color:var(--ink-soft);line-height:1.8;margin:0 0 22px;}
   .agegate-actions{display:flex;flex-direction:column;gap:10px;margin-bottom:16px;}
   .agegate-actions button{appearance:none;border:none;cursor:pointer;border-radius:10px;padding:13px 20px;font-size:14px;font-weight:700;}
-  #agegateYes{background:var(--gold,var(--orange,#d4a017));color:#1a1206;}
-  #agegateYes:hover{background:var(--gold2,var(--orange2,#a67811));color:#fff;}
+  #agegateYes{background:var(--gold,var(--orange,#D98A3D));color:#0F0D0C;}
+  #agegateYes:hover{background:var(--gold2,var(--orange2,#D98A3D));color:#fff;}
   #agegateNo{background:transparent;border:1px solid var(--card-line);color:var(--ink);}
   .agegate-note{font-size:10.5px;color:var(--ink-soft);opacity:.8;margin:0;line-height:1.7;}
-  .agegate-actions button:focus-visible,.agegate-lang button:focus-visible{outline:2px solid var(--blue,#2563eb);outline-offset:2px;}
+  .agegate-actions button:focus-visible,.agegate-lang button:focus-visible{outline:2px solid var(--blue,#5C6675);outline-offset:2px;}
 </style>
 </head>
 <body>
@@ -270,15 +276,15 @@
       <div data-reveal>
         <div class="hero-visual">
           <svg viewBox="0 0 400 260" preserveAspectRatio="xMidYMid meet">
-            <defs><linearGradient id="skyline" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#1c1233"/><stop offset="1" stop-color="#0b1220"/></linearGradient></defs>
+            <defs><linearGradient id="skyline" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#1B2330"/><stop offset="1" stop-color="#141820"/></linearGradient></defs>
             <rect width="400" height="260" fill="url(#skyline)"/>
-            <g fill="#f1e6c8" opacity=".9">
+            <g fill="#F4F1EC" opacity=".9">
               <circle cx="70" cy="55" r="1.4"/><circle cx="120" cy="35" r="1.2"/><circle cx="180" cy="60" r="1.5"/><circle cx="240" cy="40" r="1.1"/><circle cx="300" cy="58" r="1.3"/><circle cx="340" cy="30" r="1.2"/> </g>
-            <g fill="#16213a" stroke="#d4a017" stroke-width=".6">
+            <g fill="#1B2330" stroke="#D98A3D" stroke-width=".6">
               <rect x="40" y="150" width="30" height="90"/><rect x="80" y="120" width="26" height="120"/><rect x="115" y="165" width="24" height="75"/>
               <rect x="150" y="100" width="34" height="140"/><rect x="195" y="140" width="26" height="100"/><rect x="230" y="115" width="30" height="125"/>
               <rect x="270" y="155" width="24" height="85"/><rect x="304" y="130" width="28" height="110"/><rect x="342" y="160" width="24" height="80"/> </g>
-            <g fill="#d4a017">
+            <g fill="#D98A3D">
               <rect x="46" y="160" width="4" height="4"/><rect x="56" y="175" width="4" height="4"/><rect x="88" y="135" width="4" height="4"/><rect x="98" y="150" width="4" height="4"/>
               <rect x="122" y="180" width="4" height="4"/><rect x="158" y="115" width="4" height="4"/><rect x="168" y="130" width="4" height="4"/><rect x="202" y="155" width="4" height="4"/>
               <rect x="238" y="130" width="4" height="4"/><rect x="248" y="145" width="4" height="4"/><rect x="278" y="170" width="4" height="4"/><rect x="312" y="145" width="4" height="4"/> </g> </svg> </div>
