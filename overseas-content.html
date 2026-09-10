@@ -66,29 +66,29 @@
   --font-display:"Outfit", "Inter", ui-sans-serif, system-ui, sans-serif;
   --font-mono:ui-monospace, SFMono-Regular, Menlo, monospace;
 
-    --bg:#ffffff; --alt:#f7f7fa; --card:#ffffff; --ink:#0b1d2a; --ink-soft:#64748b;
-    --navy:#0b1d2a; --navy2:#132a4d; --purple:#582cf5; --amber:#f59e0b; --amber2:#c2760a;
-    --hair:#e5e7eb; --card-line:#e5e7eb;
+    --bg:#FFF9F2; --alt:#F7EBDD; --card:#ffffff; --ink:#0b1d2a; --ink-soft:#64748b;
+    --navy:#0b1d2a; --navy2:#132a4d; --purple:#9B5034; --amber:#D9A13C; --amber2:#9B5034;
+    --hair:#E4E7EC; --card-line:#E4E7EC;
     --shadow:0 1px 2px rgba(11,29,42,.05), 0 12px 28px -14px rgba(11,29,42,.14);
-    --radius:12px; --maxw:1200px; --footer-bg:#0b1d2a; --footer-ink:#eef2f8; --footer-soft:#93a3bd;
+    --radius:12px; --maxw:1200px; --footer-bg:#0b1d2a; --footer-ink:#E4E7EC; --footer-soft:#93a3bd;
   }
   @media (prefers-color-scheme: dark){
-    :root{ --bg:#0f1115; --alt:#151821; --card:#1a1e27; --ink:#f0f2f5; --ink-soft:#a3adc0;
+    :root{ --bg:#0f1115; --alt:#151821; --card:#1a1e27; --ink:#E4E7EC; --ink-soft:#a3adc0;
       --hair:#2a2f3b; --card-line:#2a2f3b; --amber:#fbbf24;
       --shadow:0 1px 2px rgba(0,0,0,.4), 0 12px 28px -14px rgba(0,0,0,.65); }
   }
-  :root[data-theme="dark"]{ --bg:#0f1115; --alt:#151821; --card:#1a1e27; --ink:#f0f2f5; --ink-soft:#a3adc0;
+  :root[data-theme="dark"]{ --bg:#0f1115; --alt:#151821; --card:#1a1e27; --ink:#E4E7EC; --ink-soft:#a3adc0;
     --hair:#2a2f3b; --card-line:#2a2f3b; --amber:#fbbf24;
     --shadow:0 1px 2px rgba(0,0,0,.4), 0 12px 28px -14px rgba(0,0,0,.65); }
-  :root[data-theme="light"]{ --bg:#ffffff; --alt:#f7f7fa; --card:#ffffff; --ink:#0b1d2a; --ink-soft:#64748b;
-    --hair:#e5e7eb; --card-line:#e5e7eb; --amber:#f59e0b;
+  :root[data-theme="light"]{ --bg:#FFF9F2; --alt:#F7EBDD; --card:#ffffff; --ink:#0b1d2a; --ink-soft:#64748b;
+    --hair:#E4E7EC; --card-line:#E4E7EC; --amber:#D9A13C;
     --shadow:0 1px 2px rgba(11,29,42,.05), 0 12px 28px -14px rgba(11,29,42,.14); }
 
   *{box-sizing:border-box;}
   body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--font-body);line-height:1.75;overflow-x:hidden;}
   img{max-width:100%;display:block;}
   .wrap{max-width:var(--maxw);margin:0 auto;padding:0 28px;}
-  .preview-flag{background:#000;color:#eee;text-align:center;font-size:12px;padding:8px 16px;}
+  .preview-flag{background:#000;color:#E4E7EC;text-align:center;font-size:12px;padding:8px 16px;}
   .preview-flag b{color:var(--amber);}
 
   header{position:sticky;top:0;z-index:40;background:color-mix(in srgb, var(--bg) 90%, transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--hair);}
@@ -113,7 +113,7 @@
 
   .hero{background:linear-gradient(135deg,var(--navy),#16305a);color:#fff;padding:46px 0;position:relative;overflow:hidden;}
   .hero .wrap{display:grid;grid-template-columns:1.05fr .95fr;gap:36px;align-items:center;position:relative;}
-  .eyebrow{display:inline-block;font-size:11px;font-weight:800;letter-spacing:.03em;color:var(--amber);background:rgba(245,158,11,.14);padding:5px 11px;border-radius:99px;margin-bottom:12px;}
+  .eyebrow{display:inline-block;font-size:11px;font-weight:800;letter-spacing:.03em;color:var(--amber);background:rgba(217,161,60,.14);padding:5px 11px;border-radius:99px;margin-bottom:12px;}
   .hero h1{font-size:clamp(24px,3.4vw,34px);font-weight:800;line-height:1.5;margin:0 0 10px;text-wrap:balance;color:#fff;}
   .hero-body{font-size:13px;color:#c3d1ea;max-width:42ch;margin:0 0 20px;}
   .hero-actions{display:flex;gap:10px;flex-wrap:wrap;}
@@ -264,12 +264,12 @@
           <svg viewBox="0 0 400 260" preserveAspectRatio="xMidYMid meet">
             <circle cx="200" cy="130" r="90" fill="none" stroke="rgba(255,255,255,.18)" stroke-width="1"/>
             <circle cx="200" cy="130" r="60" fill="none" stroke="rgba(255,255,255,.14)" stroke-width="1"/>
-            <g stroke="#f59e0b" stroke-width="1.4" opacity=".8"><path d="M110 90l180 80"/><path d="M110 170l180-80"/><path d="M200 40v180"/></g>
-            <g fill="#f59e0b"><circle cx="110" cy="90" r="4"/><circle cx="290" cy="170" r="4"/><circle cx="110" cy="170" r="4"/><circle cx="290" cy="90" r="4"/><circle cx="200" cy="40" r="4"/><circle cx="200" cy="220" r="4"/></g>
+            <g stroke="#D9A13C" stroke-width="1.4" opacity=".8"><path d="M110 90l180 80"/><path d="M110 170l180-80"/><path d="M200 40v180"/></g>
+            <g fill="#D9A13C"><circle cx="110" cy="90" r="4"/><circle cx="290" cy="170" r="4"/><circle cx="110" cy="170" r="4"/><circle cx="290" cy="90" r="4"/><circle cx="200" cy="40" r="4"/><circle cx="200" cy="220" r="4"/></g>
             <rect x="160" y="100" width="80" height="60" rx="8" fill="#fff" opacity=".95"/>
-            <rect x="170" y="112" width="60" height="6" rx="3" fill="#582cf5"/>
-            <rect x="170" y="124" width="40" height="4" rx="2" fill="#e5e7eb"/>
-            <rect x="170" y="134" width="50" height="4" rx="2" fill="#e5e7eb"/> </svg> </div>
+            <rect x="170" y="112" width="60" height="6" rx="3" fill="#9B5034"/>
+            <rect x="170" y="124" width="40" height="4" rx="2" fill="#E4E7EC"/>
+            <rect x="170" y="134" width="50" height="4" rx="2" fill="#E4E7EC"/> </svg> </div>
         <div class="hero-strong">
           <ul>
             <li><svg viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>多言語コンテンツ制作に対応</li>
