@@ -230,6 +230,12 @@
     .final-cta{padding:28px 20px;}
     .hero{padding:34px 0;}
   }
+
+/* hover のコントラスト是正（2026-09-10 実測）。
+   共通クラスの :hover に色を足すと、同じ規則を使う別背景のボタンが
+   読めなくなるため、祖先の文脈とクラス組で限定する。 */
+.final-cta-actions a.btn-ghost.btn:hover{color:#0E1116;}  /* on #F8EDE0 = 16.37:1 */
+.hero-actions a.btn-ghost.btn:hover{color:#0E1116;}  /* on #FFF9F3 = 18.1:1 */
 </style>
 </head>
 <body>
@@ -258,7 +264,7 @@
         <p class="hero-body">日本の知識・ノウハウ・文化・コンテンツを多言語で整理し、海外の個人・企業向けに販売できる形にします。企画から翻訳・出品・マーケティングまでを支援します。</p>
         <div class="hero-actions">
           <a class="btn" data-contact-cta href="#">無料で相談する</a>
-          <a class="btn-ghost btn" data-secondary-cta href="#" style="background:rgba(255,255,255,.08);color:#fff;border-color:rgba(255,255,255,.28);">サービス資料をダウンロード</a> </div> </div>
+          <a class="btn-ghost btn" data-secondary-cta href="#" style="background:rgba(255,255,255,.08);border-color:rgba(255,255,255,.28);">サービス資料をダウンロード</a> </div> </div>
       <div data-reveal>
         <div class="hero-visual">
           <svg viewBox="0 0 400 260" preserveAspectRatio="xMidYMid meet">
@@ -397,7 +403,7 @@
         <p>まずは無料相談で、最適なコンテンツ販売プランをご提案します。</p>
         <div class="final-cta-actions">
           <a class="btn" data-contact-cta href="#">無料で相談する</a>
-          <a class="btn-ghost btn" data-secondary-cta href="#" style="background:rgba(255,255,255,.1);color:#fff;border-color:rgba(255,255,255,.3);">サービス資料をダウンロード</a> </div> </div> </div> </section>
+          <a class="btn-ghost btn" data-secondary-cta href="#" style="background:rgba(255,255,255,.1);border-color:rgba(255,255,255,.3);">サービス資料をダウンロード</a> </div> </div> </div> </section>
 </main>
 
 <footer>

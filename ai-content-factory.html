@@ -257,6 +257,16 @@
     .wrap{padding:0 20px;}
     .final-cta{padding:28px 20px;}
   }
+
+/* hover のコントラスト是正（2026-09-10 実測）。
+   共通クラスの :hover に色を足すと、同じ規則を使う別背景のボタンが
+   読めなくなるため、祖先の文脈とクラス組で限定する。 */
+.final-cta-actions a.btn.btn-ghost:hover{color:#FFFFFF;}  /* on #5B21B6 = 8.98:1 */
+.hero-actions a.btn.btn-ghost:hover{color:#FFFFFF;}  /* on #5B21B6 = 8.98:1 */
+.mm-cta a.btn:hover{color:#FFFFFF;}  /* on #5B21B6 = 8.98:1 */
+.mm-cta a.btn.btn-ghost:hover{color:#FFFFFF;}  /* on #5B21B6 = 8.98:1 */
+.navcta a.btn.btn-ghost:hover{color:#FFFFFF;}  /* on #5B21B6 = 8.98:1 */
+.trial-box a.btn.btn-ghost:hover{color:#FFFFFF;}  /* on #5B21B6 = 8.98:1 */
 </style>
 </head>
 <body>
@@ -387,7 +397,7 @@
             <li><svg viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>その他カスタマイズ対応</li> </ul> </div> </div>
       <div class="trial-box" style="max-width:640px;margin:20px auto 0;">
         <span>まずは気軽に始めたい方へ: <b>お試し 単発1素材→5媒体 ¥25,000</b></span>
-        <a class="btn btn-ghost" data-contact-cta href="#" style="color:var(--purple);border-color:var(--purple);">お試しを相談する</a> </div>
+        <a class="btn btn-ghost" data-contact-cta href="#" style="border-color:var(--purple);">お試しを相談する</a> </div>
       <p class="price-note" style="text-align:center;">月¥50,000〜150,000(税別)が目安の範囲です。展開先の媒体数・素材量・修正回数等により実際の料金は個別にお見積りします。</p> </div> </section>
 
   <section class="band alt" id="cases">

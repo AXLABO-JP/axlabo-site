@@ -235,6 +235,15 @@
     .wrap{padding:0 20px;}
     .final-cta{padding:28px 20px;}
   }
+
+/* hover のコントラスト是正（2026-09-10 実測）。
+   共通クラスの :hover に色を足すと、同じ規則を使う別背景のボタンが
+   読めなくなるため、祖先の文脈とクラス組で限定する。 */
+.hero-actions a.btn.btn-ghost:hover{color:#0E1116;}  /* on #D95700 = 4.79:1 */
+.mm-cta a.btn:hover{color:#0E1116;}  /* on #D95700 = 4.79:1 */
+.mm-cta a.btn.btn-ghost:hover{color:#0E1116;}  /* on #D95700 = 4.79:1 */
+.navcta a.btn.btn-ghost:hover{color:#0E1116;}  /* on #D95700 = 4.79:1 */
+.trial-box a.btn.btn-ghost:hover{color:#0E1116;}  /* on #D95700 = 4.79:1 */
 </style>
 </head>
 <body>
@@ -334,7 +343,7 @@
           <div class="note">税別・2時間/30枚(¥30,000)〜1日(¥80,000)を目安</div>
           <div class="trial-box">
             <span>まずは気軽に始めたい方へ: <b>お試し ¥19,800</b>(1時間/15枚・市内)</span>
-            <a class="btn btn-ghost" data-contact-cta href="#" style="color:var(--orange);border-color:var(--orange);">お試しを相談する</a> </div>
+            <a class="btn btn-ghost" data-contact-cta href="#" style="border-color:var(--orange);">お試しを相談する</a> </div>
           <p class="price-note">納期・修正回数・出張エリアの区分は現在調整中のため、詳細はご相談時にご案内します。市内以外への出張は別途費用が発生する場合があります。</p> </div> </div> </div> </section>
 
   <section class="band">

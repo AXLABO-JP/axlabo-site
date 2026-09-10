@@ -215,6 +215,14 @@
     .wrap{padding:0 20px;}
     .final-cta{padding:32px 22px;}
   }
+
+/* hover のコントラスト是正（2026-09-10 実測）。
+   共通クラスの :hover に色を足すと、同じ規則を使う別背景のボタンが
+   読めなくなるため、祖先の文脈とクラス組で限定する。 */
+#mobileMenu a.btn:hover{color:#FFFFFF;}  /* on #B83A08 = 5.76:1 */
+#mobileMenu a.btn-ghost.btn:hover{color:#FFFFFF;}  /* on #B83A08 = 5.76:1 */
+.navcta a.btn-ghost.btn:hover{color:#FFFFFF;}  /* on #B83A08 = 5.76:1 */
+.trial-box a.btn.btn-ghost:hover{color:#FFFFFF;}  /* on #B83A08 = 5.76:1 */
 </style>
 </head>
 <body>
@@ -305,7 +313,7 @@
             <ul>
               <li><svg viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>ナレーション音声データ納品</li>
               <li><svg viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>修正2回込み(以降1回¥3,000)</li> </ul> </div>
-          <div class="trial-box"><span>はじめての方へ: <b>初回1本 ¥3,000</b>のお試し価格でご案内します。</span><a class="btn btn-ghost" data-contact-cta href="#" style="color:var(--accent);border-color:var(--accent);">お試しを相談する</a></div> </div>
+          <div class="trial-box"><span>はじめての方へ: <b>初回1本 ¥3,000</b>のお試し価格でご案内します。</span><a class="btn btn-ghost" data-contact-cta href="#" style="border-color:var(--accent);">お試しを相談する</a></div> </div>
         <div class="flow-list" id="flow">
           <div class="flow-item"><div class="num">1</div><div><h3>お問い合わせ</h3><p>用途・原稿内容をヒアリングします。</p></div></div>
           <div class="flow-item"><div class="num">2</div><div><h3>お見積り・ご提案</h3><p>最適なプランと納期をご提案します。</p></div></div>

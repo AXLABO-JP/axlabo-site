@@ -248,6 +248,15 @@
     .final-cta{padding:28px 20px;}
     .hero{padding:32px 0;}
   }
+
+/* hover のコントラスト是正（2026-09-10 実測）。
+   共通クラスの :hover に色を足すと、同じ規則を使う別背景のボタンが
+   読めなくなるため、祖先の文脈とクラス組で限定する。 */
+#stickyCta a.btn-ghost.btn:hover{color:#FFFFFF;}  /* on #1D4ED8 = 6.7:1 */
+.hero-actions a.btn-ghost.btn:hover{color:#FFFFFF;}  /* on #1D4ED8 = 6.7:1 */
+.mm-cta a.btn:hover{color:#FFFFFF;}  /* on #1D4ED8 = 6.7:1 */
+.mm-cta a.btn-ghost.btn:hover{color:#FFFFFF;}  /* on #1D4ED8 = 6.7:1 */
+.navcta a.btn-ghost.btn:hover{color:#FFFFFF;}  /* on #1D4ED8 = 6.7:1 */
 </style>
 </head>
 <body>
@@ -412,7 +421,7 @@
         <p>AXLABO AI OSで、あなたのビジネスを次のステージへ。</p>
         <div class="final-cta-actions">
           <a class="btn" data-contact-cta href="#">無料で相談する</a>
-          <a class="btn-ghost btn" data-secondary-cta href="#" style="background:rgba(255,255,255,.1);color:#fff;border-color:rgba(255,255,255,.3);">サービス資料をダウンロード</a> </div> </div> </div> </section>
+          <a class="btn-ghost btn" data-secondary-cta href="#" style="background:rgba(255,255,255,.1);border-color:rgba(255,255,255,.3);">サービス資料をダウンロード</a> </div> </div> </div> </section>
 </main>
 
 <footer>

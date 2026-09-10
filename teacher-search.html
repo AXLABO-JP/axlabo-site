@@ -98,6 +98,15 @@
   @media (max-width:640px){ .nav{padding:12px 16px;} .navlinks{display:none;} .navcta{display:none;} .menu-toggle{display:block;} }
   .mm-cta{display:flex;gap:8px;margin-top:10px;}
   .mm-cta .btn{flex:1;justify-content:center;}
+
+/* hover のコントラスト是正（2026-09-10 実測）。
+   共通クラスの :hover に色を足すと、同じ規則を使う別背景のボタンが
+   読めなくなるため、祖先の文脈とクラス組で限定する。 */
+.actions a.btn.btn-ghost:hover{color:#FFFFFF;}  /* on #C14A12 = 4.93:1 */
+.mm-cta a.btn:hover{color:#FFFFFF;}  /* on #C14A12 = 4.93:1 */
+.mm-cta a.btn.btn-ghost:hover{color:#FFFFFF;}  /* on #C14A12 = 4.93:1 */
+.navcta a.btn.btn-ghost:hover{color:#FFFFFF;}  /* on #C14A12 = 4.93:1 */
+.navlinks a.active:hover{color:#0E1116;}  /* on #FFFFFF = 18.91:1 */
 </style>
 </head>
 <body>

@@ -220,6 +220,14 @@
     .final-cta{padding:28px 20px;}
     .hero{padding:32px 0;}
   }
+
+/* hover のコントラスト是正（2026-09-10 実測）。
+   共通クラスの :hover に色を足すと、同じ規則を使う別背景のボタンが
+   読めなくなるため、祖先の文脈とクラス組で限定する。 */
+#stickyCta a.btn-ghost.btn:hover{color:#FFFFFF;}  /* on #1D4ED8 = 6.7:1 */
+.mm-cta a.btn:hover{color:#FFFFFF;}  /* on #1D4ED8 = 6.7:1 */
+.mm-cta a.btn-ghost.btn:hover{color:#FFFFFF;}  /* on #1D4ED8 = 6.7:1 */
+.navcta a.btn-ghost.btn:hover{color:#FFFFFF;}  /* on #1D4ED8 = 6.7:1 */
 </style>
 </head>
 <body>
@@ -248,7 +256,7 @@
         <p class="hero-body">世界のスタートアップ創業者・エンジニア・マーケター・投資家とのマッチングを支援します。信頼できる仲間との出会いが、あなたの事業を前に進めます。</p>
         <div class="hero-actions">
           <a class="btn" data-contact-cta href="#">無料で相談する</a>
-          <a class="btn-ghost btn" data-secondary-cta href="#" style="background:rgba(255,255,255,.08);color:#fff;border-color:rgba(255,255,255,.28);">サービス資料をダウンロード</a> </div> </div>
+          <a class="btn-ghost btn" data-secondary-cta href="#" style="background:rgba(255,255,255,.08);border-color:rgba(255,255,255,.28);">サービス資料をダウンロード</a> </div> </div>
       <div data-reveal>
         <div class="hero-visual">
           <svg viewBox="0 0 400 260" preserveAspectRatio="xMidYMid meet">
@@ -368,7 +376,7 @@
         <p>まずは無料相談で、あなたに最適な出会いの可能性を広げましょう。</p>
         <div class="final-cta-actions">
           <a class="btn" data-contact-cta href="#">無料で相談する</a>
-          <a class="btn-ghost btn" data-secondary-cta href="#" style="background:rgba(255,255,255,.1);color:#fff;border-color:rgba(255,255,255,.3);">サービス資料をダウンロード</a> </div> </div> </div> </section>
+          <a class="btn-ghost btn" data-secondary-cta href="#" style="background:rgba(255,255,255,.1);border-color:rgba(255,255,255,.3);">サービス資料をダウンロード</a> </div> </div> </div> </section>
 </main>
 
 <footer>

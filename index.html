@@ -313,6 +313,13 @@
     nav#primary-nav a { padding: 12px 4px; border-bottom: 1px solid var(--line); border-radius: 0; }
     nav#primary-nav a.btn-primary { margin-top: 8px; text-align: center; justify-content: center; border-bottom: none; }
   }
+
+/* hover のコントラスト是正（2026-09-10 実測）。
+   共通クラスの :hover に色を足すと、同じ規則を使う別背景のボタンが
+   読めなくなるため、祖先の文脈とクラス組で限定する。 */
+#axlabo-chat-form button:hover{color:#0E1116;}  /* on #C8622C = 4.72:1 */
+#primary-nav a.btn.btn-primary.btn-sm:hover{color:#0E1116;}  /* on #F4F5F7 = 17.34:1 */
+button:hover{color:#0E1116;}  /* on #C8622C = 4.72:1 */
 </style>
 </head>
 <body>

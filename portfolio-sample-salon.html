@@ -69,6 +69,11 @@
     .info-cols{grid-template-columns:1fr;}
     .hero{min-height:440px;}
   }
+
+/* hover のコントラスト是正（2026-09-10 実測）。
+   共通クラスの :hover に色を足すと、同じ規則を使う別背景のボタンが
+   読めなくなるため、祖先の文脈とクラス組で限定する。 */
+.navlinks a:hover{color:#0E1116;}  /* on #FBF9F5 = 17.98:1 */
 </style>
 
 <div class="demo-flag"><b>制作サンプル</b> — BLOOM HAIR & SPAは架空の店舗です。AXLABO Web制作の店舗・サービスサイト実装例としてご覧ください。</div>

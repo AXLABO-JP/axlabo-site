@@ -235,6 +235,15 @@
   #agegateNo{background:transparent;border:1px solid var(--card-line);color:var(--ink);}
   .agegate-note{font-size:10.5px;color:var(--ink-soft);opacity:.8;margin:0;line-height:1.7;}
   .agegate-actions button:focus-visible,.agegate-lang button:focus-visible{outline:2px solid var(--blue,#2563eb);outline-offset:2px;}
+
+/* hover のコントラスト是正（2026-09-10 実測）。
+   共通クラスの :hover に色を足すと、同じ規則を使う別背景のボタンが
+   読めなくなるため、祖先の文脈とクラス組で限定する。 */
+.agegate-lang button:hover{color:#FFFFFF;}  /* on #211B17 = 17.02:1 */
+.final-cta-actions a.btn-ghost.btn:hover{color:#FFFFFF;}  /* on #2C2928 = 14.43:1 */
+.hero-actions a.btn-ghost.btn:hover{color:#FFFFFF;}  /* on #272423 = 15.41:1 */
+.navlinks a:hover{color:#FFFFFF;}  /* on #141110 = 18.79:1 */
+.agegate-lang button.active:hover{color:#0E1116;}  /* on #E8B45A = 10.0:1 */
 </style>
 </head>
 <body>
@@ -276,7 +285,7 @@
         <p class="hero-body">バー・クラブ・夜間営業の飲食店・エンターテインメント施設向けに、多言語ページ制作、Google Maps情報整備、SNS発信設計、予約導線の整理までを支援します。</p>
         <div class="hero-actions">
           <a class="btn" data-contact-cta href="#">外国人客対応を相談する</a>
-          <a class="btn-ghost btn" data-secondary-cta href="#" style="background:rgba(255,255,255,.08);color:#fff;border-color:rgba(255,255,255,.28);">サービス資料をダウンロード</a> </div> </div>
+          <a class="btn-ghost btn" data-secondary-cta href="#" style="background:rgba(255,255,255,.08);border-color:rgba(255,255,255,.28);">サービス資料をダウンロード</a> </div> </div>
       <div data-reveal>
         <div class="hero-visual">
           <svg viewBox="0 0 400 260" preserveAspectRatio="xMidYMid meet">
@@ -401,7 +410,7 @@
         <p>まずは無料相談で、店舗に合った海外顧客対応プランをご提案します。</p>
         <div class="final-cta-actions">
           <a class="btn" data-contact-cta href="#">無料で相談する</a>
-          <a class="btn-ghost btn" data-secondary-cta href="#" style="background:rgba(255,255,255,.1);color:#fff;border-color:rgba(255,255,255,.3);">サービス資料をダウンロード</a> </div> </div> </div> </section>
+          <a class="btn-ghost btn" data-secondary-cta href="#" style="background:rgba(255,255,255,.1);border-color:rgba(255,255,255,.3);">サービス資料をダウンロード</a> </div> </div> </div> </section>
 </main>
 
 <footer>

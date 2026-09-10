@@ -269,6 +269,12 @@
     .final-cta{padding:32px 22px;}
     .flagship{padding:24px 20px;}
   }
+
+/* hover のコントラスト是正（2026-09-10 実測）。
+   共通クラスの :hover に色を足すと、同じ規則を使う別背景のボタンが
+   読めなくなるため、祖先の文脈とクラス組で限定する。 */
+.hero-actions a.btn.btn-ghost:hover{color:#FFFFFF;}  /* on #153F26 = 11.86:1 */
+.trial-box a.btn.btn-ghost:hover{color:#FFFFFF;}  /* on #153F26 = 11.86:1 */
 </style>
 </head>
 <body>
@@ -401,7 +407,7 @@
             <div class="note">税別・単発のパッケージです。継続課金はありません。</div>
           <div class="trial-box">
             <span>初回相談は<b>無料</b>です。</span>
-            <a class="btn btn-ghost" data-contact-cta href="#" style="color:var(--accent);border-color:var(--accent);">お試しを相談する</a> </div>
+            <a class="btn btn-ghost" data-contact-cta href="#" style="border-color:var(--accent);">お試しを相談する</a> </div>
           <div class="password-note">
             <svg viewBox="0 0 24 24" fill="none"><path d="M12 15a3 3 0 003-3V6a3 3 0 00-6 0v6a3 3 0 003 3z" stroke="currentColor" stroke-width="1.6"/><path d="M7 11v1a5 5 0 0010 0v-1M12 18v3" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
             <span><b>パスワードや認証情報は、ご相談時にお伝えいただく必要はありません。</b>AXLABOはお客様のパスワードや秘密情報そのものを保管するサービスではありません。</span> </div> </div> </div> </div> </section>

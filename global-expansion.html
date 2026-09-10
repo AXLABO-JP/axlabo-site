@@ -226,6 +226,11 @@
     .wrap{padding:0 20px;}
     .final-cta{padding:32px 22px;}
   }
+
+/* hover のコントラスト是正（2026-09-10 実測）。
+   共通クラスの :hover に色を足すと、同じ規則を使う別背景のボタンが
+   読めなくなるため、祖先の文脈とクラス組で限定する。 */
+.foot-col a:hover{color:#0E1116;}  /* on #D96C4A = 5.58:1 */
 </style>
 </head>
 <body>
@@ -368,7 +373,7 @@
           <div class="note">税別。対応範囲に応じて金額が変動します(提供範囲は市場仮説・初期ターゲットリスト・初期接触用営業文面の3点)</div>
           <div class="trial-box">
             <span>まずは軽く相談したい方へ: <b>初期整理1回 ¥50,000</b></span>
-            <a class="btn btn-ghost" data-contact-cta href="#" style="color:var(--accent);border-color:var(--accent);">初期整理を相談する</a> </div> </div> </div> </div> </section>
+            <a class="btn btn-ghost" data-contact-cta href="#" style="border-color:var(--accent);">初期整理を相談する</a> </div> </div> </div> </div> </section>
 
   <section class="band" id="cases">
     <div class="wrap">

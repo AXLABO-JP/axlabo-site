@@ -286,6 +286,16 @@
     .final-cta{padding:30px 20px;}
     .corp-panel{padding:24px 18px;}
   }
+
+/* hover のコントラスト是正（2026-09-10 実測）。
+   共通クラスの :hover に色を足すと、同じ規則を使う別背景のボタンが
+   読めなくなるため、祖先の文脈とクラス組で限定する。 */
+.final-cta-actions a.btn.btn-ghost:hover{color:#0E1116;}  /* on #D4551A = 4.61:1 */
+.hero-actions a.btn.btn-navy:hover{color:#FFFFFF;}  /* on #132A4D = 14.32:1 */
+.mm-cta a.btn:hover{color:#0E1116;}  /* on #D4551A = 4.61:1 */
+.mm-cta a.btn.btn-ghost:hover{color:#0E1116;}  /* on #D4551A = 4.61:1 */
+.navcta a.btn.btn-ghost:hover{color:#0E1116;}  /* on #D4551A = 4.61:1 */
+.sel-card a.btn:hover{color:#0E1116;}  /* on #D2A443 = 8.22:1 */
 </style>
 </head>
 <body>
@@ -491,7 +501,7 @@
         <div class="final-cta-actions">
           <a class="btn" data-contact-cta href="#">学習目的を相談する</a>
           <a class="btn btn-ghost" data-secondary-cta href="#">体験レッスンを申し込む</a> </div>
-        <p style="margin-top:14px;"><a data-teacher-cta href="#" style="font-size:13px;color:var(--ink-soft);text-decoration:underline;">日本語講師として登録したい方はこちら →</a></p> </div> </div> </section>
+        <p style="margin-top:14px;"><a data-teacher-cta href="#" style="font-size:13px;text-decoration:underline;">日本語講師として登録したい方はこちら →</a></p> </div> </div> </section>
 </main>
 
 <footer>

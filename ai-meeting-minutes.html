@@ -217,6 +217,12 @@
     .wrap{padding:0 20px;}
     .final-cta{padding:32px 22px;}
   }
+
+/* hover のコントラスト是正（2026-09-10 実測）。
+   共通クラスの :hover に色を足すと、同じ規則を使う別背景のボタンが
+   読めなくなるため、祖先の文脈とクラス組で限定する。 */
+#mobileMenu a.btn:hover{color:#FFFFFF;}  /* on #B83A08 = 5.76:1 */
+#mobileMenu a.btn-ghost.btn:hover{color:#0E1116;}  /* on #EEF6F6 = 17.24:1 */
 </style>
 </head>
 <body>

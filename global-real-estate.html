@@ -228,6 +228,11 @@
     .hero{padding:30px 0;}
     .price-card-single{padding:24px 20px;}
   }
+
+/* hover のコントラスト是正（2026-09-10 実測）。
+   共通クラスの :hover に色を足すと、同じ規則を使う別背景のボタンが
+   読めなくなるため、祖先の文脈とクラス組で限定する。 */
+.final-cta-actions a.btn-ghost.btn:hover{color:#0E1116;}  /* on #F2F5F2 = 17.22:1 */
 </style>
 </head>
 <body>
@@ -382,7 +387,7 @@
         <p>あなたに合った海外不動産投資の判断材料整理をご提案します。</p>
         <div class="final-cta-actions">
           <a class="btn" data-contact-cta href="#">無料相談をする</a>
-          <a class="btn-ghost btn" data-secondary-cta href="#" style="background:rgba(255,255,255,.1);color:#fff;border-color:rgba(255,255,255,.3);">資料をダウンロード</a> </div> </div> </div> </section>
+          <a class="btn-ghost btn" data-secondary-cta href="#" style="background:rgba(255,255,255,.1);border-color:rgba(255,255,255,.3);">資料をダウンロード</a> </div> </div> </div> </section>
 </main>
 
 <footer>

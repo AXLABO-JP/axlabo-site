@@ -294,6 +294,16 @@
     .final-cta{padding:30px 20px;}
     .corp-panel{padding:24px 18px;}
   }
+
+/* hover のコントラスト是正（2026-09-10 実測）。
+   共通クラスの :hover に色を足すと、同じ規則を使う別背景のボタンが
+   読めなくなるため、祖先の文脈とクラス組で限定する。 */
+.final-cta-actions a.btn.btn-ghost:hover{color:#0E1116;}  /* on #D4551A = 4.61:1 */
+.hero-actions a.btn.btn-navy:hover{color:#FFFFFF;}  /* on #132A4D = 14.32:1 */
+.mm-cta a.btn:hover{color:#0E1116;}  /* on #D4551A = 4.61:1 */
+.mm-cta a.btn.btn-ghost:hover{color:#0E1116;}  /* on #D4551A = 4.61:1 */
+.navcta a.btn.btn-ghost:hover{color:#0E1116;}  /* on #D4551A = 4.61:1 */
+.sel-card a.btn:hover{color:#0E1116;}  /* on #E99A4B = 8.27:1 */
 </style>
 </head>
 <body>

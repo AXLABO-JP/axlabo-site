@@ -230,6 +230,15 @@
   #agegateNo{background:transparent;border:1px solid var(--card-line);color:var(--ink);}
   .agegate-note{font-size:10.5px;color:var(--ink-soft);opacity:.8;margin:0;line-height:1.7;}
   .agegate-actions button:focus-visible,.agegate-lang button:focus-visible{outline:2px solid var(--blue,#5C6675);outline-offset:2px;}
+
+/* hover のコントラスト是正（2026-09-10 実測）。
+   共通クラスの :hover に色を足すと、同じ規則を使う別背景のボタンが
+   読めなくなるため、祖先の文脈とクラス組で限定する。 */
+.agegate-lang button:hover{color:#FFFFFF;}  /* on #211B17 = 17.02:1 */
+.final-cta-actions a.btn-ghost.btn:hover{color:#FFFFFF;}  /* on #2C2928 = 14.43:1 */
+.hero-actions a.btn-ghost.btn:hover{color:#FFFFFF;}  /* on #272423 = 15.41:1 */
+.navlinks a:hover{color:#FFFFFF;}  /* on #141110 = 18.79:1 */
+.agegate-lang button.active:hover{color:#0E1116;}  /* on #E8B45A = 10.0:1 */
 </style>
 </head>
 <body>
@@ -272,7 +281,7 @@
         <p class="hero-body">日本国内のバー・クラブ・夜間営業の飲食店を、多言語ページで訪日外国人客に届けます。掲載は当面無料、制作費のみでご案内します。<br><span style="font-size:.82em;color:var(--ink-soft);">Bringing Japan's nightlife to international visitors — multilingual listings for bars, clubs, and late-night venues.</span></p>
         <div class="hero-actions">
           <a class="btn" data-contact-cta href="#">掲載について相談する</a>
-          <a class="btn-ghost btn" data-secondary-cta href="#" style="background:rgba(255,255,255,.08);color:#fff;border-color:rgba(255,255,255,.28);">掲載ページのサンプルを見る</a> </div> </div>
+          <a class="btn-ghost btn" data-secondary-cta href="#" style="background:rgba(255,255,255,.08);border-color:rgba(255,255,255,.28);">掲載ページのサンプルを見る</a> </div> </div>
       <div data-reveal>
         <div class="hero-visual">
           <svg viewBox="0 0 400 260" preserveAspectRatio="xMidYMid meet">
@@ -394,7 +403,7 @@
         <p>まずは掲載ページのサンプルをご覧いただき、お気軽にご相談ください。</p>
         <div class="final-cta-actions">
           <a class="btn" data-contact-cta href="#">掲載について相談する</a>
-          <a class="btn-ghost btn" data-secondary-cta href="#" style="background:rgba(255,255,255,.1);color:#fff;border-color:rgba(255,255,255,.3);">掲載ページのサンプルを見る</a> </div> </div> </div> </section>
+          <a class="btn-ghost btn" data-secondary-cta href="#" style="background:rgba(255,255,255,.1);border-color:rgba(255,255,255,.3);">掲載ページのサンプルを見る</a> </div> </div> </div> </section>
 </main>
 
 <footer>
