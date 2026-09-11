@@ -23,10 +23,10 @@
 
   var css = [
     "#axlabo-chat-btn{position:fixed;right:20px;bottom:20px;z-index:9999;",
-    "width:56px;height:56px;border-radius:50%;background:#c8622c;color:#fff;",
+    "width:56px;height:56px;border-radius:50%;background:#c8622c;color:#161311;",
     "border:none;box-shadow:0 4px 14px rgba(0,0,0,.2);cursor:pointer;font-size:24px;",
     "display:flex;align-items:center;justify-content:center;}",
-    "#axlabo-chat-btn:hover{background:#9c4a1f;}",
+    "#axlabo-chat-btn:hover{background:#9c4a1f;color:#fff;}",
     "#axlabo-chat-panel{position:fixed;right:20px;bottom:88px;z-index:9999;",
     "width:320px;max-width:90vw;height:420px;max-height:70vh;background:#fff;",
     "border:1px solid #e1ddd3;border-radius:12px;box-shadow:0 8px 30px rgba(0,0,0,.2);",
@@ -42,7 +42,7 @@
     "#axlabo-chat-body{flex:1;overflow-y:auto;padding:12px;background:#f5f3ef;}",
     ".axlabo-chat-msg{margin-bottom:10px;max-width:85%;padding:8px 12px;",
     "border-radius:10px;font-size:13px;line-height:1.5;white-space:pre-wrap;}",
-    ".axlabo-chat-msg.user{background:#c8622c;color:#fff;margin-left:auto;",
+    ".axlabo-chat-msg.user{background:#c8622c;color:#161311;margin-left:auto;",
     "border-bottom-right-radius:2px;}",
     ".axlabo-chat-msg.bot{background:#fff;color:#161311;border:1px solid #e1ddd3;",
     "border-bottom-left-radius:2px;}",
@@ -52,7 +52,7 @@
     "gap:6px;background:#fff;}",
     "#axlabo-chat-input{flex:1;border:1px solid #e1ddd3;border-radius:8px;",
     "padding:8px 10px;font-size:13px;font-family:inherit;resize:none;}",
-    "#axlabo-chat-send{background:#c8622c;color:#fff;border:none;border-radius:8px;",
+    "#axlabo-chat-send{background:#c8622c;color:#161311;border:none;border-radius:8px;",
     "padding:0 14px;font-size:13px;cursor:pointer;}",
     "#axlabo-chat-send:disabled{opacity:.5;cursor:default;}",
   ].join("");
