@@ -297,6 +297,10 @@
 .navcta a.btn.btn-ghost:hover{color:#0E1116;}  /* on #D4551A = 4.61:1 */
 .sel-card a.btn:hover{color:#0E1116;}  /* on #D2A443 = 8.22:1 */
 .sel-card.corporate .btn:hover{color:#FFFFFF;}  /* on #1E4FC4 = 7.07:1 */
+.eyebrow{color:#695222;}
+.tag,.match-step{color:#993D13;}  /* 配色マスター派生色・4.5:1確保 */
+.price-card.ind .tag{color:#993D13;}
+.match-list .match-step,.match-step{color:#993D13;}  /* 既存セレクタの詳細度に合わせて再指定 */
 </style>
 </head>
 <body>
@@ -386,7 +390,7 @@
         <span class="match-step">言語を選ぶ</span><span class="match-arrow">→</span>
         <span class="match-step">レベルを選ぶ</span><span class="match-arrow">→</span>
         <span class="match-step">希望条件を追加</span><span class="match-arrow">→</span>
-        <span class="match-step" style="background:color-mix(in srgb, var(--orange) 14%, var(--card));color:var(--orange2);">講師候補を提案</span> </div>
+        <span class="match-step" style="background:color-mix(in srgb, var(--orange) 14%, var(--card));color:#993D13;">講師候補を提案</span> </div>
       <div class="match-panel" data-reveal>
         <div>
           <div class="tutor-cards">
