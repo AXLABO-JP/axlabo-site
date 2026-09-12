@@ -262,6 +262,14 @@
   .f-check input, .check-item input{width:24px;height:24px;}
   aside.filter button, .filter button{min-height:32px;}
 }
+/* focus-2026-09-13: フォーカス枠の色がボタンの地色と同じで見えなかった
+   （実測 差 1.00〜1.14）。濃色の地には白い枠を内側に置く。
+   白は配色マスターの「アクセント地の上の文字」と同じ値。 */
+a:focus-visible, button:focus-visible, input:focus-visible,
+select:focus-visible, textarea:focus-visible, summary:focus-visible,
+[tabindex]:focus-visible{
+  outline:2px solid #FFFFFF; outline-offset:0;
+  box-shadow:0 0 0 4px #141820, 0 0 0 6px #FFFFFF;}
 </style>
 </head>
 <body>
