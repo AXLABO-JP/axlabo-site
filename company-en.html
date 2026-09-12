@@ -84,6 +84,25 @@
   nav { flex-wrap: wrap; justify-content: flex-start; row-gap: 6px; }
   nav a { padding: 6px 10px; }
 }
+@media (max-width: 640px){
+  header nav a, header .logo, .navlink a{padding-block:5px;display:inline-block;}
+  aside.filter button, .filter button{min-height:32px;}
+  /* 2026-09-13 実測: 幅390pxでフッタのリンクが高さ16px、ロゴのリンクが19px
+     しかなく、WCAG 2.5.8(AA)の24px下限を下回っていた。押し間違えの原因。
+     余白で高さを稼ぎ、行間は margin を詰めて元の間隔を保つ。 */
+  .foot-col a{padding-block:5px;margin-bottom:0;}
+  .nav .brand, .brand{padding-block:4px;display:inline-flex;align-items:center;}
+  .legal-link a{padding-block:5px;display:inline-block;}
+}
+@media (max-width: 640px){
+  /* 2026-09-13 第2段: フッタのリンク・パンくず・チェックボックス・
+     ナビが 13〜23px で、WCAG 2.5.8(AA)の24px下限を下回っていた */
+  footer a, .footer-inner a, .legal-link a, .navlink a, .breadcrumb a,
+  .foot a, .site-footer a{ padding-block:5px; display:inline-block;}
+  aside.filter button, .filter button, .filter-reset{min-height:32px;}
+  .f-check input, .check-item input{width:24px;height:24px;}
+  aside.filter button, .filter button{min-height:32px;}
+}
 </style>
 </head>
 <body>

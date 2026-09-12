@@ -62,6 +62,17 @@
     .svc-grid{grid-template-columns:1fr;}
     .hero{min-height:420px;}
   }
+@media (max-width: 640px){
+  header nav a, header .logo, .navlink a{padding-block:5px;display:inline-block;}
+  aside.filter button, .filter button{min-height:32px;}
+  /* 2026-09-13 第2段: フッタのリンク・パンくず・チェックボックス・
+     ナビが 13〜23px で、WCAG 2.5.8(AA)の24px下限を下回っていた */
+  footer a, .footer-inner a, .legal-link a, .navlink a, .breadcrumb a,
+  .foot a, .site-footer a{ padding-block:5px; display:inline-block;}
+  aside.filter button, .filter button, .filter-reset{min-height:32px;}
+  .f-check input, .check-item input{width:24px;height:24px;}
+  aside.filter button, .filter button{min-height:32px;}
+}
 </style>
 
 <div class="demo-flag"><b>制作サンプル</b> — Next Innovationは架空の企業です。AXLABO Web制作のコーポレートサイト実装例としてご覧ください。</div>

@@ -52,6 +52,14 @@
   table th { width: 34%; color: var(--ink); font-weight: 700; }
   table td { color: var(--ink-soft); }
   footer { padding: 32px 0 48px; border-top: 1px solid var(--line); color: var(--ink-soft); font-size: 0.82rem; }
+@media (max-width: 640px){
+  /* 2026-09-13 実測: 幅390pxでヘッダーのリンクとフッタのリンクが
+     15〜23px しかなく、WCAG 2.5.8(AA)の24px下限を下回っていた */
+  header nav a, header .logo, .navlink a,
+  footer a, footer .wrap a, .legal-link a, .breadcrumb a{
+    padding-block:5px; display:inline-block;}
+  aside.filter button, .filter button{min-height:32px;}
+}
 </style>
 </head>
 <body>
