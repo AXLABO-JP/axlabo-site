@@ -246,6 +246,14 @@
 .mm-cta a.btn:not(.btn-ghost){color:#211B17;}  /* on #E8B45A = 9.0:1 */
 .mm-cta a.btn:not(.btn-ghost):hover{background:#D49A16;color:#211B17;}  /* = 6.84 */
 .faq-q .plus{color:#D49A16;}  /* 暗い地のため派生 x1.28 で明るく = 6.84 */
+@media (max-width: 440px){
+  /* 2026-09-12 実測: 幅390pxで右のボタンが画面外へ11px溢れ、ラベルが
+     切れていた（ghost 側にだけ flex:1 が付いていた）。横に2つ並べると
+     どちらかが必ず切れるため、狭い幅では縦に積む。
+     text-overflow:ellipsis で詰めると文字が隠れるので使わない。 */
+  .sticky-cta{flex-direction:column;}
+  .sticky-cta > .btn, .sticky-cta > a{flex:none;width:100%;justify-content:center;}
+}
 </style>
 </head>
 <body>

@@ -245,6 +245,14 @@
 .trial-box a.btn.btn-ghost:hover{color:#0E1116;}  /* on #D95700 = 4.79:1 */
 .eyebrow{color:#5F4A36;}  /* 配色マスター派生色・4.5:1確保 */
 .faq-q .plus{color:#896A4D;}  /* FAQの開閉状態を示す唯一の手がかり・4.5:1 */
+@media (max-width: 440px){
+  /* 2026-09-12 実測: 幅390pxで右のボタンが画面外へ11px溢れ、ラベルが
+     切れていた（ghost 側にだけ flex:1 が付いていた）。横に2つ並べると
+     どちらかが必ず切れるため、狭い幅では縦に積む。
+     text-overflow:ellipsis で詰めると文字が隠れるので使わない。 */
+  .sticky-cta{flex-direction:column;}
+  .sticky-cta > .btn, .sticky-cta > a{flex:none;width:100%;justify-content:center;}
+}
 </style>
 </head>
 <body>

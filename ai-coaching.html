@@ -243,6 +243,14 @@
 .eyebrow{color:#69452D;}
 .rec-badge{background:#976341;}  /* 配色マスター派生色・4.5:1確保 */
 .faq-q .plus{color:#976341;}  /* FAQの開閉状態を示す唯一の手がかり・4.5:1 */
+@media (max-width: 440px){
+  /* 2026-09-12 実測: 幅390pxで右のボタンが画面外へ11px溢れ、ラベルが
+     切れていた（ghost 側にだけ flex:1 が付いていた）。横に2つ並べると
+     どちらかが必ず切れるため、狭い幅では縦に積む。
+     text-overflow:ellipsis で詰めると文字が隠れるので使わない。 */
+  .sticky-cta{flex-direction:column;}
+  .sticky-cta > .btn, .sticky-cta > a{flex:none;width:100%;justify-content:center;}
+}
 </style>
 </head>
 <body>
