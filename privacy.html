@@ -68,9 +68,12 @@ select:focus-visible, textarea:focus-visible, summary:focus-visible,
 [tabindex]:focus-visible{
   outline:2px solid #FFFFFF; outline-offset:0;
   box-shadow:0 0 0 4px #141820, 0 0 0 6px #FFFFFF;}
+.skip-to-main{position:absolute;left:-9999px;top:0;z-index:100;background:#141820;color:#FFFFFF;padding:10px 16px;border-radius:0 0 6px 0;text-decoration:none;font-size:14px;}
+.skip-to-main:focus{left:0;}  /* 2026-09-14: 本文に着くまで17回タブが要った */
 </style>
 </head>
 <body>
+<a class="skip-to-main" href="#main">本文へスキップ</a>
 
 <header>
   <div class="wrap">
@@ -78,7 +81,7 @@ select:focus-visible, textarea:focus-visible, summary:focus-visible,
     <nav><a href="/">トップへ戻る</a></nav> </div>
 </header>
 
-<main class="wrap">
+<main id="main" tabindex="-1" class="wrap">
 <h1>プライバシーポリシー</h1>
 <p class="updated">最終更新日: 2026年8月3日</p>
 

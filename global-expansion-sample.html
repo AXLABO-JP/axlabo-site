@@ -160,9 +160,12 @@ select:focus-visible, textarea:focus-visible, summary:focus-visible,
 [tabindex]:focus-visible{
   outline:2px solid #FFFFFF; outline-offset:0;
   box-shadow:0 0 0 4px #141820, 0 0 0 6px #FFFFFF;}
+.skip-to-main{position:absolute;left:-9999px;top:0;z-index:100;background:#141820;color:#FFFFFF;padding:10px 16px;border-radius:0 0 6px 0;text-decoration:none;font-size:14px;}
+.skip-to-main:focus{left:0;}  /* 2026-09-14: 本文に着くまで17回タブが要った */
 </style>
 </head>
 <body>
+<a class="skip-to-main" href="#main">本文へスキップ</a>
 <div class="sample-banner" role="note">
   SAMPLE — Fictional company, for illustration only
   <small>サンプル — 架空企業による説明用資料です。実在の企業・案件・調査結果ではありません。</small>
@@ -174,7 +177,7 @@ select:focus-visible, textarea:focus-visible, summary:focus-visible,
     <div class="doc-meta">Completed deliverable format demo<br>Illustrative version · updated 27 Aug 2026</div> </div>
 </header>
 
-<main>
+<main id="main" tabindex="-1">
   <section class="hero">
     <div class="wrap">
       <span class="eyebrow">Overseas market entry starter</span><span class="status-pill">SAMPLE / FICTIONAL</span>

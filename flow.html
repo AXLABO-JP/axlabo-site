@@ -102,9 +102,12 @@ select:focus-visible, textarea:focus-visible, summary:focus-visible,
 [tabindex]:focus-visible{
   outline:2px solid #FFFFFF; outline-offset:0;
   box-shadow:0 0 0 4px #141820, 0 0 0 6px #FFFFFF;}
+.skip-to-main{position:absolute;left:-9999px;top:0;z-index:100;background:#141820;color:#FFFFFF;padding:10px 16px;border-radius:0 0 6px 0;text-decoration:none;font-size:14px;}
+.skip-to-main:focus{left:0;}  /* 2026-09-14: 本文に着くまで17回タブが要った */
 </style>
 </head>
 <body>
+<a class="skip-to-main" href="#main">本文へスキップ</a>
 
 <header id="site-header">
   <div class="wrap">
@@ -117,7 +120,7 @@ select:focus-visible, textarea:focus-visible, summary:focus-visible,
       <a class="btn btn-primary btn-sm" href="mailto:info@axlabo.com">お問い合わせ</a> </nav> </div>
 </header>
 
-<main>
+<main id="main" tabindex="-1">
 
 <section class="hero">
   <div class="wrap">
