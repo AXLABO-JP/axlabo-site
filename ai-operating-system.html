@@ -121,7 +121,7 @@
   .kpi .l{font-size:9px;color:#93a3bd;margin-top:2px;}
   .dash-row{display:grid;grid-template-columns:1.1fr .9fr;gap:10px;}
   .dash-panel{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:10px;padding:12px;}
-  .dash-panel h5{font-size:10.5px;font-weight:700;margin:0 0 9px;color:#c3d1ea;}
+  .dash-panel .dash-title{font-size:10.5px;font-weight:700;margin:0 0 9px;color:#c3d1ea;}
   .dash-panel .row{display:flex;justify-content:space-between;align-items:center;font-size:10px;color:#93a3bd;margin-bottom:7px;}
   .dash-panel .row b{color:#e7ecf6;font-weight:600;}
   .agent-bar{height:4px;border-radius:99px;background:rgba(255,255,255,.1);overflow:hidden;width:52px;}
@@ -338,13 +338,13 @@ select:focus-visible, textarea:focus-visible, summary:focus-visible,
             <div class="kpi"><div class="v">78%</div><div class="l">自動化率</div></div> </div>
           <div class="dash-row">
             <div class="dash-panel">
-              <h5>最近のプロジェクト</h5>
+              <div class="dash-title">最近のプロジェクト</div>
               <div class="row"><span>新規AIエージェント開発</span><b>72%</b></div>
               <div class="row"><span>データクレンジング</span><b>60%</b></div>
               <div class="row"><span>営業サポート設計</span><b>92%</b></div>
               <svg class="spark" viewBox="0 0 200 38" preserveAspectRatio="none"><polyline points="0,30 30,24 60,26 90,14 120,18 150,8 180,12 200,6" fill="none" stroke="#3b82f6" stroke-width="2"/></svg> </div>
             <div class="dash-panel">
-              <h5>AIエージェント稼働状況</h5>
+              <div class="dash-title">AIエージェント稼働状況</div>
               <div class="row"><span>コールト</span><div class="agent-bar"><i style="width:88%;background:#10b981;"></i></div></div>
               <div class="row"><span>アーカイブログ</span><div class="agent-bar"><i style="width:74%;background:#06b6d4;"></i></div></div>
               <div class="row"><span>ナレッジ</span><div class="agent-bar"><i style="width:65%;background:#8b5cf6;"></i></div></div>
