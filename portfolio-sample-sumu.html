@@ -372,10 +372,14 @@ select:focus-visible, textarea:focus-visible, summary:focus-visible,
   box-shadow:0 0 0 4px #141820, 0 0 0 6px #FFFFFF;}
 .skip-to-main{position:absolute;left:-9999px;top:0;z-index:100;background:#141820;color:#FFFFFF;padding:10px 16px;border-radius:0 0 6px 0;text-decoration:none;font-size:14px;}
 .skip-to-main:focus{left:0;}  /* 2026-09-14 */
+  /* 2026-09-16: 他3点の制作サンプルには上部に明示があるのに、このページだけ無かった。架空であることを読み始めに伝える。 */
+  .demo-flag{background:var(--ink);color:var(--bg);text-align:center;font-size:12px;padding:8px 16px;line-height:1.6;}
+  .demo-flag b{color:var(--accent);}
 </style>
 </head>
 <body>
 <a class="skip-to-main" href="#main">本文へスキップ</a>
+<div class="demo-flag"><b>制作サンプル</b> — SUMUは架空の屋号です。屋号・料金・対応地域・サポート内容はすべて架空の例であり、実在するサービスではありません。AXLABO Web制作の実装例としてご覧ください。</div>
 
 <nav>
   <div class="wrap">
@@ -445,7 +449,7 @@ select:focus-visible, textarea:focus-visible, summary:focus-visible,
 <section class="plans" id="plans">
   <div class="wrap">
     <div class="label">PLANS</div>
-    <h2>プラン・料金</h2>
+    <h2>プラン・料金</h2><p style="text-align:center;font-size:12px;opacity:.75;margin:4px 0 0">※ 金額・内容はすべて架空の例です。実在するサービスの料金ではありません。</p>
     <div class="plan-grid">
       <div class="plan">
         <h3>単発相談</h3>
