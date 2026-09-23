@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>【サンプル】掲載ページの完成イメージ ｜ AXLABO</title>
+<meta name="robots" content="noindex, nofollow">
+<meta name="description" content="AXLABOが制作する日本語掲載ページの完成イメージです。架空の店舗によるサンプルであり、実在の店舗・取引先ではありません。">
+<style>
+  /* 既存ポータル（portal/assets/portal.css）のトークンを再利用。新しい設計は作らない。 */
+  :root{
+    --bg:#141110; --alt:#0F0D0C; --card:#211B17; --ink:#F7F1E8; --ink-soft:#C9BCA9;
+    --ink-faint:#9A8D7B; --gold:#D98A3D; --gold2:#B96F28; --teal:#E8B45A; --line:#3A2F24;
+    --warn:#E0B355; --warn-tint:#3A2F16;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--ink);
+       font-family:-apple-system,BlinkMacSystemFont,"Hiragino Sans","Noto Sans JP",sans-serif;
+       line-height:1.8;-webkit-font-smoothing:antialiased}
+  .wrap{max-width:860px;margin:0 auto;padding:0 20px}
+  a{color:var(--teal)}
+  /* 既存ポータル（portal.css, focus-2026-09-13）と同じ二色リングを使う。
+     単色だと金色のボタン上で枠と地の差が 2.44 しかなく見えなかった（実測）。
+     明暗どちらの地でも片方が見える。 */
+  a:focus-visible,button:focus-visible,[tabindex]:focus-visible{
+    outline:2px solid #FFFFFF; outline-offset:0;
+    box-shadow:0 0 0 4px #141820, 0 0 0 6px #FFFFFF;}
+
+  /* サンプルであることを最上部に固定。スクロールしても消えない */
+  .sample-banner{position:sticky;top:0;z-index:50;background:var(--warn-tint);
+    color:var(--warn);border-bottom:1px solid var(--warn);
+    padding:10px 16px;font-size:.86rem;font-weight:700;text-align:center;line-height:1.6}
+  .sample-banner span{font-weight:400;color:var(--ink-soft);display:block;font-size:.8rem;margin-top:2px}
+  /* 受け取る相手は海外の店舗オーナーで、日本語を読めない。
+     否定表示が日本語だけでは伝わらない（2026-09-23 Reviewer 指摘）。英語を先に置く。 */
+  .sample-banner .en{color:var(--warn);font-weight:600;font-size:.84rem;margin:0 0 6px;display:block}
+  .sample-banner .en b{color:var(--warn);font-weight:700}
+  .note .en{display:block;color:var(--ink-soft);margin:0 0 14px;
+    padding-bottom:12px;border-bottom:1px solid var(--line)}
+  .note .en strong{color:var(--warn)}
+
+  header.hero{background:linear-gradient(180deg,var(--alt),var(--bg));
+    border-bottom:1px solid var(--line);padding:44px 0 32px}
+  .eyebrow{color:var(--gold);font-size:.76rem;letter-spacing:.14em;text-transform:uppercase;margin:0 0 8px}
+  h1{margin:0 0 10px;font-size:clamp(1.6rem,4.6vw,2.3rem);line-height:1.35;text-wrap:balance}
+  .sub{color:var(--ink-soft);margin:0;font-size:1rem}
+  .meta{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px}
+  .tag{background:var(--card);border:1px solid var(--line);color:var(--ink-soft);
+    border-radius:999px;padding:4px 12px;font-size:.8rem}
+
+  /* 画像枠。写真は店舗から受け取るため、サンプルでは枠だけを示す */
+  .imgarea{background:var(--card);border:1px dashed var(--line);border-radius:12px;
+    aspect-ratio:3/2;display:flex;align-items:center;justify-content:center;
+    color:var(--ink-faint);font-size:.88rem;text-align:center;padding:20px;margin:26px 0}
+
+  section{padding:30px 0;border-bottom:1px solid var(--line)}
+  h2{margin:0 0 14px;font-size:1.12rem;color:var(--gold)}
+  p{margin:0 0 14px}
+  ul.hl{list-style:none;padding:0;margin:0;display:grid;gap:12px}
+  ul.hl li{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:14px 16px}
+  ul.hl b{display:block;color:var(--ink);margin-bottom:3px;font-size:.95rem}
+  ul.hl span{color:var(--ink-soft);font-size:.9rem}
+
+  table{width:100%;border-collapse:collapse;font-size:.93rem}
+  th,td{padding:10px 8px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}
+  th{color:var(--ink-soft);font-weight:600;width:34%;font-size:.88rem}
+
+  .cta{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:20px;margin:6px 0 0}
+  .cta p{margin:0 0 12px;color:var(--ink-soft);font-size:.92rem}
+  .btn{display:inline-block;background:var(--gold);color:#1A1209;text-decoration:none;
+    font-weight:700;border-radius:8px;padding:11px 24px}
+  .btn:hover{background:var(--gold2)}
+
+  footer{padding:28px 0 56px;color:var(--ink-faint);font-size:.84rem}
+  .note{background:var(--warn-tint);border:1px solid var(--warn);border-radius:10px;
+    padding:14px 16px;color:var(--ink-soft);font-size:.87rem;margin:22px 0 0}
+  .note b{color:var(--warn)}
+  @media (max-width:640px){
+    th{width:42%;font-size:.84rem}
+    section{padding:24px 0}
+    .tag,.btn{padding-block:8px}
+  }
+  @media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+</style>
+</head>
+<body>
+
+<div class="sample-banner" role="note">
+  <span lang="en" class="en">SAMPLE — this is a mock-up of the Japanese page we would write for your venue.
+  <b>The venue shown is invented. It is not a real business, not an AXLABO client, and not a partner.
+  AXLABO has no published listings yet.</b></span>
+  これは AXLABO が制作する掲載ページの<strong>サンプル（完成イメージ）</strong>です
+  <span>架空の店舗による例であり、実在の店舗・AXLABOの顧客・提携先ではありません。掲載実績を示すものでもありません。</span>
+</div>
+
+<header class="hero">
+  <div class="wrap">
+    <p class="eyebrow">SAMPLE ／ 掲載ページの完成イメージ</p>
+    <h1>The Lantern Room<span style="color:var(--ink-faint);font-size:.55em;display:block;margin-top:6px" lang="en">an invented venue ／ 架空の店舗名</span></h1>
+    <p class="sub">カクテルバー ／ サンプル市 ダウンタウン</p>
+    <div class="meta">
+      <span class="tag">カクテルバー</span>
+      <span class="tag">予約推奨</span>
+      <span class="tag">ドレスコードあり</span>
+      <span class="tag">英語・日本語の案内</span>
+    </div>
+    <div class="imgarea">
+      店舗からご提供いただいた写真が入ります<br>
+      （外観・店内・代表的なメニューなど3〜6枚）
+    </div>
+  </div>
+</header>
+
+<main>
+<section>
+  <div class="wrap">
+    <h2>お店について</h2>
+    <p>
+      旧倉庫を改装した、席数30ほどの小さなカクテルバーです。カウンター中心の造りで、
+      バーテンダーと話しながら1杯ずつ選ぶスタイル。定番のクラシックカクテルに加え、
+      地元の果物を使ったオリジナルを季節ごとに用意しています。
+    </p>
+    <p>
+      音量は会話ができる程度。ひとりでも入りやすく、旅行中の1杯にも、
+      食後の落ち着いた時間にも向きます。
+    </p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>日本から訪れる方へ</h2>
+    <ul class="hl">
+      <li><b>予算の目安</b><span>カクテル1杯 18〜24 ／ チャージ 5（通貨・金額は店舗の実額を掲載します）</span></li>
+      <li><b>ドレスコード</b><span>スマートカジュアル。短パン・ビーチサンダルはお断りしています</span></li>
+      <li><b>予約</b><span>金・土は予約をおすすめします。平日は当日でも入れることが多いです</span></li>
+      <li><b>言語</b><span>スタッフは英語で対応します。日本語のメニューをご用意しています</span></li>
+      <li><b>支払い</b><span>主要クレジットカード可。現地通貨の現金も使えます</span></li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>基本情報</h2>
+    <table>
+      <tbody>
+        <tr><th>店名</th><td>The Lantern Room（架空）</td></tr>
+        <tr><th>種別</th><td>カクテルバー</td></tr>
+        <tr><th>営業時間</th><td>18:00〜翌1:00（金・土は翌2:00）</td></tr>
+        <tr><th>定休日</th><td>日曜</td></tr>
+        <tr><th>席数</th><td>約30席（カウンター12席）</td></tr>
+        <tr><th>年齢制限</th><td>21歳以上</td></tr>
+        <tr><th>住所</th><td>12 Sample Street, Downtown, サンプル市</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>場所</h2>
+    <div class="imgarea" style="aspect-ratio:16/9">
+      地図が入ります（店舗の所在地・最寄りの目印）
+    </div>
+    <p style="color:var(--ink-soft);font-size:.92rem;margin:0">
+      最寄りの目印・行き方を、店舗からうかがった内容で日本語にして掲載します。
+    </p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>お問い合わせ・ご予約</h2>
+    <div class="cta">
+      <p>
+        <strong>ご予約・お問い合わせは、店舗へ直接お願いします。</strong>
+        AXLABOは予約の受付・仲介を行いません。
+      </p>
+      <a class="btn" href="#" onclick="return false;">店舗の公式サイトへ（サンプル）</a>
+      <p style="margin:12px 0 0">
+        掲載ページには、店舗の公式サイト・予約ページ・電話番号・SNSなど、
+        <strong>店舗ご自身の連絡先</strong>を掲載します。
+      </p>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="note">
+      <b lang="en">About this page</b><br>
+      <span lang="en" class="en">This is a <strong>sample</strong> of the Japanese listing page AXLABO produces.
+      The venue name, address, opening hours, prices and all other details on this page are
+      <strong>invented</strong>. They do not describe a real business.
+      <strong>This page does not represent an AXLABO client, a partner, or a published listing.</strong>
+      Your actual page would be written from details you send us, and
+      <strong>you would approve the text before anything goes live.</strong></span>
+      <b>このページについて</b><br>
+      AXLABO が制作する日本語掲載ページの<strong>サンプル（完成イメージ）</strong>です。
+      掲載されている店名・住所・営業時間・金額・内容は<strong>すべて架空</strong>で、
+      実在の店舗を表すものではありません。
+      <strong>AXLABOの顧客・提携先を示すものでも、掲載実績を示すものでもありません。</strong><br><br>
+      実際の掲載ページは、店舗からご提供いただいた内容をもとに制作し、
+      <strong>公開前に必ず店舗ご自身にご確認いただきます。</strong>
+    </div>
+    <p style="margin-top:22px">AXLABO ／ info@axlabo.com</p>
+  </div>
+</footer>
+
+</body>
+</html>
