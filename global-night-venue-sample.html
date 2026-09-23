@@ -7,7 +7,6 @@
 <meta name="robots" content="noindex, nofollow">
 <meta name="description" content="AXLABOが制作する日本語掲載ページの完成イメージです。架空の店舗によるサンプルであり、実在の店舗・取引先ではありません。">
 <style>
-  /* 既存ポータル（portal/assets/portal.css）のトークンを再利用。新しい設計は作らない。 */
   :root{
     --bg:#141110; --alt:#0F0D0C; --card:#211B17; --ink:#F7F1E8; --ink-soft:#C9BCA9;
     --ink-faint:#9A8D7B; --gold:#D98A3D; --gold2:#B96F28; --teal:#E8B45A; --line:#3A2F24;
@@ -17,68 +16,59 @@
   body{margin:0;background:var(--bg);color:var(--ink);
        font-family:-apple-system,BlinkMacSystemFont,"Hiragino Sans","Noto Sans JP",sans-serif;
        line-height:1.8;-webkit-font-smoothing:antialiased}
-  .wrap{max-width:860px;margin:0 auto;padding:0 20px}
+  .wrap{max-width:900px;margin:0 auto;padding:0 20px}
   a{color:var(--teal)}
-  /* 既存ポータル（portal.css, focus-2026-09-13）と同じ二色リングを使う。
-     単色だと金色のボタン上で枠と地の差が 2.44 しかなく見えなかった（実測）。
-     明暗どちらの地でも片方が見える。 */
   a:focus-visible,button:focus-visible,[tabindex]:focus-visible{
-    outline:2px solid #FFFFFF; outline-offset:0;
-    box-shadow:0 0 0 4px #141820, 0 0 0 6px #FFFFFF;}
-
-  /* サンプルであることを最上部に固定。スクロールしても消えない */
-  .sample-banner{position:sticky;top:0;z-index:50;background:var(--warn-tint);
-    color:var(--warn);border-bottom:1px solid var(--warn);
-    padding:10px 16px;font-size:.86rem;font-weight:700;text-align:center;line-height:1.6}
-  .sample-banner span{font-weight:400;color:var(--ink-soft);display:block;font-size:.8rem;margin-top:2px}
-  /* 受け取る相手は海外の店舗オーナーで、日本語を読めない。
-     否定表示が日本語だけでは伝わらない（2026-09-23 Reviewer 指摘）。英語を先に置く。 */
+    outline:2px solid #FFFFFF;outline-offset:0;box-shadow:0 0 0 4px #141820,0 0 0 6px #FFFFFF}
+  .sample-banner{position:sticky;top:0;z-index:50;background:var(--warn-tint);color:var(--warn);
+    border-bottom:1px solid var(--warn);padding:10px 16px;font-size:.86rem;font-weight:700;
+    text-align:center;line-height:1.6}
   .sample-banner .en{color:var(--warn);font-weight:600;font-size:.84rem;margin:0 0 6px;display:block}
   .sample-banner .en b{color:var(--warn);font-weight:700}
-  .note .en{display:block;color:var(--ink-soft);margin:0 0 14px;
-    padding-bottom:12px;border-bottom:1px solid var(--line)}
-  .note .en strong{color:var(--warn)}
-
-  header.hero{background:linear-gradient(180deg,var(--alt),var(--bg));
-    border-bottom:1px solid var(--line);padding:44px 0 32px}
+  .sample-banner .ja{font-weight:400;color:var(--ink-soft);display:block;font-size:.8rem;margin-top:2px}
+  header.hero{background:linear-gradient(180deg,var(--alt),var(--bg));border-bottom:1px solid var(--line);
+    padding:40px 0 0}
   .eyebrow{color:var(--gold);font-size:.76rem;letter-spacing:.14em;text-transform:uppercase;margin:0 0 8px}
-  h1{margin:0 0 10px;font-size:clamp(1.6rem,4.6vw,2.3rem);line-height:1.35;text-wrap:balance}
-  .sub{color:var(--ink-soft);margin:0;font-size:1rem}
-  .meta{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px}
-  .tag{background:var(--card);border:1px solid var(--line);color:var(--ink-soft);
-    border-radius:999px;padding:4px 12px;font-size:.8rem}
-
-  /* 画像枠。写真は店舗から受け取るため、サンプルでは枠だけを示す */
-  .imgarea{background:var(--card);border:1px dashed var(--line);border-radius:12px;
-    aspect-ratio:3/2;display:flex;align-items:center;justify-content:center;
-    color:var(--ink-faint);font-size:.88rem;text-align:center;padding:20px;margin:26px 0}
-
-  section{padding:30px 0;border-bottom:1px solid var(--line)}
-  h2{margin:0 0 14px;font-size:1.12rem;color:var(--gold)}
+  h1{margin:0 0 8px;font-size:clamp(1.7rem,5vw,2.4rem);line-height:1.3;text-wrap:balance}
+  h1 .fic{color:var(--ink-faint);font-size:.46em;display:block;margin-top:8px;font-weight:400}
+  .lead{color:var(--ink-soft);margin:0 0 20px;font-size:1.02rem}
+  .facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:1px;
+    background:var(--line);border:1px solid var(--line);border-radius:10px;overflow:hidden;margin:0 0 26px}
+  .facts div{background:var(--card);padding:13px 15px}
+  .facts span{display:block;color:var(--ink-faint);font-size:.74rem;letter-spacing:.06em;margin-bottom:3px}
+  .facts strong{font-size:.95rem;font-weight:600}
+  figure{margin:0}
+  .shot{border-radius:12px;overflow:hidden;border:1px solid var(--line);background:var(--card);line-height:0}
+  .shot svg{width:100%;height:auto;display:block}
+  figcaption{line-height:1.6;color:var(--ink-faint);font-size:.78rem;padding:9px 12px;background:var(--card);
+    border-top:1px solid var(--line)}
+  figcaption b{color:var(--warn);font-weight:600}
+  .hero-shot{margin:0 0 -30px}
+  .grid3{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px;margin:20px 0 0}
+  section{padding:34px 0;border-bottom:1px solid var(--line)}
+  h2{margin:0 0 14px;font-size:1.14rem;color:var(--gold)}
   p{margin:0 0 14px}
   ul.hl{list-style:none;padding:0;margin:0;display:grid;gap:12px}
   ul.hl li{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:14px 16px}
   ul.hl b{display:block;color:var(--ink);margin-bottom:3px;font-size:.95rem}
   ul.hl span{color:var(--ink-soft);font-size:.9rem}
-
   table{width:100%;border-collapse:collapse;font-size:.93rem}
-  th,td{padding:10px 8px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}
-  th{color:var(--ink-soft);font-weight:600;width:34%;font-size:.88rem}
-
-  .cta{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:20px;margin:6px 0 0}
+  th,td{padding:11px 8px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}
+  th{color:var(--ink-soft);font-weight:600;width:32%;font-size:.88rem}
+  .cta{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:20px}
   .cta p{margin:0 0 12px;color:var(--ink-soft);font-size:.92rem}
-  .btn{display:inline-block;background:var(--gold);color:#1A1209;text-decoration:none;
-    font-weight:700;border-radius:8px;padding:11px 24px}
+  .btn{display:inline-block;background:var(--gold);color:#1A1209;text-decoration:none;font-weight:700;
+    border-radius:8px;padding:11px 24px}
   .btn:hover{background:var(--gold2)}
-
-  footer{padding:28px 0 56px;color:var(--ink-faint);font-size:.84rem}
-  .note{background:var(--warn-tint);border:1px solid var(--warn);border-radius:10px;
-    padding:14px 16px;color:var(--ink-soft);font-size:.87rem;margin:22px 0 0}
+  footer{padding:30px 0 60px;color:var(--ink-faint);font-size:.84rem}
+  .note{background:var(--warn-tint);border:1px solid var(--warn);border-radius:10px;padding:15px 17px;
+    color:var(--ink-soft);font-size:.87rem;margin:22px 0 0}
   .note b{color:var(--warn)}
+  .note .en{display:block;color:var(--ink-soft);margin:0 0 14px;padding-bottom:12px;border-bottom:1px solid var(--line)}
+  .note .en strong{color:var(--warn)}
   @media (max-width:640px){
-    th{width:42%;font-size:.84rem}
-    section{padding:24px 0}
-    .tag,.btn{padding-block:8px}
+    th{width:40%;font-size:.84rem} section{padding:26px 0} .btn{padding-block:12px}
+    .hero-shot{margin-bottom:-18px}
   }
   @media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
 </style>
@@ -87,27 +77,40 @@
 
 <div class="sample-banner" role="note">
   <span lang="en" class="en">SAMPLE — this is a mock-up of the Japanese page we would write for your venue.
-  <b>The venue shown is invented. It is not a real business, not an AXLABO client, and not a partner.
-  AXLABO has no published listings yet.</b></span>
-  これは AXLABO が制作する掲載ページの<strong>サンプル（完成イメージ）</strong>です
-  <span>架空の店舗による例であり、実在の店舗・AXLABOの顧客・提携先ではありません。掲載実績を示すものでもありません。</span>
+  <b>The venue is fictional. All images are illustrations, not photographs. This is not a real business,
+  not an AXLABO client, and not a published listing.</b></span>
+  <span class="ja">これは AXLABO が制作する掲載ページの<strong>サンプル（完成イメージ）</strong>です。
+  架空の店舗による例で、<strong>画像はすべて図版であり写真ではありません。</strong>
+  実在の店舗・AXLABOの顧客・提携先ではなく、掲載実績を示すものでもありません。</span>
 </div>
 
 <header class="hero">
   <div class="wrap">
     <p class="eyebrow">SAMPLE ／ 掲載ページの完成イメージ</p>
-    <h1>The Lantern Room<span style="color:var(--ink-faint);font-size:.55em;display:block;margin-top:6px" lang="en">an invented venue ／ 架空の店舗名</span></h1>
-    <p class="sub">カクテルバー ／ サンプル市 ダウンタウン</p>
-    <div class="meta">
-      <span class="tag">カクテルバー</span>
-      <span class="tag">予約推奨</span>
-      <span class="tag">ドレスコードあり</span>
-      <span class="tag">英語・日本語の案内</span>
+    <h1>The Lantern Room<span class="fic" lang="en">a fictional venue ／ 架空の店舗</span></h1>
+    <p class="lead">旧倉庫を改装した、席数30ほどの小さなカクテルバー。カウンター中心で、1杯ずつ選べます。</p>
+    <div class="facts">
+      <div><span>エリア</span><strong>サンプル市 ダウンタウン</strong></div>
+      <div><span>種別</span><strong>カクテルバー</strong></div>
+      <div><span>雰囲気</span><strong>会話ができる音量</strong></div>
+      <div><span>予約</span><strong>金・土は推奨</strong></div>
     </div>
-    <div class="imgarea">
-      店舗からご提供いただいた写真が入ります<br>
-      （外観・店内・代表的なメニューなど3〜6枚）
-    </div>
+    <figure class="hero-shot">
+      <div class="shot"><svg viewBox="0 0 900 600" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="店内のイメージ図。カウンター席とボトル棚のある小さなバー。">
+<defs><linearGradient id="g1" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2A211A"/><stop offset="1" stop-color="#15110C"/></linearGradient>
+<linearGradient id="warm" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#E8B45A" stop-opacity=".9"/><stop offset="1" stop-color="#D98A3D" stop-opacity=".25"/></linearGradient></defs>
+<rect width="900" height="600" fill="url(#g1)"/>
+<rect x="60" y="80" width="780" height="230" rx="6" fill="#211B17"/>
+<g fill="#3A2F24"><rect x="80" y="100" width="46" height="120" rx="3"/><rect x="154" y="108" width="46" height="106" rx="3"/><rect x="228" y="116" width="46" height="92" rx="3"/><rect x="302" y="100" width="46" height="120" rx="3"/><rect x="376" y="108" width="46" height="106" rx="3"/><rect x="450" y="116" width="46" height="92" rx="3"/><rect x="524" y="100" width="46" height="120" rx="3"/><rect x="598" y="108" width="46" height="106" rx="3"/><rect x="672" y="116" width="46" height="92" rx="3"/><rect x="746" y="100" width="46" height="120" rx="3"/></g>
+<g fill="url(#warm)" opacity=".75"><rect x="86" y="110" width="34" height="100" rx="2"/><rect x="160" y="118" width="34" height="86" rx="2"/><rect x="234" y="126" width="34" height="72" rx="2"/><rect x="308" y="110" width="34" height="100" rx="2"/><rect x="382" y="118" width="34" height="86" rx="2"/><rect x="456" y="126" width="34" height="72" rx="2"/><rect x="530" y="110" width="34" height="100" rx="2"/><rect x="604" y="118" width="34" height="86" rx="2"/><rect x="678" y="126" width="34" height="72" rx="2"/><rect x="752" y="110" width="34" height="100" rx="2"/></g>
+<rect x="0" y="330" width="900" height="34" fill="#D98A3D" opacity=".55"/>
+<rect x="0" y="364" width="900" height="120" fill="#1B1611"/>
+<g fill="#2A211A"><rect x="70" y="484" width="64" height="116" rx="6"/><rect x="175" y="484" width="64" height="116" rx="6"/><rect x="280" y="484" width="64" height="116" rx="6"/><rect x="385" y="484" width="64" height="116" rx="6"/><rect x="490" y="484" width="64" height="116" rx="6"/><rect x="595" y="484" width="64" height="116" rx="6"/><rect x="700" y="484" width="64" height="116" rx="6"/><rect x="805" y="484" width="64" height="116" rx="6"/></g>
+<g fill="#E8B45A" opacity=".85"><circle cx="120" cy="52" r="9"/><rect x="118" y="0" width="4" height="44"/><circle cx="270" cy="52" r="9"/><rect x="268" y="0" width="4" height="44"/><circle cx="420" cy="52" r="9"/><rect x="418" y="0" width="4" height="44"/><circle cx="570" cy="52" r="9"/><rect x="568" y="0" width="4" height="44"/><circle cx="720" cy="52" r="9"/><rect x="718" y="0" width="4" height="44"/><circle cx="870" cy="52" r="9"/><rect x="868" y="0" width="4" height="44"/></g>
+</svg></div>
+      <figcaption><b lang="en">Illustration — not a photograph.</b>
+        実際の掲載ページには、<strong>店舗からご提供いただいた写真</strong>が入ります。</figcaption>
+    </figure>
   </div>
 </header>
 
@@ -115,15 +118,47 @@
 <section>
   <div class="wrap">
     <h2>お店について</h2>
-    <p>
-      旧倉庫を改装した、席数30ほどの小さなカクテルバーです。カウンター中心の造りで、
-      バーテンダーと話しながら1杯ずつ選ぶスタイル。定番のクラシックカクテルに加え、
-      地元の果物を使ったオリジナルを季節ごとに用意しています。
-    </p>
-    <p>
-      音量は会話ができる程度。ひとりでも入りやすく、旅行中の1杯にも、
-      食後の落ち着いた時間にも向きます。
-    </p>
+    <p>旧倉庫を改装した、席数30ほどの小さなカクテルバーです。カウンター中心の造りで、バーテンダーと話しながら1杯ずつ選ぶスタイル。定番のクラシックカクテルに加え、地元の果物を使ったオリジナルを季節ごとに用意しています。</p>
+    <p>音量は会話ができる程度。ひとりでも入りやすく、旅行中の1杯にも、食後の落ち着いた時間にも向きます。</p>
+    <div class="grid3">
+      <figure><div class="shot"><svg viewBox="0 0 900 600" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="外観のイメージ図。通りに面した小さな入口と看板。">
+<defs><linearGradient id="sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#1A2230"/><stop offset="1" stop-color="#15110C"/></linearGradient></defs>
+<rect width="900" height="600" fill="url(#sky)"/>
+<g fill="#F7F1E8" opacity=".25"><circle cx="40" cy="30" r="1.6"/><circle cx="107" cy="67" r="1.6"/><circle cx="174" cy="104" r="1.6"/><circle cx="241" cy="51" r="1.6"/><circle cx="308" cy="88" r="1.6"/><circle cx="375" cy="35" r="1.6"/><circle cx="442" cy="72" r="1.6"/><circle cx="509" cy="109" r="1.6"/><circle cx="576" cy="56" r="1.6"/><circle cx="643" cy="93" r="1.6"/><circle cx="710" cy="40" r="1.6"/><circle cx="777" cy="77" r="1.6"/><circle cx="844" cy="114" r="1.6"/></g>
+<rect x="120" y="150" width="660" height="450" fill="#231D17"/>
+<rect x="160" y="200" width="180" height="150" rx="4" fill="#2A211A"/><rect x="172" y="212" width="156" height="126" rx="3" fill="#E8B45A" opacity=".35"/>
+<rect x="560" y="200" width="180" height="150" rx="4" fill="#2A211A"/><rect x="572" y="212" width="156" height="126" rx="3" fill="#E8B45A" opacity=".35"/>
+<rect x="380" y="330" width="140" height="270" rx="4" fill="#15110C"/><rect x="392" y="346" width="116" height="240" rx="3" fill="#D98A3D" opacity=".28"/>
+<rect x="330" y="96" width="240" height="54" rx="6" fill="#211B17" stroke="#D98A3D" stroke-width="2"/>
+<g fill="#D98A3D" opacity=".9"><circle cx="366" cy="123" r="5"/><circle cx="390" cy="123" r="5"/><circle cx="414" cy="123" r="5"/><circle cx="438" cy="123" r="5"/><circle cx="462" cy="123" r="5"/><circle cx="486" cy="123" r="5"/><circle cx="510" cy="123" r="5"/><circle cx="534" cy="123" r="5"/></g>
+<rect x="0" y="580" width="900" height="20" fill="#0F0D0C"/>
+</svg></div>
+        <figcaption><b lang="en">Illustration</b> ／ 外観</figcaption></figure>
+      <figure><div class="shot"><svg viewBox="0 0 900 600" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="提供されるドリンクのイメージ図。カクテルグラス3種。">
+<rect width="900" height="600" fill="#1B1611"/>
+<rect x="0" y="470" width="900" height="130" fill="#241D17"/>
+<g stroke="#E8B45A" stroke-width="3" fill="none">
+<path d="M250 200 L350 200 L305 300 L305 430 M265 430 L345 430"/><path d="M430 210 a55 55 0 0 0 110 0 M485 265 L485 430 M445 430 L525 430"/><path d="M620 200 L700 200 L700 360 a40 40 0 0 1-80 0 Z M660 360 L660 430 M625 430 L695 430"/></g>
+<path d="M258 208 L342 208 L305 290 Z" fill="#D98A3D" opacity=".75"/>
+<path d="M434 216 a51 51 0 0 0 102 0 Z" fill="#E8B45A" opacity=".6"/>
+<path d="M622 300 L698 300 L698 358 a38 38 0 0 1-76 0 Z" fill="#B96F28" opacity=".7"/>
+<circle cx="300" cy="180" r="7" fill="#8EC37F" opacity=".8"/><circle cx="486" cy="196" r="7" fill="#E08276" opacity=".8"/>
+</svg></div>
+        <figcaption><b lang="en">Illustration</b> ／ ドリンク</figcaption></figure>
+      <figure><div class="shot"><svg viewBox="0 0 900 600" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="店内のイメージ図。カウンター席とボトル棚のある小さなバー。">
+<defs><linearGradient id="g1b" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2A211A"/><stop offset="1" stop-color="#15110C"/></linearGradient>
+<linearGradient id="warmb" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#C9A15A" stop-opacity=".9"/><stop offset="1" stop-color="#B9793D" stop-opacity=".25"/></linearGradient></defs>
+<rect width="900" height="600" fill="url(#g1b)"/>
+<rect x="60" y="80" width="780" height="230" rx="6" fill="#211B17"/>
+<g fill="#3A2F24"><rect x="80" y="100" width="46" height="120" rx="3"/><rect x="154" y="108" width="46" height="106" rx="3"/><rect x="228" y="116" width="46" height="92" rx="3"/><rect x="302" y="100" width="46" height="120" rx="3"/><rect x="376" y="108" width="46" height="106" rx="3"/><rect x="450" y="116" width="46" height="92" rx="3"/><rect x="524" y="100" width="46" height="120" rx="3"/><rect x="598" y="108" width="46" height="106" rx="3"/><rect x="672" y="116" width="46" height="92" rx="3"/><rect x="746" y="100" width="46" height="120" rx="3"/></g>
+<g fill="url(#warmb)" opacity=".75"><rect x="86" y="110" width="34" height="100" rx="2"/><rect x="160" y="118" width="34" height="86" rx="2"/><rect x="234" y="126" width="34" height="72" rx="2"/><rect x="308" y="110" width="34" height="100" rx="2"/><rect x="382" y="118" width="34" height="86" rx="2"/><rect x="456" y="126" width="34" height="72" rx="2"/><rect x="530" y="110" width="34" height="100" rx="2"/><rect x="604" y="118" width="34" height="86" rx="2"/><rect x="678" y="126" width="34" height="72" rx="2"/><rect x="752" y="110" width="34" height="100" rx="2"/></g>
+<rect x="0" y="330" width="900" height="34" fill="#B9793D" opacity=".55"/>
+<rect x="0" y="364" width="900" height="120" fill="#1B1611"/>
+<g fill="#2A211A"><rect x="70" y="484" width="64" height="116" rx="6"/><rect x="175" y="484" width="64" height="116" rx="6"/><rect x="280" y="484" width="64" height="116" rx="6"/><rect x="385" y="484" width="64" height="116" rx="6"/><rect x="490" y="484" width="64" height="116" rx="6"/><rect x="595" y="484" width="64" height="116" rx="6"/><rect x="700" y="484" width="64" height="116" rx="6"/><rect x="805" y="484" width="64" height="116" rx="6"/></g>
+<g fill="#C9A15A" opacity=".85"><circle cx="120" cy="52" r="9"/><rect x="118" y="0" width="4" height="44"/><circle cx="270" cy="52" r="9"/><rect x="268" y="0" width="4" height="44"/><circle cx="420" cy="52" r="9"/><rect x="418" y="0" width="4" height="44"/><circle cx="570" cy="52" r="9"/><rect x="568" y="0" width="4" height="44"/><circle cx="720" cy="52" r="9"/><rect x="718" y="0" width="4" height="44"/><circle cx="870" cy="52" r="9"/><rect x="868" y="0" width="4" height="44"/></g>
+</svg></div>
+        <figcaption><b lang="en">Illustration</b> ／ カウンター</figcaption></figure>
+    </div>
   </div>
 </section>
 
@@ -136,6 +171,7 @@
       <li><b>予約</b><span>金・土は予約をおすすめします。平日は当日でも入れることが多いです</span></li>
       <li><b>言語</b><span>スタッフは英語で対応します。日本語のメニューをご用意しています</span></li>
       <li><b>支払い</b><span>主要クレジットカード可。現地通貨の現金も使えます</span></li>
+      <li><b>入店条件</b><span>21歳以上。年齢確認の身分証をお持ちください</span></li>
     </ul>
   </div>
 </section>
@@ -147,11 +183,11 @@
       <tbody>
         <tr><th>店名</th><td>The Lantern Room（架空）</td></tr>
         <tr><th>種別</th><td>カクテルバー</td></tr>
-        <tr><th>営業時間</th><td>18:00〜翌1:00（金・土は翌2:00）</td></tr>
-        <tr><th>定休日</th><td>日曜</td></tr>
+        <tr><th>営業時間</th><td>火〜木 18:00〜24:00 ／ 金・土 18:00〜翌2:00</td></tr>
+        <tr><th>定休日</th><td>日曜・月曜</td></tr>
         <tr><th>席数</th><td>約30席（カウンター12席）</td></tr>
         <tr><th>年齢制限</th><td>21歳以上</td></tr>
-        <tr><th>住所</th><td>12 Sample Street, Downtown, サンプル市</td></tr>
+        <tr><th>エリア</th><td>サンプル市 ダウンタウン（架空の所在地です）</td></tr>
       </tbody>
     </table>
   </div>
@@ -160,12 +196,18 @@
 <section>
   <div class="wrap">
     <h2>場所</h2>
-    <div class="imgarea" style="aspect-ratio:16/9">
-      地図が入ります（店舗の所在地・最寄りの目印）
-    </div>
-    <p style="color:var(--ink-soft);font-size:.92rem;margin:0">
-      最寄りの目印・行き方を、店舗からうかがった内容で日本語にして掲載します。
-    </p>
+    <figure>
+      <div class="shot"><svg viewBox="0 0 900 480" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="地図のイメージ図。実在の場所を示すものではありません。">
+<rect width="900" height="480" fill="#1B1611"/>
+<g stroke="#3A2F24" stroke-width="14" fill="none"><path d="M0 150 H900"/><path d="M0 330 H900"/><path d="M240 0 V480"/><path d="M620 0 V480"/></g>
+<g stroke="#2A211A" stroke-width="6" fill="none"><path d="M0 240 H900"/><path d="M430 0 V480"/><path d="M790 0 V480"/></g>
+<g fill="#241D17"><rect x="20" y="20" width="150" height="90" rx="4"/><rect x="215" y="20" width="150" height="90" rx="4"/><rect x="410" y="20" width="150" height="90" rx="4"/><rect x="605" y="20" width="150" height="90" rx="4"/><rect x="20" y="200" width="150" height="90" rx="4"/><rect x="215" y="200" width="150" height="90" rx="4"/><rect x="410" y="200" width="150" height="90" rx="4"/><rect x="605" y="200" width="150" height="90" rx="4"/></g>
+<circle cx="430" cy="240" r="26" fill="#D98A3D" opacity=".25"/><circle cx="430" cy="240" r="11" fill="#D98A3D"/>
+<text x="430" y="292" text-anchor="middle" fill="#C9BCA9" font-family="sans-serif" font-size="19">お店の場所</text>
+</svg></div>
+      <figcaption><b lang="en">Illustration — not a real location.</b>
+        実際の掲載ページには、<strong>店舗の所在地と最寄りの目印</strong>を日本語で掲載します。</figcaption>
+    </figure>
   </div>
 </section>
 
@@ -173,15 +215,11 @@
   <div class="wrap">
     <h2>お問い合わせ・ご予約</h2>
     <div class="cta">
-      <p>
-        <strong>ご予約・お問い合わせは、店舗へ直接お願いします。</strong>
-        AXLABOは予約の受付・仲介を行いません。
-      </p>
+      <p><strong>ご予約・お問い合わせは、店舗へ直接お願いします。</strong>
+        AXLABOは予約の受付・仲介を行いません。</p>
       <a class="btn" href="#" onclick="return false;">店舗の公式サイトへ（サンプル）</a>
-      <p style="margin:12px 0 0">
-        掲載ページには、店舗の公式サイト・予約ページ・電話番号・SNSなど、
-        <strong>店舗ご自身の連絡先</strong>を掲載します。
-      </p>
+      <p style="margin:12px 0 0">掲載ページには、店舗の公式サイト・予約ページ・電話番号・SNSなど、
+        <strong>店舗ご自身の連絡先</strong>を掲載します。</p>
     </div>
   </div>
 </section>
@@ -192,17 +230,17 @@
     <div class="note">
       <b lang="en">About this page</b><br>
       <span lang="en" class="en">This is a <strong>sample</strong> of the Japanese listing page AXLABO produces.
-      The venue name, address, opening hours, prices and all other details on this page are
-      <strong>invented</strong>. They do not describe a real business.
-      <strong>This page does not represent an AXLABO client, a partner, or a published listing.</strong>
-      Your actual page would be written from details you send us, and
+      The venue name, area, opening hours, prices and every other detail on this page are
+      <strong>fictional</strong>. All images are <strong>illustrations, not photographs</strong>, and the map
+      does not show a real location. <strong>This page does not represent an AXLABO client, a partner, or a
+      published listing.</strong> Your actual page would use the details and photos you send us, and
       <strong>you would approve the text before anything goes live.</strong></span>
       <b>このページについて</b><br>
       AXLABO が制作する日本語掲載ページの<strong>サンプル（完成イメージ）</strong>です。
-      掲載されている店名・住所・営業時間・金額・内容は<strong>すべて架空</strong>で、
-      実在の店舗を表すものではありません。
+      店名・エリア・営業時間・金額など<strong>すべて架空</strong>で、実在の店舗を表すものではありません。
+      <strong>画像はすべて図版であり写真ではなく、地図も実在の場所を示していません。</strong>
       <strong>AXLABOの顧客・提携先を示すものでも、掲載実績を示すものでもありません。</strong><br><br>
-      実際の掲載ページは、店舗からご提供いただいた内容をもとに制作し、
+      実際の掲載ページは、<strong>店舗からご提供いただいた内容と写真</strong>をもとに制作し、
       <strong>公開前に必ず店舗ご自身にご確認いただきます。</strong>
     </div>
     <p style="margin-top:22px">AXLABO ／ info@axlabo.com</p>
