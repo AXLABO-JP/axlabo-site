@@ -1,0 +1,265 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta name="robots" content="noindex, nofollow">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="An illustrative mock-up of an AXLABO venue listing page. SAMPLE LOUNGE SINGAPORE is fictional and is not a real listed venue.">
+  <title>Sample venue listing | SAMPLE LOUNGE SINGAPORE</title>
+  <style>
+    :root {
+  /* フォントマスター axlabo-font-master.md（2026-09-01） */
+  --font-heading:"Zen Kaku Gothic New", "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Noto Sans JP", sans-serif;
+  --font-body:"Hiragino Sans", "Noto Sans JP", system-ui, sans-serif;
+  --font-display:"Outfit", "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-mono:ui-monospace, SFMono-Regular, Menlo, monospace;
+
+      --navy:#141110;
+      --navy2:#0F0D0C;
+      --gold:#D98A3D;
+      --gold2:#B96F28;
+      --on-accent: #0E1116; --accent:#E8B45A;
+      --teal:#E8B45A;
+      --bg:#0F0D0C;
+      --alt:#0F0D0C;
+      --card:#211B17;
+      --ink:#E4E7EC;
+      --ink-soft:#B4AEA6;
+      --hair:#332C27;
+      --card-line:#332C27;
+      --footer-bg:#0A0908;
+      --footer-text:#CFC7BD;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--ink);
+      font-family:var(--font-display);
+      font-size: 16px;
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: inherit; }
+    a:focus-visible { outline: 3px solid var(--teal); outline-offset: 3px; }
+    .container { width: min(1120px, calc(100% - 40px)); margin-inline: auto; }
+    .sample-banner { background: var(--gold); color: #1a1410; }
+    .sample-banner p { margin: 0; padding: 12px 0; font-size: .82rem; font-weight: 900; letter-spacing: .04em; text-align: center; }
+    .site-header { position: sticky; top: 0; z-index: 20; border-bottom: 1px solid var(--hair); background: rgba(15,13,12,.96); backdrop-filter: blur(6px); }
+    .header-inner { min-height: 74px; display: flex; align-items: center; justify-content: space-between; gap: 18px; }
+    .header-right { display: flex; align-items: center; gap: 16px; }
+    .brand { color: var(--ink); font-size: 1.15rem; font-weight: 900; letter-spacing: .13em; text-decoration: none; }
+    .sample-label { color: var(--accent); font-size: .78rem; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; }
+    .button-small { min-height: 40px; padding: 9px 16px; font-size: .82rem; }
+    .eyebrow { margin: 0 0 14px; color: var(--accent); font-size: .78rem; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; }
+    h1, h2, h3 { margin-top: 0; color: var(--ink); line-height: 1.13; letter-spacing: -.025em; }
+    h1 { max-width: 880px; margin-bottom: 20px; font-size: clamp(2.45rem, 6vw, 5.15rem); }
+    h2 { margin-bottom: 18px; font-size: clamp(1.8rem, 4vw, 2.8rem); }
+    h3 { margin-bottom: 9px; font-size: 1.08rem; }
+    p { margin-top: 0; }
+    .lead { max-width: 720px; color: var(--ink-soft); font-size: clamp(1.06rem, 2vw, 1.24rem); }
+    .hero { position: relative; overflow: hidden; padding: 104px 0 88px; }
+    .hero::before { position: absolute; z-index: -1; top: -220px; right: -190px; width: 580px; height: 580px; border: 1px solid var(--hair); border-radius: 50%; background: radial-gradient(circle at center, rgba(217,138,61,.12), transparent 65%); content: ""; }
+    .fiction-note { max-width: 760px; margin: 28px 0 0; border-left: 4px solid var(--gold); border-radius: 0 8px 8px 0; background: var(--card); padding: 16px 18px; color: var(--ink); font-size: .92rem; font-weight: 800; }
+    .venue-photo { position: relative; margin-top: 40px; border-radius: 14px; overflow: hidden; box-shadow: 0 22px 60px rgba(0,0,0,.4); }
+    .venue-photo img { display: block; width: 100%; height: clamp(220px, 38vw, 420px); object-fit: cover; }
+    .venue-photo figcaption { margin: 10px 0 0; color: var(--ink-soft); font-size: .82rem; }
+    .quick-facts { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 48px; }
+    .fact { border: 1px solid var(--card-line); border-radius: 12px; background: var(--card); padding: 22px; box-shadow: 0 12px 32px rgba(0,0,0,.28); }
+    .fact span { display: block; margin-bottom: 5px; color: var(--ink-soft); font-size: .76rem; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; }
+    .fact strong { color: var(--ink); font-size: 1rem; }
+    .section { padding: 88px 0; }
+    .section-alt { background: var(--alt); }
+    .overview { display: grid; grid-template-columns: .8fr 1.2fr; gap: 72px; align-items: start; }
+    .overview-copy { color: var(--ink-soft); }
+    .overview-copy p:last-child { margin-bottom: 0; }
+    .details-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; margin-top: 40px; }
+    .detail-card { border: 1px solid var(--card-line); border-radius: 12px; background: var(--card); padding: 28px; }
+    .detail-card::before { display: block; width: 34px; height: 3px; margin-bottom: 20px; background: var(--teal); content: ""; }
+    .detail-card p { margin-bottom: 0; color: var(--ink-soft); }
+    .pricing-card { border: 1px solid var(--card-line); border-top: 5px solid var(--gold); border-radius: 14px; background: var(--card); padding: 38px; box-shadow: 0 22px 60px rgba(0,0,0,.4); }
+    .pricing-head { display: flex; align-items: start; justify-content: space-between; gap: 24px; margin-bottom: 18px; }
+    .pricing-head p { margin-bottom: 0; color: var(--ink-soft); font-size: .88rem; font-weight: 800; }
+    .pricing-line { display: flex; justify-content: space-between; gap: 22px; margin: 0; padding: 17px 0; border-top: 1px solid var(--hair); }
+    .pricing-line span:last-child { color: var(--ink); font-weight: 900; text-align: right; }
+    .example-note { margin: 20px 0 0; color: var(--ink-soft); font-size: .84rem; }
+    .listing-price-note { max-width: 760px; margin: 24px auto 0; border: 1px solid var(--card-line); border-radius: 10px; background: var(--card); padding: 16px 20px; color: var(--ink-soft); font-size: .9rem; text-align: center; }
+    .listing-price-note strong { color: var(--ink); }
+    .listing-price-note a { color: var(--accent); font-weight: 800; text-decoration: underline; }
+    .legal-note { border-left: 4px solid var(--gold); border-radius: 0 10px 10px 0; background: var(--footer-bg); color: var(--ink); padding: 30px 32px; }
+    .legal-note h2 { margin-bottom: 12px; color: var(--ink); font-size: 1.35rem; letter-spacing: 0; }
+    .legal-note p { margin-bottom: 0; color: var(--ink-soft); }
+    .button-row { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 30px; }
+    .button { min-height: 52px; display: inline-flex; align-items: center; justify-content: center; border: 1px solid var(--hair); border-radius: 8px; padding: 13px 20px; font-size: .94rem; font-weight: 800; line-height: 1.25; text-align: center; text-decoration: none; transition: transform .18s ease, background .18s ease, border-color .18s ease; }
+    .button:hover { transform: translateY(-2px); }
+    .button-primary { border-color: var(--gold); background: var(--gold); color: #1a1410; }
+    .button-primary:hover { border-color: var(--gold2); background: var(--gold2); }
+    .final-cta { background: var(--alt); color: var(--ink); }
+    .final-cta h2 { max-width: 720px; color: var(--ink); }
+    .final-cta .eyebrow { color: var(--accent); }
+    .final-cta .lead { color: var(--ink-soft); }
+    footer { border-top: 1px solid var(--card-line); background: var(--footer-bg); color: var(--footer-text); }
+    .footer-inner { min-height: 92px; display: flex; align-items: center; justify-content: space-between; gap: 24px; font-size: .82rem; }
+    .footer-inner p { margin: 0; }
+
+    @media (max-width: 820px) {
+      .quick-facts { grid-template-columns: 1fr; }
+      .overview { grid-template-columns: 1fr; gap: 28px; }
+      .section { padding: 72px 0; }
+    }
+    @media (max-width: 560px) {
+      .container { width: min(100% - 28px, 1120px); }
+      .header-inner { min-height: 64px; }
+      .sample-label { font-size: .68rem; letter-spacing: .08em; text-align: right; }
+      .header-inner .button-small { display: none; }
+      .hero { padding: 68px 0 64px; }
+      h1 { font-size: 2.45rem; overflow-wrap: anywhere; }
+      .details-grid { grid-template-columns: 1fr; }
+      .detail-card, .pricing-card { padding: 24px; }
+      .pricing-head, .pricing-line { align-items: flex-start; flex-direction: column; gap: 4px; }
+      .pricing-line span:last-child { text-align: left; }
+      .legal-note { padding: 24px 22px; }
+      .button-row { display: grid; }
+      .button { width: 100%; }
+      .footer-inner { align-items: flex-start; flex-direction: column; justify-content: center; padding: 24px 0; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      .button { transition: none; }
+    }
+  </style>
+</head>
+<body>
+  <div class="sample-banner" role="note">
+    <div class="container"><p>SAMPLE / ILLUSTRATIVE MOCK-UP — NOT A REAL LISTED VENUE</p></div>
+  </div>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="#top" aria-label="AXLABO sample listing top">AXLABO</a>
+      <div class="header-right">
+        <span class="sample-label">Venue listing format · sample only</span>
+        <a class="button button-primary button-small" href="./lp-partner-en-2026-08-24.html#pricing">Talk to us about listing your venue</a>
+      </div>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero" aria-labelledby="venue-name">
+      <div class="container">
+        <p class="eyebrow">Illustrative venue profile</p>
+        <h1 id="venue-name">SAMPLE LOUNGE SINGAPORE</h1>
+        <p class="lead">A quiet, contemporary lounge presented here to demonstrate how practical venue information could be organized for Japanese travelers.</p>
+        <p class="fiction-note">This venue is entirely fictional and created for illustration only. It is not a real venue, partner, or published AXLABO listing.</p>
+
+        <div class="quick-facts" aria-label="Venue summary">
+          <div class="fact"><span>Area</span><strong>Clarke Quay area, Singapore</strong></div>
+          <div class="fact"><span>Setting</span><strong>Seated lounge · relaxed conversation</strong></div>
+          <div class="fact"><span>Information status</span><strong>Illustrative example details only</strong></div>
+        </div>
+
+        <figure class="venue-photo">
+          <img src="./assets/venues/biz035-venue01-loungesingapore-master-3x2-2400x1600@2x.jpg" alt="Illustrative AI-generated image of a contemporary lounge interior, used as a sample photo for this fictional venue." loading="lazy">
+          <figcaption>AI-generated illustrative image created for this sample listing. It does not depict a real venue.</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="section section-alt" aria-labelledby="about-title">
+      <div class="container overview">
+        <div>
+          <p class="eyebrow">About this sample venue</p>
+          <h2 id="about-title">A calm setting with clear pre-visit information.</h2>
+        </div>
+        <div class="overview-copy">
+          <p>SAMPLE LOUNGE SINGAPORE is depicted as an indoor lounge with table seating, measured background music, and a concise drinks menu. The example format prioritizes practical details that a traveler may want to check before deciding whether the venue suits their plans.</p>
+          <p>The photograph shown above is an AI-generated illustrative image created for this fictional sample; it does not depict a real venue. The description, location, hours, conditions, and prices on this page are mock content and do not describe any real business.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="details-title">
+      <div class="container">
+        <p class="eyebrow">Plan your visit · illustrative format</p>
+        <h2 id="details-title">Venue details</h2>
+        <div class="details-grid">
+          <article class="detail-card">
+            <h3>Opening hours</h3>
+            <p>Tuesday–Thursday: 6:00 p.m.–12:00 a.m.<br>Friday–Saturday: 6:00 p.m.–1:00 a.m.<br>Sunday–Monday: Closed</p>
+          </article>
+          <article class="detail-card">
+            <h3>Location</h3>
+            <p>Clarke Quay area, Singapore. This generic area reference is fictional example content; no street address is associated with this sample.</p>
+          </article>
+          <article class="detail-card">
+            <h3>Dress code</h3>
+            <p>Smart casual. Neat casual footwear is shown as acceptable in this mock-up. Final admission decisions would remain with the venue.</p>
+          </article>
+          <article class="detail-card">
+            <h3>Entry requirements</h3>
+            <p>Admission requirements vary under local law and venue policy. Guests would need to meet the applicable legal age requirement and present any identification requested by the venue.</p>
+          </article>
+          <article class="detail-card">
+            <h3>Atmosphere</h3>
+            <p>Moderate lighting, table seating, and background music at a level intended to allow conversation. Seating and service availability would vary by evening.</p>
+          </article>
+          <article class="detail-card">
+            <h3>Reservations</h3>
+            <p>Walk-ins and advance reservations are shown as accepted for this example. A real listing would state the venue's confirmed booking method and policies.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-alt" aria-labelledby="pricing-title">
+      <div class="container">
+        <div class="pricing-card">
+          <div class="pricing-head">
+            <div>
+              <p class="eyebrow">Illustrative example figures</p>
+              <h2 id="pricing-title">Sample pricing in SGD</h2>
+            </div>
+            <p>Not real prices</p>
+          </div>
+          <p class="pricing-line"><span>Example cover charge</span><span>SGD 12</span></p>
+          <p class="pricing-line"><span>Example non-alcoholic drink</span><span>SGD 9</span></p>
+          <p class="pricing-line"><span>Example signature mixed drink</span><span>SGD 19</span></p>
+          <p class="pricing-line"><span>Example light plate</span><span>SGD 16</span></p>
+          <p class="example-note"><strong>Sample disclosure:</strong> Every amount above is a fictional, illustrative example figure. These are not advertised or current prices for any real venue. A live listing would use venue-supplied information reviewed before publication.</p>
+        </div>
+        <p class="listing-price-note">This mock-up shows fictional in-venue prices only. The actual AXLABO listing terms are separate: <strong>the monthly listing fee is currently ¥0</strong>, with a <strong>one-time production fee of ¥30,000 per venue, excluding tax</strong>. <a href="./lp-partner-en-2026-08-24.html#pricing">See full pricing details</a>.</p>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="requirements-title">
+      <div class="container">
+        <aside class="legal-note">
+          <h2 id="requirements-title">Venue requirements and local guidance</h2>
+          <p>Age, dress code, and entry requirements are set by your venue and displayed exactly as you provide them. AXLABO does not set, verify, or guarantee compliance with any age requirement or local licensing law on your behalf — please confirm your own venue's requirements with your local regulatory or legal advisor.</p>
+          <p>AXLABO is a listing and information platform only. We do not process bookings, payments, or reservations on your venue's behalf — travelers are directed to your own website or contact channel to confirm availability.</p>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section final-cta" aria-labelledby="cta-title">
+      <div class="container">
+        <p class="eyebrow">Sample page · not a real venue</p>
+        <h2 id="cta-title">See how your own venue information could be presented.</h2>
+        <p class="lead">This illustrative mock-up shows the English-language format. Actual traveler-facing venue pages would normally be produced in Japanese from information reviewed by the venue.</p>
+        <div class="button-row">
+          <a class="button button-primary" href="./lp-partner-en-2026-08-24.html">This is a sample — talk to us about listing your venue</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-inner">
+      <p>© 2026 AXLABO</p>
+      <p>SAMPLE / illustrative mock-up · not a real listed venue</p>
+    </div>
+  </footer>
+</body>
+</html>
