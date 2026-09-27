@@ -1,0 +1,208 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>写真室 こもれび（架空の写真スタジオ・サンプル） | AXLABO サンプル</title>
+<meta name="description" content="AXLABO が制作したサンプルサイトです。架空の写真スタジオ（七五三・家族写真・プロフィール写真）のページ例。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@700&family=Zen+Kaku+Gothic+New:wght@700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="components.css">
+<style>
+  /* このページのテーマだけ（部品本体は components.css）。
+     コントラストは README に計算結果を記載（すべて 4.5:1 以上）。 */
+  :root {
+    --ax-bg: #F8F5F2;
+    --ax-tint: #EDE5E0;
+    --ax-accent: #6B3F55;
+    --ax-accent-hover: #553144;
+    --ax-text: #251F21;
+    --ax-muted: #574E51;
+    --ax-line: #DDD1CB;
+  }
+  .ph-frame { width: 100%; max-width: 360px; }
+  .ph-menu-note { margin-top: var(--ax-s3); }
+  .ph-session { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--ax-s3); margin-top: var(--ax-s5); }
+  .ph-session div { border-top: 3px solid var(--ax-accent); padding-top: var(--ax-s2); }
+  .ph-session dt { font-family: var(--ax-font-heading); font-weight: 700; }
+  .ph-session dd { margin: var(--ax-s1) 0 0; color: var(--ax-muted); font-size: 15px; }
+  @media (max-width: 860px) { .ph-session { grid-template-columns: 1fr; } }
+</style>
+</head>
+<body class="ax-page">
+<div class="ax-sample-banner">これは AXLABO が制作したサンプルサイトです。掲載の店舗・人物・内容は架空です。</div>
+
+<header class="ax-header">
+  <div class="ax-wrap">
+    <a class="ax-logo" href="#top" aria-label="写真室 こもれび（架空） トップへ">
+      <svg width="28" height="28" viewBox="0 0 28 28" aria-hidden="true"><rect x="2" y="7" width="24" height="17" rx="4" fill="#6B3F55"/><rect x="9" y="3" width="10" height="6" rx="2" fill="#6B3F55"/><circle cx="14" cy="15.5" r="5" fill="#F8F5F2"/><circle cx="14" cy="15.5" r="2.6" fill="#6B3F55"/></svg>
+      写真室 こもれび
+    </a>
+    <nav class="ax-nav" aria-label="ページ内">
+      <ul>
+        <li><a href="#menu">撮影メニュー</a></li>
+        <li><a href="#studio">スタジオ</a></li>
+        <li><a href="#flow">ご予約</a></li>
+        <li><a href="#access">アクセス</a></li>
+      </ul>
+    </nav>
+    <a class="ax-btn" href="#flow">撮影を予約</a>
+  </div>
+</header>
+
+<main id="top">
+  <section class="ax-hero ax-section">
+    <div class="ax-wrap">
+      <div>
+        <p class="ax-kicker">Neighborhood photo studio</p>
+        <h1><span class="ax-nobr">家族の今日を、</span><br><span class="ax-nobr">一枚に</span><span class="ax-nobr">残す。</span></h1>
+        <p class="ax-lead">七五三、家族写真、仕事用のプロフィール写真。小さなスタジオで、1組ずつ時間をとって撮影します。</p>
+        <div class="ax-cta">
+          <a class="ax-btn" href="#flow">撮影を予約する</a>
+          <a class="ax-btn ax-btn--ghost" href="#menu">メニューと料金</a>
+        </div>
+        <p class="ax-status"><span class="ax-dot" aria-hidden="true"></span>完全予約制・10:00〜17:00（例）</p>
+      </div>
+      <div class="ax-visual" role="img" aria-label="額縁に入った家族写真と、三脚にのったカメラのイラスト">
+        <svg class="ph-frame" viewBox="0 0 360 260" aria-hidden="true">
+          <rect x="30" y="30" width="190" height="150" rx="10" fill="#FFFFFF"/>
+          <rect x="44" y="44" width="162" height="122" rx="6" fill="#E3D2CB"/>
+          <circle cx="92" cy="96" r="16" fill="#8E6A7C"/><rect x="72" y="114" width="40" height="42" rx="18" fill="#8E6A7C"/>
+          <circle cx="140" cy="92" r="18" fill="#6B3F55"/><rect x="118" y="112" width="44" height="46" rx="20" fill="#6B3F55"/>
+          <circle cx="178" cy="118" r="11" fill="#B08E9E"/><rect x="165" y="130" width="26" height="28" rx="12" fill="#B08E9E"/>
+          <rect x="262" y="96" width="70" height="46" rx="8" fill="#251F21"/>
+          <rect x="280" y="86" width="26" height="14" rx="4" fill="#251F21"/>
+          <circle cx="297" cy="119" r="14" fill="#EDE5E0"/><circle cx="297" cy="119" r="7" fill="#6B3F55"/>
+          <path d="M297 142 L272 236 M297 142 L322 236 M297 142 L297 236" stroke="#574E51" stroke-width="5" stroke-linecap="round"/>
+          <rect x="20" y="236" width="320" height="6" rx="3" fill="#DDD1CB"/>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <section class="ax-section ax-section--alt" id="menu" aria-labelledby="h-menu">
+    <div class="ax-wrap">
+      <div class="ax-section-head">
+        <p class="ax-kicker">Menu</p>
+        <h2 id="h-menu"><span class="ax-nobr">撮影メニューと</span><span class="ax-nobr">料金の目安</span></h2>
+      </div>
+      <div class="ax-cards">
+        <article class="ax-card">
+          <div class="ax-card__ill" aria-hidden="true"><svg width="96" height="72" viewBox="0 0 96 72"><path d="M48 10 L64 34 H32 Z" fill="#B08E9E"/><rect x="34" y="34" width="28" height="30" rx="6" fill="#6B3F55"/><circle cx="48" cy="22" r="6" fill="#F8F5F2"/><path d="M20 64 H76" stroke="#8E6A7C" stroke-width="4" stroke-linecap="round"/></svg></div>
+          <h3>七五三</h3>
+          <p class="ax-card__meta">撮影約60分・データ10カット</p>
+          <p class="ax-card__price">¥22,000〜（例）</p>
+        </article>
+        <article class="ax-card">
+          <div class="ax-card__ill" aria-hidden="true"><svg width="96" height="72" viewBox="0 0 96 72"><circle cx="30" cy="26" r="9" fill="#8E6A7C"/><rect x="20" y="36" width="20" height="26" rx="9" fill="#8E6A7C"/><circle cx="52" cy="24" r="10" fill="#6B3F55"/><rect x="41" y="35" width="22" height="28" rx="10" fill="#6B3F55"/><circle cx="72" cy="36" r="7" fill="#B08E9E"/><rect x="65" y="44" width="14" height="18" rx="7" fill="#B08E9E"/></svg></div>
+          <h3>家族写真</h3>
+          <p class="ax-card__meta">撮影約45分・6名まで</p>
+          <p class="ax-card__price">¥16,500〜（例）</p>
+        </article>
+        <article class="ax-card">
+          <div class="ax-card__ill" aria-hidden="true"><svg width="96" height="72" viewBox="0 0 96 72"><rect x="28" y="8" width="40" height="56" rx="6" fill="#FFFFFF" stroke="#DDD1CB" stroke-width="2"/><circle cx="48" cy="28" r="9" fill="#6B3F55"/><rect x="36" y="40" width="24" height="18" rx="8" fill="#6B3F55"/></svg></div>
+          <h3>プロフィール写真</h3>
+          <p class="ax-card__meta">撮影約30分・データ3カット</p>
+          <p class="ax-card__price">¥9,900〜（例）</p>
+        </article>
+      </div>
+      <p class="ax-note ph-menu-note">※メニュー・料金はサンプル用の架空のものです。実際のスタジオのサイトでは、スタジオの方が内容と料金を更新できる形にします。</p>
+    </div>
+  </section>
+
+  <section class="ax-section" id="studio" aria-labelledby="h-studio">
+    <div class="ax-wrap">
+      <div class="ax-section-head">
+        <p class="ax-kicker">Our studio</p>
+        <h2 id="h-studio"><span class="ax-nobr">急がずに、</span><span class="ax-nobr">いつもの顔で</span></h2>
+      </div>
+      <div class="ax-points">
+        <div><p class="ax-points__num">01</p><h3>1組ずつの貸し切り</h3><p>撮影中はほかのお客さまと重なりません。小さなお子さまが泣いても、落ち着くまで待てます。</p></div>
+        <div><p class="ax-points__num">02</p><h3>衣装は持ち込みも可</h3><p>ご家族の着物や、ふだんの服での撮影もできます。事前に内容を伺います。</p></div>
+        <div><p class="ax-points__num">03</p><h3>その場で一緒に選ぶ</h3><p>撮影のあと、画面で写真を見ながらお渡しするカットを一緒に選びます。</p></div>
+      </div>
+      <dl class="ph-session">
+        <div><dt>撮影の時間</dt><dd>メニューごとの目安です。お子さまの様子に合わせて調整します（例）。</dd></div>
+        <div><dt>お渡し</dt><dd>選んだ写真をデータでお渡しします。プリントは追加で承ります（例）。</dd></div>
+        <div><dt>お支払い</dt><dd>撮影当日にスタジオでお支払いください（例）。</dd></div>
+      </dl>
+    </div>
+  </section>
+
+  <section class="ax-section ax-section--alt" id="flow" aria-labelledby="h-flow">
+    <div class="ax-wrap">
+      <div class="ax-section-head">
+        <p class="ax-kicker">Reservation</p>
+        <h2 id="h-flow"><span class="ax-nobr">ご予約から</span><span class="ax-nobr">お渡しまで</span></h2>
+      </div>
+      <ol class="ax-steps">
+        <li><p class="ax-steps__label">STEP 1</p><h3>日時を選ぶ</h3><p>フォームかお電話で、ご希望の日時とメニューをお知らせください。</p></li>
+        <li><p class="ax-steps__label">STEP 2</p><h3>撮影</h3><p>ご来店後、衣装や撮りたい雰囲気を伺ってから撮影を始めます。</p></li>
+        <li><p class="ax-steps__label">STEP 3</p><h3>写真を選んで受け取る</h3><p>撮影のあとに写真を選び、後日データをお送りします（例）。</p></li>
+      </ol>
+      <div class="ax-cta" style="margin-top: var(--ax-s4); display:flex;">
+        <a class="ax-btn" href="#flow" aria-disabled="true">予約フォームへ（サンプルのため動作しません）</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="ax-section" id="faq" aria-labelledby="h-faq">
+    <div class="ax-wrap">
+      <div class="ax-section-head">
+        <p class="ax-kicker">FAQ</p>
+        <h2 id="h-faq">よくある質問</h2>
+      </div>
+      <div class="ax-faq">
+        <details><summary>子どもが人見知りでも大丈夫ですか？</summary><p>時間に余裕をもってご予約をお受けしています。慣れるまで、おもちゃで遊んでから撮影を始めることもできます（例）。</p></details>
+        <details><summary>日程の変更はできますか？</summary><p>前日までにご連絡いただければ、別の日時へ変更できます（例）。</p></details>
+        <details><summary>ペットと一緒に撮影できますか？</summary><p>小型の動物であれば、事前にご相談ください（例）。</p></details>
+      </div>
+    </div>
+  </section>
+
+  <section class="ax-section ax-section--alt" id="access" aria-labelledby="h-access">
+    <div class="ax-wrap">
+      <div class="ax-section-head">
+        <p class="ax-kicker">Access</p>
+        <h2 id="h-access"><span class="ax-nobr">スタジオの</span><span class="ax-nobr">場所</span></h2>
+      </div>
+      <div class="ax-access">
+        <table class="ax-info">
+          <tbody>
+            <tr><th scope="row">店名</th><td>写真室 こもれび（架空）</td></tr>
+            <tr><th scope="row">営業時間</th><td>10:00〜17:00（完全予約制・例）</td></tr>
+            <tr><th scope="row">定休日</th><td>火曜（例）</td></tr>
+            <tr><th scope="row">住所</th><td>〇〇市△△町 3-4-5（架空の住所）</td></tr>
+            <tr><th scope="row">電話</th><td>000-0000-0000（架空）</td></tr>
+            <tr><th scope="row">駐車場</th><td>2台（例）</td></tr>
+          </tbody>
+        </table>
+        <div class="ax-map" role="img" aria-label="駅からスタジオまでの案内図（例）">
+          <svg viewBox="0 0 320 200" aria-hidden="true">
+            <rect width="320" height="200" rx="10" fill="#EDE5E0"/>
+            <rect x="0" y="88" width="320" height="18" fill="#FFFFFF"/>
+            <rect x="196" y="0" width="18" height="200" fill="#FFFFFF"/>
+            <rect x="24" y="44" width="64" height="30" rx="6" fill="#574E51"/>
+            <text x="56" y="64" text-anchor="middle" font-size="13" fill="#FFFFFF" font-family="sans-serif">駅</text>
+            <path d="M88 97 H205 V140" stroke="#6B3F55" stroke-width="3" stroke-dasharray="6 5" fill="none"/>
+            <rect x="222" y="126" width="72" height="30" rx="6" fill="#6B3F55"/>
+            <text x="258" y="146" text-anchor="middle" font-size="13" fill="#FFFFFF" font-family="sans-serif">スタジオ</text>
+          </svg>
+        </div>
+      </div>
+      <p class="ax-note" style="margin-top: var(--ax-s3);">最寄り駅から徒歩7分（例）。案内図はイメージです。</p>
+    </div>
+  </section>
+</main>
+
+<footer class="ax-footer">
+  <div class="ax-wrap">
+    <p>写真室 こもれび（架空の店舗）</p>
+    <p>これは AXLABO が制作したサンプルサイトです。掲載の店舗・人物・内容は架空です。お客様の制作実績ではありません。</p>
+  </div>
+</footer>
+<div class="ax-sample-banner">これは AXLABO が制作したサンプルサイトです。掲載の店舗・人物・内容は架空です。</div>
+</body>
+</html>
