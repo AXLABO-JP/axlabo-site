@@ -1,0 +1,207 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Shokudo Hinata — sample restaurant website (fictional) | AXLABO sample</title>
+<meta name="description" content="A sample English website for a fictional small Japanese restaurant, made by AXLABO. Not a real business.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;700&family=Zen+Kaku+Gothic+New:wght@700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="components.css">
+<style>
+  /* Theme: warm wood and lantern red. Contrast checked (see README). */
+  :root {
+    --ax-bg:#F8F4EE; --ax-tint:#EFE6DA; --ax-surface:#FFFFFF;
+    --ax-accent:#8C2B1F; --ax-accent-hover:#6F2218;
+    --ax-text:#241E1A; --ax-muted:#554A41; --ax-line:#DED1BF;
+    --ax-font-heading:"Outfit","Zen Kaku Gothic New",ui-sans-serif,system-ui,sans-serif;
+    --ax-font-body:ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,"Noto Sans JP",sans-serif;
+    --ax-ls-body:0.01em;
+  }
+  .ax-page h1, .ax-page h2, .ax-page h3 { letter-spacing: 0; }
+  .jp { font-family: "Zen Kaku Gothic New","Hiragino Sans","Noto Sans JP",sans-serif; font-size: var(--ax-fs-note); color: var(--ax-muted); font-weight: 700; }
+  /* Menu */
+  .menu-group + .menu-group { margin-top: var(--ax-s6); }
+  .menu-group h3 { font-size: 20px; padding-bottom: var(--ax-s1); border-bottom: 2px solid var(--ax-accent); margin-bottom: var(--ax-s2); }
+  .menu { list-style: none; margin: 0; padding: 0; display: grid; gap: 0; }
+  .menu li { display: grid; grid-template-columns: 1fr auto; gap: var(--ax-s1) var(--ax-s3); padding: var(--ax-s2) 0; border-bottom: 1px solid var(--ax-line); }
+  .menu .name { font-family: var(--ax-font-heading); font-weight: 700; font-size: 17px; }
+  .menu .price { font-family: var(--ax-font-display); font-weight: 700; white-space: nowrap; }
+  .menu .desc { grid-column: 1 / -1; color: var(--ax-muted); font-size: 15px; }
+  .tags { grid-column: 1 / -1; display: flex; flex-wrap: wrap; gap: var(--ax-s1); margin: 0; padding: 0; list-style: none; }
+  .tags li { display: inline-block; border: 1px solid var(--ax-line); border-radius: 999px; padding: 2px 10px; font-size: var(--ax-fs-note); color: var(--ax-muted); background: var(--ax-surface); }
+  .menu-cols { display: grid; grid-template-columns: 1fr 1fr; gap: var(--ax-s6); }
+  .notice { margin-top: var(--ax-s4); background: var(--ax-surface); border-left: 4px solid var(--ax-accent); border-radius: var(--ax-radius-s); padding: var(--ax-s2) var(--ax-s3); font-size: 15px; }
+  .notice strong { font-family: var(--ax-font-heading); }
+  .pay { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--ax-s3); }
+  .pay div { background: var(--ax-surface); border-radius: var(--ax-radius); padding: var(--ax-s3); }
+  .pay h3 { margin-bottom: var(--ax-s1); }
+  @media (max-width: 860px) { .menu-cols, .pay { grid-template-columns: 1fr; gap: var(--ax-s4); } }
+</style>
+</head>
+<body class="ax-page">
+<div class="ax-sample-banner">This is a sample website made by AXLABO. The business, people and details shown are fictional.　これは AXLABO が制作したサンプルサイトです（架空の店舗）。</div>
+
+<header class="ax-header">
+  <div class="ax-wrap">
+    <a class="ax-logo" href="#top" aria-label="Shokudo Hinata, top of page">
+      <svg width="28" height="28" viewBox="0 0 28 28" aria-hidden="true"><circle cx="14" cy="14" r="13" fill="#8C2B1F"/><rect x="9" y="7" width="10" height="14" rx="5" fill="#F8F4EE"/><rect x="12.5" y="4" width="3" height="3" rx="1" fill="#F8F4EE"/></svg>
+      Shokudo Hinata
+    </a>
+    <nav class="ax-nav" aria-label="Page sections">
+      <ul>
+        <li><a href="#menu">Menu</a></li>
+        <li><a href="#order">How to order</a></li>
+        <li><a href="#pay">Payment</a></li>
+        <li><a href="#access">Access</a></li>
+      </ul>
+    </nav>
+    <a class="ax-btn" href="#menu">See the menu</a>
+  </div>
+</header>
+
+<main id="top">
+<section class="ax-hero ax-section">
+  <div class="ax-wrap">
+    <div>
+      <p class="ax-kicker">Neighborhood Japanese diner</p>
+      <h1><span class="ax-nobr">Home-style Japanese</span> <span class="ax-nobr">meals, explained</span> <span class="ax-nobr">in English.</span></h1>
+      <p class="ax-lead">A twelve-seat diner near the station. Set meals at lunch, small plates at night. The menu below describes every dish in plain English, so you can order without guessing.</p>
+      <div class="ax-cta">
+        <a class="ax-btn" href="#menu">See the menu</a>
+        <a class="ax-btn ax-btn--ghost" href="#order">How to order</a>
+      </div>
+      <p class="ax-status"><span class="ax-dot" aria-hidden="true"></span>Lunch 11:30–14:00 · Dinner 17:30–22:00 (example)</p>
+    </div>
+    <div class="ax-visual" role="img" aria-label="Illustration: a set meal tray with rice, miso soup and grilled fish">
+      <svg width="320" height="220" viewBox="0 0 320 220" aria-hidden="true">
+        <rect x="20" y="40" width="280" height="160" rx="18" fill="#6B4A33"/>
+        <rect x="32" y="52" width="256" height="136" rx="12" fill="#8A6246"/>
+        <ellipse cx="96" cy="140" rx="44" ry="30" fill="#FFFFFF"/>
+        <ellipse cx="96" cy="130" rx="34" ry="18" fill="#F5F0E6"/>
+        <ellipse cx="220" cy="142" rx="42" ry="28" fill="#3A2B22"/>
+        <ellipse cx="220" cy="136" rx="32" ry="16" fill="#B7793F"/>
+        <rect x="126" y="76" width="96" height="36" rx="8" fill="#F8F4EE"/>
+        <path d="M140 94c14-10 44-10 66 0" stroke="#8C2B1F" stroke-width="10" stroke-linecap="round" fill="none"/>
+        <rect x="258" y="70" width="6" height="92" rx="3" fill="#E9D8B8" transform="rotate(12 261 116)"/>
+        <rect x="270" y="70" width="6" height="92" rx="3" fill="#E9D8B8" transform="rotate(12 273 116)"/>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<section class="ax-section ax-section--alt" id="menu" aria-labelledby="menu-title">
+  <div class="ax-wrap">
+    <div class="ax-section-head">
+      <p class="ax-kicker">Menu</p>
+      <h2 id="menu-title">What we serve</h2>
+      <p>Every dish has a short description and the main ingredients. Allergy notes are examples for this sample; a real restaurant confirms its own.</p>
+    </div>
+    <div class="menu-cols">
+      <div class="menu-group">
+        <h3>Lunch set meals <span class="jp">定食</span></h3>
+        <ul class="menu">
+          <li><span class="name">Grilled salmon set</span><span class="price">¥1,100</span>
+            <span class="desc">Salted salmon grilled over a flame, with rice, miso soup and two small pickles.</span>
+            <ul class="tags" aria-label="Ingredient notes (example)"><li>Fish</li><li>Soy</li></ul></li>
+          <li><span class="name">Ginger pork set</span><span class="price">¥1,050</span>
+            <span class="desc">Thin pork slices cooked in a ginger and soy sauce, with shredded cabbage, rice and soup.</span>
+            <ul class="tags" aria-label="Ingredient notes (example)"><li>Pork</li><li>Soy</li><li>Wheat</li></ul></li>
+          <li><span class="name">Vegetable tempura set</span><span class="price">¥1,000</span>
+            <span class="desc">Seasonal vegetables fried in a light batter. The dipping sauce uses fish stock.</span>
+            <ul class="tags" aria-label="Ingredient notes (example)"><li>Wheat</li><li>Egg</li><li>Fish stock</li></ul></li>
+        </ul>
+      </div>
+      <div class="menu-group">
+        <h3>Evening small plates <span class="jp">一品料理</span></h3>
+        <ul class="menu">
+          <li><span class="name">Rolled omelette</span><span class="price">¥500</span>
+            <span class="desc">A soft, slightly sweet egg roll, served warm with grated radish.</span>
+            <ul class="tags" aria-label="Ingredient notes (example)"><li>Egg</li><li>Soy</li></ul></li>
+          <li><span class="name">Chicken skewers (2)</span><span class="price">¥450</span>
+            <span class="desc">Charcoal-grilled thigh pieces, with salt or a sweet soy glaze. Tell us which you prefer.</span>
+            <ul class="tags" aria-label="Ingredient notes (example)"><li>Chicken</li><li>Soy (glaze)</li></ul></li>
+          <li><span class="name">Chilled tofu</span><span class="price">¥400</span>
+            <span class="desc">Silken tofu with spring onion and ginger. Topped with bonito flakes unless you ask us not to.</span>
+            <ul class="tags" aria-label="Ingredient notes (example)"><li>Soy</li><li>Fish (topping)</li></ul></li>
+        </ul>
+      </div>
+    </div>
+    <div class="notice"><strong>About allergies and diets.</strong> Tell us about allergies before you order. We cook in one small kitchen, so we cannot promise a dish is free of any ingredient. The notes on this page are examples only and are not a certification.</div>
+    <p class="ax-note" style="margin-top:var(--ax-s2)">Dishes and prices are fictional examples for this sample. On a real site, the owner updates the menu and prices.</p>
+  </div>
+</section>
+
+<section class="ax-section" id="order" aria-labelledby="order-title">
+  <div class="ax-wrap">
+    <div class="ax-section-head">
+      <p class="ax-kicker">How to order</p>
+      <h2 id="order-title">Three simple steps</h2>
+    </div>
+    <ol class="ax-steps">
+      <li><p class="ax-steps__label">STEP 1</p><h3>Take a seat</h3><p>If a seat is free, sit anywhere. If we are full, write your name on the list by the door.</p></li>
+      <li><p class="ax-steps__label">STEP 2</p><h3>Point or tell us</h3><p>Show the dish on this page or on the paper menu. Staff will repeat your order to check.</p></li>
+      <li><p class="ax-steps__label">STEP 3</p><h3>Pay when you leave</h3><p>Bring your slip to the counter. There is no service charge and no tipping.</p></li>
+    </ol>
+  </div>
+</section>
+
+<section class="ax-section ax-section--alt" id="pay" aria-labelledby="pay-title">
+  <div class="ax-wrap">
+    <div class="ax-section-head">
+      <p class="ax-kicker">Payment</p>
+      <h2 id="pay-title">Good to know before you come</h2>
+    </div>
+    <div class="pay">
+      <div><h3>Cash and cards</h3><p>Cash and major credit cards (example). Please check at the counter.</p></div>
+      <div><h3>Group size</h3><p>Up to four people per table. For larger groups, please ask in advance (example).</p></div>
+      <div><h3>Children</h3><p>Children are welcome at lunch. Ask us for smaller portions (example).</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="ax-section" id="access" aria-labelledby="access-title">
+  <div class="ax-wrap ax-access">
+    <div>
+      <div class="ax-section-head">
+        <p class="ax-kicker">Access</p>
+        <h2 id="access-title">Finding us</h2>
+      </div>
+      <table class="ax-info">
+        <tbody>
+          <tr><th scope="row">Address</th><td>4-5-6 ○○-cho, △△ City (fictional)</td></tr>
+          <tr><th scope="row">From station</th><td>3 min walk from ○○ Station, north exit (example)</td></tr>
+          <tr><th scope="row">Hours</th><td>11:30–14:00 / 17:30–22:00 (example)</td></tr>
+          <tr><th scope="row">Closed</th><td>Wednesdays (example)</td></tr>
+          <tr><th scope="row">Contact</th><td>info@example.com (fictional)</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="ax-map" role="img" aria-label="Map illustration: the restaurant is a short walk north of the station">
+      <svg viewBox="0 0 400 260" width="100%" aria-hidden="true">
+        <rect width="400" height="260" rx="12" fill="#EFE6DA"/>
+        <rect x="0" y="118" width="400" height="24" fill="#FFFFFF"/>
+        <rect x="186" y="0" width="24" height="260" fill="#FFFFFF"/>
+        <rect x="24" y="170" width="120" height="48" rx="8" fill="#241E1A"/>
+        <text x="84" y="199" text-anchor="middle" font-size="16" fill="#FFFFFF" font-family="Outfit, sans-serif">Station</text>
+        <path d="M144 194 H198 V70 H250" stroke="#8C2B1F" stroke-width="3" stroke-dasharray="6 6" fill="none"/>
+        <rect x="250" y="46" width="120" height="48" rx="8" fill="#8C2B1F"/>
+        <text x="310" y="75" text-anchor="middle" font-size="16" fill="#FFFFFF" font-family="Outfit, sans-serif">Hinata</text>
+      </svg>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="ax-footer">
+  <div class="ax-wrap">
+    <p>Shokudo Hinata (fictional business)</p>
+    <p>This is a sample website made by AXLABO. The business, people and details shown are fictional. It is not a client project.</p>
+    <p>これは AXLABO が制作したサンプルサイトです。掲載の店舗・人物・内容は架空です。お客様の制作実績ではありません。</p>
+  </div>
+</footer>
+<div class="ax-sample-banner">This is a sample website made by AXLABO. The business, people and details shown are fictional.　これは AXLABO が制作したサンプルサイトです（架空の店舗）。</div>
+</body>
+</html>
