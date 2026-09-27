@@ -1,0 +1,414 @@
+<!doctype html>
+<html lang="ja" data-theme="indigo">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>AXLABO 共用コンポーネント（サンプル）</title>
+<meta name="description" content="AXLABO が Daily Sample と事業LPで共用する部品の一覧（サンプル資産）。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@700&family=Zen+Kaku+Gothic+New:wght@700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="components.css">
+<style>
+  /* カタログ自体の最小限の飾り（部品本体は components.css） */
+  .cat-intro { padding: var(--ax-s8) 0 var(--ax-s4); }
+  .cat-intro h1 { font-size: 36px; }
+  .cat-intro p { margin-top: var(--ax-s2); color: var(--ax-muted); max-width: 40em; }
+  .cat-theme { margin-top: var(--ax-s3); display: flex; flex-wrap: wrap; gap: var(--ax-s1); align-items: center; border: 0; padding: 0; }
+  .cat-theme legend { font-family: var(--ax-font-heading); font-weight: 700; margin-bottom: var(--ax-s1); padding: 0; }
+  .cat-theme label { display: inline-flex; align-items: center; gap: var(--ax-s1); min-height: var(--ax-tap); padding: 0 var(--ax-s2);
+    border: 2px solid var(--ax-line); border-radius: 999px; background: var(--ax-surface); cursor: pointer; font-size: 15px; }
+  .cat-theme input:focus-visible + span { outline: 3px solid var(--ax-accent); outline-offset: 3px; }
+  .cat-toc ul { list-style: none; padding: 0; margin: var(--ax-s3) 0 0; display: flex; flex-wrap: wrap; gap: var(--ax-s1) var(--ax-s3); }
+  .cat-toc a { display: inline-flex; align-items: center; min-height: var(--ax-tap); }
+  .cat-item { border-top: 1px solid var(--ax-line); padding: var(--ax-s6) 0; }
+  .cat-head { display: grid; gap: var(--ax-s1); margin-bottom: var(--ax-s3); }
+  .cat-desc { color: var(--ax-muted); }
+  .cat-demo { margin: 0 auto; max-width: 1180px; border: 2px dashed var(--ax-line); border-radius: var(--ax-radius); overflow: hidden; background: var(--ax-bg); }
+  .cat-demo > .ax-cards, .cat-demo > .ax-points, .cat-demo > .ax-steps, .cat-demo > .ax-info, .cat-demo > .ax-access, .cat-demo > .ax-faq, .cat-demo > .ax-note { margin: var(--ax-s4); width: auto; max-width: calc(100% - 2 * var(--ax-s4)); }
+  .cat-demo > .ax-info { width: calc(100% - 2 * var(--ax-s4)); }
+  @media (max-width: 480px) { .cat-demo > .ax-cards, .cat-demo > .ax-points, .cat-demo > .ax-steps, .cat-demo > .ax-info, .cat-demo > .ax-access, .cat-demo > .ax-faq, .cat-demo > .ax-note { margin: var(--ax-s2); max-width: calc(100% - 2 * var(--ax-s2)); } .cat-demo > .ax-info { width: calc(100% - 2 * var(--ax-s2)); } }
+  .cat-demo .ax-header { position: static; }
+  .cat-demo .ax-section { padding: var(--ax-s6) 0; }
+  .cat-code { margin-top: var(--ax-s3); }
+  .cat-code summary { cursor: pointer; font-family: var(--ax-font-heading); font-weight: 700; min-height: var(--ax-tap); display: flex; align-items: center; }
+  .cat-code pre { margin: var(--ax-s2) 0 0; padding: var(--ax-s2); background: #1E2530; color: #F4EEE6; border-radius: var(--ax-radius-s);
+    overflow-x: auto; font-size: 13px; line-height: 1.6; letter-spacing: 0; }
+  .cat-copy { margin-top: var(--ax-s1); }
+  @media (max-width: 480px) { .cat-intro h1 { font-size: 28px; } .cat-demo { border-radius: 0; border-left: 0; border-right: 0; } }
+</style>
+</head>
+<body class="ax-page">
+<div class="ax-sample-banner">これは AXLABO が制作したサンプルサイトです。掲載の店舗・人物・内容は架空です。</div>
+<main>
+  <section class="cat-intro">
+    <div class="ax-wrap">
+      <p class="ax-kicker">AXLABO Components</p>
+      <h1><span class="ax-nobr">共用コンポーネント</span><span class="ax-nobr">の一覧</span></h1>
+      <p>Daily Sample と各事業のLPで同じ部品を使うための一覧です。部品は <code>components.css</code> の1ファイルにまとめ、色はテーマ（CSS変数）で切り替えます。下のボタンで配色を切り替えられます。</p>
+      <fieldset class="cat-theme">
+        <legend>配色のテーマ</legend>
+        <label><input type="radio" name="theme" value="indigo" checked><span>藍（工務店）</span></label>
+        <label><input type="radio" name="theme" value="bakery"><span>焼き色（ベーカリー）</span></label>
+        <label><input type="radio" name="theme" value="florist"><span>緑（花屋）</span></label>
+      </fieldset>
+      <nav class="cat-toc" aria-label="部品の一覧"><ul><li><a href="#c-sample-banner">サンプル表示</a></li><li><a href="#c-header">ヘッダー（CTA付き）</a></li><li><a href="#c-hero">ヒーロー</a></li><li><a href="#c-cards">カード一覧</a></li><li><a href="#c-points">番号つきの要点</a></li><li><a href="#c-steps">手順</a></li><li><a href="#c-info">情報の表</a></li><li><a href="#c-map">地図の図</a></li><li><a href="#c-faq">よくある質問</a></li><li><a href="#c-footer">フッター</a></li></ul></nav>
+    </div>
+  </section>
+
+  <section class="cat-item" id="c-sample-banner" aria-labelledby="h-sample-banner">
+    <div class="ax-wrap">
+      <div class="cat-head">
+        <p class="ax-kicker">Component 01</p>
+        <h2 id="h-sample-banner">サンプル表示</h2>
+        <p class="cat-desc">ページの最上部と最下部に必ず置く。架空であることを明示する。</p>
+      </div>
+    </div>
+    <div class="cat-demo">
+<div class="ax-sample-banner">これは AXLABO が制作したサンプルサイトです。掲載の店舗・人物・内容は架空です。</div>
+    </div>
+    <div class="ax-wrap">
+      <details class="cat-code">
+        <summary>HTML を見る（サンプル表示）</summary>
+        <button type="button" class="ax-btn ax-btn--ghost cat-copy" data-target="code-sample-banner">コピーする</button>
+        <pre><code id="code-sample-banner">&lt;div class=&quot;ax-sample-banner&quot;&gt;これは AXLABO が制作したサンプルサイトです。掲載の店舗・人物・内容は架空です。&lt;/div&gt;</code></pre>
+      </details>
+    </div>
+  </section>
+  <section class="cat-item" id="c-header" aria-labelledby="h-header">
+    <div class="ax-wrap">
+      <div class="cat-head">
+        <p class="ax-kicker">Component 02</p>
+        <h2 id="h-header">ヘッダー（CTA付き）</h2>
+        <p class="cat-desc">ロゴ・ナビ・主要CTA。スマホ幅ではナビを隠し、CTAだけ残す。</p>
+      </div>
+    </div>
+    <div class="cat-demo">
+<header class="ax-header">
+  <div class="ax-wrap">
+    <a class="ax-logo" href="#">
+      <svg width="28" height="28" viewBox="0 0 28 28" aria-hidden="true"><circle cx="14" cy="14" r="13" fill="currentColor" opacity=".15"/><path d="M8 18h12M10 12h8" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/></svg>
+      店名（架空）
+    </a>
+    <nav class="ax-nav" aria-label="ページ内">
+      <ul><li><a href="#">メニュー</a></li><li><a href="#">流れ</a></li><li><a href="#">アクセス</a></li></ul>
+    </nav>
+    <a class="ax-btn" href="#">相談する</a>
+  </div>
+</header>
+    </div>
+    <div class="ax-wrap">
+      <details class="cat-code">
+        <summary>HTML を見る（ヘッダー（CTA付き））</summary>
+        <button type="button" class="ax-btn ax-btn--ghost cat-copy" data-target="code-header">コピーする</button>
+        <pre><code id="code-header">&lt;header class=&quot;ax-header&quot;&gt;
+  &lt;div class=&quot;ax-wrap&quot;&gt;
+    &lt;a class=&quot;ax-logo&quot; href=&quot;#&quot;&gt;
+      &lt;svg width=&quot;28&quot; height=&quot;28&quot; viewBox=&quot;0 0 28 28&quot; aria-hidden=&quot;true&quot;&gt;&lt;circle cx=&quot;14&quot; cy=&quot;14&quot; r=&quot;13&quot; fill=&quot;currentColor&quot; opacity=&quot;.15&quot;/&gt;&lt;path d=&quot;M8 18h12M10 12h8&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;2.5&quot; stroke-linecap=&quot;round&quot;/&gt;&lt;/svg&gt;
+      店名（架空）
+    &lt;/a&gt;
+    &lt;nav class=&quot;ax-nav&quot; aria-label=&quot;ページ内&quot;&gt;
+      &lt;ul&gt;&lt;li&gt;&lt;a href=&quot;#&quot;&gt;メニュー&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;#&quot;&gt;流れ&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;#&quot;&gt;アクセス&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;
+    &lt;/nav&gt;
+    &lt;a class=&quot;ax-btn&quot; href=&quot;#&quot;&gt;相談する&lt;/a&gt;
+  &lt;/div&gt;
+&lt;/header&gt;</code></pre>
+      </details>
+    </div>
+  </section>
+  <section class="cat-item" id="c-hero" aria-labelledby="h-hero">
+    <div class="ax-wrap">
+      <div class="cat-head">
+        <p class="ax-kicker">Component 03</p>
+        <h2 id="h-hero">ヒーロー</h2>
+        <p class="cat-desc">見出し・導入文・CTA2つ・状況の1行。右は図の枠（写真を入れる場合も同じ枠）。ページでは見出しを h1 にする（この一覧の中だけ h2 で表示）。</p>
+      </div>
+    </div>
+    <div class="cat-demo">
+<section class="ax-hero ax-section">
+  <div class="ax-wrap">
+    <div>
+      <p class="ax-kicker">Neighborhood shop</p>
+      <h2 class="ax-h1"><span class="ax-nobr">見出しは</span><span class="ax-nobr">句ごとに包む。</span></h2>
+      <p class="ax-lead">導入文は2〜3行。お店が何をしていて、誰のためかを書きます。断定や成果の約束は書きません。</p>
+      <div class="ax-cta">
+        <a class="ax-btn" href="#">主要な行動</a>
+        <a class="ax-btn ax-btn--ghost" href="#">もう一つの行動</a>
+      </div>
+      <p class="ax-status"><span class="ax-dot" aria-hidden="true"></span>本日 10:00〜18:00 営業（例）</p>
+    </div>
+    <div class="ax-visual" role="img" aria-label="図の枠（写真や図を入れる場所）">
+      <svg width="160" height="120" viewBox="0 0 160 120" aria-hidden="true"><rect x="20" y="40" width="120" height="64" rx="10" fill="currentColor" opacity=".18"/><circle cx="80" cy="36" r="20" fill="currentColor" opacity=".35"/></svg>
+    </div>
+  </div>
+</section>
+    </div>
+    <div class="ax-wrap">
+      <details class="cat-code">
+        <summary>HTML を見る（ヒーロー）</summary>
+        <button type="button" class="ax-btn ax-btn--ghost cat-copy" data-target="code-hero">コピーする</button>
+        <pre><code id="code-hero">&lt;section class=&quot;ax-hero ax-section&quot;&gt;
+  &lt;div class=&quot;ax-wrap&quot;&gt;
+    &lt;div&gt;
+      &lt;p class=&quot;ax-kicker&quot;&gt;Neighborhood shop&lt;/p&gt;
+      &lt;h1 class=&quot;ax-h1&quot;&gt;&lt;span class=&quot;ax-nobr&quot;&gt;見出しは&lt;/span&gt;&lt;span class=&quot;ax-nobr&quot;&gt;句ごとに包む。&lt;/span&gt;&lt;/h1&gt;
+      &lt;p class=&quot;ax-lead&quot;&gt;導入文は2〜3行。お店が何をしていて、誰のためかを書きます。断定や成果の約束は書きません。&lt;/p&gt;
+      &lt;div class=&quot;ax-cta&quot;&gt;
+        &lt;a class=&quot;ax-btn&quot; href=&quot;#&quot;&gt;主要な行動&lt;/a&gt;
+        &lt;a class=&quot;ax-btn ax-btn--ghost&quot; href=&quot;#&quot;&gt;もう一つの行動&lt;/a&gt;
+      &lt;/div&gt;
+      &lt;p class=&quot;ax-status&quot;&gt;&lt;span class=&quot;ax-dot&quot; aria-hidden=&quot;true&quot;&gt;&lt;/span&gt;本日 10:00〜18:00 営業（例）&lt;/p&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;ax-visual&quot; role=&quot;img&quot; aria-label=&quot;図の枠（写真や図を入れる場所）&quot;&gt;
+      &lt;svg width=&quot;160&quot; height=&quot;120&quot; viewBox=&quot;0 0 160 120&quot; aria-hidden=&quot;true&quot;&gt;&lt;rect x=&quot;20&quot; y=&quot;40&quot; width=&quot;120&quot; height=&quot;64&quot; rx=&quot;10&quot; fill=&quot;currentColor&quot; opacity=&quot;.18&quot;/&gt;&lt;circle cx=&quot;80&quot; cy=&quot;36&quot; r=&quot;20&quot; fill=&quot;currentColor&quot; opacity=&quot;.35&quot;/&gt;&lt;/svg&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/section&gt;</code></pre>
+      </details>
+    </div>
+  </section>
+  <section class="cat-item" id="c-cards" aria-labelledby="h-cards">
+    <div class="ax-wrap">
+      <div class="cat-head">
+        <p class="ax-kicker">Component 04</p>
+        <h2 id="h-cards">カード一覧</h2>
+        <p class="cat-desc">商品・メニュー・部屋など。3列（スマホは1列）。価格は数字書体。</p>
+      </div>
+    </div>
+    <div class="cat-demo">
+<div class="ax-cards">
+  <article class="ax-card">
+    <div class="ax-card__ill" aria-hidden="true"><svg width="64" height="48" viewBox="0 0 64 48"><rect x="6" y="12" width="52" height="30" rx="8" fill="currentColor" opacity=".3"/></svg></div>
+    <h3>品名（例）</h3>
+    <p class="ax-card__meta">説明の1行</p>
+    <p class="ax-card__price">¥1,200</p>
+  </article>
+  <article class="ax-card">
+    <div class="ax-card__ill" aria-hidden="true"><svg width="64" height="48" viewBox="0 0 64 48"><circle cx="32" cy="26" r="16" fill="currentColor" opacity=".3"/></svg></div>
+    <h3>品名（例）</h3>
+    <p class="ax-card__meta">説明の1行</p>
+    <p class="ax-card__price">¥2,400</p>
+  </article>
+  <article class="ax-card">
+    <div class="ax-card__ill" aria-hidden="true"><svg width="64" height="48" viewBox="0 0 64 48"><path d="M10 40 32 8l22 32z" fill="currentColor" opacity=".3"/></svg></div>
+    <h3>品名（例）</h3>
+    <p class="ax-card__meta">説明の1行</p>
+    <p class="ax-card__price">¥3,600〜</p>
+  </article>
+</div>
+<p class="ax-note">※商品・価格はサンプル用の架空のものです。</p>
+    </div>
+    <div class="ax-wrap">
+      <details class="cat-code">
+        <summary>HTML を見る（カード一覧）</summary>
+        <button type="button" class="ax-btn ax-btn--ghost cat-copy" data-target="code-cards">コピーする</button>
+        <pre><code id="code-cards">&lt;div class=&quot;ax-cards&quot;&gt;
+  &lt;article class=&quot;ax-card&quot;&gt;
+    &lt;div class=&quot;ax-card__ill&quot; aria-hidden=&quot;true&quot;&gt;&lt;svg width=&quot;64&quot; height=&quot;48&quot; viewBox=&quot;0 0 64 48&quot;&gt;&lt;rect x=&quot;6&quot; y=&quot;12&quot; width=&quot;52&quot; height=&quot;30&quot; rx=&quot;8&quot; fill=&quot;currentColor&quot; opacity=&quot;.3&quot;/&gt;&lt;/svg&gt;&lt;/div&gt;
+    &lt;h3&gt;品名（例）&lt;/h3&gt;
+    &lt;p class=&quot;ax-card__meta&quot;&gt;説明の1行&lt;/p&gt;
+    &lt;p class=&quot;ax-card__price&quot;&gt;¥1,200&lt;/p&gt;
+  &lt;/article&gt;
+  &lt;article class=&quot;ax-card&quot;&gt;
+    &lt;div class=&quot;ax-card__ill&quot; aria-hidden=&quot;true&quot;&gt;&lt;svg width=&quot;64&quot; height=&quot;48&quot; viewBox=&quot;0 0 64 48&quot;&gt;&lt;circle cx=&quot;32&quot; cy=&quot;26&quot; r=&quot;16&quot; fill=&quot;currentColor&quot; opacity=&quot;.3&quot;/&gt;&lt;/svg&gt;&lt;/div&gt;
+    &lt;h3&gt;品名（例）&lt;/h3&gt;
+    &lt;p class=&quot;ax-card__meta&quot;&gt;説明の1行&lt;/p&gt;
+    &lt;p class=&quot;ax-card__price&quot;&gt;¥2,400&lt;/p&gt;
+  &lt;/article&gt;
+  &lt;article class=&quot;ax-card&quot;&gt;
+    &lt;div class=&quot;ax-card__ill&quot; aria-hidden=&quot;true&quot;&gt;&lt;svg width=&quot;64&quot; height=&quot;48&quot; viewBox=&quot;0 0 64 48&quot;&gt;&lt;path d=&quot;M10 40 32 8l22 32z&quot; fill=&quot;currentColor&quot; opacity=&quot;.3&quot;/&gt;&lt;/svg&gt;&lt;/div&gt;
+    &lt;h3&gt;品名（例）&lt;/h3&gt;
+    &lt;p class=&quot;ax-card__meta&quot;&gt;説明の1行&lt;/p&gt;
+    &lt;p class=&quot;ax-card__price&quot;&gt;¥3,600〜&lt;/p&gt;
+  &lt;/article&gt;
+&lt;/div&gt;
+&lt;p class=&quot;ax-note&quot;&gt;※商品・価格はサンプル用の架空のものです。&lt;/p&gt;</code></pre>
+      </details>
+    </div>
+  </section>
+  <section class="cat-item" id="c-points" aria-labelledby="h-points">
+    <div class="ax-wrap">
+      <div class="cat-head">
+        <p class="ax-kicker">Component 05</p>
+        <h2 id="h-points">番号つきの要点</h2>
+        <p class="cat-desc">こだわり・特徴を3つ。番号は数字書体。</p>
+      </div>
+    </div>
+    <div class="cat-demo">
+<div class="ax-points">
+  <div><p class="ax-points__num">01</p><h3>要点の見出し</h3><p>本文は2〜3行。事実だけを書きます。</p></div>
+  <div><p class="ax-points__num">02</p><h3>要点の見出し</h3><p>本文は2〜3行。事実だけを書きます。</p></div>
+  <div><p class="ax-points__num">03</p><h3>要点の見出し</h3><p>本文は2〜3行。事実だけを書きます。</p></div>
+</div>
+    </div>
+    <div class="ax-wrap">
+      <details class="cat-code">
+        <summary>HTML を見る（番号つきの要点）</summary>
+        <button type="button" class="ax-btn ax-btn--ghost cat-copy" data-target="code-points">コピーする</button>
+        <pre><code id="code-points">&lt;div class=&quot;ax-points&quot;&gt;
+  &lt;div&gt;&lt;p class=&quot;ax-points__num&quot;&gt;01&lt;/p&gt;&lt;h3&gt;要点の見出し&lt;/h3&gt;&lt;p&gt;本文は2〜3行。事実だけを書きます。&lt;/p&gt;&lt;/div&gt;
+  &lt;div&gt;&lt;p class=&quot;ax-points__num&quot;&gt;02&lt;/p&gt;&lt;h3&gt;要点の見出し&lt;/h3&gt;&lt;p&gt;本文は2〜3行。事実だけを書きます。&lt;/p&gt;&lt;/div&gt;
+  &lt;div&gt;&lt;p class=&quot;ax-points__num&quot;&gt;03&lt;/p&gt;&lt;h3&gt;要点の見出し&lt;/h3&gt;&lt;p&gt;本文は2〜3行。事実だけを書きます。&lt;/p&gt;&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+      </details>
+    </div>
+  </section>
+  <section class="cat-item" id="c-steps" aria-labelledby="h-steps">
+    <div class="ax-wrap">
+      <div class="cat-head">
+        <p class="ax-kicker">Component 06</p>
+        <h2 id="h-steps">手順</h2>
+        <p class="cat-desc">ご依頼・予約・来店の流れ。番号つきリスト。</p>
+      </div>
+    </div>
+    <div class="cat-demo">
+<ol class="ax-steps">
+  <li><p class="ax-steps__label">STEP 1</p><h3>ご相談</h3><p>フォームかお電話で内容を伺います。</p></li>
+  <li><p class="ax-steps__label">STEP 2</p><h3>ご提案</h3><p>内容を確認し、進め方をご案内します。</p></li>
+  <li><p class="ax-steps__label">STEP 3</p><h3>お渡し</h3><p>ご指定の日時にお渡しします。</p></li>
+</ol>
+    </div>
+    <div class="ax-wrap">
+      <details class="cat-code">
+        <summary>HTML を見る（手順）</summary>
+        <button type="button" class="ax-btn ax-btn--ghost cat-copy" data-target="code-steps">コピーする</button>
+        <pre><code id="code-steps">&lt;ol class=&quot;ax-steps&quot;&gt;
+  &lt;li&gt;&lt;p class=&quot;ax-steps__label&quot;&gt;STEP 1&lt;/p&gt;&lt;h3&gt;ご相談&lt;/h3&gt;&lt;p&gt;フォームかお電話で内容を伺います。&lt;/p&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;p class=&quot;ax-steps__label&quot;&gt;STEP 2&lt;/p&gt;&lt;h3&gt;ご提案&lt;/h3&gt;&lt;p&gt;内容を確認し、進め方をご案内します。&lt;/p&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;p class=&quot;ax-steps__label&quot;&gt;STEP 3&lt;/p&gt;&lt;h3&gt;お渡し&lt;/h3&gt;&lt;p&gt;ご指定の日時にお渡しします。&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;</code></pre>
+      </details>
+    </div>
+  </section>
+  <section class="cat-item" id="c-info" aria-labelledby="h-info">
+    <div class="ax-wrap">
+      <div class="cat-head">
+        <p class="ax-kicker">Component 07</p>
+        <h2 id="h-info">情報の表</h2>
+        <p class="cat-desc">営業時間・住所・連絡先。掲載ページ（BIZ-035）の基本情報にも使う。</p>
+      </div>
+    </div>
+    <div class="cat-demo">
+<table class="ax-info">
+  <tbody>
+    <tr><th scope="row">営業時間</th><td>10:00〜18:00（例）</td></tr>
+    <tr><th scope="row">定休日</th><td>水曜（例）</td></tr>
+    <tr><th scope="row">住所</th><td>〇〇市△△町 1-2-3（架空の住所）</td></tr>
+    <tr><th scope="row">電話</th><td>000-0000-0000（架空）</td></tr>
+  </tbody>
+</table>
+    </div>
+    <div class="ax-wrap">
+      <details class="cat-code">
+        <summary>HTML を見る（情報の表）</summary>
+        <button type="button" class="ax-btn ax-btn--ghost cat-copy" data-target="code-info">コピーする</button>
+        <pre><code id="code-info">&lt;table class=&quot;ax-info&quot;&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;&lt;th scope=&quot;row&quot;&gt;営業時間&lt;/th&gt;&lt;td&gt;10:00〜18:00（例）&lt;/td&gt;&lt;/tr&gt;
+    &lt;tr&gt;&lt;th scope=&quot;row&quot;&gt;定休日&lt;/th&gt;&lt;td&gt;水曜（例）&lt;/td&gt;&lt;/tr&gt;
+    &lt;tr&gt;&lt;th scope=&quot;row&quot;&gt;住所&lt;/th&gt;&lt;td&gt;〇〇市△△町 1-2-3（架空の住所）&lt;/td&gt;&lt;/tr&gt;
+    &lt;tr&gt;&lt;th scope=&quot;row&quot;&gt;電話&lt;/th&gt;&lt;td&gt;000-0000-0000（架空）&lt;/td&gt;&lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;</code></pre>
+      </details>
+    </div>
+  </section>
+  <section class="cat-item" id="c-map" aria-labelledby="h-map">
+    <div class="ax-wrap">
+      <div class="cat-head">
+        <p class="ax-kicker">Component 08</p>
+        <h2 id="h-map">地図の図</h2>
+        <p class="cat-desc">外部の地図や写真を使わない案内図。目印と店の位置だけを示す。</p>
+      </div>
+    </div>
+    <div class="cat-demo">
+<div class="ax-access">
+  <p>最寄り駅から徒歩5分（例）。通り沿いの青い看板が目印です。</p>
+  <div class="ax-map" role="img" aria-label="駅から店までの案内図（例）">
+    <svg viewBox="0 0 320 180" aria-hidden="true"><rect width="320" height="180" rx="10" fill="currentColor" opacity=".08"/><rect x="0" y="80" width="320" height="16" fill="currentColor" opacity=".18"/><rect x="150" y="0" width="16" height="180" fill="currentColor" opacity=".18"/><rect x="40" y="40" width="60" height="28" rx="6" fill="currentColor" opacity=".6"/><rect x="200" y="112" width="56" height="28" rx="6" fill="currentColor"/></svg>
+  </div>
+</div>
+    </div>
+    <div class="ax-wrap">
+      <details class="cat-code">
+        <summary>HTML を見る（地図の図）</summary>
+        <button type="button" class="ax-btn ax-btn--ghost cat-copy" data-target="code-map">コピーする</button>
+        <pre><code id="code-map">&lt;div class=&quot;ax-access&quot;&gt;
+  &lt;p&gt;最寄り駅から徒歩5分（例）。通り沿いの青い看板が目印です。&lt;/p&gt;
+  &lt;div class=&quot;ax-map&quot; role=&quot;img&quot; aria-label=&quot;駅から店までの案内図（例）&quot;&gt;
+    &lt;svg viewBox=&quot;0 0 320 180&quot; aria-hidden=&quot;true&quot;&gt;&lt;rect width=&quot;320&quot; height=&quot;180&quot; rx=&quot;10&quot; fill=&quot;currentColor&quot; opacity=&quot;.08&quot;/&gt;&lt;rect x=&quot;0&quot; y=&quot;80&quot; width=&quot;320&quot; height=&quot;16&quot; fill=&quot;currentColor&quot; opacity=&quot;.18&quot;/&gt;&lt;rect x=&quot;150&quot; y=&quot;0&quot; width=&quot;16&quot; height=&quot;180&quot; fill=&quot;currentColor&quot; opacity=&quot;.18&quot;/&gt;&lt;rect x=&quot;40&quot; y=&quot;40&quot; width=&quot;60&quot; height=&quot;28&quot; rx=&quot;6&quot; fill=&quot;currentColor&quot; opacity=&quot;.6&quot;/&gt;&lt;rect x=&quot;200&quot; y=&quot;112&quot; width=&quot;56&quot; height=&quot;28&quot; rx=&quot;6&quot; fill=&quot;currentColor&quot;/&gt;&lt;/svg&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+      </details>
+    </div>
+  </section>
+  <section class="cat-item" id="c-faq" aria-labelledby="h-faq">
+    <div class="ax-wrap">
+      <div class="cat-head">
+        <p class="ax-kicker">Component 09</p>
+        <h2 id="h-faq">よくある質問</h2>
+        <p class="cat-desc">開閉式。質問は短く、答えは事実だけ。</p>
+      </div>
+    </div>
+    <div class="cat-demo">
+<div class="ax-faq">
+  <details><summary>質問の例（1）</summary><p>答えの例です。約束できないことは書きません。</p></details>
+  <details><summary>質問の例（2）</summary><p>答えの例です。料金や日数は確定しているものだけを書きます。</p></details>
+</div>
+    </div>
+    <div class="ax-wrap">
+      <details class="cat-code">
+        <summary>HTML を見る（よくある質問）</summary>
+        <button type="button" class="ax-btn ax-btn--ghost cat-copy" data-target="code-faq">コピーする</button>
+        <pre><code id="code-faq">&lt;div class=&quot;ax-faq&quot;&gt;
+  &lt;details&gt;&lt;summary&gt;質問の例（1）&lt;/summary&gt;&lt;p&gt;答えの例です。約束できないことは書きません。&lt;/p&gt;&lt;/details&gt;
+  &lt;details&gt;&lt;summary&gt;質問の例（2）&lt;/summary&gt;&lt;p&gt;答えの例です。料金や日数は確定しているものだけを書きます。&lt;/p&gt;&lt;/details&gt;
+&lt;/div&gt;</code></pre>
+      </details>
+    </div>
+  </section>
+  <section class="cat-item" id="c-footer" aria-labelledby="h-footer">
+    <div class="ax-wrap">
+      <div class="cat-head">
+        <p class="ax-kicker">Component 10</p>
+        <h2 id="h-footer">フッター</h2>
+        <p class="cat-desc">店名と、サンプルであることの再掲。</p>
+      </div>
+    </div>
+    <div class="cat-demo">
+<footer class="ax-footer">
+  <div class="ax-wrap">
+    <p>店名（架空の店舗）</p>
+    <p>これは AXLABO が制作したサンプルサイトです。掲載の店舗・人物・内容は架空です。お客様の制作実績ではありません。</p>
+  </div>
+</footer>
+    </div>
+    <div class="ax-wrap">
+      <details class="cat-code">
+        <summary>HTML を見る（フッター）</summary>
+        <button type="button" class="ax-btn ax-btn--ghost cat-copy" data-target="code-footer">コピーする</button>
+        <pre><code id="code-footer">&lt;footer class=&quot;ax-footer&quot;&gt;
+  &lt;div class=&quot;ax-wrap&quot;&gt;
+    &lt;p&gt;店名（架空の店舗）&lt;/p&gt;
+    &lt;p&gt;これは AXLABO が制作したサンプルサイトです。掲載の店舗・人物・内容は架空です。お客様の制作実績ではありません。&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/footer&gt;</code></pre>
+      </details>
+    </div>
+  </section>
+</main>
+<div class="ax-sample-banner">これは AXLABO が制作したサンプルサイトです。掲載の店舗・人物・内容は架空です。</div>
+<script>
+  document.querySelectorAll('.cat-theme input').forEach(function (r) {
+    r.addEventListener('change', function () { document.documentElement.setAttribute('data-theme', r.value); });
+  });
+  document.querySelectorAll('.cat-copy').forEach(function (b) {
+    b.addEventListener('click', function () {
+      var t = document.getElementById(b.dataset.target).textContent;
+      (navigator.clipboard ? navigator.clipboard.writeText(t) : Promise.reject()).then(function () { b.textContent = 'コピーしました'; }, function () { b.textContent = '手動で選択してコピーしてください'; });
+    });
+  });
+</script>
+</body>
+</html>
