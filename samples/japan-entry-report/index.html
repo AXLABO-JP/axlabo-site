@@ -1,0 +1,307 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Japan Entry Assessment — sample report for a fictional company | AXLABO sample</title>
+<meta name="description" content="SAMPLE — a sample deliverable made by AXLABO for a fictional company. It is not advice and not a client project.">
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;700&family=Zen+Kaku+Gothic+New:wght@500;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #F5F6F8;
+    --tint: #E3E8EF;
+    --accent: #23466B;
+    --warm: #8A4B14;
+    --text: #1B2330;
+    --muted: #465262;
+    --line: #C9D1DC;
+    --font-heading: "Outfit", "Inter", ui-sans-serif, system-ui, sans-serif;
+    --font-body: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
+    --font-ja: "Zen Kaku Gothic New", "Hiragino Sans", "Noto Sans JP", sans-serif;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { margin: 0; background: var(--bg); color: var(--text); font-family: var(--font-body); font-size: 17px; line-height: 1.7; }
+  img, svg { max-width: 100%; height: auto; display: block; }
+  a { color: var(--accent); }
+  a:focus-visible, button:focus-visible, summary:focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; border-radius: 4px; }
+  h1, h2, h3 { font-family: var(--font-heading); line-height: 1.25; margin: 0; letter-spacing: -.01em; }
+  h2 { font-size: 30px; }
+  h3 { font-size: 19px; }
+  p { margin: 0; }
+  [lang="ja"] { font-family: var(--font-ja); }
+  .wrap { max-width: 1040px; margin: 0 auto; padding: 0 24px; }
+  .kicker { font-family: var(--font-heading); font-weight: 700; letter-spacing: .14em; font-size: 13px; color: var(--accent); text-transform: uppercase; }
+
+  .sample-banner { background: var(--text); color: #fff; font-size: 14px; text-align: center; padding: 10px 16px; line-height: 1.6; }
+  .sample-banner strong { color: #FFD9A8; }
+  .sample-banner span { display: inline-block; }
+
+  header.site { position: sticky; top: 0; z-index: 10; background: rgba(245,246,248,.97); border-bottom: 1px solid var(--tint); }
+  header.site .wrap { display: flex; align-items: center; justify-content: space-between; gap: 16px; min-height: 64px; }
+  .logo { display: flex; align-items: center; gap: 10px; text-decoration: none; color: var(--text); font-family: var(--font-heading); font-weight: 700; font-size: 18px; }
+  nav ul { list-style: none; display: flex; gap: 20px; margin: 0; padding: 0; }
+  nav a { color: var(--text); text-decoration: none; font-size: 15px; display: inline-block; padding: 8px 0; }
+  nav a:hover { color: var(--accent); }
+  .btn { display: inline-block; background: var(--accent); color: #fff; text-decoration: none; font-weight: 700; font-family: var(--font-heading); padding: 12px 22px; border-radius: 999px; min-height: 44px; }
+  .btn:hover { background: #18344F; }
+
+  section { padding: 80px 0; }
+  section.alt { background: var(--tint); }
+  .section-head { display: grid; gap: 8px; margin-bottom: 32px; }
+  .section-head p { color: var(--muted); max-width: 36em; }
+
+  .hero .wrap { display: grid; grid-template-columns: 1.1fr .9fr; gap: 48px; align-items: center; }
+  .hero h1 { font-size: 46px; }
+  .hero h1 span { display: inline-block; }
+  .hero p.lead { margin-top: 18px; color: var(--muted); max-width: 32em; }
+  .meta { margin-top: 28px; background: #fff; border-radius: 16px; padding: 8px 20px; }
+  table { border-collapse: collapse; width: 100%; }
+  th, td { text-align: left; padding: 12px 0; border-bottom: 1px solid var(--line); vertical-align: top; font-size: 15px; }
+  tr:last-child th, tr:last-child td { border-bottom: 0; }
+  th { width: 9em; font-family: var(--font-heading); font-weight: 700; padding-right: 16px; }
+  .ill { background: #fff; border-radius: 16px; padding: 28px; }
+
+  .brief { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
+  .card { background: #fff; border-radius: 16px; padding: 22px 24px; display: grid; gap: 8px; align-content: start; }
+  .card .label { font-family: var(--font-heading); font-weight: 700; color: var(--accent); font-size: 13px; letter-spacing: .1em; text-transform: uppercase; }
+  .ex { display: inline-block; font-size: 12px; font-weight: 700; letter-spacing: .06em; color: var(--warm); border: 1px solid var(--warm); border-radius: 999px; padding: 1px 10px; margin-left: 6px; vertical-align: 2px; }
+  .note { margin-top: 20px; font-size: 14px; color: var(--muted); }
+
+  .issues { display: grid; gap: 16px; }
+  .issue { background: #fff; border-radius: 16px; padding: 22px 24px; display: grid; grid-template-columns: 3.2em 1fr; gap: 4px 16px; }
+  .issue .num { font-family: var(--font-heading); font-size: 30px; font-weight: 700; color: var(--accent); line-height: 1; grid-row: span 3; }
+  .issue p { color: var(--muted); }
+  .status { display: inline-block; margin-top: 4px; font-size: 13px; font-weight: 700; color: var(--warm); }
+
+  .check { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px 24px; }
+  .check li { background: #fff; border-radius: 12px; padding: 14px 18px 14px 50px; position: relative; min-height: 48px; }
+  .check li::before { content: ""; position: absolute; left: 18px; top: 17px; width: 18px; height: 18px; border: 2px solid var(--accent); border-radius: 4px; }
+  .check small { display: block; color: var(--muted); font-size: 14px; }
+
+  .qtable { background: #fff; border-radius: 16px; padding: 8px 24px; overflow-x: auto; }
+  .qtable th { width: auto; }
+  .qtable thead th { font-size: 13px; letter-spacing: .08em; text-transform: uppercase; color: var(--accent); }
+  .qtable td:first-child { font-family: var(--font-heading); font-weight: 700; white-space: nowrap; padding-right: 16px; }
+  .qtable td:nth-child(2) { color: var(--muted); padding-right: 16px; min-width: 10em; }
+
+  .notdo { display: grid; grid-template-columns: 1.1fr .9fr; gap: 40px; align-items: start; }
+  .notdo ul { margin: 0; padding: 0; list-style: none; display: grid; gap: 10px; }
+  .notdo li { background: #fff; border-radius: 12px; padding: 12px 18px 12px 46px; position: relative; }
+  .notdo li::before { content: ""; position: absolute; left: 18px; top: 50%; width: 14px; height: 2px; background: var(--warm); transform: translateY(-50%) rotate(45deg); }
+  .notdo li::after { content: ""; position: absolute; left: 18px; top: 50%; width: 14px; height: 2px; background: var(--warm); transform: translateY(-50%) rotate(-45deg); }
+  .box { background: #fff; border-radius: 16px; padding: 24px; display: grid; gap: 12px; }
+  .box p { color: var(--muted); }
+
+  .about { background: #fff; border: 2px dashed var(--line); border-radius: 16px; padding: 24px 28px; display: grid; gap: 10px; }
+  .about p { color: var(--muted); }
+
+  footer { background: var(--text); color: #EEF1F5; padding: 44px 0; font-size: 14px; }
+  footer p + p { margin-top: 8px; }
+  footer strong { color: #FFD9A8; }
+
+  @media (max-width: 860px) {
+    .hero .wrap, .notdo { grid-template-columns: 1fr; gap: 32px; }
+    .brief, .check { grid-template-columns: 1fr; }
+    nav ul { display: none; }
+    section { padding: 60px 0; }
+  }
+  @media (max-width: 480px) {
+    .wrap { padding: 0 16px; }
+    .hero h1 { font-size: 32px; }
+    h2 { font-size: 25px; }
+    header .btn { padding: 10px 16px; font-size: 14px; }
+    .logo { font-size: 16px; }
+    .issue { grid-template-columns: 1fr; }
+    .issue .num { grid-row: auto; font-size: 24px; }
+    .qtable td:first-child { white-space: normal; }
+  }
+  @media (max-width: 600px) {
+    .qtable { padding: 4px 16px; }
+    .qtable thead { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
+    .qtable tr { display: block; padding: 14px 0; border-bottom: 1px solid var(--line); }
+    .qtable tr:last-child { border-bottom: 0; }
+    .qtable td { display: block; border: 0; padding: 2px 0; white-space: normal !important; min-width: 0 !important; }
+    .qtable td::before { content: attr(data-label); display: block; font-size: 12px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--accent); margin-top: 6px; }
+  }
+  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+</style>
+</head>
+<body id="top">
+
+<div class="sample-banner" role="note">
+  <span><strong>SAMPLE</strong> — This is a sample deliverable made by AXLABO for a fictional company. It is not advice and not a client project.</span>
+  <span lang="ja">これは AXLABO が制作したサンプルサイトです（架空の企業・助言ではありません）。</span>
+</div>
+
+<header class="site">
+  <div class="wrap">
+    <a class="logo" href="#top" aria-label="Japan Entry Assessment sample, back to top">
+      <svg width="32" height="32" viewBox="0 0 32 32" aria-hidden="true"><rect x="2" y="2" width="28" height="28" rx="8" fill="#23466B"/><path d="M10 9h9l4 4v10H10z" fill="none" stroke="#F5F6F8" stroke-width="2" stroke-linejoin="round"/><path d="M13 17l2 2 4-4" fill="none" stroke="#FFD9A8" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      Japan Entry Assessment
+    </a>
+    <nav aria-label="Report sections">
+      <ul>
+        <li><a href="#brief">Brief</a></li>
+        <li><a href="#issues">Issues</a></li>
+        <li><a href="#checklist">Checklist</a></li>
+        <li><a href="#questions">Questions</a></li>
+        <li><a href="#not-included">Not included</a></li>
+      </ul>
+    </nav>
+    <a class="btn" href="#about">About this sample</a>
+  </div>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="wrap">
+      <div>
+        <p class="kicker">Sample report · fictional company</p>
+        <h1><span>Japan Entry</span> <span>Assessment</span></h1>
+        <p class="lead">An example of the one-page report AXLABO prepares after a short hearing. It organizes the questions a company usually faces before setting up in Japan, and lists what to confirm with licensed professionals. It does not answer those questions for you.</p>
+        <div class="meta">
+          <table>
+            <tr><th scope="row">Prepared for</th><td>Nordlicht Labs <em>(fictional company)</em></td></tr>
+            <tr><th scope="row">Based on</th><td>A hearing about goals and business activities <span class="ex">EXAMPLE</span></td></tr>
+            <tr><th scope="row">Price</th><td>¥50,000 (excluding tax)</td></tr>
+            <tr><th scope="row">Not included</th><td>Market research, legal / tax / visa advice, filings of any kind</td></tr>
+          </table>
+        </div>
+      </div>
+      <div class="ill" aria-hidden="true">
+        <svg viewBox="0 0 320 260">
+          <rect x="60" y="20" width="200" height="220" rx="14" fill="#E3E8EF"/>
+          <rect x="84" y="46" width="120" height="12" rx="6" fill="#23466B"/>
+          <g fill="none" stroke="#23466B" stroke-width="3">
+            <rect x="84" y="84" width="16" height="16" rx="3"/><rect x="84" y="120" width="16" height="16" rx="3"/><rect x="84" y="156" width="16" height="16" rx="3"/><rect x="84" y="192" width="16" height="16" rx="3"/>
+          </g>
+          <g stroke="#8A4B14" stroke-width="3.5" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M87 92l4 4 7-8"/><path d="M87 128l4 4 7-8"/>
+          </g>
+          <g fill="#C9D1DC"><rect x="112" y="87" width="120" height="10" rx="5"/><rect x="112" y="123" width="100" height="10" rx="5"/><rect x="112" y="159" width="116" height="10" rx="5"/><rect x="112" y="195" width="88" height="10" rx="5"/></g>
+          <circle cx="252" cy="206" r="30" fill="#23466B"/><path d="M240 206h24M252 194v24" stroke="#FFD9A8" stroke-width="4" stroke-linecap="round"/>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <section class="alt" id="brief">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="kicker">0 · Brief</p>
+        <h2>What the company told us</h2>
+        <p>Only facts heard in the hearing are recorded here. We do not add assumptions about the market.</p>
+      </div>
+      <div class="brief">
+        <div class="card"><p class="label">Company <span class="ex">EXAMPLE</span></p><p>A small software company in Europe with six people. No entity or staff in Japan yet.</p></div>
+        <div class="card"><p class="label">Goal in Japan <span class="ex">EXAMPLE</span></p><p>Sell its scheduling software to small clinics and studios, starting with online sales.</p></div>
+        <div class="card"><p class="label">People <span class="ex">EXAMPLE</span></p><p>The founders live outside Japan. One founder may spend some months in Japan next year.</p></div>
+        <div class="card"><p class="label">Open decisions <span class="ex">EXAMPLE</span></p><p>Whether to set up an entity now or later, and whether a Japan address is needed at the start.</p></div>
+      </div>
+      <p class="note">All company details on this page are fictional and shown only as an example of the report format.</p>
+    </div>
+  </section>
+
+  <section id="issues">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="kicker">1 · Issues</p>
+        <h2>Questions to settle before setting up</h2>
+        <p>Each item is a question, not an answer. Which option fits depends on your situation and must be confirmed with a licensed professional.</p>
+      </div>
+      <div class="issues">
+        <div class="issue"><p class="num">01</p><h3>Form of presence</h3><p>Options people commonly compare include selling from abroad without an entity, a branch, or a Japanese company (for example a KK or GK). The trade-offs for your case are not decided here.</p><p class="status">Needs confirmation</p></div>
+        <div class="issue"><p class="num">02</p><h3>Address in Japan</h3><p>Whether you need a Japan address, and what kind of address is acceptable for your chosen form, varies by situation. Please do not rely on this sample for that answer.</p><p class="status">Needs confirmation</p></div>
+        <div class="issue"><p class="num">03</p><h3>Main procedures</h3><p>Registration, tax-related notifications and opening a bank account are typically discussed. Order, timing and eligibility depend on the form you choose.</p><p class="status">Needs confirmation</p></div>
+        <div class="issue"><p class="num">04</p><h3>People and residence</h3><p>If a founder plans to stay and work in Japan, residence status becomes a separate question. It is outside what this report can decide.</p><p class="status">Needs confirmation</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="alt" id="checklist">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="kicker">2 · Document checklist</p>
+        <h2>Documents you may be asked for</h2>
+        <p>An example list to help you prepare. Requirements vary — confirm the exact list with the professional who handles your procedure.</p>
+      </div>
+      <ul class="check">
+        <li>Registration documents of the parent company<small>If you set up as a foreign company. Translation may be requested.</small></li>
+        <li>Identification of the representatives<small>For example passport copies.</small></li>
+        <li>Proof of address of the representatives<small>Format depends on the country of residence.</small></li>
+        <li>Signature or seal certification<small>Which one is accepted varies. Confirm first.</small></li>
+        <li>Basic company information<small>Planned name, business purpose, capital, officers.</small></li>
+        <li>Information about the Japan address<small>Only if an address is required for your form.</small></li>
+      </ul>
+      <p class="note">This checklist is an example for a fictional company. It is not a complete or authoritative list.</p>
+    </div>
+  </section>
+
+  <section id="questions">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="kicker">3 · Questions for professionals</p>
+        <h2>What to ask, and whom</h2>
+        <p>You engage these professionals directly. AXLABO does not introduce or broker professionals.</p>
+      </div>
+      <div class="qtable">
+        <table>
+          <thead><tr><th scope="col">Topic</th><th scope="col">Type of professional</th><th scope="col">Questions to bring</th></tr></thead>
+          <tbody>
+            <tr><td data-label="Topic">Form &amp; registration</td><td data-label="Type of professional">Judicial scrivener (shiho-shoshi) or lawyer</td><td data-label="Questions to bring">Which form fits our plan? What is needed to register it, and in what order?</td></tr>
+            <tr><td data-label="Topic">Tax</td><td data-label="Type of professional">Tax accountant (zeirishi)</td><td data-label="Questions to bring">What notifications are needed after setting up? How is selling from abroad treated compared with a Japanese entity?</td></tr>
+            <tr><td data-label="Topic">Residence status</td><td data-label="Type of professional">Immigration lawyer or gyoseishoshi</td><td data-label="Questions to bring">If a founder stays in Japan to work, what status could apply, and what does it require?</td></tr>
+            <tr><td data-label="Topic">Contracts</td><td data-label="Type of professional">Lawyer</td><td data-label="Questions to bring">What should our terms with Japanese customers cover?</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <section class="alt" id="not-included">
+    <div class="wrap notdo">
+      <div>
+        <div class="section-head">
+          <p class="kicker">4 · Not included</p>
+          <h2>What AXLABO does not do</h2>
+        </div>
+        <ul>
+          <li>Legal advice</li>
+          <li>Company registration on your behalf</li>
+          <li>Tax representation</li>
+          <li>Residence status (visa) applications on your behalf</li>
+          <li>Permit or licence applications on your behalf</li>
+          <li>Any other service reserved for licensed professionals</li>
+        </ul>
+      </div>
+      <div class="box">
+        <h3>How this works in practice</h3>
+        <p>When a licensed professional is needed, you engage them yourself. AXLABO does not introduce or broker professionals, and does not file anything.</p>
+        <p>We make no guarantee about bank accounts, addresses or residence status. We do not promise a delivery date in this sample.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="about">
+    <div class="wrap">
+      <div class="about">
+        <h2>About this sample</h2>
+        <p>This page shows the format of an AXLABO Japan Entry Assessment. Nordlicht Labs is a fictional company, and every detail on this page is an example. It is not advice for any real company, and it is not a client project.</p>
+        <p lang="ja">このページは AXLABO が制作したサンプルです。掲載の企業・内容はすべて架空で、助言や制作実績ではありません。</p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <p><strong>SAMPLE</strong> — This is a sample deliverable made by AXLABO for a fictional company. It is not advice and not a client project.</p>
+    <p lang="ja">これは AXLABO が制作したサンプルサイトです。掲載の企業・内容は架空で、お客様の制作実績ではありません。</p>
+  </div>
+</footer>
+</body>
+</html>
