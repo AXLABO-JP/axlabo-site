@@ -1,0 +1,242 @@
+<!doctype html>
+<html lang="ja" data-theme="tour">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>城下町のまちあるき・体験ツアー ゆらり舎（架空）｜AXLABO サンプルサイト</title>
+<meta name="description" content="AXLABO が制作したサンプルサイトです。掲載の店舗・人物・内容は架空です。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@700&family=Zen+Kaku+Gothic+New:wght@700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="components.css">
+<style>
+  /* このページだけの指定: 配色トークン、言語切替、ツアー表の幅、英語の概要枠 */
+  [data-theme="tour"] { --ax-bg:#F5F3EF; --ax-tint:#E6E2D8; --ax-accent:#2E3F6B; --ax-accent-hover:#223155;
+    --ax-text:#1C2230; --ax-muted:#485064; --ax-line:#D6D0C2; }
+  .lang-switch { display: inline-flex; border: 1px solid var(--ax-line); border-radius: 999px; overflow: hidden; }
+  .lang-switch a { display: inline-flex; align-items: center; justify-content: center; min-width: 44px; min-height: 36px;
+    padding: 0 10px; font-size: 13px; font-family: var(--ax-font-display); text-decoration: none; color: var(--ax-text); }
+  .lang-switch a[aria-current="true"] { background: var(--ax-accent); color: #fff; }
+  .head-right { display: flex; align-items: center; gap: var(--ax-s2); }
+  .tour-table td:last-child { text-align: right; white-space: nowrap; font-family: var(--ax-font-display); font-weight: 700; }
+  .tour-desc { display: block; font-family: var(--ax-font-body); font-weight: 400; }
+  .en-box { background: var(--ax-surface); border-radius: var(--ax-radius); padding: var(--ax-s4); max-width: 760px; }
+  .en-box h2 { font-family: var(--ax-font-display); }
+  @media (max-width: 480px) {
+    .head-right .ax-btn { display: none; }
+    .en-box { padding: var(--ax-s3); }
+  }
+</style>
+</head>
+<body class="ax-page">
+
+<p class="ax-sample-banner">これは AXLABO が制作したサンプルサイトです。掲載の店舗・人物・内容は架空です。</p>
+
+<header class="ax-header">
+  <div class="ax-wrap">
+    <a class="ax-logo" href="#top" aria-label="ゆらり舎 トップへ">
+      <svg width="32" height="32" viewBox="0 0 32 32" aria-hidden="true"><path d="M4 26 L16 6 L28 26 Z" fill="none" stroke="currentColor" stroke-width="3" stroke-linejoin="round"/><path d="M11 26 v-6 h10 v6" fill="none" stroke="currentColor" stroke-width="2.5"/></svg>
+      ゆらり舎
+    </a>
+    <nav class="ax-nav" aria-label="ページ内">
+      <ul>
+        <li><a href="#tours">ツアー</a></li>
+        <li><a href="#day">当日の流れ</a></li>
+        <li><a href="#faq">よくある質問</a></li>
+        <li><a href="#meet">集合場所</a></li>
+      </ul>
+    </nav>
+    <div class="head-right">
+      <div class="lang-switch" role="group" aria-label="表示言語（サンプル）">
+        <a href="#top" aria-current="true" lang="ja">日本語</a>
+        <a href="#english" lang="en">EN</a>
+      </div>
+      <a class="ax-btn" href="#book">予約の相談</a>
+    </div>
+  </div>
+</header>
+
+<main id="top">
+  <section class="ax-hero ax-section">
+    <div class="ax-wrap">
+      <div>
+        <p class="ax-kicker">Walking Tours &amp; Local Crafts</p>
+        <h1 class="ax-h1"><span class="ax-nobr">城下町を、</span><span class="ax-nobr">地元の人と</span><span class="ax-nobr">歩く半日。</span></h1>
+        <p class="ax-lead">古い町並みを案内人と歩き、職人の工房で手仕事を少しだけ体験する、少人数のまちあるきツアーです。日本語と英語でご案内します。</p>
+        <div class="ax-cta">
+          <a class="ax-btn" href="#tours">ツアーを見る</a>
+          <a class="ax-btn ax-btn--ghost" href="#english">English summary</a>
+        </div>
+        <p class="ax-status"><span class="ax-dot" aria-hidden="true"></span>毎日 9:30 / 13:30 出発（例）</p>
+      </div>
+      <div class="ax-visual">
+        <svg viewBox="0 0 320 200" width="320" height="200" role="img" aria-label="城と町並みのイラスト">
+          <rect x="0" y="170" width="320" height="30" fill="#D6D0C2"/>
+          <path d="M120 70 h80 l-12 -18 h-56 Z" fill="#2E3F6B"/>
+          <rect x="132" y="70" width="56" height="34" fill="#F5F3EF" stroke="#2E3F6B" stroke-width="4"/>
+          <path d="M112 104 h96 l-14 -14 h-68 Z" fill="#2E3F6B"/>
+          <rect x="124" y="104" width="72" height="44" fill="#F5F3EF" stroke="#2E3F6B" stroke-width="4"/>
+          <rect x="100" y="148" width="120" height="22" fill="#9C7A4B"/>
+          <path d="M20 170 v-40 l24 -16 l24 16 v40 Z M236 170 v-34 l22 -14 l22 14 v34 Z" fill="#C98A3E"/>
+          <circle cx="270" cy="40" r="16" fill="#E0B25A"/>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <section class="ax-section ax-section--alt" id="tours">
+    <div class="ax-wrap">
+      <div class="ax-section-head">
+        <p class="ax-kicker">Tours</p>
+        <h2><span class="ax-nobr">ツアーと料金の目安（例）</span></h2>
+      </div>
+      <div class="ax-cards">
+        <article class="ax-card">
+          <div class="ax-card__ill"><svg viewBox="0 0 120 80" width="120" height="80" aria-hidden="true"><path d="M10 64 C 40 40, 70 70, 110 30" fill="none" stroke="#2E3F6B" stroke-width="5" stroke-dasharray="8 6"/><circle cx="110" cy="30" r="7" fill="#C98A3E"/></svg></div>
+          <h3>城下町まちあるき</h3>
+          <p class="ax-card__meta">約2時間・徒歩約3km・1〜6名</p>
+          <p><strong>1名 ¥5,000〜（例）</strong></p>
+        </article>
+        <article class="ax-card">
+          <div class="ax-card__ill"><svg viewBox="0 0 120 80" width="120" height="80" aria-hidden="true"><ellipse cx="60" cy="50" rx="30" ry="14" fill="none" stroke="#2E3F6B" stroke-width="5"/><path d="M34 50 q26 -30 52 0" fill="none" stroke="#C98A3E" stroke-width="5"/></svg></div>
+          <h3>まちあるき＋工房体験</h3>
+          <p class="ax-card__meta">約3.5時間・器の絵付け体験つき</p>
+          <p><strong>1名 ¥9,000〜（例）</strong></p>
+        </article>
+        <article class="ax-card">
+          <div class="ax-card__ill"><svg viewBox="0 0 120 80" width="120" height="80" aria-hidden="true"><circle cx="44" cy="40" r="14" fill="none" stroke="#2E3F6B" stroke-width="5"/><circle cx="78" cy="40" r="14" fill="none" stroke="#2E3F6B" stroke-width="5"/><path d="M58 40 h6" stroke="#C98A3E" stroke-width="5"/></svg></div>
+          <h3>貸切プライベート</h3>
+          <p class="ax-card__meta">時間と行き先をご相談で</p>
+          <p><strong>1組 ¥20,000〜（例）</strong></p>
+        </article>
+      </div>
+      <p class="ax-note" style="margin-top:var(--ax-s3)">※ツアー内容・料金はサンプル用の架空の例です。実際のサイトでは、事業者が内容と料金を掲載・更新します。</p>
+    </div>
+  </section>
+
+  <section class="ax-section">
+    <div class="ax-wrap">
+      <div class="ax-section-head">
+        <p class="ax-kicker">Our Way</p>
+        <h2><span class="ax-nobr">観光地の、</span><span class="ax-nobr">その少し奥へ</span></h2>
+      </div>
+      <div class="ax-points">
+        <div>
+          <p class="ax-points__num">01</p>
+          <h3>少人数で歩く</h3>
+          <p>1回の定員は6名まで。路地や小さな店にも、無理なく立ち寄れます。</p>
+        </div>
+        <div>
+          <p class="ax-points__num">02</p>
+          <h3>町の人の話を聞く</h3>
+          <p>案内人がこの町の暮らしや歴史を、自分の言葉でお話しします。</p>
+        </div>
+        <div>
+          <p class="ax-points__num">03</p>
+          <h3>手を動かして持ち帰る</h3>
+          <p>工房体験で作ったものは、後日お送りするか当日お持ち帰りいただけます（例）。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="ax-section ax-section--alt" id="day">
+    <div class="ax-wrap">
+      <div class="ax-section-head">
+        <p class="ax-kicker">Your Day</p>
+        <h2><span class="ax-nobr">当日の流れ</span></h2>
+      </div>
+      <ol class="ax-steps">
+        <li><p class="ax-steps__label">STEP 1</p><h3>集合・あいさつ</h3><p>駅前の集合場所で案内人と合流します。歩きやすい靴でお越しください。</p></li>
+        <li><p class="ax-steps__label">STEP 2</p><h3>まちあるき</h3><p>町並み・寺社・市場をめぐります。途中で休憩をはさみます。</p></li>
+        <li><p class="ax-steps__label">STEP 3</p><h3>工房体験・解散</h3><p>体験つきのツアーは工房へ。終了後は近くの見どころをご案内して解散です。</p></li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="ax-section" id="book">
+    <div class="ax-wrap">
+      <div class="ax-section-head">
+        <p class="ax-kicker">Booking</p>
+        <h2><span class="ax-nobr">予約の相談</span></h2>
+      </div>
+      <table class="ax-info tour-table">
+        <tbody>
+          <tr><th scope="row">希望日<span class="ax-card__meta tour-desc">第2希望まで</span></th><td>フォームで送信</td></tr>
+          <tr><th scope="row">人数・言語<span class="ax-card__meta tour-desc">日本語・英語</span></th><td>フォームで送信</td></tr>
+          <tr><th scope="row">お返事<span class="ax-card__meta tour-desc">空き状況と合計金額</span></th><td>メールで連絡</td></tr>
+        </tbody>
+      </table>
+      <p style="margin-top:var(--ax-s4)"><a class="ax-btn" href="#book">予約フォームへ（サンプルのため動作しません）</a></p>
+    </div>
+  </section>
+
+  <section class="ax-section ax-section--alt" id="faq">
+    <div class="ax-wrap">
+      <div class="ax-section-head">
+        <p class="ax-kicker">FAQ</p>
+        <h2><span class="ax-nobr">よくある質問</span></h2>
+      </div>
+      <div class="ax-faq">
+        <details><summary>雨の日も開催しますか？</summary><p>小雨なら傘をさして歩きます。大雨や警報のときは、日程の変更をご相談します（サンプルの回答例です）。</p></details>
+        <details><summary>子ども連れでも参加できますか？</summary><p>歩ける年齢のお子さまから参加いただけます。ベビーカーは一部の道で通れないため、事前にご相談ください（例）。</p></details>
+        <details><summary>支払い方法は？</summary><p>当日に現金またはカードでお支払いいただく形にしています（例）。</p></details>
+      </div>
+    </div>
+  </section>
+
+  <section class="ax-section" id="english" lang="en">
+    <div class="ax-wrap">
+      <div class="en-box">
+        <p class="ax-kicker">English Summary</p>
+        <h2>Walk the old castle town with a local guide</h2>
+        <p>Small-group walking tours (up to 6 people) through old streets, shrines and a morning market, with an optional pottery-painting workshop. Guided in Japanese and English. Tours start at 9:30 and 13:30 (example).</p>
+        <p class="ax-note">This is a sample website made by AXLABO. The business, people, tours and prices shown are fictional. On a real site, a full English version would be available from the language switch.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="ax-section ax-section--alt" id="meet">
+    <div class="ax-wrap ax-access">
+      <div>
+        <div class="ax-section-head">
+          <p class="ax-kicker">Meeting Point</p>
+          <h2><span class="ax-nobr">集合場所</span></h2>
+        </div>
+        <table class="ax-info">
+          <tbody>
+            <tr><th scope="row">事業者名</th><td>ゆらり舎（架空）</td></tr>
+            <tr><th scope="row">集合</th><td>〇〇駅 東口の時計台前（例）</td></tr>
+            <tr><th scope="row">出発</th><td>9:30 / 13:30（例）</td></tr>
+            <tr><th scope="row">登録</th><td>旅行業登録番号（架空）</td></tr>
+            <tr><th scope="row">連絡先</th><td>000-0000-0000（架空）</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="ax-map">
+        <svg viewBox="0 0 400 280" width="400" height="280" role="img" aria-label="駅から集合場所までの案内図（架空）">
+          <rect width="400" height="280" rx="12" fill="#E6E2D8"/>
+          <rect x="0" y="130" width="400" height="36" fill="#FFFFFF"/>
+          <rect x="170" y="0" width="36" height="280" fill="#FFFFFF"/>
+          <rect x="24" y="50" width="120" height="44" rx="8" fill="#1C2230"/>
+          <text x="84" y="78" text-anchor="middle" font-size="16" fill="#FFFFFF" font-family="sans-serif">〇〇駅</text>
+          <path d="M144 72 H188 V130" fill="none" stroke="#C98A3E" stroke-width="4" stroke-dasharray="8 6"/>
+          <rect x="220" y="176" width="150" height="44" rx="8" fill="#2E3F6B"/>
+          <text x="295" y="204" text-anchor="middle" font-size="15" fill="#FFFFFF" font-family="sans-serif">時計台（集合）</text>
+          <text x="200" y="262" text-anchor="middle" font-size="13" fill="#485064" font-family="sans-serif">駅の東口から徒歩2分（例）</text>
+        </svg>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="ax-footer">
+  <div class="ax-wrap">
+    <p>ゆらり舎（架空の事業者）</p>
+    <p>これは AXLABO が制作したサンプルサイトです。掲載の店舗・人物・内容は架空です。お客様の制作実績ではありません。</p>
+  </div>
+</footer>
+<p class="ax-sample-banner">これは AXLABO が制作したサンプルサイトです。掲載の店舗・人物・内容は架空です。</p>
+</body>
+</html>
