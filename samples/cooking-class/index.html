@@ -1,0 +1,317 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>台所教室 ひとさじ（架空の料理教室）｜AXLABO 制作サンプル</title>
+<meta name="description" content="AXLABO が制作した Web サイトのサンプルです。掲載の教室・人物・内容はすべて架空です。">
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;700&family=Zen+Kaku+Gothic+New:wght@500;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #FBF7F1;       /* 生成り */
+    --tint: #F1E6D6;     /* 小麦（区切り） */
+    --accent: #8A3B22;   /* 煉瓦（白文字 7:1 以上） */
+    --herb: #5E7A3A;     /* ハーブ（装飾のみ） */
+    --tomato: #D9613F;   /* トマト（装飾のみ） */
+    --text: #2A211C;
+    --muted: #54483F;
+    --font-heading: "Zen Kaku Gothic New", "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Noto Sans JP", sans-serif;
+    --font-body: "Hiragino Sans", "Noto Sans JP", system-ui, sans-serif;
+    --font-display: "Outfit", "Inter", ui-sans-serif, system-ui, sans-serif;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { margin: 0; background: var(--bg); color: var(--text); font-family: var(--font-body); font-size: 16px; line-height: 1.8; }
+  img, svg { max-width: 100%; height: auto; display: block; }
+  a { color: var(--accent); }
+  a:focus-visible, button:focus-visible, summary:focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; border-radius: 4px; }
+  h1, h2, h3 { font-family: var(--font-heading); line-height: 1.4; margin: 0; }
+  h2 { font-size: 28px; }
+  h3 { font-size: 18px; }
+  p { margin: 0; }
+  .ph { display: inline-block; }  /* 見出しの折り返しを語の切れ目にそろえる */
+  .wrap { max-width: 1040px; margin: 0 auto; padding: 0 24px; }
+  .measure { max-width: 26em; }
+  .kicker { font-family: var(--font-display); font-weight: 700; letter-spacing: .12em; font-size: 13px; color: var(--accent); text-transform: uppercase; }
+
+  .sample-banner { background: var(--text); color: #fff; font-size: 13px; text-align: center; padding: 8px 16px; line-height: 1.6; }
+
+  header.site { position: sticky; top: 0; z-index: 10; background: rgba(251,247,241,.96); border-bottom: 1px solid var(--tint); }
+  header.site .wrap { display: flex; align-items: center; justify-content: space-between; gap: 16px; min-height: 64px; }
+  .logo { display: flex; align-items: center; gap: 10px; text-decoration: none; color: var(--text); font-family: var(--font-heading); font-weight: 700; font-size: 18px; }
+  nav ul { list-style: none; display: flex; gap: 22px; margin: 0; padding: 0; }
+  nav a { color: var(--text); text-decoration: none; font-size: 15px; display: inline-block; padding: 8px 0; }
+  nav a:hover { color: var(--accent); }
+  .btn { display: inline-block; background: var(--accent); color: #fff; text-decoration: none; font-weight: 700; font-family: var(--font-heading); padding: 12px 22px; border-radius: 999px; min-height: 44px; }
+  .btn:hover { background: #6E2E1A; }
+  .btn.ghost { background: transparent; color: var(--accent); border: 2px solid var(--accent); padding: 10px 20px; }
+  .btn.ghost:hover { background: var(--tint); }
+
+  section { padding: 88px 0; }
+  section.alt { background: var(--tint); }
+  .section-head { display: grid; gap: 8px; margin-bottom: 40px; }
+
+  .hero .wrap { display: grid; grid-template-columns: 1.1fr .9fr; gap: 48px; align-items: center; }
+  .hero h1 { font-size: 44px; }
+  .hero p.lead { margin-top: 20px; color: var(--muted); }
+  .hero .cta { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 32px; }
+  .hero .area { margin-top: 28px; display: inline-flex; gap: 10px; align-items: center; font-size: 14px; color: var(--muted); }
+  .dot { width: 10px; height: 10px; border-radius: 50%; background: var(--herb); flex: none; }
+  .hero .ill-hero { background: var(--tint); border-radius: 20px; padding: 28px; }
+
+  .cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+  .card { background: #fff; border-radius: 16px; padding: 24px; display: grid; gap: 10px; align-content: start; }
+  .card .ill { background: var(--tint); border-radius: 12px; padding: 16px; display: grid; place-items: center; height: 140px; }
+  .card .price { font-family: var(--font-display); font-weight: 700; font-size: 17px; }
+  .card .tag { font-size: 14px; color: var(--muted); }
+  .note { margin-top: 20px; font-size: 13px; color: var(--muted); }
+
+  .schedule { width: 100%; border-collapse: collapse; background: #fff; border-radius: 16px; overflow: hidden; }
+  .schedule th, .schedule td { padding: 14px 16px; border-bottom: 1px solid var(--tint); text-align: left; font-size: 15px; }
+  .schedule thead th { background: var(--accent); color: #fff; font-family: var(--font-heading); }
+  .schedule .full { color: var(--muted); }
+  .table-scroll { overflow-x: auto; }
+
+  .points { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; }
+  .points .num { font-family: var(--font-display); font-size: 32px; font-weight: 700; color: var(--accent); line-height: 1; }
+  .points h3 { margin: 12px 0 8px; }
+
+  .steps { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+  .steps li { background: #fff; border-radius: 16px; padding: 22px; }
+  .steps .label { font-family: var(--font-display); font-weight: 700; color: var(--accent); font-size: 13px; letter-spacing: .1em; }
+  .steps h3 { margin: 6px 0 8px; font-size: 17px; }
+  .form-cta { margin-top: 28px; }
+
+  .faq { display: grid; gap: 12px; max-width: 760px; }
+  .faq details { background: #fff; border-radius: 12px; padding: 4px 20px; }
+  .faq summary { cursor: pointer; font-family: var(--font-heading); font-weight: 700; padding: 14px 0; min-height: 44px; }
+  .faq details p { padding: 0 0 16px; color: var(--muted); }
+
+  .access { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; }
+  .info { border-collapse: collapse; width: 100%; }
+  .info th, .info td { text-align: left; padding: 12px 0; border-bottom: 1px solid #DCCDB8; vertical-align: top; font-size: 15px; }
+  .info th { width: 7em; font-family: var(--font-heading); font-weight: 700; }
+  .map { background: #fff; border-radius: 16px; padding: 16px; }
+
+  footer { background: var(--text); color: #F3ECE4; padding: 48px 0; font-size: 14px; }
+  footer p + p { margin-top: 8px; }
+
+  @media (max-width: 860px) {
+    .hero .wrap, .access { grid-template-columns: 1fr; gap: 32px; }
+    .cards, .points, .steps { grid-template-columns: 1fr; }
+    nav ul { display: none; }
+    section { padding: 64px 0; }
+  }
+  @media (max-width: 480px) {
+    .wrap { padding: 0 16px; }
+    .hero h1 { font-size: 30px; }
+    h2 { font-size: 24px; }
+    header .btn { padding: 10px 14px; font-size: 14px; }
+    .schedule th, .schedule td { padding: 12px 10px; font-size: 14px; }
+  }
+  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+</style>
+</head>
+<body>
+
+<div class="sample-banner" role="note">
+  これは AXLABO が制作したサンプルサイトです。掲載の店舗・人物・内容は架空です。
+</div>
+
+<header class="site">
+  <div class="wrap">
+    <a class="logo" href="#top" aria-label="台所教室 ひとさじ トップへ">
+      <svg width="30" height="30" viewBox="0 0 30 30" aria-hidden="true"><circle cx="15" cy="15" r="15" fill="#8A3B22"/><ellipse cx="15" cy="11" rx="5" ry="6" fill="#FBF7F1"/><rect x="13.6" y="16" width="2.8" height="9" rx="1.4" fill="#FBF7F1"/></svg>
+      台所教室 ひとさじ
+    </a>
+    <nav aria-label="ページ内の案内">
+      <ul>
+        <li><a href="#classes">クラス</a></li>
+        <li><a href="#schedule">日程</a></li>
+        <li><a href="#flow">申し込み</a></li>
+        <li><a href="#access">アクセス</a></li>
+      </ul>
+    </nav>
+    <a class="btn" href="#flow">体験を申し込む</a>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero" aria-labelledby="hero-title">
+    <div class="wrap">
+      <div>
+        <p class="kicker">Neighborhood Cooking Class</p>
+        <h1 id="hero-title"><span class="ph">毎日のごはんを、</span><br><span class="ph">少しだけ</span><span class="ph">らくに。</span></h1>
+        <p class="lead measure">6人までの少人数で、家にある道具でつくれる献立を一緒につくります。はじめての方も、手順を一つずつ確かめながら進めます。</p>
+        <div class="cta">
+          <a class="btn" href="#flow">体験を申し込む</a>
+          <a class="btn ghost" href="#classes">クラスを見る</a>
+        </div>
+        <p class="area"><span class="dot" aria-hidden="true"></span>火・木・土 開講（例）</p>
+      </div>
+      <div class="ill-hero">
+        <svg viewBox="0 0 420 300" role="img" aria-label="まな板の上の野菜と鍋のイラスト">
+          <rect x="40" y="200" width="340" height="44" rx="12" fill="#C8A57E"/>
+          <rect x="60" y="210" width="300" height="24" rx="8" fill="#DBBE97"/>
+          <circle cx="120" cy="190" r="26" fill="#D9613F"/>
+          <path d="M112 166 q8 -14 16 0" stroke="#5E7A3A" stroke-width="6" fill="none" stroke-linecap="round"/>
+          <ellipse cx="190" cy="196" rx="30" ry="18" fill="#E9C46A"/>
+          <path d="M240 200 l60 -40" stroke="#5E7A3A" stroke-width="10" stroke-linecap="round"/>
+          <path d="M292 162 q14 -10 22 -24" stroke="#5E7A3A" stroke-width="6" fill="none" stroke-linecap="round"/>
+          <rect x="250" y="70" width="120" height="70" rx="10" fill="#54483F"/>
+          <rect x="240" y="62" width="140" height="14" rx="7" fill="#2A211C"/>
+          <path d="M280 52 q6 -12 0 -24 M310 52 q6 -12 0 -24 M340 52 q6 -12 0 -24" stroke="#B8A898" stroke-width="4" fill="none" stroke-linecap="round"/>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <section class="alt" id="classes" aria-labelledby="classes-title">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="kicker">Classes</p>
+        <h2 id="classes-title">クラスと受講料の目安</h2>
+      </div>
+      <div class="cards">
+        <article class="card">
+          <div class="ill"><svg width="120" height="90" viewBox="0 0 120 90" aria-hidden="true"><ellipse cx="60" cy="60" rx="46" ry="18" fill="#fff"/><ellipse cx="60" cy="54" rx="34" ry="12" fill="#E9C46A"/><circle cx="48" cy="50" r="6" fill="#D9613F"/><circle cx="70" cy="52" r="5" fill="#5E7A3A"/></svg></div>
+          <h3>はじめての体験クラス</h3>
+          <p class="tag">約2時間・主菜1品と汁物</p>
+          <p class="price">¥3,000（例）</p>
+        </article>
+        <article class="card">
+          <div class="ill"><svg width="120" height="90" viewBox="0 0 120 90" aria-hidden="true"><rect x="20" y="30" width="80" height="44" rx="8" fill="#fff"/><rect x="28" y="38" width="30" height="28" rx="4" fill="#D9613F"/><rect x="64" y="38" width="28" height="12" rx="4" fill="#5E7A3A"/><rect x="64" y="54" width="28" height="12" rx="4" fill="#E9C46A"/></svg></div>
+          <h3>作りおき献立クラス</h3>
+          <p class="tag">約2.5時間・3〜4品・持ち帰り容器あり</p>
+          <p class="price">月2回 ¥9,000（例）</p>
+        </article>
+        <article class="card">
+          <div class="ill"><svg width="120" height="90" viewBox="0 0 120 90" aria-hidden="true"><circle cx="44" cy="52" r="22" fill="#fff"/><circle cx="44" cy="52" r="14" fill="#D9613F"/><circle cx="84" cy="56" r="16" fill="#fff"/><circle cx="84" cy="56" r="9" fill="#E9C46A"/></svg></div>
+          <h3>親子でつくるクラス</h3>
+          <p class="tag">約1.5時間・小学生と保護者1組</p>
+          <p class="price">1組 ¥4,500（例）</p>
+        </article>
+      </div>
+      <p class="note">※クラス・料金はサンプル用の架空のものです。実際の教室サイトでは、教室の方が内容と料金を更新できる形にします。</p>
+    </div>
+  </section>
+
+  <section id="schedule" aria-labelledby="schedule-title">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="kicker">Schedule</p>
+        <h2 id="schedule-title">今月の日程（例）</h2>
+      </div>
+      <div class="table-scroll">
+        <table class="schedule">
+          <caption class="note" style="caption-side:bottom;text-align:left">※日程と空き状況はサンプル用の表示です。</caption>
+          <thead><tr><th scope="col">日にち</th><th scope="col">クラス</th><th scope="col">時間</th><th scope="col">空き</th></tr></thead>
+          <tbody>
+            <tr><td>第1火曜</td><td>体験クラス</td><td>10:30〜12:30</td><td>あり</td></tr>
+            <tr><td>第1土曜</td><td>親子クラス</td><td>10:00〜11:30</td><td class="full">満席</td></tr>
+            <tr><td>第2木曜</td><td>作りおき献立</td><td>18:30〜21:00</td><td>あり</td></tr>
+            <tr><td>第3土曜</td><td>体験クラス</td><td>14:00〜16:00</td><td>あり</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <section class="alt" aria-labelledby="points-title">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="kicker">Our Kitchen</p>
+        <h2 id="points-title"><span class="ph">家の台所で、</span><span class="ph">そのまま使えるように</span></h2>
+      </div>
+      <div class="points">
+        <div>
+          <p class="num">01</p>
+          <h3>道具は家にあるものだけ</h3>
+          <p>特別な調理器具は使いません。帰ってすぐ同じように作れます。</p>
+        </div>
+        <div>
+          <p class="num">02</p>
+          <h3>6人までの少人数</h3>
+          <p>手元を見ながら進めるので、途中で何度でも聞けます。</p>
+        </div>
+        <div>
+          <p class="num">03</p>
+          <h3>レシピはその日に持ち帰り</h3>
+          <p>手順の写真つきレシピをお渡しします。アレルギーは事前にお知らせください。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="flow" aria-labelledby="flow-title">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="kicker">How to Join</p>
+        <h2 id="flow-title">体験のお申し込み</h2>
+      </div>
+      <ol class="steps">
+        <li><p class="label">STEP 1</p><h3>日程を選ぶ</h3><p>上の日程から、ご都合のよい回を選んでください。</p></li>
+        <li><p class="label">STEP 2</p><h3>フォームで申し込む</h3><p>お名前・人数・アレルギーの有無をお知らせください。</p></li>
+        <li><p class="label">STEP 3</p><h3>当日はエプロンだけ</h3><p>材料と道具は教室で用意します。受講料は当日お支払いください。</p></li>
+      </ol>
+      <p class="form-cta"><a class="btn" href="#flow">申し込みフォームへ（サンプルのため動作しません）</a></p>
+    </div>
+  </section>
+
+  <section class="alt" aria-labelledby="faq-title">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="kicker">FAQ</p>
+        <h2 id="faq-title">よくある質問</h2>
+      </div>
+      <div class="faq">
+        <details><summary>料理がほとんど初めてでも大丈夫ですか？</summary><p>はい。包丁の持ち方から一緒に確かめます（サンプルの回答例です）。</p></details>
+        <details><summary>キャンセルはいつまでできますか？</summary><p>実際の教室サイトでは、教室の規定を掲載します（サンプルのため空欄にしています）。</p></details>
+        <details><summary>ひとりで参加してもよいですか？</summary><p>はい。多くのクラスはおひとりからご参加いただけます（サンプルの回答例です）。</p></details>
+      </div>
+    </div>
+  </section>
+
+  <section id="access" aria-labelledby="access-title">
+    <div class="wrap access">
+      <div>
+        <div class="section-head">
+          <p class="kicker">Access</p>
+          <h2 id="access-title">教室の場所</h2>
+        </div>
+        <table class="info">
+          <tr><th scope="row">教室名</th><td>台所教室 ひとさじ（架空）</td></tr>
+          <tr><th scope="row">開講日</th><td>火・木・土（例）</td></tr>
+          <tr><th scope="row">住所</th><td>〇〇市△△町 7-8-9（架空の住所）</td></tr>
+          <tr><th scope="row">電話</th><td>000-0000-0000（架空）</td></tr>
+          <tr><th scope="row">最寄り</th><td>〇〇駅から徒歩6分（例）</td></tr>
+        </table>
+      </div>
+      <div class="map">
+        <svg viewBox="0 0 400 300" role="img" aria-label="駅から教室までの簡単な地図（架空）">
+          <rect width="400" height="300" rx="10" fill="#F1E6D6"/>
+          <rect x="0" y="130" width="400" height="26" fill="#fff"/>
+          <rect x="250" y="0" width="26" height="300" fill="#fff"/>
+          <rect x="30" y="110" width="80" height="40" rx="6" fill="#54483F"/>
+          <text x="70" y="136" font-size="14" fill="#fff" text-anchor="middle" font-family="sans-serif">駅</text>
+          <path d="M110 143 H250 V210" stroke="#8A3B22" stroke-width="4" stroke-dasharray="8 6" fill="none"/>
+          <rect x="222" y="206" width="84" height="40" rx="8" fill="#8A3B22"/>
+          <text x="264" y="232" font-size="14" fill="#fff" text-anchor="middle" font-family="sans-serif">教室</text>
+        </svg>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <p>台所教室 ひとさじ（架空の教室）</p>
+    <p>これは AXLABO が制作したサンプルサイトです。掲載の店舗・人物・内容は架空です。お客様の制作実績ではありません。</p>
+  </div>
+</footer>
+
+</body>
+</html>
