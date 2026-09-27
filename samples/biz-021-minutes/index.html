@@ -1,0 +1,266 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>AI議事録・会議メモ作成代行 — 納品物サンプル（架空の会議）| AXLABO</title>
+<meta name="description" content="AXLABO の AI議事録・会議メモ作成代行で、お送りいただく会議メモ（入力）とお届けする議事録（納品物）の見本です。会議・企業はすべて架空です。">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@500;700&family=Outfit:wght@500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="components.css">
+<style>
+  :root {
+    --ax-bg: #F4F5F3; --ax-tint: #E3E8E4; --ax-surface: #FFFFFF;
+    --ax-accent: #2C5A4E; --ax-accent-hover: #21463C;
+    --ax-text: #1B2421; --ax-muted: #47534F; --ax-line: #CFD8D3;
+  }
+  .io { display: grid; grid-template-columns: 1fr 1fr; gap: var(--ax-s4); align-items: start; }
+  .io__label { display: inline-flex; align-items: center; gap: 8px; font-family: var(--ax-font-display); font-weight: 700;
+    font-size: var(--ax-fs-note); letter-spacing: .12em; color: var(--ax-accent); margin-bottom: var(--ax-s1); }
+  .io__label b { background: var(--ax-accent); color: #fff; border-radius: 999px; padding: 2px 10px; letter-spacing: .08em; }
+  .io h3 { margin-bottom: var(--ax-s2); }
+  .transcript { background: var(--ax-surface); border: 1px solid var(--ax-line); border-radius: var(--ax-radius);
+    padding: var(--ax-s3); font-size: 14px; line-height: 1.8; }
+  .transcript__head { font-size: 13px; color: var(--ax-muted); border-bottom: 1px dashed var(--ax-line); padding-bottom: var(--ax-s1); margin-bottom: var(--ax-s2); }
+  .transcript dl { margin: 0; display: grid; grid-template-columns: 3.2em 1fr; column-gap: 10px; row-gap: 6px; }
+  .transcript dt { font-weight: 700; color: var(--ax-accent); }
+  .transcript dd { margin: 0; }
+  /* 納品物（議事録）: 実際の生成物と同じ構成・見た目の文書 */
+  .minutes { background: #fff; border: 1px solid var(--ax-line); border-radius: 6px; padding: var(--ax-s4) var(--ax-s4);
+    box-shadow: 0 1px 0 rgba(0,0,0,.04), 0 8px 24px rgba(27,36,33,.06); font-family: system-ui, "Hiragino Sans", "Noto Sans JP", sans-serif;
+    color: #1a1a1a; line-height: 1.7; letter-spacing: 0; }
+  .minutes h4 { font-size: 1.3rem; margin: 0 0 4px; font-family: inherit; }
+  .minutes h5 { font-size: 1.02rem; margin: 24px 0 6px; border-bottom: 1px solid #ddd; padding-bottom: 4px; font-family: inherit; }
+  .minutes .meta { color: #595959; font-size: .85rem; margin: 0; }
+  .minutes ul { padding-left: 20px; margin: 0; }
+  .minutes li + li { margin-top: 4px; }
+  .minutes p { margin: 0; }
+  .doc-caption { margin-top: var(--ax-s2); }
+  .disclosure { background: var(--ax-surface); border-left: 4px solid var(--ax-accent); border-radius: var(--ax-radius-s);
+    padding: var(--ax-s3); max-width: 820px; }
+  .disclosure h3 { margin-bottom: var(--ax-s1); }
+  .disclosure p + p { margin-top: 4px; }
+  .price-wrap { max-width: 640px; }
+  @media (max-width: 860px) { .io { grid-template-columns: 1fr; } }
+  @media (max-width: 480px) {
+    .minutes { padding: var(--ax-s3) var(--ax-s2); }
+    .transcript { padding: var(--ax-s2); }
+    .transcript dl { grid-template-columns: 3em 1fr; }
+  }
+</style>
+</head>
+<body class="ax-page">
+<div class="ax-sample-banner" role="note">これは AXLABO が制作したサンプルサイトです。掲載の会議・企業・人物・内容はすべて架空です。</div>
+
+<header class="ax-header">
+  <div class="ax-wrap">
+    <a class="ax-logo" href="#top">AXLABO AI議事録<span class="ax-note">&nbsp;（納品物サンプル）</span></a>
+    <nav class="ax-nav" aria-label="ページ内の移動">
+      <ul>
+        <li><a href="#flow">流れ</a></li>
+        <li><a href="#sample">入力と納品物</a></li>
+        <li><a href="#data">データの扱い</a></li>
+        <li><a href="#price">料金</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+  <section class="ax-hero ax-section">
+    <div class="ax-wrap">
+      <div>
+        <p class="ax-kicker">SAMPLE DELIVERABLE · BIZ-021</p>
+        <h1><span class="ax-nobr">会議のメモを送ると、</span><span class="ax-nobr">議事録が届きます。</span></h1>
+        <p class="ax-lead">お送りいただくのは、会議の文字起こしや要点メモ（テキスト）です。AIが要約・決定事項・ToDoを整理し、AXLABO代表が確認したうえで、印刷・共有できる議事録をお届けします。このページでは、架空の会議を例に「送るもの」と「届くもの」を並べています。</p>
+        <div class="ax-cta">
+          <a class="ax-btn" href="#sample">入力と納品物を見る</a>
+          <a class="ax-btn ax-btn--ghost" href="#price">料金の目安</a>
+        </div>
+        <p class="ax-status"><span class="ax-dot" aria-hidden="true"></span>現在お受けしているのはテキストです（音声ファイルからの文字起こしは行っていません）</p>
+      </div>
+      <div class="ax-visual" aria-hidden="true">
+        <svg viewBox="0 0 280 180" width="280" height="180">
+          <rect x="20" y="30" width="96" height="120" rx="8" fill="#fff" stroke="#2C5A4E" stroke-width="3"/>
+          <g stroke="#9BB0A8" stroke-width="4" stroke-linecap="round"><path d="M36 56h64M36 72h56M36 88h64M36 104h44M36 120h60"/></g>
+          <path d="M128 90h30" stroke="#2C5A4E" stroke-width="5" stroke-linecap="round"/><path d="M152 80l12 10-12 10" fill="none" stroke="#2C5A4E" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+          <rect x="170" y="24" width="92" height="132" rx="6" fill="#fff" stroke="#2C5A4E" stroke-width="3"/>
+          <rect x="182" y="38" width="56" height="8" rx="3" fill="#2C5A4E"/>
+          <g stroke="#9BB0A8" stroke-width="4" stroke-linecap="round"><path d="M182 60h68M182 72h60"/></g>
+          <g fill="#2C5A4E"><circle cx="186" cy="92" r="3"/><circle cx="186" cy="106" r="3"/><circle cx="186" cy="120" r="3"/></g>
+          <g stroke="#9BB0A8" stroke-width="4" stroke-linecap="round"><path d="M196 92h52M196 106h46M196 120h50M182 140h56"/></g>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <section class="ax-section ax-section--alt" id="flow" aria-labelledby="flow-h">
+    <div class="ax-wrap">
+      <div class="ax-section-head"><p class="ax-kicker">FLOW</p><h2 id="flow-h">お届けまでの流れ</h2></div>
+      <ol class="ax-steps">
+        <li><p class="ax-steps__label">STEP 1</p><h3>会議メモを送る</h3><p>会議の文字起こし、または要点のメモをテキストでお送りください。日時・参加者を書き添えていただくと、議事録に反映されます。</p></li>
+        <li><p class="ax-steps__label">STEP 2</p><h3>AIが初稿を作る</h3><p>AIがメモから要約・決定事項・ToDo・持ち越し事項を整理します。メモに無いことは書き足しません。</p></li>
+        <li><p class="ax-steps__label">STEP 3</p><h3>代表が確認して納品</h3><p>AXLABO代表が初稿を確認し、印刷・共有できる議事録（HTML文書）としてお届けします。</p></li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="ax-section" id="sample" aria-labelledby="sample-h">
+    <div class="ax-wrap">
+      <div class="ax-section-head">
+        <p class="ax-kicker">INPUT → OUTPUT</p>
+        <h2 id="sample-h"><span class="ax-nobr">送るものと、</span><span class="ax-nobr">届くもの</span></h2>
+        <p class="ax-note">例として、架空の配送会社「株式会社みなと配送」の週次定例を使っています。会社・人物・日付・取引先はすべて架空です。</p>
+      </div>
+      <div class="io">
+        <div>
+          <p class="io__label"><b>INPUT</b>お客さまが送るもの</p>
+          <h3>会議の文字起こし（テキスト）</h3>
+          <div class="transcript">
+            <p class="transcript__head">週次定例　2026年10月5日（月）9:00〜9:40（例）<br>参加：佐藤（所長）、田中（配車）、鈴木（倉庫）、高橋（営業）、伊藤（総務）</p>
+            <dl>
+              <dt>佐藤</dt><dd>では週次定例を始めます。今日は4点、夕方便の遅れ、フォークリフトの点検、新しいお取引先の試験配送、それから土曜の人員です。</dd>
+              <dt>田中</dt><dd>まず夕方便ですが、先週は5日中3日、最終便の出発が20分以上遅れました。</dd>
+              <dt>佐藤</dt><dd>原因は分かっていますか。</dd>
+              <dt>田中</dt><dd>16時締めの集荷が締め切りぎりぎりに集中して、積み込みが間に合っていません。</dd>
+              <dt>鈴木</dt><dd>倉庫側も、15時半以降に入る荷物が多くて仕分けが追いつかない状態です。</dd>
+              <dt>佐藤</dt><dd>締め切りを早めるしかないかな。</dd>
+              <dt>高橋</dt><dd>営業としては、お客さまに案内する時間が要ります。急に変えると困るところもあるので。</dd>
+              <dt>佐藤</dt><dd>どれくらいあれば案内できますか。</dd>
+              <dt>高橋</dt><dd>1週間あれば全社に連絡できます。</dd>
+              <dt>佐藤</dt><dd>では集荷の締め切りを16時から15時半に変更します。開始は再来週の月曜、10月19日からにしましょう。</dd>
+              <dt>高橋</dt><dd>了解です。案内文を作って、今週金曜までに全社へ送ります。</dd>
+              <dt>田中</dt><dd>変更後の1週間は最終便の出発時刻を記録しておきます。1週間分そろったら定例で報告します。</dd>
+              <dt>佐藤</dt><dd>お願いします。次、フォークリフト。</dd>
+              <dt>鈴木</dt><dd>2号機の定期点検の時期です。業者さんから候補日が2つ出ていて、10月8日か10月13日です。</dd>
+              <dt>佐藤</dt><dd>点検中は1台少なくなるよね。</dd>
+              <dt>鈴木</dt><dd>そうです。8日は入荷が多い日なので、13日のほうがいいと思います。</dd>
+              <dt>佐藤</dt><dd>では13日で。</dd>
+              <dt>鈴木</dt><dd>業者さんには今日中に返事します。</dd>
+              <dt>伊藤</dt><dd>点検の費用は前回と同じ見積りで大丈夫そうですか。</dd>
+              <dt>鈴木</dt><dd>確認していません。返事のついでに聞いておきます。</dd>
+              <dt>佐藤</dt><dd>次、新しいお取引先の件。</dd>
+              <dt>高橋</dt><dd>食品卸のB社さんから、試験的に2日間だけ配送をお願いしたいというお話です。冷蔵品が少し混ざります。</dd>
+              <dt>田中</dt><dd>冷蔵車は1台しか空いていない日があるので、日程次第です。</dd>
+              <dt>佐藤</dt><dd>候補日は。</dd>
+              <dt>高橋</dt><dd>10月の第3週で、先方は火曜と木曜を希望しています。</dd>
+              <dt>田中</dt><dd>火曜は空いていますが、木曜は冷蔵車が埋まっています。</dd>
+              <dt>高橋</dt><dd>火曜はその日で進めて、木曜は別の日にできないか聞いてみます。</dd>
+              <dt>佐藤</dt><dd>料金はどうする。</dd>
+              <dt>高橋</dt><dd>通常の料金表で出すつもりですが、冷蔵の割増をどうするかはまだ決めていません。</dd>
+              <dt>佐藤</dt><dd>割増は次回までに考えよう。今日は決めない。</dd>
+              <dt>伊藤</dt><dd>見積りを出す前に、保険の適用範囲も確認させてください。冷蔵品は以前もめたことがあるので。</dd>
+              <dt>佐藤</dt><dd>伊藤さん、確認をお願いします。</dd>
+              <dt>伊藤</dt><dd>来週水曜までに保険会社に問い合わせます。</dd>
+              <dt>佐藤</dt><dd>最後、土曜の人員です。</dd>
+              <dt>田中</dt><dd>来月から土曜便の依頼が増えそうで、今の2名だと足りない可能性があります。</dd>
+              <dt>佐藤</dt><dd>何名必要そう？</dd>
+              <dt>田中</dt><dd>3名は欲しいですが、まだ依頼の件数がはっきりしません。</dd>
+              <dt>伊藤</dt><dd>募集を出すなら、求人の締め切りとの関係で今月中に決めたいです。</dd>
+              <dt>佐藤</dt><dd>件数が分かってから判断しよう。高橋さん、土曜の依頼見込みを取引先に聞いてもらえますか。</dd>
+              <dt>高橋</dt><dd>次回の定例までにまとめます。</dd>
+              <dt>佐藤</dt><dd>では今日はここまで。次回は10月12日の月曜、同じ時間で。</dd>
+            </dl>
+          </div>
+        </div>
+
+        <div>
+          <p class="io__label"><b>OUTPUT</b>お届けするもの</p>
+          <h3>議事録（HTML文書）</h3>
+          <article class="minutes" aria-label="納品される議事録の見本">
+            <h4>議事録: 週次定例（2026年10月5日）</h4>
+            <p class="meta">AXLABO AI議事録作成サービスにより生成（問い合わせ先: info@axlabo.com）</p>
+            <h5>要約</h5>
+            <p>2026年10月5日（月）9:00〜9:40に週次定例を行った（参加: 佐藤・田中・鈴木・高橋・伊藤）。議題は、夕方便の出発遅れ、フォークリフト2号機の定期点検、B社からの試験配送の依頼、土曜便の人員の4点。夕方便の遅れへの対策として集荷の締め切りを15時半に早めること、2号機の点検日を10月13日とすることを決めた。B社の試験配送は火曜分を進め、木曜分は日程を先方と調整する。冷蔵の割増料金と土曜便の増員は、次回以降に判断する。</p>
+            <h5>決定事項</h5>
+            <ul>
+              <li>集荷の締め切りを16時から15時半に変更する。開始は10月19日（月）から。</li>
+              <li>フォークリフト2号機の定期点検は10月13日に実施する。</li>
+              <li>冷蔵の割増料金は今回は決めず、次回までに検討する。</li>
+            </ul>
+            <h5>ToDo</h5>
+            <ul>
+              <li>集荷締め切り変更の案内文を作成し、全取引先へ送付する。期限: 今週金曜（担当: 高橋）</li>
+              <li>締め切り変更後1週間の最終便の出発時刻を記録し、1週間分そろったら定例で報告する（担当: 田中）</li>
+              <li>点検日（10月13日）を業者へ連絡し、費用が前回の見積りと同じか確認する。期限: 本日中（担当: 鈴木）</li>
+              <li>B社へ火曜の試験配送を進める旨を伝え、木曜分を別の日にできないか相談する（担当: 高橋）</li>
+              <li>冷蔵品の配送に保険が適用されるか、保険会社へ問い合わせる。期限: 来週水曜（担当: 伊藤）</li>
+              <li>土曜便の依頼見込みを取引先に確認し、まとめる。期限: 次回定例（担当: 高橋）</li>
+              <li>B社向けの冷蔵の割増料金を検討する。期限: 次回定例（担当者未定）</li>
+            </ul>
+            <h5>未解決・持ち越し事項</h5>
+            <ul>
+              <li>B社の試験配送の木曜分の日程（冷蔵車が埋まっているため、別日を相談中）。</li>
+              <li>B社向けの冷蔵の割増料金をどうするか。</li>
+              <li>土曜便を増員するか（依頼件数の見込みを見て判断。求人を出す場合は今月中の判断が必要との意見あり）。</li>
+              <li>次回の定例: 10月12日（月）9:00〜。上記の見込み・確認結果を持ち寄る。</li>
+            </ul>
+          </article>
+          <p class="ax-note doc-caption">実際の納品物は、この構成の議事録をHTML文書（ブラウザで開いて印刷・共有できる形式）でお届けします。担当・期限は、会議メモに書かれている場合に記載し、書かれていない場合は「担当者未定」とします。このページの議事録は、実際の納品物と同じ構成で作成した見本です（生成サービスの出力をそのまま載せたものではありません）。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="ax-section ax-section--alt" aria-labelledby="point-h">
+    <div class="ax-wrap">
+      <div class="ax-section-head"><p class="ax-kicker">WHAT YOU GET</p><h2 id="point-h">議事録で整理されること</h2></div>
+      <div class="ax-points">
+        <div><p class="ax-points__num">01</p><h3>決まったこと</h3><p>会議で決まったことだけを「決定事項」に分けます。話し合っただけのことは決定事項に入れません。</p></div>
+        <div><p class="ax-points__num">02</p><h3>誰が、いつまでに</h3><p>ToDoごとに担当と期限を添えます。メモに担当が無いものは「担当者未定」と書き、推測で埋めません。</p></div>
+        <div><p class="ax-points__num">03</p><h3>持ち越したこと</h3><p>決めきれなかった論点と、次回に確認することを残し、次の会議の始めにそのまま使えるようにします。</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="ax-section" id="data" aria-labelledby="data-h">
+    <div class="ax-wrap">
+      <div class="ax-section-head"><p class="ax-kicker">DATA</p><h2 id="data-h">お預かりした内容の扱い</h2></div>
+      <div class="disclosure">
+        <h3>お預かりした内容はどのように扱われますか？</h3>
+        <p>成果物の初稿作成に、OpenAI社が提供する外部のAIサービス（API）を利用しています。</p>
+        <p>お送りいただいたテキスト（会議の文字起こし・要点メモ）は、成果物を作成する目的で同社のAPIへ送信されます。</p>
+        <p>送信先はAXLABO以外の事業者が運営するシステムです。</p>
+        <p>AIが作成した初稿は、AXLABO代表が確認したうえでお届けします。</p>
+        <p>AXLABOは、お預かりした内容を成果物の作成以外の目的には利用しません。</p>
+        <p>機密性の高い内容でのご利用をご検討の場合は、お申し込み前にご相談ください。</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="ax-section ax-section--alt" id="price" aria-labelledby="price-h">
+    <div class="ax-wrap price-wrap">
+      <div class="ax-section-head"><p class="ax-kicker">PRICE</p><h2 id="price-h">料金の目安</h2></div>
+      <table class="ax-info">
+        <tbody>
+          <tr><th scope="row">単発</th><td>¥8,000 / 60分の会議1本（税別）</td></tr>
+          <tr><th scope="row">月4回パック</th><td>¥28,000 / 月（税別・月4回まで）</td></tr>
+          <tr><th scope="row">お試し</th><td>初回1本 ¥3,000（税別）</td></tr>
+        </tbody>
+      </table>
+      <p class="ax-note" style="margin-top:16px">外部のお客さまへの提供実績はまだありません。このページの会議・企業・人物は架空で、議事録はサンプルとして作成したものです。</p>
+    </div>
+  </section>
+
+  <section class="ax-section" aria-labelledby="faq-h">
+    <div class="ax-wrap">
+      <div class="ax-section-head"><p class="ax-kicker">FAQ</p><h2 id="faq-h">よくある質問</h2></div>
+      <div class="ax-faq">
+        <details><summary>会議の録音（音声ファイル）を送るだけでもよいですか？</summary><p>現在はテキスト（文字起こし・要点メモ）でお受けしています。音声ファイルからの文字起こしは、現時点では行っていません。</p></details>
+        <details><summary>メモに無いことを補って書いてもらえますか？</summary><p>書き足しません。メモに書かれていない決定・担当・期限は議事録に入れず、「担当者未定」や持ち越し事項として残します。</p></details>
+        <details><summary>どんな形式で届きますか？</summary><p>ブラウザで開いて印刷・共有できるHTML文書でお届けします。</p></details>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="ax-footer">
+  <div class="ax-wrap">
+    <p>AXLABO AI議事録・会議メモ作成代行 — 納品物サンプル</p>
+    <p>このページは AXLABO が制作したサンプルです。掲載の会議・企業・人物・内容はすべて架空で、お客さまの制作実績ではありません。</p>
+  </div>
+</footer>
+<div class="ax-sample-banner" role="note">これは AXLABO が制作したサンプルサイトです。掲載の会議・企業・人物・内容はすべて架空です。</div>
+</body>
+</html>
