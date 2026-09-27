@@ -1,0 +1,301 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>住まいの工房 ハシバ（架空の工務店）｜AXLABO 制作サンプル</title>
+<meta name="description" content="AXLABO が制作した Web サイトのサンプルです。掲載の会社・人物・内容はすべて架空です。">
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;700&family=Zen+Kaku+Gothic+New:wght@500;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #F6F3EE;       /* しっくい */
+    --tint: #EAE3D7;     /* 木の淡色（区切り） */
+    --accent: #2F4A63;   /* 藍 */
+    --wood: #B98A5E;     /* 木部（装飾のみ） */
+    --text: #1E2530;
+    --muted: #464E5A;
+    --font-heading: "Zen Kaku Gothic New", "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Noto Sans JP", sans-serif;
+    --font-body: "Hiragino Sans", "Noto Sans JP", system-ui, sans-serif;
+    --font-display: "Outfit", "Inter", ui-sans-serif, system-ui, sans-serif;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { margin: 0; background: var(--bg); color: var(--text); font-family: var(--font-body); font-size: 16px; line-height: 1.8; }
+  img, svg { max-width: 100%; height: auto; display: block; }
+  a { color: var(--accent); }
+  a:focus-visible, button:focus-visible, summary:focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; border-radius: 4px; }
+  h1, h2, h3 { font-family: var(--font-heading); line-height: 1.4; margin: 0; }
+  h2 { font-size: 28px; }
+  h3 { font-size: 18px; }
+  p { margin: 0; }
+  .ph { display: inline-block; }  /* 見出しの折り返しを語の切れ目にそろえる */
+  .wrap { max-width: 1040px; margin: 0 auto; padding: 0 24px; }
+  .measure { max-width: 26em; }
+  .kicker { font-family: var(--font-display); font-weight: 700; letter-spacing: .12em; font-size: 13px; color: var(--accent); text-transform: uppercase; }
+
+  .sample-banner { background: var(--text); color: #fff; font-size: 13px; text-align: center; padding: 8px 16px; line-height: 1.6; }
+
+  header.site { position: sticky; top: 0; z-index: 10; background: rgba(246,243,238,.96); border-bottom: 1px solid var(--tint); }
+  header.site .wrap { display: flex; align-items: center; justify-content: space-between; gap: 16px; min-height: 64px; }
+  .logo { display: flex; align-items: center; gap: 10px; text-decoration: none; color: var(--text); font-family: var(--font-heading); font-weight: 700; font-size: 18px; }
+  nav ul { list-style: none; display: flex; gap: 22px; margin: 0; padding: 0; }
+  nav a { color: var(--text); text-decoration: none; font-size: 15px; display: inline-block; padding: 8px 0; }
+  nav a:hover { color: var(--accent); }
+  .btn { display: inline-block; background: var(--accent); color: #fff; text-decoration: none; font-weight: 700; font-family: var(--font-heading); padding: 12px 22px; border-radius: 8px; min-height: 44px; }
+  .btn:hover { background: #22384C; }
+  .btn.ghost { background: transparent; color: var(--accent); border: 2px solid var(--accent); padding: 10px 20px; }
+  .btn.ghost:hover { background: var(--tint); }
+
+  section { padding: 88px 0; }
+  section.alt { background: var(--tint); }
+  .section-head { display: grid; gap: 8px; margin-bottom: 40px; }
+
+  .hero .wrap { display: grid; grid-template-columns: 1.1fr .9fr; gap: 48px; align-items: center; }
+  .hero h1 { font-size: 46px; }
+  .hero p.lead { margin-top: 20px; color: var(--muted); }
+  .hero .cta { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 32px; }
+  .hero .area { margin-top: 28px; display: inline-flex; gap: 10px; align-items: center; font-size: 14px; color: var(--muted); }
+  .dot { width: 10px; height: 10px; border-radius: 50%; background: var(--accent); flex: none; }
+
+  .cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+  .card { background: #fff; border-radius: 12px; padding: 24px; display: grid; gap: 12px; align-content: start; }
+  .card .ill { background: var(--tint); border-radius: 8px; padding: 16px; display: grid; place-items: center; height: 140px; }
+  .card .price { font-family: var(--font-display); font-weight: 700; font-size: 17px; }
+  .card .tag { font-size: 14px; color: var(--muted); }
+  .note { margin-top: 20px; font-size: 13px; color: var(--muted); }
+
+  .ba { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+  .ba figure { margin: 0; background: #fff; border-radius: 12px; padding: 16px; }
+  .ba figcaption { margin-top: 12px; font-size: 14px; color: var(--muted); }
+  .ba .label { font-family: var(--font-display); font-weight: 700; letter-spacing: .1em; font-size: 13px; color: var(--accent); }
+
+  .points { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; }
+  .points .num { font-family: var(--font-display); font-size: 32px; font-weight: 700; color: var(--accent); line-height: 1; }
+  .points h3 { margin: 12px 0 8px; }
+
+  .steps { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+  .steps li { background: #fff; border-radius: 12px; padding: 22px; }
+  .steps .label { font-family: var(--font-display); font-weight: 700; color: var(--accent); font-size: 13px; letter-spacing: .1em; }
+  .steps h3 { margin: 6px 0 8px; font-size: 17px; }
+
+  .faq { display: grid; gap: 12px; max-width: 760px; }
+  .faq details { background: #fff; border-radius: 12px; padding: 4px 20px; }
+  .faq summary { cursor: pointer; font-family: var(--font-heading); font-weight: 700; padding: 14px 0; min-height: 44px; list-style-position: outside; }
+  .faq details p { padding: 0 0 16px; color: var(--muted); }
+
+  .access { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; }
+  table { border-collapse: collapse; width: 100%; }
+  th, td { text-align: left; padding: 12px 0; border-bottom: 1px solid #D5CBBB; vertical-align: top; font-size: 15px; }
+  th { width: 7em; font-family: var(--font-heading); font-weight: 700; }
+  .map { background: #fff; border-radius: 12px; padding: 16px; }
+
+  footer { background: var(--text); color: #EEF1F4; padding: 48px 0; font-size: 14px; }
+  footer p + p { margin-top: 8px; }
+
+  @media (max-width: 860px) {
+    .hero .wrap, .access, .ba { grid-template-columns: 1fr; gap: 32px; }
+    .cards, .points { grid-template-columns: 1fr; }
+    .steps { grid-template-columns: 1fr 1fr; }
+    nav ul { display: none; }
+    section { padding: 64px 0; }
+  }
+  @media (max-width: 480px) {
+    .wrap { padding: 0 16px; }
+    .hero h1 { font-size: 30px; }
+    h2 { font-size: 24px; }
+    .steps { grid-template-columns: 1fr; }
+    header .btn { padding: 10px 14px; font-size: 14px; }
+  }
+  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+</style>
+</head>
+<body>
+
+<div class="sample-banner" role="note">
+  これは AXLABO が制作したサンプルサイトです。掲載の店舗・人物・内容は架空です。
+</div>
+
+<header class="site">
+  <div class="wrap">
+    <a class="logo" href="#top" aria-label="住まいの工房 ハシバ トップへ">
+      <svg width="32" height="32" viewBox="0 0 32 32" aria-hidden="true"><rect x="2" y="2" width="28" height="28" rx="6" fill="#2F4A63"/><path d="M7 16l9-8 9 8M10 14v10h12V14" stroke="#F6F3EE" stroke-width="2.2" fill="none" stroke-linejoin="round" stroke-linecap="round"/><path d="M14 24v-5h4v5" stroke="#F6F3EE" stroke-width="2" fill="none"/></svg>
+      住まいの工房 ハシバ
+    </a>
+    <nav aria-label="メインメニュー">
+      <ul>
+        <li><a href="#menu">工事メニュー</a></li>
+        <li><a href="#flow">ご依頼の流れ</a></li>
+        <li><a href="#faq">よくある質問</a></li>
+        <li><a href="#company">会社情報</a></li>
+      </ul>
+    </nav>
+    <a class="btn" href="#flow">相談する</a>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero">
+    <div class="wrap">
+      <div>
+        <p class="kicker">Local Renovation</p>
+        <h1><span class="ph">住まいの</span><span class="ph">気になる所、</span><br><span class="ph">まず</span><span class="ph">見に伺います。</span></h1>
+        <p class="lead measure">水まわりの傷み、床のきしみ、外壁のひび。小さな修繕から間取りの見直しまで、現地を見てからご提案とお見積りをお出しします。</p>
+        <div class="cta">
+          <a class="btn" href="#flow">現地調査を相談する</a>
+          <a class="btn ghost" href="#menu">工事メニューを見る</a>
+        </div>
+        <p class="area"><span class="dot" aria-hidden="true"></span>対応エリア：〇〇市とその周辺（例）</p>
+      </div>
+      <svg viewBox="0 0 400 320" role="img" aria-label="工具箱と木造の家のイラスト">
+        <rect width="400" height="320" rx="16" fill="#EAE3D7"/>
+        <path d="M110 170l90-76 90 76" stroke="#2F4A63" stroke-width="10" fill="none" stroke-linejoin="round" stroke-linecap="round"/>
+        <rect x="132" y="168" width="136" height="100" fill="#FFFFFF"/>
+        <rect x="186" y="210" width="30" height="58" fill="#B98A5E"/>
+        <rect x="148" y="190" width="28" height="24" fill="#C9D6E3"/><rect x="226" y="190" width="28" height="24" fill="#C9D6E3"/>
+        <rect x="262" y="236" width="88" height="44" rx="6" fill="#B98A5E"/><rect x="290" y="226" width="32" height="12" rx="4" fill="none" stroke="#2F4A63" stroke-width="5"/>
+        <path d="M60 280l40-60" stroke="#2F4A63" stroke-width="9" stroke-linecap="round"/><rect x="88" y="206" width="30" height="16" rx="3" fill="#464E5A" transform="rotate(-56 103 214)"/>
+      </svg>
+    </div>
+  </section>
+
+  <section id="menu" class="alt">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="kicker">Our Work</p>
+        <h2>工事メニューと費用の目安</h2>
+      </div>
+      <div class="cards">
+        <article class="card">
+          <div class="ill"><svg width="120" height="90" viewBox="0 0 120 90" role="img" aria-label="洗面台と蛇口のイラスト"><rect x="22" y="44" width="76" height="36" rx="6" fill="#FFFFFF"/><path d="M34 44c0-10 52-10 52 0" fill="#C9D6E3"/><path d="M60 20v14h10" stroke="#2F4A63" stroke-width="5" fill="none" stroke-linecap="round"/></svg></div>
+          <h3>水まわりの修繕・交換</h3>
+          <p class="tag">キッチン・浴室・洗面・トイレ</p>
+          <p class="price">目安 20万円〜（例）</p>
+        </article>
+        <article class="card">
+          <div class="ill"><svg width="120" height="90" viewBox="0 0 120 90" role="img" aria-label="フローリングと壁紙のイラスト"><rect x="14" y="14" width="92" height="40" fill="#FFFFFF"/><path d="M14 54h92v26H14z" fill="#B98A5E"/><path d="M36 54v26M60 54v26M84 54v26" stroke="#8C6440" stroke-width="2"/></svg></div>
+          <h3>内装・床・建具</h3>
+          <p class="tag">床の張り替え、壁紙、扉の調整</p>
+          <p class="price">目安 5万円〜（例）</p>
+        </article>
+        <article class="card">
+          <div class="ill"><svg width="120" height="90" viewBox="0 0 120 90" role="img" aria-label="屋根と外壁のイラスト"><path d="M16 46l44-30 44 30" fill="#2F4A63"/><rect x="26" y="46" width="68" height="34" fill="#FFFFFF"/><path d="M40 58h40M40 68h40" stroke="#C9D6E3" stroke-width="4"/></svg></div>
+          <h3>外壁・屋根の補修</h3>
+          <p class="tag">ひび割れ、雨どい、塗り替えの相談</p>
+          <p class="price">目安 現地調査のうえ</p>
+        </article>
+      </div>
+      <p class="note">※工事内容・費用はサンプル用の架空のものです。実際の会社サイトでは、工事の種類ごとに費用の考え方と、お見積りが変わる条件を書き添えます。</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div class="section-head">
+        <p class="kicker">Before / After</p>
+        <h2><span class="ph">工事の前と後を、</span><span class="ph">並べて見せる</span></h2>
+      </div>
+      <div class="ba">
+        <figure>
+          <p class="label">BEFORE（イメージ）</p>
+          <svg viewBox="0 0 400 220" role="img" aria-label="工事前のイメージ。色あせた床と古い棚のイラスト"><rect width="400" height="220" rx="8" fill="#E2DCD2"/><rect x="0" y="150" width="400" height="70" fill="#A89682"/><rect x="40" y="60" width="90" height="90" fill="#C8BBA8"/><path d="M40 90h90M40 120h90" stroke="#A89682" stroke-width="4"/><path d="M220 160l30 20M300 170l-20 18" stroke="#8A7A66" stroke-width="3"/></svg>
+          <figcaption>床の色あせと、使いにくい造り付けの棚。</figcaption>
+        </figure>
+        <figure>
+          <p class="label">AFTER（イメージ）</p>
+          <svg viewBox="0 0 400 220" role="img" aria-label="工事後のイメージ。明るい床と壁面収納のイラスト"><rect width="400" height="220" rx="8" fill="#F6F3EE"/><rect x="0" y="150" width="400" height="70" fill="#B98A5E"/><path d="M80 150v70M160 150v70M240 150v70M320 150v70" stroke="#A67A50" stroke-width="2"/><rect x="40" y="40" width="150" height="110" fill="#FFFFFF" stroke="#2F4A63" stroke-width="4"/><path d="M115 40v110M40 95h150" stroke="#2F4A63" stroke-width="3"/><circle cx="300" cy="80" r="26" fill="#C9D6E3"/></svg>
+          <figcaption>床を張り替え、壁面に収納をまとめたイメージ。</figcaption>
+        </figure>
+      </div>
+      <p class="note">※上はイラストによるイメージです。実際の会社サイトでは、お客様の了承を得た施工写真に差し替えます。</p>
+    </div>
+  </section>
+
+  <section class="alt">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="kicker">Our Approach</p>
+        <h2>小さな工事ほど、ていねいに</h2>
+      </div>
+      <div class="points">
+        <div>
+          <p class="num">01</p>
+          <h3>見てから決める</h3>
+          <p class="measure">写真だけで金額を決めず、現地で状態を確かめてからお見積りをお出しします。</p>
+        </div>
+        <div>
+          <p class="num">02</p>
+          <h3>内訳を分けて出す</h3>
+          <p class="measure">材料・工事・処分などを分けて書き、何にいくらかかるかが分かる形にします。</p>
+        </div>
+        <div>
+          <p class="num">03</p>
+          <h3>終わった後も相談できる</h3>
+          <p class="measure">引き渡しのあとに気になる点があれば、担当者へそのままご連絡ください。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="flow">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="kicker">Flow</p>
+        <h2>ご依頼の流れ</h2>
+      </div>
+      <ol class="steps">
+        <li><p class="label">STEP 1</p><h3>ご相談</h3><p>気になる箇所を、フォームかお電話でお知らせください。</p></li>
+        <li><p class="label">STEP 2</p><h3>現地調査</h3><p>ご都合のよい日に伺い、状態を確かめます。</p></li>
+        <li><p class="label">STEP 3</p><h3>お見積り</h3><p>内訳つきのお見積りと、工事の進め方をご説明します。</p></li>
+        <li><p class="label">STEP 4</p><h3>工事・お引き渡し</h3><p>ご納得いただいてから着工し、仕上がりを一緒に確認します。</p></li>
+      </ol>
+      <p style="margin-top:32px"><a class="btn" href="#flow">相談フォームへ（サンプルのため動作しません）</a></p>
+    </div>
+  </section>
+
+  <section id="faq" class="alt">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="kicker">FAQ</p>
+        <h2>よくある質問</h2>
+      </div>
+      <div class="faq">
+        <details><summary>現地調査やお見積りに費用はかかりますか？</summary><p>サンプルのため架空の回答です。実際の会社サイトでは、費用の有無と、かかる場合の条件をここに書きます。</p></details>
+        <details><summary>住みながら工事できますか？</summary><p>工事の内容によります。水まわりが使えない期間がある場合は、事前に日数の目安をお伝えします（例）。</p></details>
+        <details><summary>小さな修理だけでも頼めますか？</summary><p>扉の調整や部品の交換など、小さな修理もご相談ください（例）。</p></details>
+      </div>
+    </div>
+  </section>
+
+  <section id="company">
+    <div class="wrap access">
+      <div>
+        <div class="section-head">
+          <p class="kicker">Company</p>
+          <h2>会社情報</h2>
+        </div>
+        <table>
+          <tr><th>会社名</th><td>住まいの工房 ハシバ（架空）</td></tr>
+          <tr><th>所在地</th><td>〇〇市△△町 7-8-9（架空の住所）</td></tr>
+          <tr><th>電話</th><td>000-0000-0000（架空）</td></tr>
+          <tr><th>受付時間</th><td>9:00〜18:00（日曜・祝日休み）（例）</td></tr>
+          <tr><th>対応エリア</th><td>〇〇市とその周辺（例）</td></tr>
+        </table>
+      </div>
+      <div class="map">
+        <svg viewBox="0 0 400 300" role="img" aria-label="事務所の場所を示す簡略地図のイラスト"><rect width="400" height="300" fill="#EAE3D7"/><path d="M0 110h400M0 210h400M130 0v300M280 0v300" stroke="#FFFFFF" stroke-width="18"/><rect x="176" y="136" width="64" height="44" rx="6" fill="#2F4A63"/><text x="208" y="164" font-size="15" fill="#FFFFFF" text-anchor="middle" font-family="sans-serif">事務所</text><text x="208" y="250" font-size="13" fill="#464E5A" text-anchor="middle" font-family="sans-serif">駅から歩いて10分ほど（例）</text></svg>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <p>住まいの工房 ハシバ（架空の会社）</p>
+    <p>これは AXLABO が制作したサンプルサイトです。掲載の店舗・人物・内容は架空です。お客様の制作実績ではありません。</p>
+  </div>
+</footer>
+</body>
+</html>
