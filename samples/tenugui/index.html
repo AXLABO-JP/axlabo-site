@@ -1,0 +1,231 @@
+<!doctype html>
+<html lang="ja" data-theme="ai">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>手ぬぐいの店 そめいろ（架空）｜AXLABO サンプルサイト</title>
+<meta name="description" content="AXLABO が制作したサンプルサイトです。掲載の店舗・人物・内容は架空です。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@700&family=Zen+Kaku+Gothic+New:wght@700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="components.css">
+<style>
+  /* このページだけの指定: 配色トークンと、共用部品に無い「商品グリッド」「商品の詳細」の調整のみ */
+  [data-theme="ai"] { --ax-bg:#F5F4F0; --ax-tint:#E4E6EE; --ax-accent:#2B3F66; --ax-accent-hover:#20304F;
+    --ax-text:#1C2230; --ax-muted:#4A5264; --ax-line:#D3D6E0; }
+  .product-grid { grid-template-columns: repeat(3, 1fr); }
+  .product-grid .ax-card__ill { aspect-ratio: 4 / 3; display: grid; place-items: center; }
+  .product-grid .ax-card__ill svg { width: 100%; height: auto; max-width: 220px; }
+  .product-detail__visual { background: var(--ax-surface); border-radius: var(--ax-radius); padding: var(--ax-s3); display: grid; place-items: center; }
+  .product-detail__visual svg { width: 100%; height: auto; max-width: 420px; }
+  .product-detail .ax-cta { margin-top: var(--ax-s3); }
+  @media (max-width: 900px) { .product-grid { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 560px) { .product-grid { grid-template-columns: 1fr; } }
+</style>
+</head>
+<body class="ax-page">
+
+<p class="ax-sample-banner">これは AXLABO が制作したサンプルサイトです。掲載の店舗・人物・内容は架空です。</p>
+
+<header class="ax-header">
+  <div class="ax-wrap">
+    <a class="ax-logo" href="#top" aria-label="手ぬぐいの店 そめいろ トップへ">
+      <svg width="32" height="32" viewBox="0 0 32 32" aria-hidden="true"><rect x="4" y="6" width="24" height="20" rx="3" fill="none" stroke="currentColor" stroke-width="3"/><path d="M4 13h24M4 19h24" stroke="currentColor" stroke-width="2" stroke-dasharray="3 3"/></svg>
+      そめいろ
+    </a>
+    <nav class="ax-nav" aria-label="ページ内">
+      <ul>
+        <li><a href="#story">わたしたちのこと</a></li>
+        <li><a href="#products">商品</a></li>
+        <li><a href="#buy">ご購入</a></li>
+        <li><a href="#faq">よくある質問</a></li>
+      </ul>
+    </nav>
+    <a class="ax-btn" href="#products">商品を見る</a>
+  </div>
+</header>
+
+<main id="top">
+  <section class="ax-hero ax-section">
+    <div class="ax-wrap">
+      <div>
+        <p class="ax-kicker">Hand-dyed Tenugui</p>
+        <h1 class="ax-h1"><span class="ax-nobr">毎日つかう</span><span class="ax-nobr">一枚を、</span><span class="ax-nobr">ていねいに。</span></h1>
+        <p class="ax-lead">小さな工房で一枚ずつ染めた手ぬぐいです。台所で、お出かけに、贈りものに。使うほどやわらかくなる綿の手ざわりをお届けします。</p>
+        <div class="ax-cta">
+          <a class="ax-btn" href="#products">商品を見る</a>
+          <a class="ax-btn ax-btn--ghost" href="#buy">ご購入の流れ</a>
+        </div>
+        <p class="ax-status"><span class="ax-dot" aria-hidden="true"></span>ご注文は24時間受付（例）</p>
+      </div>
+      <div class="ax-visual">
+        <svg viewBox="0 0 320 220" width="320" height="220" role="img" aria-label="物干しに掛かった手ぬぐいのイラスト">
+          <path d="M20 40 H300" stroke="#4A5264" stroke-width="4" stroke-linecap="round"/>
+          <rect x="40" y="40" width="70" height="150" rx="4" fill="#2B3F66"/>
+          <g fill="#F5F4F0"><circle cx="58" cy="70" r="6"/><circle cx="92" cy="95" r="6"/><circle cx="58" cy="120" r="6"/><circle cx="92" cy="145" r="6"/><circle cx="58" cy="170" r="6"/></g>
+          <rect x="125" y="40" width="70" height="150" rx="4" fill="#E4E6EE"/>
+          <path d="M125 70 H195 M125 100 H195 M125 130 H195 M125 160 H195" stroke="#B5543A" stroke-width="6"/>
+          <rect x="210" y="40" width="70" height="150" rx="4" fill="#6E8B74"/>
+          <path d="M210 80 q17 -16 35 0 t35 0 M210 120 q17 -16 35 0 t35 0 M210 160 q17 -16 35 0 t35 0" fill="none" stroke="#F5F4F0" stroke-width="4"/>
+          <g fill="#1C2230"><rect x="70" y="34" width="10" height="14" rx="2"/><rect x="155" y="34" width="10" height="14" rx="2"/><rect x="240" y="34" width="10" height="14" rx="2"/></g>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <section class="ax-section ax-section--alt" id="story">
+    <div class="ax-wrap">
+      <div class="ax-section-head">
+        <p class="ax-kicker">Our Story</p>
+        <h2><span class="ax-nobr">わたしたちの</span><span class="ax-nobr">手ぬぐいづくり</span></h2>
+      </div>
+      <div class="ax-points">
+        <div>
+          <p class="ax-points__num">01</p>
+          <h3>一枚ずつ手で染める</h3>
+          <p>型を置き、染料を注ぎ、干して乾かす。天気を見ながら、少しずつ仕上げています。</p>
+        </div>
+        <div>
+          <p class="ax-points__num">02</p>
+          <h3>毎日つかえる柄</h3>
+          <p>台所にも、かばんの中にも合うように。飽きのこない柄と色を選んでいます。</p>
+        </div>
+        <div>
+          <p class="ax-points__num">03</p>
+          <h3>切りっぱなしの端</h3>
+          <p>端は縫わずに仕上げています。洗ううちに糸がほつれ、やがて落ち着きます。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="ax-section" id="products">
+    <div class="ax-wrap">
+      <div class="ax-section-head">
+        <p class="ax-kicker">Products</p>
+        <h2><span class="ax-nobr">商品</span></h2>
+      </div>
+      <div class="ax-cards product-grid">
+        <article class="ax-card">
+          <div class="ax-card__ill"><svg viewBox="0 0 160 120" role="img" aria-label="紺地に白い水玉の手ぬぐい"><rect x="20" y="10" width="120" height="100" rx="4" fill="#2B3F66"/><g fill="#F5F4F0"><circle cx="45" cy="35" r="6"/><circle cx="80" cy="35" r="6"/><circle cx="115" cy="35" r="6"/><circle cx="62" cy="60" r="6"/><circle cx="98" cy="60" r="6"/><circle cx="45" cy="85" r="6"/><circle cx="80" cy="85" r="6"/><circle cx="115" cy="85" r="6"/></g></svg></div>
+          <h3>水玉（紺）</h3>
+          <p class="ax-card__meta">綿100%・約90×35cm</p>
+          <p class="ax-card__price">¥1,320（例）</p>
+        </article>
+        <article class="ax-card">
+          <div class="ax-card__ill"><svg viewBox="0 0 160 120" role="img" aria-label="生成り地に赤茶の縞の手ぬぐい"><rect x="20" y="10" width="120" height="100" rx="4" fill="#EFE9DC"/><path d="M20 30 H140 M20 55 H140 M20 80 H140 M20 100 H140" stroke="#B5543A" stroke-width="7"/></svg></div>
+          <h3>縞（赤茶）</h3>
+          <p class="ax-card__meta">綿100%・約90×35cm</p>
+          <p class="ax-card__price">¥1,320（例）</p>
+        </article>
+        <article class="ax-card">
+          <div class="ax-card__ill"><svg viewBox="0 0 160 120" role="img" aria-label="緑地に白い波の手ぬぐい"><rect x="20" y="10" width="120" height="100" rx="4" fill="#6E8B74"/><path d="M20 40 q15 -14 30 0 t30 0 t30 0 t30 0 M20 70 q15 -14 30 0 t30 0 t30 0 t30 0 M20 100 q15 -14 30 0 t30 0 t30 0 t30 0" fill="none" stroke="#F5F4F0" stroke-width="4"/></svg></div>
+          <h3>波（若竹）</h3>
+          <p class="ax-card__meta">綿100%・約90×35cm</p>
+          <p class="ax-card__price">¥1,540（例）</p>
+        </article>
+        <article class="ax-card">
+          <div class="ax-card__ill"><svg viewBox="0 0 160 120" role="img" aria-label="藍色の格子の手ぬぐい"><rect x="20" y="10" width="120" height="100" rx="4" fill="#E4E6EE"/><path d="M50 10 V110 M80 10 V110 M110 10 V110 M20 40 H140 M20 70 H140 M20 100 H140" stroke="#2B3F66" stroke-width="4"/></svg></div>
+          <h3>格子（藍）</h3>
+          <p class="ax-card__meta">綿100%・約90×35cm</p>
+          <p class="ax-card__price">¥1,540（例）</p>
+        </article>
+        <article class="ax-card">
+          <div class="ax-card__ill"><svg viewBox="0 0 160 120" role="img" aria-label="からし色に小花柄の手ぬぐい"><rect x="20" y="10" width="120" height="100" rx="4" fill="#D9B45B"/><g fill="#1C2230"><circle cx="50" cy="40" r="4"/><circle cx="100" cy="35" r="4"/><circle cx="75" cy="65" r="4"/><circle cx="45" cy="90" r="4"/><circle cx="115" cy="80" r="4"/></g></svg></div>
+          <h3>小花（からし）</h3>
+          <p class="ax-card__meta">綿100%・約90×35cm</p>
+          <p class="ax-card__price">¥1,540（例）</p>
+        </article>
+        <article class="ax-card">
+          <div class="ax-card__ill"><svg viewBox="0 0 160 120" role="img" aria-label="紙箱に入った手ぬぐい2枚のイラスト"><rect x="25" y="30" width="110" height="75" rx="6" fill="#FFFFFF" stroke="#4A5264" stroke-width="3"/><rect x="38" y="22" width="40" height="60" rx="3" fill="#2B3F66"/><rect x="82" y="22" width="40" height="60" rx="3" fill="#B5543A"/><path d="M25 55 H135" stroke="#4A5264" stroke-width="3"/></svg></div>
+          <h3>贈りもの 2枚箱入り</h3>
+          <p class="ax-card__meta">お好きな2枚を選べます・のし対応（例）</p>
+          <p class="ax-card__price">¥3,300（例）</p>
+        </article>
+      </div>
+      <p class="ax-note" style="margin-top:var(--ax-s2)">※商品・価格はサンプル用の架空の例です。実際のお店のサイトでは、お店が商品の写真と価格を掲載・更新します。</p>
+    </div>
+  </section>
+
+  <section class="ax-section ax-section--alt">
+    <div class="ax-wrap ax-access product-detail">
+      <div class="product-detail__visual">
+        <svg viewBox="0 0 420 300" role="img" aria-label="広げた紺地水玉の手ぬぐいと、たたんだ状態のイラスト">
+          <rect x="20" y="30" width="250" height="110" rx="4" fill="#2B3F66"/>
+          <g fill="#F5F4F0"><circle cx="50" cy="60" r="8"/><circle cx="100" cy="60" r="8"/><circle cx="150" cy="60" r="8"/><circle cx="200" cy="60" r="8"/><circle cx="240" cy="60" r="8"/><circle cx="75" cy="110" r="8"/><circle cx="125" cy="110" r="8"/><circle cx="175" cy="110" r="8"/><circle cx="225" cy="110" r="8"/></g>
+          <rect x="290" y="170" width="110" height="90" rx="4" fill="#2B3F66"/>
+          <path d="M290 200 H400 M290 230 H400" stroke="#20304F" stroke-width="3"/>
+          <g fill="#F5F4F0"><circle cx="315" cy="185" r="6"/><circle cx="365" cy="185" r="6"/><circle cx="340" cy="245" r="6"/></g>
+          <path d="M40 200 q40 -30 80 0 t80 0" fill="none" stroke="#6E8B74" stroke-width="4"/>
+          <text x="120" y="250" text-anchor="middle" font-size="14" fill="#4A5264" font-family="sans-serif">広げると約90cm（例）</text>
+        </svg>
+      </div>
+      <div>
+        <div class="ax-section-head">
+          <p class="ax-kicker">Featured</p>
+          <h2><span class="ax-nobr">いちばん</span><span class="ax-nobr">使いやすい一枚</span></h2>
+        </div>
+        <p>最初の一枚におすすめしている「水玉（紺）」。色が落ち着いているので、台所でも外出先でも使いやすい手ぬぐいです。</p>
+        <table class="ax-info">
+          <tbody>
+            <tr><th scope="row">素材</th><td>綿100%（例）</td></tr>
+            <tr><th scope="row">大きさ</th><td>約90×35cm（例）</td></tr>
+            <tr><th scope="row">お手入れ</th><td>はじめは色が出るため、単独で手洗いしてください（例）</td></tr>
+            <tr><th scope="row">価格</th><td>¥1,320（税込・例）</td></tr>
+          </tbody>
+        </table>
+        <div class="ax-cta">
+          <a class="ax-btn" href="#buy">カートに入れる（サンプルのため動作しません）</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="ax-section" id="buy">
+    <div class="ax-wrap">
+      <div class="ax-section-head">
+        <p class="ax-kicker">How to Buy</p>
+        <h2><span class="ax-nobr">ご購入の流れ</span></h2>
+      </div>
+      <ol class="ax-steps">
+        <li><p class="ax-steps__label">STEP 1</p><h3>商品を選ぶ</h3><p>柄と枚数を選んで、カートに入れてください。</p></li>
+        <li><p class="ax-steps__label">STEP 2</p><h3>お支払い</h3><p>お届け先とお支払い方法を入力して、注文を確定します（例）。</p></li>
+        <li><p class="ax-steps__label">STEP 3</p><h3>お届け</h3><p>発送のご連絡のあと、ご指定の住所へお届けします（例）。</p></li>
+      </ol>
+      <table class="ax-info" style="margin-top:var(--ax-s4)">
+        <tbody>
+          <tr><th scope="row">送料</th><td>全国一律 ¥390（例）</td></tr>
+          <tr><th scope="row">発送</th><td>ご注文から3営業日以内に発送（例）</td></tr>
+          <tr><th scope="row">返品・交換</th><td>未使用品に限り、到着から7日以内にご連絡ください（例）</td></tr>
+        </tbody>
+      </table>
+      <p style="margin-top:var(--ax-s4)"><a class="ax-btn" href="#buy">カートを見る（サンプルのため動作しません）</a></p>
+    </div>
+  </section>
+
+  <section class="ax-section ax-section--alt" id="faq">
+    <div class="ax-wrap">
+      <div class="ax-section-head">
+        <p class="ax-kicker">FAQ</p>
+        <h2><span class="ax-nobr">よくある質問</span></h2>
+      </div>
+      <div class="ax-faq">
+        <details><summary>色落ちはしますか？</summary><p>染め物のため、はじめの数回は色が出ます。単独で洗うようお願いしています（サンプルの回答例です）。</p></details>
+        <details><summary>贈りもの用の包装はできますか？</summary><p>2枚箱入りをご用意しています。のしの有無はご注文時に選べます（例）。</p></details>
+        <details><summary>端がほつれてきました。</summary><p>切りっぱなしのため、洗ううちに糸が出ます。長い糸は切っていただくと、やがて落ち着きます（例）。</p></details>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="ax-footer">
+  <div class="ax-wrap">
+    <p>手ぬぐいの店 そめいろ（架空のお店）</p>
+    <p><a href="#top">特定商取引法に基づく表示（サンプルのため表示のみ）</a></p>
+    <p>これは AXLABO が制作したサンプルサイトです。掲載の店舗・人物・内容は架空です。お客様の制作実績ではありません。</p>
+  </div>
+</footer>
+<p class="ax-sample-banner">これは AXLABO が制作したサンプルサイトです。掲載の店舗・人物・内容は架空です。</p>
+</body>
+</html>
