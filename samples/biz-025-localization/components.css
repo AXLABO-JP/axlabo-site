@@ -1,0 +1,167 @@
+/*
+ * AXLABO 共用コンポーネント（Daily Sample と BIZ LP で共用）
+ * 由来: Portfolio sample #1〜#5 に繰り返し現れた部品を1つにまとめた（2026-09-28）。
+ * 使い方: このファイルを読み込み、:root（またはページの <html data-theme="…">）でトークンを上書きする。
+ * クラスは ax- で始まる（既存の LP の CSS と衝突させないため）。
+ * 数値の正本: docs/design/axlabo-design-common-rules.md（h1 48 / h2 28 / body 16px・行間1.8・8pxグリッド）、
+ *            docs/design/axlabo-font-master.md（書体・本文 letter-spacing 0.05em）
+ */
+
+/* ---------- トークン（既定＝藍テーマ） ---------- */
+:root {
+  /* 色: 5色だけでページが組めるようにする。コントラストは各テーマで 4.5:1 以上を確認して決める */
+  --ax-bg: #F6F3EE;
+  --ax-tint: #EAE3D7;
+  --ax-surface: #FFFFFF;
+  --ax-accent: #2F4A63;
+  --ax-accent-hover: #233A4F;
+  --ax-text: #1E2530;
+  --ax-muted: #4A5360;
+  --ax-line: #DDD3C3;
+  --ax-on-accent: #FFFFFF;
+  --ax-on-dark: #F4EEE6;
+
+  /* 書体（axlabo-font-master.md） */
+  --ax-font-heading: "Zen Kaku Gothic New", "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Noto Sans JP", sans-serif;
+  --ax-font-body: "Hiragino Sans", "Noto Sans JP", system-ui, sans-serif;
+  --ax-font-display: "Outfit", "Inter", ui-sans-serif, system-ui, sans-serif;
+
+  /* 文字（axlabo-design-common-rules.md: h1 48 / h2 28 / body 16・3階層まで） */
+  --ax-fs-h1: 48px;
+  --ax-fs-h2: 28px;
+  --ax-fs-h3: 18px;
+  --ax-fs-body: 16px;
+  --ax-fs-small: 14px;
+  --ax-fs-note: 13px;
+  --ax-lh-body: 1.8;
+  --ax-lh-heading: 1.4;
+  --ax-ls-body: 0.05em;
+
+  /* 余白（8pxグリッド） */
+  --ax-s1: 8px;
+  --ax-s2: 16px;
+  --ax-s3: 24px;
+  --ax-s4: 32px;
+  --ax-s5: 40px;
+  --ax-s6: 48px;
+  --ax-s8: 64px;
+  --ax-s11: 88px;
+
+  --ax-radius: 16px;
+  --ax-radius-s: 12px;
+  --ax-width: 1040px;
+  --ax-tap: 44px;
+}
+
+/* テーマの例（sample #1〜#3 の配色） */
+[data-theme="bakery"]  { --ax-bg:#FBF7F1; --ax-tint:#F1E6D8; --ax-accent:#9A4B1F; --ax-accent-hover:#7E3C17; --ax-text:#2B2420; --ax-muted:#5C4F46; --ax-line:#E3D5C3; }
+[data-theme="florist"] { --ax-bg:#F7F8F3; --ax-tint:#E4EBE0; --ax-accent:#3E6A4E; --ax-accent-hover:#2F5340; --ax-text:#1F2B25; --ax-muted:#46544C; --ax-line:#D5DECF; }
+[data-theme="indigo"]  { --ax-bg:#F6F3EE; --ax-tint:#EAE3D7; --ax-accent:#2F4A63; --ax-accent-hover:#233A4F; --ax-text:#1E2530; --ax-muted:#4A5360; --ax-line:#DDD3C3; }
+
+/* ---------- 基本 ---------- */
+.ax-page { margin: 0; background: var(--ax-bg); color: var(--ax-text); font-family: var(--ax-font-body);
+  font-size: var(--ax-fs-body); line-height: var(--ax-lh-body); letter-spacing: var(--ax-ls-body); }
+.ax-page *, .ax-page *::before, .ax-page *::after { box-sizing: border-box; }
+.ax-page img, .ax-page svg { max-width: 100%; height: auto; display: block; }
+.ax-page a { color: var(--ax-accent); }
+.ax-page a:focus-visible, .ax-page button:focus-visible, .ax-page summary:focus-visible {
+  outline: 3px solid var(--ax-accent); outline-offset: 3px; border-radius: 4px; }
+.ax-page h1, .ax-page h2, .ax-page h3 { font-family: var(--ax-font-heading); line-height: var(--ax-lh-heading); margin: 0; letter-spacing: 0.02em; }
+.ax-page h2 { font-size: var(--ax-fs-h2); }
+.ax-page h3 { font-size: var(--ax-fs-h3); }
+.ax-page p { margin: 0; }
+/* 見出しの折り返し: 語の途中で1文字だけ落ちないよう、句ごとに ax-nobr で包む */
+.ax-nobr { display: inline-block; }
+
+.ax-wrap { max-width: var(--ax-width); margin: 0 auto; padding: 0 var(--ax-s3); }
+.ax-kicker { font-family: var(--ax-font-display); font-weight: 700; letter-spacing: .12em; font-size: var(--ax-fs-note);
+  color: var(--ax-accent); text-transform: uppercase; }
+.ax-note { font-size: var(--ax-fs-note); color: var(--ax-muted); }
+
+/* ---------- サンプル表示（必ずページ最上部と最下部） ---------- */
+.ax-sample-banner { background: var(--ax-text); color: #fff; font-size: var(--ax-fs-note); text-align: center;
+  padding: var(--ax-s1) var(--ax-s2); line-height: 1.6; }
+
+/* ---------- ボタン ---------- */
+.ax-btn { display: inline-flex; align-items: center; justify-content: center; min-height: var(--ax-tap);
+  background: var(--ax-accent); color: var(--ax-on-accent) !important; text-decoration: none; font-weight: 700;
+  font-family: var(--ax-font-heading); padding: 0 var(--ax-s3); border-radius: 999px; border: 2px solid var(--ax-accent); cursor: pointer; font-size: 15px; }
+.ax-btn:hover { background: var(--ax-accent-hover); border-color: var(--ax-accent-hover); }
+.ax-btn--ghost { background: transparent; color: var(--ax-accent) !important; }
+.ax-btn--ghost:hover { background: var(--ax-tint); border-color: var(--ax-accent); }
+
+/* ---------- ヘッダー（CTA付き） ---------- */
+.ax-header { position: sticky; top: 0; z-index: 10; background: color-mix(in srgb, var(--ax-bg) 96%, transparent); border-bottom: 1px solid var(--ax-tint); }
+.ax-header .ax-wrap { display: flex; align-items: center; justify-content: space-between; gap: var(--ax-s2); min-height: 64px; }
+.ax-logo { display: flex; align-items: center; gap: var(--ax-s1); text-decoration: none; color: var(--ax-text) !important;
+  font-family: var(--ax-font-heading); font-weight: 700; font-size: 18px; }
+.ax-nav ul { list-style: none; display: flex; gap: var(--ax-s3); margin: 0; padding: 0; }
+.ax-nav a { color: var(--ax-text); text-decoration: none; font-size: 15px; display: inline-flex; align-items: center; min-height: var(--ax-tap); }
+.ax-nav a:hover { color: var(--ax-accent); }
+
+/* ---------- セクション ---------- */
+.ax-section { padding: var(--ax-s11) 0; }
+.ax-section--alt { background: var(--ax-tint); }
+.ax-section-head { display: grid; gap: var(--ax-s1); margin-bottom: var(--ax-s5); }
+
+/* ---------- ヒーロー ---------- */
+.ax-hero .ax-wrap { display: grid; grid-template-columns: 1.1fr .9fr; gap: var(--ax-s6); align-items: center; }
+.ax-hero h1, .ax-hero .ax-h1 { font-size: var(--ax-fs-h1); }
+.ax-hero .ax-lead { margin-top: var(--ax-s3); color: var(--ax-muted); max-width: 26em; }
+.ax-hero .ax-cta { display: flex; flex-wrap: wrap; gap: var(--ax-s2); margin-top: var(--ax-s4); }
+.ax-hero .ax-status { margin-top: var(--ax-s3); display: inline-flex; gap: var(--ax-s1); align-items: center; font-size: var(--ax-fs-small); color: var(--ax-muted); }
+.ax-dot { width: 10px; height: 10px; border-radius: 50%; background: var(--ax-accent); flex: none; }
+.ax-visual { background: var(--ax-tint); border-radius: var(--ax-radius); padding: var(--ax-s4); display: grid; place-items: center; min-height: 240px; }
+
+/* ---------- カード一覧 ---------- */
+.ax-cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--ax-s3); }
+.ax-card { background: var(--ax-surface); border-radius: var(--ax-radius); padding: var(--ax-s3); display: grid; gap: var(--ax-s2); align-content: start; }
+.ax-card__ill { background: var(--ax-tint); border-radius: var(--ax-radius-s); padding: var(--ax-s2); display: grid; place-items: center; height: 136px; }
+.ax-card__meta { font-size: var(--ax-fs-note); color: var(--ax-muted); }
+.ax-card__price { font-family: var(--ax-font-display); font-weight: 700; font-size: 18px; }
+
+/* ---------- 番号つきの要点 ---------- */
+.ax-points { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--ax-s4); }
+.ax-points__num { font-family: var(--ax-font-display); font-size: 32px; font-weight: 700; color: var(--ax-accent); line-height: 1; }
+.ax-points h3 { margin: var(--ax-s2) 0 var(--ax-s1); }
+
+/* ---------- 手順 ---------- */
+.ax-steps { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--ax-s3); }
+.ax-steps li { background: var(--ax-surface); border-radius: var(--ax-radius); padding: var(--ax-s3); }
+.ax-steps__label { font-family: var(--ax-font-display); font-weight: 700; color: var(--ax-accent); font-size: var(--ax-fs-note); letter-spacing: .1em; }
+.ax-steps h3 { margin: var(--ax-s1) 0; }
+
+/* ---------- 情報の表 ---------- */
+.ax-info { border-collapse: collapse; width: 100%; }
+.ax-info th, .ax-info td { text-align: left; padding: var(--ax-s2) 0; border-bottom: 1px solid var(--ax-line); vertical-align: top; font-size: 15px; }
+.ax-info th { width: 7em; padding-right: var(--ax-s2); font-family: var(--ax-font-heading); font-weight: 700; }
+
+/* ---------- 地図の図（写真・外部地図を使わない案内図） ---------- */
+.ax-access { display: grid; grid-template-columns: 1fr 1fr; gap: var(--ax-s6); align-items: start; }
+.ax-map { background: var(--ax-surface); border-radius: var(--ax-radius); padding: var(--ax-s2); }
+
+/* ---------- よくある質問 ---------- */
+.ax-faq { display: grid; gap: var(--ax-s2); max-width: 760px; }
+.ax-faq details { background: var(--ax-surface); border-radius: var(--ax-radius-s); padding: 0 var(--ax-s3); }
+.ax-faq summary { cursor: pointer; font-family: var(--ax-font-heading); font-weight: 700; padding: var(--ax-s2) 0; min-height: var(--ax-tap); }
+.ax-faq details p { padding: 0 0 var(--ax-s2); color: var(--ax-muted); }
+
+/* ---------- フッター ---------- */
+.ax-footer { background: var(--ax-text); color: var(--ax-on-dark); padding: var(--ax-s6) 0; font-size: var(--ax-fs-small); }
+.ax-footer p + p { margin-top: var(--ax-s1); }
+.ax-footer a { color: var(--ax-on-dark); }
+
+/* ---------- 画面幅 ---------- */
+@media (max-width: 860px) {
+  .ax-hero .ax-wrap, .ax-access { grid-template-columns: 1fr; gap: var(--ax-s4); }
+  .ax-cards, .ax-points, .ax-steps { grid-template-columns: 1fr; }
+  .ax-nav ul { display: none; }
+  .ax-section { padding: var(--ax-s8) 0; }
+}
+@media (max-width: 480px) {
+  .ax-wrap { padding: 0 var(--ax-s2); }
+  .ax-hero h1, .ax-hero .ax-h1 { font-size: 32px; }
+  .ax-page h2 { font-size: 24px; }
+  .ax-header .ax-btn { padding: 0 var(--ax-s2); font-size: 14px; }
+}
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }

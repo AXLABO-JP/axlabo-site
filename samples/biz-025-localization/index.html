@@ -1,0 +1,184 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>日本語→英語ローカライズの見本（BIZ-025 サンプル）｜AXLABO</title>
+<meta name="description" content="AXLABO が制作したサンプルサイトです。掲載の店舗・人物・内容は架空です。日本語の案内文を英語向けにローカライズした Before / After の見本。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;700&family=Zen+Kaku+Gothic+New:wght@700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="components.css">
+<style>
+  :root { --ax-accent: #6B3D52; --ax-accent-hover: #552F41; --ax-tint: #EFE6EA; --ax-line: #DCCFD5; }
+  .lz-list { display: grid; gap: var(--ax-s4); }
+  .lz-item { background: var(--ax-surface); border-radius: var(--ax-radius); padding: var(--ax-s3); }
+  .lz-item h3 { font-size: var(--ax-fs-h3); margin-bottom: var(--ax-s2); }
+  .lz-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--ax-s2); }
+  .lz-col { border: 1px solid var(--ax-line); border-radius: var(--ax-radius-s); padding: var(--ax-s2); }
+  .lz-col h4 { font-size: 13px; letter-spacing: .04em; margin-bottom: var(--ax-s1); color: var(--ax-muted); }
+  .lz-col p { font-size: 15px; line-height: 1.7; }
+  .lz-col--literal { background: #F4F4F4; }
+  .lz-col--literal h4::after { content: "（納品物ではありません）"; font-weight: 400; }
+  .lz-col--after { border: 2px solid var(--ax-accent); }
+  .lz-col--after h4 { color: var(--ax-accent); }
+  .lz-why { margin-top: var(--ax-s2); font-size: var(--ax-fs-small); color: var(--ax-muted); }
+  .lz-why strong { color: var(--ax-text); }
+  [lang="en"] { font-family: var(--ax-font-display), system-ui, sans-serif; font-weight: 400; letter-spacing: 0; }
+  .lz-deliver { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--ax-s3); }
+  @media (max-width: 760px) { .lz-grid, .lz-deliver { grid-template-columns: 1fr; } }
+</style>
+</head>
+<body class="ax-page" id="top">
+<div class="ax-sample-banner" role="note">これは AXLABO が制作したサンプルサイトです。掲載の店舗・人物・内容は架空です。</div>
+
+<header class="ax-header">
+  <div class="ax-wrap">
+    <a class="ax-logo" href="#top" aria-label="ローカライズの見本 トップへ">
+      <svg width="32" height="32" viewBox="0 0 32 32" aria-hidden="true"><rect x="3" y="6" width="16" height="16" rx="3" fill="none" stroke="currentColor" stroke-width="2.5"/><rect x="13" y="12" width="16" height="16" rx="3" fill="currentColor"/></svg>
+      ローカライズの見本
+    </a>
+    <nav class="ax-nav" aria-label="ページ内">
+      <ul>
+        <li><a href="#deliver">納品物</a></li>
+        <li><a href="#compare">Before / After</a></li>
+        <li><a href="#notes">調整の考え方</a></li>
+      </ul>
+    </nav>
+    <a class="ax-btn" href="en.html">完成した英語LP</a>
+  </div>
+</header>
+
+<main>
+  <section class="ax-hero ax-section">
+    <div class="ax-wrap">
+      <div>
+        <p class="ax-kicker">BIZ-025 SAMPLE DELIVERABLE</p>
+        <h1><span class="ax-nobr">日本語の案内を、</span><br><span class="ax-nobr">英語で</span><span class="ax-nobr">「伝わる」形に。</span></h1>
+        <p class="ax-lead">架空の和菓子教室「和菓子工房 こよみ」の日本語ページを、海外の方向けの英語LPへローカライズした見本です。<span class="ax-nobr">直訳との違い</span>を並べて見せています。</p>
+        <div class="ax-cta">
+          <a class="ax-btn" href="en.html">完成した英語LPを見る</a>
+          <a class="ax-btn ax-btn--ghost" href="#compare">Before / After を見る</a>
+        </div>
+        <p class="ax-status"><span class="ax-dot" aria-hidden="true"></span>プラン A「多言語LP1ページ」に相当する納品物の例</p>
+      </div>
+      <div class="ax-visual" aria-hidden="true">
+        <svg viewBox="0 0 320 220" width="100%" height="auto" role="img"><rect x="10" y="20" width="140" height="180" rx="14" fill="#FFFFFF"/><rect x="26" y="44" width="100" height="10" rx="5" fill="#DCCFD5"/><rect x="26" y="64" width="80" height="8" rx="4" fill="#EFE6EA"/><rect x="26" y="80" width="90" height="8" rx="4" fill="#EFE6EA"/><text x="80" y="160" text-anchor="middle" font-size="34" fill="#6B3D52" font-family="sans-serif">和</text><path d="M160 110 h30" stroke="#6B3D52" stroke-width="4" stroke-linecap="round"/><path d="M182 100 l10 10 -10 10" fill="none" stroke="#6B3D52" stroke-width="4" stroke-linecap="round"/><rect x="200" y="20" width="110" height="180" rx="14" fill="#6B3D52"/><rect x="214" y="44" width="80" height="10" rx="5" fill="#EFE6EA"/><rect x="214" y="64" width="64" height="8" rx="4" fill="#B98FA3"/><rect x="214" y="80" width="72" height="8" rx="4" fill="#B98FA3"/><text x="255" y="160" text-anchor="middle" font-size="30" fill="#FFFFFF" font-family="sans-serif">EN</text></svg>
+      </div>
+    </div>
+  </section>
+
+  <section class="ax-section ax-section--alt" id="deliver" aria-labelledby="h-deliver">
+    <div class="ax-wrap">
+      <div class="ax-section-head">
+        <p class="ax-kicker">WHAT YOU RECEIVE</p>
+        <h2 id="h-deliver">お受け取りいただくもの（例）</h2>
+      </div>
+      <div class="lz-deliver">
+        <article class="ax-card"><h3>英語LP 1ページ</h3><p class="ax-card__meta">公開できる状態の HTML。見出し・予約の導線・料金の見せ方まで英語圏の読み手に合わせて組み直します</p></article>
+        <article class="ax-card"><h3>翻訳・調整メモ</h3><p class="ax-card__meta">このページのように、原文から何を変えたか・なぜ変えたかの一覧。社内で確認できる形でお渡しします</p></article>
+        <article class="ax-card"><h3>用語の対訳表</h3><p class="ax-card__meta">店名・メニュー名・固有の言い回しの英語表記をそろえた表。以後の案内文でも同じ表記を使えます</p></article>
+      </div>
+      <p class="ax-note">料金の目安：プラン A「多言語LP1ページ」¥148,000（税別）。翻訳は AI 翻訳と代表の確認で行います。<strong>ネイティブによる校正は含みません</strong>（提供していません）。</p>
+    </div>
+  </section>
+
+  <section class="ax-section" id="compare" aria-labelledby="h-compare">
+    <div class="ax-wrap">
+      <div class="ax-section-head">
+        <p class="ax-kicker">BEFORE / AFTER</p>
+        <h2 id="h-compare">原文・直訳・ローカライズ後</h2>
+      </div>
+      <p class="ax-note">「直訳」は比較のために置いた機械的な訳で、納品物ではありません。店舗・料金・日程はすべて架空の例です。</p>
+      <div class="lz-list">
+
+        <article class="lz-item">
+          <h3>1. 見出し（Headline）</h3>
+          <div class="lz-grid">
+            <div class="lz-col"><h4>原文（日本語）</h4><p>季節を感じる、はじめての和菓子づくり。心を込めてお待ちしております。</p></div>
+            <div class="lz-col lz-col--literal"><h4>直訳</h4><p lang="en">Making Japanese sweets for the first time, feeling the season. We are waiting for you with all our heart.</p></div>
+            <div class="lz-col lz-col--after"><h4>ローカライズ後</h4><p lang="en">Make seasonal Japanese sweets at home — live, online, no experience needed.</p></div>
+          </div>
+          <p class="lz-why"><strong>変えた理由：</strong>「心を込めてお待ちしております」は日本語では礼儀ですが、英語では意味の薄い一文になります。読み手が知りたい「何ができるか・どこで・初心者でもよいか」を見出しに入れました。</p>
+        </article>
+
+        <article class="lz-item">
+          <h3>2. 行動を促す一言（CTA）</h3>
+          <div class="lz-grid">
+            <div class="lz-col"><h4>原文（日本語）</h4><p>お気軽にお問い合わせください。</p></div>
+            <div class="lz-col lz-col--literal"><h4>直訳</h4><p lang="en">Please feel free to contact us.</p></div>
+            <div class="lz-col lz-col--after"><h4>ローカライズ後</h4><p lang="en">Book a 90-minute trial class</p></div>
+          </div>
+          <p class="lz-why"><strong>変えた理由：</strong>海外の読み手は「問い合わせ」より「申し込み」を先に探します。ボタンは何が起きるか（何分の何を予約するか）が分かる文言にしました。</p>
+        </article>
+
+        <article class="lz-item">
+          <h3>3. サービスの説明（Service description）</h3>
+          <div class="lz-grid">
+            <div class="lz-col"><h4>原文（日本語）</h4><p>職人歴20年の講師が、四季の練り切りを丁寧にお教えします。材料はお近くのお店でお求めいただけます。</p></div>
+            <div class="lz-col lz-col--literal"><h4>直訳</h4><p lang="en">An instructor with 20 years of craftsman history will carefully teach you nerikiri of the four seasons. Ingredients can be purchased at a store near you.</p></div>
+            <div class="lz-col lz-col--after"><h4>ローカライズ後</h4><p lang="en">Our teacher walks you through <em>nerikiri</em> — soft, sculpted sweets made from sweet bean paste. You'll get a shopping list a week before class, with substitutes you can find at most supermarkets outside Japan.</p></div>
+          </div>
+          <p class="lz-why"><strong>変えた理由：</strong>「練り切り」は説明なしでは伝わらないため一言で補いました。「近くのお店で」は海外では手に入らない材料があるので、代わりの材料を含む買い物リストを事前に送る、という実際の手順に言い換えました。「職人歴20年」は確認できる事実ではないため、この見本では使っていません。</p>
+        </article>
+
+        <article class="lz-item">
+          <h3>4. 料金の見せ方（Pricing presentation）</h3>
+          <div class="lz-grid">
+            <div class="lz-col"><h4>原文（日本語）</h4><p>体験クラス 4,400円（税込）</p></div>
+            <div class="lz-col lz-col--literal"><h4>直訳</h4><p lang="en">Trial class 4,400 yen (tax included)</p></div>
+            <div class="lz-col lz-col--after"><h4>ローカライズ後</h4><p lang="en">Trial class: ¥4,400 (JPY, tax included). About US$30 — exchange rate as of the example date; you pay in JPY. Price covers the live class and recipe PDF. Ingredients are not included.</p></div>
+          </div>
+          <p class="lz-why"><strong>変えた理由：</strong>通貨・税込みかどうか・参考の米ドル換算と基準日・料金に含まれるもの／含まれないものを一度に示しました。海外の方が支払い直前に迷わないためです。（金額と換算は例）</p>
+        </article>
+
+        <article class="lz-item">
+          <h3>5. よくある質問（FAQ）</h3>
+          <div class="lz-grid">
+            <div class="lz-col"><h4>原文（日本語）</h4><p>Q. キャンセルはできますか？<br>A. 前日までにご連絡ください。</p></div>
+            <div class="lz-col lz-col--literal"><h4>直訳</h4><p lang="en">Q. Can I cancel?<br>A. Please contact us by the day before.</p></div>
+            <div class="lz-col lz-col--after"><h4>ローカライズ後</h4><p lang="en">Q. What if I need to cancel?<br>A. Cancel at least 24 hours before your class (Japan time) for a full refund. After that, we can move you to another date once.</p></div>
+          </div>
+          <p class="lz-why"><strong>変えた理由：</strong>「前日まで」は時差があると解釈が割れます。時間（24時間前）・基準の時刻（日本時間）・返金と振替の扱いを明記しました。（規定の内容は例）</p>
+        </article>
+
+        <article class="lz-item">
+          <h3>6. 時間の表記（Schedule）</h3>
+          <div class="lz-grid">
+            <div class="lz-col"><h4>原文（日本語）</h4><p>毎週土曜 10:00〜11:30</p></div>
+            <div class="lz-col lz-col--literal"><h4>直訳</h4><p lang="en">Every Saturday 10:00–11:30</p></div>
+            <div class="lz-col lz-col--after"><h4>ローカライズ後</h4><p lang="en">Saturdays, 10:00–11:30 JST (Japan Standard Time, UTC+9). That's Friday evening in North America.</p></div>
+          </div>
+          <p class="lz-why"><strong>変えた理由：</strong>オンライン教室では、読み手の国の時刻に置き換えられることが申し込みの前提です。基準の時間帯を示し、主な地域での見え方を一言添えました。</p>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="ax-section ax-section--alt" id="notes" aria-labelledby="h-notes">
+    <div class="ax-wrap">
+      <div class="ax-section-head">
+        <p class="ax-kicker">WHY IT MATTERS</p>
+        <h2 id="h-notes">翻訳とローカライズの違い</h2>
+      </div>
+      <div class="ax-points">
+        <div><p class="ax-points__num">01</p><h3>言葉より、手順を合わせる</h3><p>材料・時差・支払い方法など、海外の読み手の実際の手順に合わせて文を組み直します。</p></div>
+        <div><p class="ax-points__num">02</p><h3>礼儀の言い回しを、情報に置き換える</h3><p>日本語の丁寧な定型句は、英語では具体的な事実（何ができるか・いつ・いくら）に置き換えます。</p></div>
+        <div><p class="ax-points__num">03</p><h3>確認できないことは書かない</h3><p>原文の強調表現でも、事実として確かめられないものは英語版に持ち込みません。</p></div>
+      </div>
+      <div class="ax-cta" style="margin-top: var(--ax-s5)"><a class="ax-btn" href="en.html">完成した英語LPを見る</a></div>
+    </div>
+  </section>
+</main>
+
+<footer class="ax-footer">
+  <div class="ax-wrap">
+    <p>和菓子工房 こよみ（架空の教室）／ ローカライズの見本（BIZ-025）</p>
+    <p>これは AXLABO が制作したサンプルサイトです。掲載の店舗・人物・内容は架空です。お客様の制作実績ではありません。</p>
+  </div>
+</footer>
+<div class="ax-sample-banner" role="note">これは AXLABO が制作したサンプルサイトです。掲載の店舗・人物・内容は架空です。</div>
+</body>
+</html>
