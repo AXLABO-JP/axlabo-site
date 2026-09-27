@@ -1,0 +1,286 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>花とみどり ミチクサ（架空の店舗）｜AXLABO 制作サンプル</title>
+<meta name="description" content="AXLABO が制作した Web サイトのサンプルです。掲載の店舗・人物・内容はすべて架空です。">
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;700&family=Zen+Kaku+Gothic+New:wght@500;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #F7F8F3;       /* 朝の白 */
+    --tint: #E4EBE0;     /* 葉の淡色（区切り） */
+    --accent: #3E6A4E;   /* 茎の緑 */
+    --text: #1F2B25;
+    --muted: #46544C;
+    --font-heading: "Zen Kaku Gothic New", "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Noto Sans JP", sans-serif;
+    --font-body: "Hiragino Sans", "Noto Sans JP", system-ui, sans-serif;
+    --font-display: "Outfit", "Inter", ui-sans-serif, system-ui, sans-serif;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { margin: 0; background: var(--bg); color: var(--text); font-family: var(--font-body); font-size: 16px; line-height: 1.8; }
+  img, svg { max-width: 100%; height: auto; display: block; }
+  a { color: var(--accent); }
+  a:focus-visible, button:focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; border-radius: 4px; }
+  h1, h2, h3 { font-family: var(--font-heading); line-height: 1.4; margin: 0; }
+  h2 { font-size: 28px; }
+  h3 { font-size: 18px; }
+  p { margin: 0; }
+  .wrap { max-width: 1040px; margin: 0 auto; padding: 0 24px; }
+  .measure { max-width: 26em; }
+  .kicker { font-family: var(--font-display); font-weight: 700; letter-spacing: .12em; font-size: 13px; color: var(--accent); text-transform: uppercase; }
+
+  /* サンプル表示（常に最上部） */
+  .sample-banner { background: var(--text); color: #fff; font-size: 13px; text-align: center; padding: 8px 16px; line-height: 1.6; }
+
+  header.site { position: sticky; top: 0; z-index: 10; background: rgba(247,248,243,.96); border-bottom: 1px solid var(--tint); }
+  header.site .wrap { display: flex; align-items: center; justify-content: space-between; gap: 16px; min-height: 64px; }
+  .logo { display: flex; align-items: center; gap: 10px; text-decoration: none; color: var(--text); font-family: var(--font-heading); font-weight: 700; font-size: 18px; }
+  nav ul { list-style: none; display: flex; gap: 22px; margin: 0; padding: 0; }
+  nav a { color: var(--text); text-decoration: none; font-size: 15px; display: inline-block; padding: 8px 0; }
+  nav a:hover { color: var(--accent); }
+  .btn { display: inline-block; background: var(--accent); color: #fff; text-decoration: none; font-weight: 700; font-family: var(--font-heading); padding: 12px 22px; border-radius: 999px; min-height: 44px; }
+  .btn:hover { background: #2F5340; }
+  .btn.ghost { background: transparent; color: var(--accent); border: 2px solid var(--accent); padding: 10px 20px; }
+  .btn.ghost:hover { background: var(--tint); }
+
+  section { padding: 88px 0; }
+  section.alt { background: var(--tint); }
+  .section-head { display: grid; gap: 8px; margin-bottom: 40px; }
+
+  /* ヒーロー */
+  .hero .wrap { display: grid; grid-template-columns: 1.1fr .9fr; gap: 48px; align-items: center; }
+  .hero h1 { font-size: 48px; }
+  .hero p.lead { margin-top: 20px; color: var(--muted); }
+  .hero .cta { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 32px; }
+  .hero .today { margin-top: 28px; display: inline-flex; gap: 10px; align-items: center; font-size: 14px; color: var(--muted); }
+  .dot { width: 10px; height: 10px; border-radius: 50%; background: var(--accent); flex: none; }
+
+  /* 季節の花束 */
+  .cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+  .card { background: #fff; border-radius: 16px; padding: 24px; display: grid; gap: 12px; }
+  .card .ill { background: var(--tint); border-radius: 12px; padding: 16px; display: grid; place-items: center; height: 140px; }
+  .card .price { font-family: var(--font-display); font-weight: 700; font-size: 18px; }
+  .card .tag { font-size: 13px; color: var(--muted); }
+  .note { margin-top: 20px; font-size: 13px; color: var(--muted); }
+
+  /* こだわり */
+  .points { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; }
+  .points .num { font-family: var(--font-display); font-size: 32px; font-weight: 700; color: var(--accent); line-height: 1; }
+  .points h3 { margin: 12px 0 8px; }
+
+  /* ご注文の流れ */
+  .steps { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; counter-reset: s; }
+  .steps li { background: #fff; border-radius: 16px; padding: 24px; }
+  .steps .label { font-family: var(--font-display); font-weight: 700; color: var(--accent); font-size: 13px; letter-spacing: .1em; }
+  .steps h3 { margin: 6px 0 8px; }
+
+  /* 季節 */
+  .season { display: grid; grid-template-columns: .9fr 1.1fr; gap: 48px; align-items: center; }
+
+  /* アクセス */
+  .access { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; }
+  table { border-collapse: collapse; width: 100%; }
+  th, td { text-align: left; padding: 12px 0; border-bottom: 1px solid #CFD9CB; vertical-align: top; font-size: 15px; }
+  th { width: 7em; font-family: var(--font-heading); font-weight: 700; }
+  .map { background: #fff; border-radius: 16px; padding: 16px; }
+
+  footer { background: var(--text); color: #EEF2EC; padding: 48px 0; font-size: 14px; }
+  footer p + p { margin-top: 8px; }
+  footer a { color: #EEF2EC; }
+
+  @media (max-width: 860px) {
+    .hero .wrap, .season, .access { grid-template-columns: 1fr; gap: 32px; }
+    .cards, .points, .steps { grid-template-columns: 1fr; }
+    nav ul { display: none; }
+    section { padding: 64px 0; }
+  }
+  @media (max-width: 480px) {
+    .wrap { padding: 0 16px; }
+    .hero h1 { font-size: 32px; }
+    h2 { font-size: 24px; }
+    header .btn { padding: 10px 16px; font-size: 14px; }
+  }
+  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+</style>
+</head>
+<body>
+
+<div class="sample-banner" role="note">
+  これは AXLABO が制作したサンプルサイトです。掲載の店舗・人物・内容は架空です。
+</div>
+
+<header class="site">
+  <div class="wrap">
+    <a class="logo" href="#top" aria-label="花とみどり ミチクサ トップへ">
+      <svg width="32" height="32" viewBox="0 0 32 32" aria-hidden="true"><rect x="3" y="3" width="26" height="26" rx="13" fill="#3E6A4E"/><path d="M16 24V13" stroke="#F7F8F3" stroke-width="2.2" stroke-linecap="round"/><path d="M16 15c-4 0-6-3-6-6 4 0 6 3 6 6zM16 13c4 0 6-3 6-6-4 0-6 3-6 6z" fill="#F7F8F3"/></svg>
+      花とみどり ミチクサ
+    </a>
+    <nav aria-label="メインメニュー">
+      <ul>
+        <li><a href="#bouquet">季節の花束</a></li>
+        <li><a href="#craft">お店のこと</a></li>
+        <li><a href="#order">ご注文</a></li>
+        <li><a href="#access">アクセス</a></li>
+      </ul>
+    </nav>
+    <a class="btn" href="#order">花束を注文</a>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero">
+    <div class="wrap">
+      <div>
+        <p class="kicker">Neighborhood Florist</p>
+        <h1>贈る日の前に、<br><span style="display:inline-block">ひと声</span><span style="display:inline-block">かけてください。</span></h1>
+        <p class="lead measure">市場から届いたその週の花で、予算と用途に合わせて束ねます。前日までのご注文なら、好きな色味でご用意できます。</p>
+        <div class="cta">
+          <a class="btn" href="#order">花束を注文する</a>
+          <a class="btn ghost" href="#bouquet">予算の目安を見る</a>
+        </div>
+        <p class="today"><span class="dot" aria-hidden="true"></span>本日 10:00〜19:00 営業（例）</p>
+      </div>
+      <svg viewBox="0 0 400 320" role="img" aria-label="ガラスの花瓶に活けた季節の花のイラスト">
+        <rect width="400" height="320" rx="24" fill="#E4EBE0"/>
+        <path d="M170 300h60l10-110h-80z" fill="#FFFFFF" opacity=".75"/>
+        <path d="M200 200V120M200 200l-40-70M200 200l38-74M200 200l-70-40M200 200l72-44" stroke="#3E6A4E" stroke-width="5" stroke-linecap="round" fill="none"/>
+        <circle cx="200" cy="108" r="22" fill="#D98C8C"/><circle cx="200" cy="108" r="9" fill="#F3D27A"/>
+        <circle cx="156" cy="124" r="18" fill="#F2C9A0"/><circle cx="242" cy="118" r="18" fill="#B7A3D6"/>
+        <circle cx="126" cy="156" r="15" fill="#F7F8F3"/><circle cx="276" cy="152" r="15" fill="#F2C9A0"/>
+        <ellipse cx="170" cy="170" rx="18" ry="8" fill="#6F9A7B" transform="rotate(-30 170 170)"/>
+        <ellipse cx="232" cy="172" rx="18" ry="8" fill="#6F9A7B" transform="rotate(30 232 172)"/>
+      </svg>
+    </div>
+  </section>
+
+  <section id="bouquet" class="alt">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="kicker">Seasonal Bouquet</p>
+        <h2>季節の花束・予算の目安</h2>
+      </div>
+      <div class="cards">
+        <article class="card">
+          <div class="ill"><svg width="120" height="90" viewBox="0 0 120 90" role="img" aria-label="小さな花束のイラスト"><path d="M50 88l10-40 10 40z" fill="#C9D8C4"/><circle cx="60" cy="36" r="14" fill="#F2C9A0"/><circle cx="44" cy="44" r="10" fill="#F7F8F3" stroke="#6F9A7B" stroke-width="2"/><circle cx="76" cy="44" r="10" fill="#D98C8C"/></svg></div>
+          <h3>ちいさな花束</h3>
+          <p class="tag">ちょっとしたお礼・お見舞いに</p>
+          <p class="price">¥2,200〜</p>
+        </article>
+        <article class="card">
+          <div class="ill"><svg width="120" height="90" viewBox="0 0 120 90" role="img" aria-label="誕生日向けの花束のイラスト"><path d="M44 88l16-44 16 44z" fill="#C9D8C4"/><circle cx="60" cy="30" r="16" fill="#D98C8C"/><circle cx="40" cy="40" r="12" fill="#B7A3D6"/><circle cx="80" cy="40" r="12" fill="#F3D27A"/><circle cx="60" cy="50" r="10" fill="#F2C9A0"/></svg></div>
+          <h3>お誕生日の花束</h3>
+          <p class="tag">年齢や好きな色をお知らせください</p>
+          <p class="price">¥4,400〜</p>
+        </article>
+        <article class="card">
+          <div class="ill"><svg width="120" height="90" viewBox="0 0 120 90" role="img" aria-label="鉢植えのグリーンのイラスト"><path d="M42 60h36l-6 28H48z" fill="#C98A5E"/><path d="M60 60V30M60 44c-12 0-18-8-18-16 12 0 18 8 18 16zM60 38c12 0 18-8 18-16-12 0-18 8-18 16z" fill="#3E6A4E" stroke="#3E6A4E" stroke-width="2"/></svg></div>
+          <h3>開店祝いのグリーン</h3>
+          <p class="tag">鉢物・配達の相談可（例）</p>
+          <p class="price">¥8,800〜</p>
+        </article>
+      </div>
+      <p class="note">※商品・価格はサンプル用の架空のものです。実際の店舗サイトでは、季節の入荷に合わせてお店の方が写真と価格を差し替えられる形にします。</p>
+    </div>
+  </section>
+
+  <section id="craft">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="kicker">About Us</p>
+        <h2>その週の花で、ていねいに</h2>
+      </div>
+      <div class="points">
+        <div>
+          <p class="num">01</p>
+          <h3>週二回の仕入れ</h3>
+          <p class="measure">火曜と金曜に市場へ行き、その週にきれいな花を選んで並べます。</p>
+        </div>
+        <div>
+          <p class="num">02</p>
+          <h3>予算から相談できる</h3>
+          <p class="measure">「三千円で、明るい色で」のような伝え方で大丈夫です。</p>
+        </div>
+        <div>
+          <p class="num">03</p>
+          <h3>長く楽しむための一言</h3>
+          <p class="measure">お渡しのときに、水替えや切り戻しのこつをお伝えします。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="alt">
+    <div class="wrap season">
+      <svg viewBox="0 0 360 260" role="img" aria-label="ドライフラワーのリースのイラスト">
+        <rect width="360" height="260" rx="24" fill="#F7F8F3"/>
+        <circle cx="180" cy="130" r="80" fill="none" stroke="#B89B72" stroke-width="18"/>
+        <circle cx="120" cy="90" r="12" fill="#D98C8C"/><circle cx="238" cy="92" r="10" fill="#B7A3D6"/>
+        <circle cx="250" cy="170" r="12" fill="#F2C9A0"/><circle cx="116" cy="176" r="10" fill="#6F9A7B"/>
+        <path d="M168 214h24l-12 20z" fill="#3E6A4E"/>
+      </svg>
+      <div>
+        <p class="kicker">Seasonal</p>
+        <h2>秋のリース、はじめました</h2>
+        <p class="measure" style="margin-top:16px">ドライフラワーと木の実でつくる小さなリースです。玄関や窓辺に、ひと月ほど楽しめます。</p>
+        <p class="note">※季節の内容は例です。お知らせ欄として、お店の方が差し替えられるようにしています。</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="order">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="kicker">Order</p>
+        <h2>ご注文の流れ</h2>
+      </div>
+      <ol class="steps">
+        <li><p class="label">STEP 1</p><h3>用途と予算を伝える</h3><p>お渡しの日・用途・予算・好きな色を、フォームかお電話でお知らせください。</p></li>
+        <li><p class="label">STEP 2</p><h3>内容の確認</h3><p>その週の花で組み合わせをご提案し、確認のご連絡をします。</p></li>
+        <li><p class="label">STEP 3</p><h3>店頭で受け取る</h3><p>ご指定の時間にご用意します。お支払いは店頭で。</p></li>
+      </ol>
+      <p style="margin-top:32px"><a class="btn" href="#order" aria-disabled="true">注文フォームへ（サンプルのため動作しません）</a></p>
+    </div>
+  </section>
+
+  <section id="access" class="alt">
+    <div class="wrap access">
+      <div>
+        <div class="section-head">
+          <p class="kicker">Access</p>
+          <h2>営業時間と場所</h2>
+        </div>
+        <table>
+          <tr><th scope="row">営業時間</th><td>10:00〜19:00</td></tr>
+          <tr><th scope="row">定休日</th><td>水曜</td></tr>
+          <tr><th scope="row">住所</th><td>〇〇市△△町 4-5-6（架空の住所）</td></tr>
+          <tr><th scope="row">電話</th><td>000-0000-0000（架空）</td></tr>
+          <tr><th scope="row">ご注文</th><td>前日の17時まで（当日は店頭の花で承ります・例）</td></tr>
+        </table>
+      </div>
+      <div class="map">
+        <svg viewBox="0 0 400 300" role="img" aria-label="店舗周辺の簡略地図（架空）">
+          <rect width="400" height="300" rx="12" fill="#E4EBE0"/>
+          <path d="M0 170h400M140 0v300" stroke="#fff" stroke-width="22"/>
+          <path d="M0 70h400" stroke="#fff" stroke-width="10"/>
+          <rect x="156" y="186" width="60" height="44" rx="6" fill="#3E6A4E"/>
+          <text x="186" y="214" text-anchor="middle" font-size="13" fill="#fff" font-family="sans-serif">店</text>
+          <text x="232" y="158" font-size="12" fill="#46544C" font-family="sans-serif">商店街の中ほど（例）</text>
+        </svg>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <p>花とみどり ミチクサ（架空の店舗）</p>
+    <p>これは AXLABO が制作したサンプルサイトです。掲載の店舗・人物・内容は架空です。お客様の制作実績ではありません。</p>
+  </div>
+</footer>
+</body>
+</html>
