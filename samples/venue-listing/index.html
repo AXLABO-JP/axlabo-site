@@ -1,0 +1,276 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>【サンプル】Blue Tide Jazz Room（架空の店舗）｜AXLABO 掲載ページの完成イメージ</title>
+<meta name="description" content="AXLABO が制作する日本語掲載ページのサンプルです。掲載の店舗・住所・金額・内容はすべて架空です。">
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;700&family=Zen+Kaku+Gothic+New:wght@500;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #F5F6F8;
+    --tint: #E6EAF0;
+    --night: #1B2433;   /* 夜の紺（ヒーロー・帯） */
+    --accent: #2F5D8C;  /* 港の青 */
+    --gold: #F2C46D;    /* 灯り（紺の上でのみ使用） */
+    --text: #1E2530;
+    --muted: #4A5566;
+    --font-heading: "Zen Kaku Gothic New", "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Noto Sans JP", sans-serif;
+    --font-body: "Hiragino Sans", "Noto Sans JP", system-ui, sans-serif;
+    --font-display: "Outfit", "Inter", ui-sans-serif, system-ui, sans-serif;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { margin: 0; background: var(--bg); color: var(--text); font-family: var(--font-body); font-size: 16px; line-height: 1.8; }
+  img, svg { max-width: 100%; height: auto; display: block; }
+  a { color: var(--accent); }
+  a:focus-visible, button:focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; border-radius: 4px; }
+  h1, h2, h3 { font-family: var(--font-heading); line-height: 1.4; margin: 0; }
+  h2 { font-size: 26px; }
+  h3 { font-size: 17px; }
+  p { margin: 0; }
+  .wrap { max-width: 960px; margin: 0 auto; padding: 0 24px; }
+  .kicker { font-family: var(--font-display); font-weight: 700; letter-spacing: .12em; font-size: 13px; color: var(--accent); text-transform: uppercase; }
+
+  .sample-banner { background: #000; color: #fff; font-size: 13px; text-align: center; padding: 8px 16px; line-height: 1.6; }
+
+  header.site { position: sticky; top: 0; z-index: 10; background: rgba(245,246,248,.97); border-bottom: 1px solid var(--tint); }
+  header.site .wrap { display: flex; align-items: center; justify-content: space-between; gap: 16px; min-height: 60px; }
+  .portal { font-family: var(--font-heading); font-weight: 700; font-size: 16px; color: var(--text); text-decoration: none; display: inline-block; padding: 8px 0; }
+  nav ul { list-style: none; display: flex; gap: 20px; margin: 0; padding: 0; }
+  nav a { color: var(--text); text-decoration: none; font-size: 14px; display: inline-block; padding: 8px 0; }
+  nav a:hover { color: var(--accent); }
+
+  .btn { display: inline-block; background: var(--accent); color: #fff; text-decoration: none; font-weight: 700; font-family: var(--font-heading); padding: 12px 22px; border-radius: 999px; min-height: 44px; }
+  .btn:hover { background: #244A70; }
+
+  /* ヒーロー */
+  .hero { background: var(--night); color: #fff; padding: 64px 0 56px; }
+  .hero .wrap { display: grid; grid-template-columns: 1.1fr .9fr; gap: 40px; align-items: center; }
+  .hero .kicker { color: var(--gold); }
+  .hero h1 { font-size: 40px; margin-top: 8px; }
+  .hero .sub { color: #D5DCE6; margin-top: 6px; font-size: 15px; }
+  .chips { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 20px; padding: 0; list-style: none; }
+  .chips li { border: 1px solid #8FA3BD; color: #fff; border-radius: 999px; padding: 4px 12px; font-size: 13px; }
+  .photo-slot { border: 2px dashed #8FA3BD; border-radius: 16px; padding: 20px; text-align: center; color: #D5DCE6; font-size: 13px; }
+  .photo-slot svg { margin: 0 auto 12px; }
+
+  section { padding: 64px 0; }
+  section.alt { background: var(--tint); }
+  .section-head { display: grid; gap: 6px; margin-bottom: 24px; }
+  .prose { max-width: 38em; display: grid; gap: 14px; }
+
+  /* 日本から訪れる方へ（カード） */
+  .facts { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
+  .fact { background: #fff; border-radius: 14px; padding: 20px 22px; box-shadow: 0 1px 0 rgba(30,37,48,.06); }
+  .fact h3 { font-size: 15px; color: var(--accent); margin-bottom: 6px; }
+  .fact p { font-size: 15px; }
+  .note { margin-top: 14px; font-size: 13px; color: var(--muted); }
+
+  /* 基本情報（表） */
+  table.info { width: 100%; border-collapse: collapse; background: #fff; border-radius: 14px; overflow: hidden; }
+  table.info th, table.info td { text-align: left; padding: 14px 18px; border-bottom: 1px solid var(--tint); font-size: 15px; vertical-align: top; }
+  table.info th { width: 9em; color: var(--muted); font-weight: 700; background: #FAFBFC; }
+  table.info tr:last-child th, table.info tr:last-child td { border-bottom: 0; }
+
+  .map { background: #fff; border-radius: 16px; padding: 16px; }
+  .map-caption { margin-top: 12px; font-size: 14px; color: var(--muted); }
+
+  /* 連絡先 */
+  .contact { background: var(--night); color: #fff; }
+  .contact .kicker { color: var(--gold); }
+  .contact p { color: #E4E9F0; }
+  .contact .btn { background: var(--gold); color: var(--night); margin-top: 22px; }
+  .contact .btn:hover { background: #E0AE4E; }
+  .contact .small { font-size: 13px; color: #C9D2DE; margin-top: 14px; }
+
+  .about { font-size: 14px; }
+  .about .box { background: #fff; border: 1px solid #C9D2DE; border-radius: 14px; padding: 22px 24px; display: grid; gap: 10px; }
+
+  footer { background: #000; color: #fff; padding: 28px 0; font-size: 13px; line-height: 1.7; }
+
+  @media (max-width: 760px) {
+    nav { display: none; }
+    .hero .wrap { grid-template-columns: 1fr; }
+    .hero h1 { font-size: 30px; }
+    h2 { font-size: 22px; }
+    section { padding: 48px 0; }
+    .facts { grid-template-columns: 1fr; }
+    table.info th { width: 6.5em; padding: 12px; }
+    table.info td { padding: 12px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- 掲載ページテンプレート（SAMPLE_PORTFOLIO #5）。data-field は掲載データの欄名。README の対応表を参照 -->
+<div class="sample-banner" role="note">これは AXLABO が制作する掲載ページのサンプル（完成イメージ）です。店舗・住所・金額・内容はすべて架空で、実在の店舗・顧客・提携先ではありません。</div>
+
+<header class="site">
+  <div class="wrap">
+    <a class="portal" href="#top">海外の夜を、日本語で（サンプル）</a>
+    <nav aria-label="ページ内">
+      <ul>
+        <li><a href="#about">お店について</a></li>
+        <li><a href="#guide">日本から訪れる方へ</a></li>
+        <li><a href="#info">基本情報</a></li>
+        <li><a href="#contact">お問い合わせ</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero" aria-labelledby="venue-name">
+    <div class="wrap">
+      <div>
+        <p class="kicker">SAMPLE LISTING</p>
+        <h1 id="venue-name" data-field="name">Blue Tide Jazz Room</h1>
+        <p class="sub"><span data-field="nameNote">架空の店舗名</span> ／ <span data-field="category">ジャズバー</span> ／ <span data-field="area">サンプル市 ハーバー地区</span></p>
+        <ul class="chips" data-field="tags" aria-label="特徴">
+          <li>生演奏（週4日）</li>
+          <li>予約推奨</li>
+          <li>ドレスコードなし</li>
+          <li>英語の案内</li>
+        </ul>
+      </div>
+      <div class="photo-slot" data-field="photos">
+        <svg width="220" height="120" viewBox="0 0 220 120" role="img" aria-label="写真が入る場所を示す図（サックスと灯りの線画）">
+          <rect x="1" y="1" width="218" height="118" rx="12" fill="none" stroke="#8FA3BD" stroke-width="2"/>
+          <circle cx="170" cy="36" r="14" fill="#F2C46D"/>
+          <path d="M70 30 q10 0 10 12 v34 q0 18 -18 18 q-14 0 -16 -12" fill="none" stroke="#F2C46D" stroke-width="5" stroke-linecap="round"/>
+          <path d="M80 30 l14 -8" stroke="#F2C46D" stroke-width="4" stroke-linecap="round"/>
+          <path d="M20 104 h180" stroke="#8FA3BD" stroke-width="2"/>
+        </svg>
+        店舗からご提供いただいた写真が入ります<br>（外観・店内・演奏の様子など3〜6枚）
+      </div>
+    </div>
+  </section>
+
+  <section id="about" aria-labelledby="h-about">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="kicker">ABOUT</p>
+        <h2 id="h-about">お店について</h2>
+      </div>
+      <div class="prose" data-field="description">
+        <p>港に面した通りの2階にある、席数40ほどのジャズバーです。木曜から日曜は、地元の演奏家による生演奏が入ります。演奏のない日は、レコードを流す静かな時間になります。</p>
+        <p>カウンター席とテーブル席があり、演奏をしっかり聴くことも、会話を楽しむこともできます。ひとりで立ち寄る方も多い店です。</p>
+      </div>
+      <p class="note">※紹介文は、店舗からうかがった内容をもとに日本語で書き起こします（掲載前に店舗が内容を確認します）。</p>
+    </div>
+  </section>
+
+  <section id="guide" class="alt" aria-labelledby="h-guide">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="kicker">FOR VISITORS FROM JAPAN</p>
+        <h2 id="h-guide">日本から訪れる方へ</h2>
+      </div>
+      <div class="facts">
+        <div class="fact" data-field="priceRange">
+          <h3>予算の目安</h3>
+          <p>ドリンク1杯 14〜20 ／ 演奏日はミュージックチャージ 10</p>
+        </div>
+        <div class="fact" data-field="dressCode">
+          <h3>ドレスコード</h3>
+          <p>特になし。普段着で入れます</p>
+        </div>
+        <div class="fact" data-field="reservation">
+          <h3>予約</h3>
+          <p>演奏日（木〜日）は予約をおすすめします。演奏のない日は当日でも入れることが多いです</p>
+        </div>
+        <div class="fact" data-field="language">
+          <h3>言語</h3>
+          <p>スタッフは英語で対応します。日本語のメニューはありません</p>
+        </div>
+        <div class="fact" data-field="payment">
+          <h3>支払い</h3>
+          <p>主要クレジットカード可。現金も使えます</p>
+        </div>
+        <div class="fact" data-field="atmosphere">
+          <h3>雰囲気</h3>
+          <p>照明は落ち着いた暗さ。演奏中は会話を控えめにする方が多いです</p>
+        </div>
+      </div>
+      <p class="note">※通貨・金額は店舗の実額を掲載します。サンプルの数値は架空です。</p>
+    </div>
+  </section>
+
+  <section id="info" aria-labelledby="h-info">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="kicker">INFORMATION</p>
+        <h2 id="h-info">基本情報</h2>
+      </div>
+      <table class="info">
+        <tbody>
+          <tr><th scope="row">店名</th><td data-field="name">Blue Tide Jazz Room（架空）</td></tr>
+          <tr><th scope="row">種別</th><td data-field="category">ジャズバー（生演奏あり）</td></tr>
+          <tr><th scope="row">営業時間</th><td data-field="hours">19:00〜翌0:00（金・土は翌1:00）</td></tr>
+          <tr><th scope="row">定休日</th><td data-field="closed">月曜</td></tr>
+          <tr><th scope="row">演奏日</th><td data-field="schedule">木〜日 20:30〜（1日2ステージ・例）</td></tr>
+          <tr><th scope="row">席数</th><td data-field="seats">約40席（カウンター10席）</td></tr>
+          <tr><th scope="row">年齢制限</th><td data-field="ageLimit">21歳以上（店舗の規定）</td></tr>
+          <tr><th scope="row">住所</th><td data-field="address">3 Harbor Lane, 2F, サンプル市（架空）</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="alt" aria-labelledby="h-access">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="kicker">ACCESS</p>
+        <h2 id="h-access">場所</h2>
+      </div>
+      <div class="map" data-field="map">
+        <svg viewBox="0 0 600 220" role="img" aria-label="店舗の場所を示す簡略図（港沿いの通りの2階。架空）">
+          <rect x="0" y="0" width="600" height="220" rx="10" fill="#E6EAF0"/>
+          <rect x="0" y="150" width="600" height="70" fill="#C7D6E6"/>
+          <text x="20" y="195" font-size="14" fill="#1E2530">港（例）</text>
+          <rect x="0" y="118" width="600" height="22" fill="#fff"/>
+          <text x="20" y="134" font-size="13" fill="#4A5566">Harbor Lane（例）</text>
+          <rect x="340" y="40" width="90" height="70" rx="6" fill="#1B2433"/>
+          <text x="352" y="82" font-size="14" fill="#F2C46D">Blue Tide</text>
+          <rect x="120" y="50" width="80" height="60" rx="6" fill="#fff"/>
+          <text x="134" y="86" font-size="12" fill="#4A5566">目印（例）</text>
+        </svg>
+      </div>
+      <p class="map-caption" data-field="directions">港沿いの通りに面した建物の2階です。1階の入口に青い看板があります（店舗からうかがった行き方を日本語で掲載します）。</p>
+    </div>
+  </section>
+
+  <section id="contact" class="contact" aria-labelledby="h-contact">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="kicker">CONTACT</p>
+        <h2 id="h-contact">お問い合わせ・ご予約</h2>
+      </div>
+      <p>ご予約・お問い合わせは、<strong>店舗へ直接</strong>お願いします。AXLABO は予約の受付・仲介を行いません。</p>
+      <a class="btn" href="#contact" data-field="officialUrl">店舗の公式サイトへ（サンプル）</a>
+      <p class="small">掲載ページには、店舗の公式サイト・予約ページ・電話番号・SNS など、店舗ご自身の連絡先を掲載します。</p>
+    </div>
+  </section>
+
+  <section class="about" aria-labelledby="h-page">
+    <div class="wrap">
+      <div class="box">
+        <h2 id="h-page" style="font-size:18px">このページについて</h2>
+        <p>AXLABO が制作する日本語掲載ページの<strong>サンプル（完成イメージ）</strong>です。掲載されている店名・住所・営業時間・金額・内容は<strong>すべて架空</strong>で、実在の店舗を表すものではありません。</p>
+        <p>AXLABO の顧客・提携先を示すものでも、掲載実績を示すものでもありません。実際の掲載ページは、店舗からご提供いただいた内容をもとに制作し、公開前に店舗が内容を確認します。</p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <p>これは AXLABO が制作する掲載ページのサンプルです。店舗・住所・金額・内容はすべて架空です。お客様の制作実績・掲載実績ではありません。</p>
+  </div>
+</footer>
+</body>
+</html>
