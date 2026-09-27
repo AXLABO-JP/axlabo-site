@@ -1,0 +1,350 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Guesthouse Kotoya (fictional) | AXLABO sample website</title>
+<meta name="description" content="A sample website made by AXLABO. The business, people and details shown are fictional.">
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;700&family=Zen+Kaku+Gothic+New:wght@500;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #F6F3EE;       /* washi paper */
+    --tint: #E9E2D7;     /* cedar, light */
+    --accent: #2E4A62;   /* indigo */
+    --text: #1E242B;
+    --muted: #4A525A;
+    --font-heading: "Outfit", "Inter", ui-sans-serif, system-ui, sans-serif;
+    --font-body: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
+    --font-ja: "Zen Kaku Gothic New", "Hiragino Sans", "Noto Sans JP", sans-serif;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { margin: 0; background: var(--bg); color: var(--text); font-family: var(--font-body); font-size: 17px; line-height: 1.7; }
+  img, svg { max-width: 100%; height: auto; display: block; }
+  a { color: var(--accent); }
+  a:focus-visible, button:focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; border-radius: 4px; }
+  h1, h2, h3 { font-family: var(--font-heading); line-height: 1.25; margin: 0; letter-spacing: -.01em; }
+  h2 { font-size: 32px; }
+  h3 { font-size: 19px; }
+  p { margin: 0; }
+  [lang="ja"] { font-family: var(--font-ja); }
+  .wrap { max-width: 1040px; margin: 0 auto; padding: 0 24px; }
+  .kicker { font-family: var(--font-heading); font-weight: 700; letter-spacing: .14em; font-size: 13px; color: var(--accent); text-transform: uppercase; }
+
+  .sample-banner { background: var(--text); color: #fff; font-size: 13px; text-align: center; padding: 8px 16px; line-height: 1.6; }
+  .sample-banner span { display: inline-block; }
+
+  header.site { position: sticky; top: 0; z-index: 10; background: rgba(246,243,238,.96); border-bottom: 1px solid var(--tint); }
+  header.site .wrap { display: flex; align-items: center; justify-content: space-between; gap: 16px; min-height: 64px; }
+  .logo { display: flex; align-items: center; gap: 10px; text-decoration: none; color: var(--text); font-family: var(--font-heading); font-weight: 700; font-size: 19px; }
+  nav ul { list-style: none; display: flex; gap: 22px; margin: 0; padding: 0; }
+  nav a { color: var(--text); text-decoration: none; font-size: 15px; display: inline-block; padding: 8px 0; }
+  nav a:hover { color: var(--accent); }
+  .btn { display: inline-block; background: var(--accent); color: #fff; text-decoration: none; font-weight: 700; font-family: var(--font-heading); padding: 12px 22px; border-radius: 999px; min-height: 44px; }
+  .btn:hover { background: #223A4E; }
+  .btn.ghost { background: transparent; color: var(--accent); border: 2px solid var(--accent); padding: 10px 20px; }
+  .btn.ghost:hover { background: var(--tint); }
+
+  section { padding: 88px 0; }
+  section.alt { background: var(--tint); }
+  .section-head { display: grid; gap: 8px; margin-bottom: 40px; }
+  .section-head p { color: var(--muted); max-width: 34em; }
+
+  .hero .wrap { display: grid; grid-template-columns: 1.05fr .95fr; gap: 48px; align-items: center; }
+  .hero h1 { font-size: 50px; }
+  .hero p.lead { margin-top: 20px; color: var(--muted); max-width: 30em; }
+  .hero .cta { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 32px; }
+  .hero .facts { margin-top: 28px; display: flex; flex-wrap: wrap; gap: 8px 20px; font-size: 14px; color: var(--muted); padding: 0; list-style: none; }
+  .hero .facts li { display: inline-flex; align-items: center; gap: 8px; }
+  .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--accent); flex: none; }
+
+  .cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+  .card { background: #fff; border-radius: 16px; padding: 24px; display: grid; gap: 10px; align-content: start; }
+  .card .ill { background: var(--tint); border-radius: 12px; padding: 16px; display: grid; place-items: center; height: 150px; }
+  .card .price { font-family: var(--font-heading); font-weight: 700; font-size: 19px; }
+  .card .tag { font-size: 14px; color: var(--muted); }
+  .note { margin-top: 20px; font-size: 14px; color: var(--muted); }
+
+  .points { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; }
+  .points .num { font-family: var(--font-heading); font-size: 32px; font-weight: 700; color: var(--accent); line-height: 1; }
+  .points h3 { margin: 12px 0 8px; }
+
+  .area { display: grid; grid-template-columns: .9fr 1.1fr; gap: 48px; align-items: center; }
+  .area ul { margin: 20px 0 0; padding: 0; list-style: none; display: grid; gap: 10px; }
+  .area li { display: flex; gap: 12px; }
+  .area li strong { font-family: var(--font-heading); min-width: 5.5em; }
+
+  .steps { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+  .steps li { background: #fff; border-radius: 16px; padding: 24px; }
+  .steps .label { font-family: var(--font-heading); font-weight: 700; color: var(--accent); font-size: 13px; letter-spacing: .1em; }
+  .steps h3 { margin: 6px 0 8px; }
+
+  .access { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; }
+  table { border-collapse: collapse; width: 100%; }
+  th, td { text-align: left; padding: 12px 0; border-bottom: 1px solid #D3C9BA; vertical-align: top; font-size: 15px; }
+  th { width: 8em; font-family: var(--font-heading); font-weight: 700; }
+  .map { background: #fff; border-radius: 16px; padding: 16px; }
+
+  details { background: #fff; border-radius: 12px; padding: 0 20px; }
+  details + details { margin-top: 12px; }
+  summary { cursor: pointer; font-family: var(--font-heading); font-weight: 700; padding: 16px 0; min-height: 44px; }
+  details p { padding: 0 0 16px; color: var(--muted); }
+
+  footer { background: var(--text); color: #EEF0F2; padding: 48px 0; font-size: 14px; }
+  footer p + p { margin-top: 8px; }
+  footer a { color: #EEF0F2; }
+
+  @media (max-width: 860px) {
+    .hero .wrap, .area, .access { grid-template-columns: 1fr; gap: 32px; }
+    .cards, .points, .steps { grid-template-columns: 1fr; }
+    nav ul { display: none; }
+    section { padding: 64px 0; }
+  }
+  @media (max-width: 480px) {
+    .wrap { padding: 0 16px; }
+    .hero h1 { font-size: 34px; }
+    h2 { font-size: 26px; }
+    header .btn { padding: 10px 16px; font-size: 14px; }
+    .logo { font-size: 17px; }
+  }
+  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+</style>
+</head>
+<body>
+
+<div class="sample-banner" role="note">
+  <span>This is a sample website made by AXLABO. The business, people and details shown are fictional.</span>
+  <span lang="ja">これは AXLABO が制作したサンプルサイトです（架空の宿）。</span>
+</div>
+
+<header class="site">
+  <div class="wrap">
+    <a class="logo" href="#top" aria-label="Guesthouse Kotoya, back to top">
+      <svg width="32" height="32" viewBox="0 0 32 32" aria-hidden="true"><rect x="2" y="2" width="28" height="28" rx="8" fill="#2E4A62"/><path d="M7 15 16 8l9 7" fill="none" stroke="#F6F3EE" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/><path d="M10 14v9h12v-9" fill="none" stroke="#F6F3EE" stroke-width="2.2" stroke-linejoin="round"/><path d="M14.5 23v-5h3v5" fill="#F6F3EE"/></svg>
+      Guesthouse Kotoya
+    </a>
+    <nav aria-label="Main menu">
+      <ul>
+        <li><a href="#rooms">Rooms</a></li>
+        <li><a href="#stay">Your stay</a></li>
+        <li><a href="#area">The town</a></li>
+        <li><a href="#access">Access</a></li>
+      </ul>
+    </nav>
+    <a class="btn" href="#book">Request a stay</a>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero">
+    <div class="wrap">
+      <div>
+        <p class="kicker">A small inn in an old post town</p>
+        <h1>Sleep on tatami, wake to a quiet street.</h1>
+        <p class="lead">Four rooms in a restored wooden townhouse, a short walk from the station. We keep things simple: futon beds, a shared cedar bath, and a Japanese breakfast if you'd like one.</p>
+        <div class="cta">
+          <a class="btn" href="#book">Request a stay</a>
+          <a class="btn ghost" href="#rooms">See the rooms</a>
+        </div>
+        <ul class="facts" aria-label="At a glance">
+          <li><span class="dot" aria-hidden="true"></span>Check-in 15:00–20:00 (example)</li>
+          <li><span class="dot" aria-hidden="true"></span>English-speaking host</li>
+        </ul>
+      </div>
+      <svg viewBox="0 0 440 340" role="img" aria-label="Illustration of a wooden two-storey townhouse with a paper lantern by the entrance">
+        <rect x="0" y="0" width="440" height="340" rx="24" fill="#E9E2D7"/>
+        <rect x="60" y="300" width="320" height="10" rx="5" fill="#C9BCA8"/>
+        <path d="M70 150 220 70l150 80" fill="#3B3A38"/>
+        <rect x="90" y="150" width="260" height="150" fill="#8A6A4A"/>
+        <path d="M80 190h280v14H80z" fill="#3B3A38"/>
+        <g fill="#F6F3EE" opacity=".9">
+          <rect x="112" y="110" width="40" height="30" rx="2"/><rect x="200" y="100" width="40" height="38" rx="2"/><rect x="288" y="110" width="40" height="30" rx="2"/>
+        </g>
+        <g stroke="#6E5238" stroke-width="3">
+          <path d="M110 214v76M130 214v76M150 214v76M170 214v76"/>
+          <path d="M270 214v76M290 214v76M310 214v76M330 214v76"/>
+        </g>
+        <rect x="192" y="220" width="56" height="80" fill="#2E4A62"/>
+        <path d="M192 234h56" stroke="#F6F3EE" stroke-width="2" opacity=".6"/>
+        <ellipse cx="176" cy="238" rx="11" ry="15" fill="#D9573F"/>
+        <path d="M176 222v-6M176 253v5" stroke="#3B3A38" stroke-width="2"/>
+      </svg>
+    </div>
+  </section>
+
+  <section class="alt" id="rooms">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="kicker">Rooms</p>
+        <h2>Four rooms, three styles</h2>
+        <p>All rooms have futon bedding, towels and a yukata robe. Toilets and the cedar bath are shared.</p>
+      </div>
+      <div class="cards">
+        <article class="card">
+          <div class="ill" aria-hidden="true">
+            <svg width="120" height="90" viewBox="0 0 120 90"><rect x="10" y="30" width="100" height="50" rx="4" fill="#F6F3EE"/><path d="M10 55h100M43 30v50M77 30v50" stroke="#C9BCA8" stroke-width="2"/><rect x="22" y="40" width="28" height="12" rx="4" fill="#2E4A62"/></svg>
+          </div>
+          <h3>Single tatami room</h3>
+          <p class="tag">1 guest · 4.5 tatami · garden view</p>
+          <p class="price">from ¥7,500 / night</p>
+        </article>
+        <article class="card">
+          <div class="ill" aria-hidden="true">
+            <svg width="120" height="90" viewBox="0 0 120 90"><rect x="6" y="26" width="108" height="56" rx="4" fill="#F6F3EE"/><path d="M6 54h108M42 26v56M78 26v56" stroke="#C9BCA8" stroke-width="2"/><rect x="16" y="36" width="28" height="12" rx="4" fill="#2E4A62"/><rect x="50" y="36" width="28" height="12" rx="4" fill="#2E4A62"/></svg>
+          </div>
+          <h3>Twin tatami room</h3>
+          <p class="tag">2 guests · 6 tatami · street view</p>
+          <p class="price">from ¥12,000 / night</p>
+        </article>
+        <article class="card">
+          <div class="ill" aria-hidden="true">
+            <svg width="120" height="90" viewBox="0 0 120 90"><rect x="4" y="22" width="112" height="62" rx="4" fill="#F6F3EE"/><path d="M4 53h112M41 22v62M79 22v62" stroke="#C9BCA8" stroke-width="2"/><rect x="12" y="32" width="26" height="12" rx="4" fill="#2E4A62"/><rect x="46" y="32" width="26" height="12" rx="4" fill="#2E4A62"/><rect x="82" y="32" width="26" height="12" rx="4" fill="#2E4A62"/></svg>
+          </div>
+          <h3>Family room</h3>
+          <p class="tag">up to 4 guests · 10 tatami · upstairs</p>
+          <p class="price">from ¥18,000 / night</p>
+        </article>
+      </div>
+      <p class="note">Rooms and prices are fictional examples for this sample. On a real site, the owner updates rates and photos for each season.</p>
+    </div>
+  </section>
+
+  <section id="stay">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="kicker">Your stay</p>
+        <h2>What to expect</h2>
+      </div>
+      <div class="points">
+        <div>
+          <p class="num">01</p>
+          <h3>A shared cedar bath</h3>
+          <p>One bath for all guests, used in turns. A small sign on the door shows when it's free.</p>
+        </div>
+        <div>
+          <p class="num">02</p>
+          <h3>Breakfast, if you like</h3>
+          <p>Rice, miso soup and seasonal side dishes, served at 8:00. Tell us about allergies when you book.</p>
+        </div>
+        <div>
+          <p class="num">03</p>
+          <h3>Quiet after 22:00</h3>
+          <p>It's a residential street, so we ask guests to keep voices low at night. Earplugs are at the front desk.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="alt" id="area">
+    <div class="wrap area">
+      <svg viewBox="0 0 440 300" role="img" aria-label="Simple illustrated map of a small town with a river, a shrine, a market street and the inn">
+        <rect width="440" height="300" rx="20" fill="#F6F3EE"/>
+        <path d="M0 210c80-30 140 10 220-10s140-40 220-20v40H0z" fill="#B9CBD8"/>
+        <path d="M60 40v150M200 30v160M340 40v140M40 110h360" stroke="#D3C9BA" stroke-width="10" stroke-linecap="round"/>
+        <rect x="178" y="92" width="44" height="36" rx="6" fill="#2E4A62"/>
+        <path d="M312 70h56M318 70v28M362 70v28M308 64h64" stroke="#D9573F" stroke-width="5" stroke-linecap="round"/>
+        <g fill="#8A6A4A"><rect x="80" y="126" width="18" height="14" rx="2"/><rect x="104" y="126" width="18" height="14" rx="2"/><rect x="128" y="126" width="18" height="14" rx="2"/></g>
+      </svg>
+      <div>
+        <p class="kicker">The town</p>
+        <h2>Small enough to walk everywhere</h2>
+        <p style="margin-top:16px;color:var(--muted)">The old post town grew along a single road. Most places guests enjoy are within a 15-minute walk.</p>
+        <ul>
+          <li><strong>3 min</strong><span>Morning market street (example)</span></li>
+          <li><strong>8 min</strong><span>Riverside walking path</span></li>
+          <li><strong>12 min</strong><span>Hilltop shrine and viewpoint</span></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="book">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="kicker">Booking</p>
+        <h2>How to book a stay</h2>
+      </div>
+      <ol class="steps">
+        <li>
+          <p class="label">STEP 1</p>
+          <h3>Send a request</h3>
+          <p>Choose your dates, room and number of guests, and send the form.</p>
+        </li>
+        <li>
+          <p class="label">STEP 2</p>
+          <h3>Get a confirmation</h3>
+          <p>The host replies by email with availability and the total price.</p>
+        </li>
+        <li>
+          <p class="label">STEP 3</p>
+          <h3>Arrive and check in</h3>
+          <p>Walk in between 15:00 and 20:00. Tell us if you'll be late.</p>
+        </li>
+      </ol>
+      <p style="margin-top:32px"><a class="btn" href="#book" aria-disabled="true">Booking form (sample – not functional)</a></p>
+    </div>
+  </section>
+
+  <section class="alt" id="access">
+    <div class="wrap access">
+      <div>
+        <p class="kicker">Access</p>
+        <h2>Getting here</h2>
+        <table style="margin-top:24px">
+          <tbody>
+            <tr><th scope="row">Address</th><td>1-2-3 ○○-machi, △△ City (fictional)</td></tr>
+            <tr><th scope="row">By train</th><td>5 min walk from ○○ Station (example)</td></tr>
+            <tr><th scope="row">Check-in</th><td>15:00–20:00</td></tr>
+            <tr><th scope="row">Check-out</th><td>by 10:00</td></tr>
+            <tr><th scope="row">Contact</th><td>info@example.com (fictional)</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="map">
+        <svg viewBox="0 0 400 260" role="img" aria-label="Simplified map showing the station and the inn five minutes' walk away">
+          <rect width="400" height="260" rx="10" fill="#E9E2D7"/>
+          <path d="M0 120h400M150 0v260M300 0v260" stroke="#F6F3EE" stroke-width="18"/>
+          <rect x="30" y="92" width="80" height="56" rx="6" fill="#4A525A"/>
+          <text x="70" y="126" text-anchor="middle" font-size="14" fill="#fff" font-family="system-ui">Station</text>
+          <path d="M112 120h170" stroke="#2E4A62" stroke-width="3" stroke-dasharray="6 6"/>
+          <rect x="266" y="138" width="68" height="44" rx="6" fill="#2E4A62"/>
+          <text x="300" y="165" text-anchor="middle" font-size="14" fill="#fff" font-family="system-ui">Inn</text>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <section id="faq">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="kicker">FAQ</p>
+        <h2>Before you come</h2>
+      </div>
+      <details>
+        <summary>Do you have beds?</summary>
+        <p>All rooms use futon mattresses on tatami. We lay them out in the evening and fold them away in the morning.</p>
+      </details>
+      <details>
+        <summary>Can I pay by card?</summary>
+        <p>On a real site, the owner lists the payment methods accepted. This sample does not take payments.</p>
+      </details>
+      <details>
+        <summary>Is there luggage storage?</summary>
+        <p>Yes — you can leave bags before check-in and after check-out on the same day.</p>
+      </details>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <p>Guesthouse Kotoya (fictional business)</p>
+    <p>This is a sample website made by AXLABO. The business, people and details shown are fictional. It is not a client project.</p>
+    <p lang="ja">これは AXLABO が制作したサンプルサイトです。掲載の宿・人物・内容は架空であり、お客様の制作実績ではありません。</p>
+  </div>
+</footer>
+</body>
+</html>
