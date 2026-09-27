@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="en" data-theme="biz004">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Misaki Hamono (fictional) — Company One-Pager | AXLABO sample</title>
+<meta name="description" content="A sample English company one-pager made by AXLABO for a fictional Japanese company.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="components.css">
+<style>
+  /* Page-only: BIZ-004 palette (white x cobalt #285EA8; coral #D96C4A for decoration only) and A4 print layout */
+  [data-theme="biz004"] { --ax-bg:#F3F6FA; --ax-tint:#EEF3FA; --ax-accent:#285EA8; --ax-accent-hover:#1F4B87;
+    --ax-text:#16202E; --ax-muted:#4A5566; --ax-line:#D6DFEC; --ax-coral:#D96C4A;
+    --ax-font-body: "Outfit", system-ui, sans-serif; --ax-font-heading: "Outfit", system-ui, sans-serif; --ax-ls-body: 0; }
+  .op-wrap { padding: var(--ax-s5) var(--ax-s2); }
+  .op-sheet { max-width: 794px; margin: 0 auto; background: #fff; border: 1px solid var(--ax-line); border-radius: 12px; padding: 44px 48px; }
+  .op-head { display: flex; justify-content: space-between; align-items: flex-start; gap: 24px; border-bottom: 3px solid var(--ax-accent); padding-bottom: 18px; }
+  .op-head h1 { font-size: 30px; line-height: 1.2; margin: 4px 0 6px; }
+  .op-tag { color: var(--ax-muted); margin: 0; font-size: 15px; }
+  .op-mark { flex: 0 0 auto; }
+  .op-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px 32px; margin-top: 22px; }
+  .op-block h2 { font-size: 15px; letter-spacing: .08em; text-transform: uppercase; color: var(--ax-accent); margin: 0 0 6px; border-left: 4px solid var(--ax-coral); padding-left: 8px; }
+  .op-block p, .op-block li { font-size: 14.5px; line-height: 1.6; margin: 0; }
+  .op-block ul { margin: 0; padding-left: 1.1em; display: grid; gap: 4px; }
+  .op-wide { grid-column: 1 / -1; }
+  .op-contact { display: grid; grid-template-columns: 7.5em 1fr; gap: 4px 12px; font-size: 14.5px; }
+  .op-contact dt { font-weight: 700; }
+  .op-contact dd { margin: 0; }
+  .op-foot { margin-top: 22px; padding-top: 12px; border-top: 1px solid var(--ax-line); font-size: 12.5px; color: var(--ax-muted); }
+  .op-tools { max-width: 794px; margin: 0 auto var(--ax-s3); display: flex; flex-wrap: wrap; gap: 12px; }
+  @media (max-width: 640px) {
+    .op-sheet { padding: 24px 18px; }
+    .op-head { flex-direction: column; }
+    .op-head h1 { font-size: 26px; }
+    .op-grid { grid-template-columns: 1fr; }
+  }
+  @page { size: A4; margin: 12mm; }
+  @media print {
+    body { background: #fff; }
+    .ax-sample-banner, .op-tools { display: none; }
+    .op-wrap { padding: 0; }
+    .op-sheet { border: none; border-radius: 0; padding: 0; max-width: none; }
+    .op-print-note { display: block !important; }
+  }
+  .op-print-note { display: none; }
+</style>
+</head>
+<body class="ax-page">
+
+<p class="ax-sample-banner">This is a sample website made by AXLABO. The company, people and details shown are fictional. ／ これは AXLABO が制作したサンプルサイトです。企業名・人物・内容は架空です。</p>
+
+<main class="op-wrap">
+  <div class="op-tools">
+    <a class="ax-btn ax-btn--ghost" href="index.html" lang="ja">成果物見本（日本語レポート）へ戻る</a>
+  </div>
+
+  <article class="op-sheet" aria-labelledby="op-title">
+    <header class="op-head">
+      <div>
+        <p class="ax-kicker">COMPANY ONE-PAGER · SAMPLE</p>
+        <h1 id="op-title">Misaki Hamono Co., Ltd.</h1>
+        <p class="op-tag">Kitchen knives and cooking scissors, made in Gifu, Japan (fictional company)</p>
+      </div>
+      <svg class="op-mark" width="72" height="72" viewBox="0 0 72 72" role="img" aria-label="Sample logo mark: a knife blade inside a circle">
+        <circle cx="36" cy="36" r="32" fill="#EEF3FA" stroke="#285EA8" stroke-width="3"/>
+        <path d="M20 46 L48 18 C54 24 52 32 44 36 L28 52 Z" fill="#285EA8"/>
+        <rect x="18" y="46" width="12" height="8" rx="2" transform="rotate(-45 24 50)" fill="#D96C4A"/>
+      </svg>
+    </header>
+
+    <div class="op-grid">
+      <section class="op-block" aria-labelledby="op-company">
+        <h2 id="op-company">Company</h2>
+        <p>A small manufacturer in Gifu Prefecture, Japan (fictional). We design, forge and finish kitchen knives and cooking scissors in our own workshop.</p>
+      </section>
+
+      <section class="op-block" aria-labelledby="op-products">
+        <h2 id="op-products">Products</h2>
+        <ul>
+          <li>Kitchen knives for home cooks (several blade shapes)</li>
+          <li>Cooking scissors</li>
+          <li>Care guide and sharpening advice in English</li>
+        </ul>
+      </section>
+
+      <section class="op-block" aria-labelledby="op-strengths">
+        <h2 id="op-strengths">What we can offer</h2>
+        <ul>
+          <li>Each item is finished and checked by hand in our workshop</li>
+          <li>Small first orders are possible</li>
+          <li>English product sheets and care instructions</li>
+        </ul>
+      </section>
+
+      <section class="op-block" aria-labelledby="op-target">
+        <h2 id="op-target">Who we are looking for</h2>
+        <p>Independent kitchenware shops and online stores that introduce Japanese cooking tools to their customers.</p>
+      </section>
+
+      <section class="op-block op-wide" aria-labelledby="op-contact">
+        <h2 id="op-contact">Contact</h2>
+        <dl class="op-contact">
+          <dt>Contact</dt><dd>[Name], Export contact (sample)</dd>
+          <dt>Email</dt><dd>export@example.com (fictional)</dd>
+          <dt>Location</dt><dd>Gifu Prefecture, Japan (fictional address)</dd>
+          <dt>Languages</dt><dd>Japanese, English</dd>
+        </dl>
+      </section>
+    </div>
+
+    <p class="op-foot">This one-pager is a fictional sample. It is not a real company or a client project of AXLABO. Details such as order terms, prices and shipping are agreed separately.</p>
+    <p class="op-foot op-print-note">Sample made by AXLABO — fictional company. ／ AXLABO が制作したサンプルサイト（架空の企業）</p>
+  </article>
+</main>
+
+<p class="ax-sample-banner">This is a sample website made by AXLABO. The company, people and details shown are fictional. ／ これは AXLABO が制作したサンプルサイトです。企業名・人物・内容は架空です。</p>
+</body>
+</html>

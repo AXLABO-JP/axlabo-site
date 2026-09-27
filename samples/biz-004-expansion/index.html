@@ -1,0 +1,249 @@
+<!doctype html>
+<html lang="ja" data-theme="biz004">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>海外進出準備パッケージ 成果物見本（架空企業）｜AXLABO サンプルサイト</title>
+<meta name="description" content="AXLABO が制作したサンプルサイトです。BIZ-004 海外進出準備パッケージの成果物見本（架空企業・架空の内容）です。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@700&family=Zen+Kaku+Gothic+New:wght@700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="components.css">
+<style>
+  /* このページだけの指定: BIZ-004 の配色（白×コバルト #285EA8、コーラル #D96C4A は装飾のみ）とレポート用の表・注記 */
+  [data-theme="biz004"] { --ax-bg:#FFFFFF; --ax-tint:#EEF3FA; --ax-accent:#285EA8; --ax-accent-hover:#1F4B87;
+    --ax-text:#16202E; --ax-muted:#4A5566; --ax-line:#D6DFEC; --ax-coral:#D96C4A; }
+  .rep-cover { border-left: 6px solid var(--ax-coral); padding-left: var(--ax-s3); }
+  .rep-meta { margin-top: var(--ax-s3); }
+  .rep-meta th { width: 9em; }
+  .rep-grid { width: 100%; border-collapse: collapse; font-size: 15px; }
+  .rep-grid th, .rep-grid td { text-align: left; vertical-align: top; padding: 12px 12px; border-bottom: 1px solid var(--ax-line); }
+  .rep-grid thead th { background: var(--ax-tint); font-family: var(--ax-font-heading); font-weight: 700; font-size: 14px; }
+  .rep-scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; border: 1px solid var(--ax-line); border-radius: 12px; background: var(--ax-surface); }
+  .rep-scroll:focus-visible { outline: 3px solid var(--ax-accent); outline-offset: 2px; }
+  .rep-list { margin: 0; padding-left: 1.3em; display: grid; gap: 8px; }
+  .rep-list li::marker { color: var(--ax-accent); }
+  .rep-box { background: var(--ax-surface); border: 1px solid var(--ax-line); border-radius: 16px; padding: var(--ax-s3); }
+  .rep-box + .rep-box { margin-top: var(--ax-s3); }
+  .rep-box h3 { margin: 0 0 var(--ax-s1); }
+  .rep-flag { display: inline-block; font-size: 12px; line-height: 1.6; padding: 1px 8px; border-radius: 999px; background: #FFF1EC; color: #8A3218; border: 1px solid #F0C2B2; margin-left: 6px; white-space: nowrap; }
+  .rep-mail { background: var(--ax-tint); border-radius: 12px; padding: var(--ax-s3); font-family: ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace; font-size: 14px; line-height: 1.8; white-space: pre-wrap; overflow-wrap: anywhere; }
+  .rep-out { list-style: none; margin: 0; padding: 0; display: grid; gap: 8px; }
+  .rep-out li { padding-left: 1.4em; position: relative; }
+  .rep-out li::before { content: "×"; position: absolute; left: 0; color: var(--ax-accent); font-weight: 700; }
+  .rep-toc { display: flex; flex-wrap: wrap; gap: 8px 16px; margin: var(--ax-s3) 0 0; padding: 0; list-style: none; }
+  .rep-toc a { display: inline-flex; align-items: center; min-height: 32px; color: var(--ax-accent); }
+  .ax-logo { white-space: nowrap; }
+  @media (max-width: 720px) { .rep-meta th { width: 7em; } .rep-grid { font-size: 14px; } }
+</style>
+</head>
+<body class="ax-page">
+
+<p class="ax-sample-banner">これは AXLABO が制作したサンプルサイトです。BIZ-004 海外進出準備パッケージの成果物見本で、企業名・人物・内容はすべて架空です。</p>
+
+<header class="ax-header">
+  <div class="ax-wrap">
+    <a class="ax-logo" href="#top" aria-label="成果物見本 トップへ">
+      <svg width="32" height="32" viewBox="0 0 32 32" aria-hidden="true"><circle cx="16" cy="16" r="12" fill="none" stroke="currentColor" stroke-width="3"/><path d="M4 16 H28 M16 4 C10 10 10 22 16 28 M16 4 C22 10 22 22 16 28" fill="none" stroke="currentColor" stroke-width="2"/></svg>
+      海外進出準備パッケージ（見本）
+    </a>
+    <a class="ax-btn ax-btn--ghost" href="one-pager-en.html">英語の会社紹介</a>
+  </div>
+</header>
+
+<main id="top">
+  <section class="ax-section">
+    <div class="ax-wrap">
+      <div class="rep-cover">
+        <p class="ax-kicker">SAMPLE DELIVERABLE ／ BIZ-004</p>
+        <h1><span class="ax-nobr">海外進出準備パッケージ</span><br><span class="ax-nobr">成果物見本</span></h1>
+        <p class="ax-lead">架空の日本企業「株式会社ミサキ刃物（架空）」が、<span class="ax-nobr">はじめての海外展開を</span>検討する場面を想定した見本です。</p>
+      </div>
+      <table class="ax-info rep-meta">
+        <tr><th scope="row">ご依頼企業</th><td>株式会社ミサキ刃物（架空）／岐阜県（架空の所在地）／家庭用包丁・料理ばさみの製造</td></tr>
+        <tr><th scope="row">対象市場</th><td>1市場：ドイツ（例）。候補の比較は第2章</td></tr>
+        <tr><th scope="row">商品</th><td>海外進出準備パッケージ（1社・1市場・1案件）98,000〜198,000円（税別）。<span class="ax-nobr">金額は調査範囲・候補件数・言語・成果物の深度で見積もり</span></td></tr>
+        <tr><th scope="row">成果物</th><td>①市場仮説整理 ②初期ターゲットリスト ③初期接触用営業文面（英語、メール用と短文DM用）</td></tr>
+        <tr><th scope="row">作成</th><td>AXLABO（AI 主体で作成）／作成日 20XX年X月（例）</td></tr>
+      </table>
+      <p class="ax-note">この見本の企業・製品・市場の記述・候補先はすべて架空の例です。<span class="ax-nobr">実在の企業や市場データを示すものではありません。</span>数値は載せていません（実際の成果物では、公開情報の出典つきで記載します）。</p>
+      <ol class="rep-toc" aria-label="目次">
+        <li><a href="#s1">1. 現状整理</a></li>
+        <li><a href="#s2">2. 市場候補の比較</a></li>
+        <li><a href="#s3">3. 市場仮説整理</a></li>
+        <li><a href="#s4">4. 課題</a></li>
+        <li><a href="#s5">5. 確認事項</a></li>
+        <li><a href="#s6">6. 初期ターゲットリスト</a></li>
+        <li><a href="#s7">7. 初期接触用営業文面</a></li>
+        <li><a href="#s8">8. Next Actions</a></li>
+        <li><a href="#s9">範囲外</a></li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="ax-section ax-section--alt" id="s1" aria-labelledby="h-s1">
+    <div class="ax-wrap">
+      <div class="ax-section-head"><p class="ax-kicker">01 CURRENT STATE</p><h2 id="h-s1">現状整理</h2></div>
+      <div class="rep-box">
+        <h3>ヒアリングで伺った内容（例）</h3>
+        <ul class="rep-list">
+          <li>国内の問屋・小売店向けの販売が中心。自社サイトからの直接販売は小規模。</li>
+          <li>海外の展示会で声をかけられたことはあるが、継続的な取引には至っていない。</li>
+          <li>社内に英語で対応できる担当者は1名（兼務）。海外専任の部署は無い。</li>
+          <li>まずは1つの国で、小売店・専門店との取引の可能性を確かめたい。</li>
+        </ul>
+      </div>
+      <div class="rep-box">
+        <h3>このパッケージで整理すること</h3>
+        <p>どの国で、誰に、どう最初の連絡をするか。<span class="ax-nobr">判断に必要な情報と、</span><span class="ax-nobr">すぐ使える営業準備をまとめます。</span></p>
+      </div>
+    </div>
+  </section>
+
+  <section class="ax-section" id="s2" aria-labelledby="h-s2">
+    <div class="ax-wrap">
+      <div class="ax-section-head"><p class="ax-kicker">02 MARKET CANDIDATES</p><h2 id="h-s2">市場候補の比較（検討の観点）</h2></div>
+      <p>ヒアリング時に挙がった3候補を、同じ観点で並べました。<span class="ax-nobr">優劣の断定ではなく、</span>対象市場を1つに絞るための整理です。</p>
+      <div class="rep-scroll" tabindex="0" role="region" aria-label="市場候補の比較表（横にスクロールできます）">
+        <table class="rep-grid">
+          <thead><tr><th scope="col">候補</th><th scope="col">検討の観点</th><th scope="col">先に確かめること</th></tr></thead>
+          <tbody>
+            <tr><th scope="row">ドイツ（例）</th><td>料理道具の専門店という販路がある前提で、品質や製法の説明が伝わりやすいか</td><td>刃物の輸入・販売に関する規制と表示<span class="rep-flag">要確認</span></td></tr>
+            <tr><th scope="row">英国（例）</th><td>英語で直接やり取りでき、社内の対応負担が比較的小さいか</td><td>刃物の販売・配送に関する年齢確認などの規制<span class="rep-flag">要確認</span></td></tr>
+            <tr><th scope="row">米国（例）</th><td>市場が広い一方、州ごとの違いと物流の距離をどう扱うか</td><td>販売する州の範囲と輸入時の手続き<span class="rep-flag">要確認</span></td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="ax-note">この見本では、ご依頼企業の判断として「ドイツ（例）」を対象市場に選んだ想定で、以降を作成しています。</p>
+    </div>
+  </section>
+
+  <section class="ax-section ax-section--alt" id="s3" aria-labelledby="h-s3">
+    <div class="ax-wrap">
+      <div class="ax-section-head"><p class="ax-kicker">03 MARKET HYPOTHESIS</p><h2 id="h-s3">市場仮説整理（ドイツ・例）</h2></div>
+      <table class="ax-info">
+        <tr><th scope="row">前提</th><td>最初は卸・代理店を通さず、料理道具の専門店・セレクトショップへ直接連絡する。<span class="ax-nobr">取引は少量から始める。</span></td></tr>
+        <tr><th scope="row">想定顧客</th><td>日本の料理道具を扱う、または扱う余地のある独立系の専門店・オンラインショップ（例）</td></tr>
+        <tr><th scope="row">参入機会</th><td>製法・素材・手入れ方法を、店が自分の顧客へ説明できる形で渡せれば、比較検討の土台に乗れる可能性がある（仮説）</td></tr>
+        <tr><th scope="row">検証すべき論点</th><td>①店側が求める最小ロット・価格帯 ②説明資料の言語（英語で足りるか、ドイツ語が要るか） ③返品・破損時の扱いへの期待</td></tr>
+        <tr><th scope="row">主な参入リスク</th><td>規制・表示への対応に時間がかかる／配送中の破損・コスト／継続的な英語対応の体制</td></tr>
+      </table>
+      <p class="ax-note">すべて仮説です。<span class="ax-nobr">市場規模・売上見込みなどの数値は、</span>実際の成果物では出典のある公開情報がある場合のみ記載します。</p>
+    </div>
+  </section>
+
+  <section class="ax-section" id="s4" aria-labelledby="h-s4">
+    <div class="ax-wrap">
+      <div class="ax-section-head"><p class="ax-kicker">04 ISSUES</p><h2 id="h-s4">課題</h2></div>
+      <div class="ax-points">
+        <div><p class="ax-points__num">01</p><h3>伝える材料が日本語だけ</h3><p>製法や手入れの説明が、海外の店がそのまま使える形になっていない。</p></div>
+        <div><p class="ax-points__num">02</p><h3>対応できる人が1名</h3><p>返信・見積り・発送の問い合わせが重なると、社内が止まりやすい。</p></div>
+        <div><p class="ax-points__num">03</p><h3>条件が未整理</h3><p>最小ロット・価格・支払い・配送条件を、先に社内で決めておく必要がある。</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="ax-section ax-section--alt" id="s5" aria-labelledby="h-s5">
+    <div class="ax-wrap">
+      <div class="ax-section-head"><p class="ax-kicker">05 QUESTIONS FOR EXPERTS</p><h2 id="h-s5">確認事項（専門家へ確認すべき点）</h2></div>
+      <p>以下は AXLABO では判断しません。<span class="ax-nobr">ご依頼企業が、</span>各分野の専門家・関係機関へ直接ご確認ください。</p>
+      <div class="rep-scroll" tabindex="0" role="region" aria-label="確認事項の表（横にスクロールできます）">
+        <table class="rep-grid">
+          <thead><tr><th scope="col">分野</th><th scope="col">確認すること</th><th scope="col">確認先の例</th></tr></thead>
+          <tbody>
+            <tr><th scope="row">規制・表示</th><td>対象国で刃物を輸入・販売する際の規制、必要な表示</td><td>通関業者、公的な貿易相談窓口</td></tr>
+            <tr><th scope="row">輸出入手続き</th><td>必要書類、関税の扱い</td><td>通関業者</td></tr>
+            <tr><th scope="row">商標</th><td>対象国での商品名・ロゴの扱い</td><td>弁理士</td></tr>
+            <tr><th scope="row">契約・取引条件</th><td>取引条件書・返品条項の内容</td><td>弁護士</td></tr>
+            <tr><th scope="row">税務・決済</th><td>海外取引の税務処理、外貨での入金</td><td>税理士、取引銀行</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="ax-note">AXLABO は専門家の紹介・取次は行いません。</p>
+    </div>
+  </section>
+
+  <section class="ax-section" id="s6" aria-labelledby="h-s6">
+    <div class="ax-wrap">
+      <div class="ax-section-head"><p class="ax-kicker">06 INITIAL TARGET LIST</p><h2 id="h-s6">初期ターゲットリスト（形式の見本）</h2></div>
+      <p>実際の成果物では、公開情報で確認できた現地の候補を、出典つきで並べます。<span class="ax-nobr">連絡手段が確認できる候補を優先します。</span></p>
+      <div class="rep-scroll" tabindex="0" role="region" aria-label="初期ターゲットリストの見本（横にスクロールできます）">
+        <table class="rep-grid">
+          <thead><tr><th scope="col">候補</th><th scope="col">区分</th><th scope="col">所在地</th><th scope="col">選んだ理由</th><th scope="col">連絡手段</th><th scope="col">出典</th></tr></thead>
+          <tbody>
+            <tr><th scope="row">候補A（架空）</th><td>料理道具の専門店</td><td>ドイツの都市（例）</td><td>日本製の調理道具を扱っている</td><td>問い合わせ用メール（公開）</td><td>公式サイトの該当ページ（URL）</td></tr>
+            <tr><th scope="row">候補B（架空）</th><td>オンラインショップ</td><td>ドイツ（例）</td><td>職人の手仕事の商品を集めている</td><td>公式サイトの問い合わせ窓口</td><td>公式サイト（URL）</td></tr>
+            <tr><th scope="row">候補C（架空）</th><td>セレクトショップ</td><td>ドイツの都市（例）</td><td>キッチン用品の売り場がある</td><td>公開メールアドレス</td><td>公式サイト・店舗情報（URL）</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="ax-note">この見本の候補A〜Cは架空です。<span class="ax-nobr">実在の店舗・企業名は載せていません。</span>候補件数はご契約時の範囲で決めます。</p>
+    </div>
+  </section>
+
+  <section class="ax-section ax-section--alt" id="s7" aria-labelledby="h-s7">
+    <div class="ax-wrap">
+      <div class="ax-section-head"><p class="ax-kicker">07 FIRST CONTACT</p><h2 id="h-s7">初期接触用営業文面（英語）</h2></div>
+      <p>ご依頼企業が内容を確認してから、ご自身で送る文面です。<span class="ax-nobr">AXLABO が代わりに送信することはありません。</span></p>
+      <div class="rep-box">
+        <h3>メール用</h3>
+        <p class="rep-mail">Subject: Kitchen knives from a small workshop in Gifu, Japan
+
+Hello [Shop name] team,
+
+We are Misaki Hamono (sample name), a small company in Gifu, Japan that makes kitchen knives and cooking scissors.
+
+I found your shop while looking for stores that carry Japanese kitchen tools. I would like to ask whether you would consider a small first order.
+
+We can send an English product sheet and care guide. If this is of interest, could you tell me who handles new suppliers and what order size usually works for you?
+
+Thank you for your time.
+
+[Name] / Misaki Hamono (sample) / [email]</p>
+      </div>
+      <div class="rep-box">
+        <h3>短文DM用</h3>
+        <p class="rep-mail">Hello from Misaki Hamono (sample name), a small knife maker in Gifu, Japan. We are looking for a few shops to carry our kitchen knives. Could I send you our English product sheet?</p>
+      </div>
+      <p class="ax-note">文面は架空の見本です。実際の成果物では、候補先ごとに宛名や一文を調整します。</p>
+    </div>
+  </section>
+
+  <section class="ax-section" id="s8" aria-labelledby="h-s8">
+    <div class="ax-wrap">
+      <div class="ax-section-head"><p class="ax-kicker">08 NEXT ACTIONS</p><h2 id="h-s8">Next Actions</h2></div>
+      <ol class="ax-steps">
+        <li><p class="ax-steps__label">STEP 1</p><h3>確認事項を専門家へ</h3><p>第5章の項目を、各分野の専門家・関係機関へ確認する。</p></li>
+        <li><p class="ax-steps__label">STEP 2</p><h3>取引条件を社内で決める</h3><p>最小ロット・価格・支払い・配送の条件を決めておく。</p></li>
+        <li><p class="ax-steps__label">STEP 3</p><h3>少数の候補へ連絡する</h3><p>リストの上位から、確認済みの文面で連絡を始める。</p></li>
+      </ol>
+      <p class="ax-note">連絡に英語の会社紹介（1枚）を添える場合の参考見本です。<span class="ax-nobr">標準の3成果物には含まれません。</span></p>
+      <p><a class="ax-btn ax-btn--ghost" href="one-pager-en.html">英語の会社紹介（見本）を見る</a></p>
+    </div>
+  </section>
+
+  <section class="ax-section ax-section--alt" id="s9" aria-labelledby="h-s9">
+    <div class="ax-wrap">
+      <div class="ax-section-head"><p class="ax-kicker">OUT OF SCOPE</p><h2 id="h-s9"><span class="ax-nobr">このパッケージに</span><span class="ax-nobr">含まれないこと</span></h2></div>
+      <ul class="rep-out">
+        <li>AXLABO による営業メールの送信・商談の代行・契約交渉</li>
+        <li>現地での代理、法人設立・ビザ・登記</li>
+        <li>法務・税務・許認可・通関に関する判断や手続き</li>
+        <li>専門家・現地企業の紹介や取次</li>
+        <li>売上・成約の保証</li>
+      </ul>
+    </div>
+  </section>
+</main>
+
+<footer class="ax-footer">
+  <div class="ax-wrap">
+    <p>BIZ-004 海外進出準備・初期営業支援 ／ 成果物見本（架空）</p>
+    <p>これは AXLABO が制作したサンプルサイトです。掲載の企業・人物・内容は架空で、お客様の制作実績ではありません。</p>
+  </div>
+</footer>
+
+<p class="ax-sample-banner">これは AXLABO が制作したサンプルサイトです。企業名・人物・内容はすべて架空です。</p>
+</body>
+</html>
