@@ -1,0 +1,217 @@
+<!doctype html>
+<html lang="en" data-theme="saas">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Shiftlane — shift scheduling for small teams (fictional) | AXLABO sample</title>
+<meta name="description" content="This is a sample website made by AXLABO. The business, people and details shown are fictional.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;700&family=Zen+Kaku+Gothic+New:wght@700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="components.css">
+<style>
+  /* Page-only: theme tokens, English type settings, and a pricing table (not in the shared library yet). */
+  [data-theme="saas"] { --ax-bg:#F5F7FB; --ax-tint:#E3E9F5; --ax-accent:#3A4FB8; --ax-accent-hover:#2E3F95;
+    --ax-text:#171C2C; --ax-muted:#4A5268; --ax-line:#D3DAEA;
+    --ax-font-heading:"Outfit", ui-sans-serif, system-ui, sans-serif; --ax-font-body:system-ui, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    --ax-ls-body:0; --ax-lh-body:1.65; }
+  .ax-page h1, .ax-page h2, .ax-page h3 { letter-spacing: -0.01em; }
+  .ax-hero h1 { font-size: 52px; line-height: 1.12; }
+  .problem-list { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--ax-s3); margin: 0; padding: 0; list-style: none; }
+  .problem-list li { background: var(--ax-surface); border-radius: var(--ax-radius-s); padding: var(--ax-s3); border-left: 4px solid var(--ax-accent); }
+  .problem-list h3 { font-size: var(--ax-fs-h3); margin-bottom: var(--ax-s1); }
+  .problem-list p { margin: 0; color: var(--ax-muted); }
+  .plans { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--ax-s3); align-items: stretch; }
+  .plan { background: var(--ax-surface); border: 1px solid var(--ax-line); border-radius: var(--ax-radius); padding: var(--ax-s4) var(--ax-s3); display: flex; flex-direction: column; gap: var(--ax-s2); }
+  .plan--featured { border: 2px solid var(--ax-accent); }
+  .plan__tag { align-self: flex-start; font-size: var(--ax-fs-note); font-weight: 700; color: var(--ax-on-accent); background: var(--ax-accent); border-radius: 999px; padding: 2px 10px; }
+  .plan h3 { font-size: 20px; }
+  .plan__price { font-family: var(--ax-font-display); font-weight: 700; font-size: 32px; margin: 0; }
+  .plan__price small { font-size: var(--ax-fs-small); font-weight: 500; color: var(--ax-muted); }
+  .plan ul { margin: 0; padding-left: 1.2em; color: var(--ax-muted); }
+  .plan li + li { margin-top: 4px; }
+  .plan .ax-btn { margin-top: auto; justify-content: center; }
+  @media (max-width: 860px) {
+    .problem-list, .plans { grid-template-columns: 1fr; }
+    .ax-hero h1 { font-size: 38px; }
+  }
+</style>
+</head>
+<body class="ax-page">
+
+<p class="ax-sample-banner">This is a sample website made by AXLABO. The business, people and details shown are fictional. <span lang="ja">／ これは AXLABO が制作したサンプルサイトです（架空のサービス）。</span></p>
+
+<header class="ax-header">
+  <div class="ax-wrap">
+    <a class="ax-logo" href="#top" aria-label="Shiftlane home">
+      <svg width="32" height="32" viewBox="0 0 32 32" aria-hidden="true"><rect x="3" y="3" width="26" height="26" rx="7" fill="currentColor"/><path d="M9 12h14M9 16h9M9 20h12" stroke="#FFFFFF" stroke-width="2.4" stroke-linecap="round"/></svg>
+      Shiftlane
+    </a>
+    <nav class="ax-nav" aria-label="On this page">
+      <ul>
+        <li><a href="#features">Features</a></li>
+        <li><a href="#how">How it works</a></li>
+        <li><a href="#pricing">Pricing</a></li>
+        <li><a href="#faq">FAQ</a></li>
+      </ul>
+    </nav>
+    <a class="ax-btn" href="#pricing">Try it free</a>
+  </div>
+</header>
+
+<main id="top">
+  <section class="ax-hero ax-section">
+    <div class="ax-wrap">
+      <div>
+        <p class="ax-kicker">Shift scheduling for small teams</p>
+        <h1>Build next week's shifts in minutes, not evenings.</h1>
+        <p class="ax-lead">Shiftlane collects availability from your team, suggests a fair schedule, and sends it out. Built for cafés, clinics, shops and studios with 5 to 50 people.</p>
+        <div class="ax-cta">
+          <a class="ax-btn" href="#pricing">Try it free</a>
+          <a class="ax-btn ax-btn--ghost" href="#how">See how it works</a>
+        </div>
+        <p class="ax-status"><span class="ax-dot" aria-hidden="true"></span>Sample page – buttons are not functional</p>
+      </div>
+      <div class="ax-visual">
+        <svg viewBox="0 0 340 230" width="340" height="230" role="img" aria-label="Illustration of a weekly shift calendar">
+          <rect x="10" y="10" width="320" height="210" rx="16" fill="#FFFFFF"/>
+          <rect x="10" y="10" width="320" height="38" rx="16" fill="#3A4FB8"/>
+          <rect x="10" y="32" width="320" height="16" fill="#3A4FB8"/>
+          <g font-family="sans-serif" font-size="12" fill="#FFFFFF" text-anchor="middle">
+            <text x="54" y="34">Mon</text><text x="108" y="34">Tue</text><text x="162" y="34">Wed</text><text x="216" y="34">Thu</text><text x="270" y="34">Fri</text>
+          </g>
+          <g>
+            <rect x="32" y="62" width="44" height="30" rx="6" fill="#C9D3F2"/><rect x="86" y="62" width="44" height="30" rx="6" fill="#F3C9A8"/>
+            <rect x="140" y="62" width="44" height="30" rx="6" fill="#C9D3F2"/><rect x="194" y="62" width="44" height="30" rx="6" fill="#BFE3D3"/>
+            <rect x="248" y="62" width="44" height="30" rx="6" fill="#F3C9A8"/>
+            <rect x="32" y="104" width="44" height="30" rx="6" fill="#BFE3D3"/><rect x="86" y="104" width="44" height="30" rx="6" fill="#C9D3F2"/>
+            <rect x="140" y="104" width="44" height="30" rx="6" fill="#F3C9A8"/><rect x="194" y="104" width="44" height="30" rx="6" fill="#C9D3F2"/>
+            <rect x="248" y="104" width="44" height="30" rx="6" fill="#BFE3D3"/>
+            <rect x="32" y="146" width="44" height="30" rx="6" fill="#F3C9A8"/><rect x="140" y="146" width="44" height="30" rx="6" fill="#BFE3D3"/>
+            <rect x="248" y="146" width="44" height="30" rx="6" fill="#C9D3F2"/>
+          </g>
+          <circle cx="292" cy="192" r="18" fill="#3A4FB8"/><path d="M284 192l6 6 11-12" stroke="#FFFFFF" stroke-width="3.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <section class="ax-section ax-section--alt">
+    <div class="ax-wrap">
+      <div class="ax-section-head">
+        <p class="ax-kicker">The problem</p>
+        <h2>Scheduling shouldn't eat your weekend</h2>
+      </div>
+      <ul class="problem-list">
+        <li><h3>Availability in five places</h3><p>Messages, notes and a spreadsheet that only one person understands.</p></li>
+        <li><h3>Last-minute swaps</h3><p>Someone can't make it, and the whole week has to be rebuilt by hand.</p></li>
+        <li><h3>"Is that fair?"</h3><p>Weekend and closing shifts pile up on the same few people without anyone noticing.</p></li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="ax-section" id="features">
+    <div class="ax-wrap">
+      <div class="ax-section-head">
+        <p class="ax-kicker">Features</p>
+        <h2>Everything a small team needs, nothing more</h2>
+      </div>
+      <div class="ax-cards">
+        <article class="ax-card">
+          <div class="ax-card__ill"><svg viewBox="0 0 120 80" width="120" height="80" aria-hidden="true"><rect x="30" y="12" width="60" height="56" rx="8" fill="#FFFFFF" stroke="#3A4FB8" stroke-width="3"/><path d="M42 32l6 6 12-12M42 50h36" stroke="#3A4FB8" stroke-width="3" fill="none" stroke-linecap="round"/></svg></div>
+          <h3>One link for availability</h3>
+          <p class="ax-card__meta">Staff tap the days they can work on their phone. No app to install.</p>
+        </article>
+        <article class="ax-card">
+          <div class="ax-card__ill"><svg viewBox="0 0 120 80" width="120" height="80" aria-hidden="true"><circle cx="60" cy="40" r="26" fill="#FFFFFF" stroke="#3A4FB8" stroke-width="3"/><path d="M60 26v14l10 8" stroke="#3A4FB8" stroke-width="3" fill="none" stroke-linecap="round"/></svg></div>
+          <h3>Suggested schedule</h3>
+          <p class="ax-card__meta">A first draft that respects everyone's hours and spreads weekend shifts evenly.</p>
+        </article>
+        <article class="ax-card">
+          <div class="ax-card__ill"><svg viewBox="0 0 120 80" width="120" height="80" aria-hidden="true"><path d="M30 34h44l-10-10M90 46H46l10 10" stroke="#3A4FB8" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          <h3>Swaps without the chaos</h3>
+          <p class="ax-card__meta">Staff offer a shift, a teammate accepts, and you approve with one tap.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="ax-section ax-section--alt" id="how">
+    <div class="ax-wrap">
+      <div class="ax-section-head">
+        <p class="ax-kicker">How it works</p>
+        <h2>From availability to a published week</h2>
+      </div>
+      <ol class="ax-steps">
+        <li><p class="ax-steps__label">STEP 1</p><h3>Share one link</h3><p>Your team adds the days and hours they can work.</p></li>
+        <li><p class="ax-steps__label">STEP 2</p><h3>Review the draft</h3><p>Adjust the suggested schedule by dragging shifts where you want them.</p></li>
+        <li><p class="ax-steps__label">STEP 3</p><h3>Publish</h3><p>Everyone gets their shifts by email, and changes stay in one place.</p></li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="ax-section" id="pricing">
+    <div class="ax-wrap">
+      <div class="ax-section-head">
+        <p class="ax-kicker">Pricing (example)</p>
+        <h2>Simple plans for teams of any size</h2>
+      </div>
+      <div class="plans">
+        <article class="plan">
+          <h3>Starter</h3>
+          <p class="plan__price">$0 <small>/ month (example)</small></p>
+          <ul><li>Up to 5 people</li><li>Availability link</li><li>One location</li></ul>
+          <a class="ax-btn ax-btn--ghost" href="#pricing">Sample – not functional</a>
+        </article>
+        <article class="plan plan--featured">
+          <span class="plan__tag">Example plan</span>
+          <h3>Team</h3>
+          <p class="plan__price">$4 <small>/ person / month (example)</small></p>
+          <ul><li>Up to 50 people</li><li>Suggested schedules</li><li>Shift swaps and approvals</li></ul>
+          <a class="ax-btn" href="#pricing">Sample – not functional</a>
+        </article>
+        <article class="plan">
+          <h3>Multi-site</h3>
+          <p class="plan__price">Contact <small>(example)</small></p>
+          <ul><li>Several locations</li><li>Shared staff between sites</li><li>Export for payroll</li></ul>
+          <a class="ax-btn ax-btn--ghost" href="#pricing">Sample – not functional</a>
+        </article>
+      </div>
+      <p class="ax-note" style="margin-top:var(--ax-s3)">Plans and prices are fictional examples for this sample. On a real site, the company sets its own plans.</p>
+    </div>
+  </section>
+
+  <section class="ax-section ax-section--alt" id="faq">
+    <div class="ax-wrap">
+      <div class="ax-section-head">
+        <p class="ax-kicker">FAQ</p>
+        <h2>Questions teams ask first</h2>
+      </div>
+      <div class="ax-faq">
+        <details><summary>Do my staff need to install an app?</summary><p>No. In this example, staff use a link in their phone's browser.</p></details>
+        <details><summary>Can I move shifts after publishing?</summary><p>Yes. Changes are sent to the people affected (example answer).</p></details>
+        <details><summary>Where is our data stored?</summary><p>A real service would explain its data handling here. This sample does not describe a real service.</p></details>
+      </div>
+    </div>
+  </section>
+
+  <section class="ax-section">
+    <div class="ax-wrap" style="text-align:center">
+      <h2>Spend Sunday evening on something else.</h2>
+      <p class="ax-note" style="margin:var(--ax-s2) 0 var(--ax-s4)">Start with the free example plan and invite your team.</p>
+      <a class="ax-btn" href="#pricing">Sample – not functional</a>
+    </div>
+  </section>
+</main>
+
+<footer class="ax-footer">
+  <div class="ax-wrap">
+    <p>Shiftlane (fictional service)</p>
+    <p>This is a sample website made by AXLABO. The business, people and details shown are fictional. It is not a client project.</p>
+    <p lang="ja">これは AXLABO が制作したサンプルサイトです。掲載のサービス・人物・内容は架空です。お客様の制作実績ではありません。</p>
+  </div>
+</footer>
+<p class="ax-sample-banner">This is a sample website made by AXLABO. The business, people and details shown are fictional. <span lang="ja">／ これは AXLABO が制作したサンプルサイトです（架空のサービス）。</span></p>
+</body>
+</html>
