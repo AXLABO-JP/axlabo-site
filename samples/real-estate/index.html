@@ -1,0 +1,209 @@
+<!doctype html>
+<html lang="ja" data-theme="estate">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>地域の不動産会社 あおば住まい舎（架空）｜AXLABO サンプルサイト</title>
+<meta name="description" content="AXLABO が制作したサンプルサイトです。掲載の会社・人物・物件・内容はすべて架空です。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@700&family=Zen+Kaku+Gothic+New:wght@700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="components.css">
+<style>
+  /* このページだけの指定は配色トークンと「物件の探し方」タイルのみ */
+  [data-theme="estate"] { --ax-bg:#F5F6F4; --ax-tint:#E3E9E4; --ax-accent:#2F5D4E; --ax-accent-hover:#244a3e;
+    --ax-text:#1C2421; --ax-muted:#46524D; --ax-line:#CFD9D3; }
+  .re-tiles { list-style:none; margin:0; padding:0; display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:var(--ax-s3); }
+  .re-tiles li { background:#fff; border:1px solid var(--ax-line); border-radius:12px; padding:var(--ax-s3); }
+  .re-tiles h3 { margin:0 0 6px; font-size:1.05rem; }
+  .re-tag { display:inline-block; font-size:.78rem; font-weight:700; color:var(--ax-accent); border:1px solid var(--ax-accent); border-radius:999px; padding:2px 10px; margin-bottom:8px; }
+</style>
+</head>
+<body class="ax-page">
+
+<p class="ax-sample-banner">これは AXLABO が制作したサンプルサイトです。掲載の店舗・人物・内容は架空です。</p>
+
+<header class="ax-header">
+  <div class="ax-wrap">
+    <a class="ax-logo" href="#top" aria-label="あおば住まい舎 トップへ">
+      <svg width="32" height="32" viewBox="0 0 32 32" aria-hidden="true"><path d="M4 16 16 5l12 11v12H4z" fill="none" stroke="currentColor" stroke-width="3" stroke-linejoin="round"/><path d="M13 28v-8h6v8" fill="none" stroke="currentColor" stroke-width="3"/></svg>
+      あおば住まい舎
+    </a>
+    <nav class="ax-nav" aria-label="ページ内">
+      <ul>
+        <li><a href="#service">サービス</a></li>
+        <li><a href="#search">物件の探し方</a></li>
+        <li><a href="#owner">オーナーの方へ</a></li>
+        <li><a href="#company">会社情報</a></li>
+      </ul>
+    </nav>
+    <a class="ax-btn" href="#contact">住まいの相談</a>
+  </div>
+</header>
+
+<main id="top">
+  <section class="ax-hero ax-section">
+    <div class="ax-wrap">
+      <div>
+        <p class="ax-kicker">Local Real Estate</p>
+        <h1 class="ax-h1"><span class="ax-nobr">この街で暮らす人と、</span><span class="ax-nobr">持つ人のあいだに。</span></h1>
+        <p class="ax-lead">賃貸のお部屋探し、売買のご相談、賃貸物件の管理まで。地域に根ざした小さな不動産会社です。条件と気になる点を伺い、無理のない選び方を一緒に考えます。</p>
+        <div class="ax-cta">
+          <a class="ax-btn" href="#contact">住まいの相談をする</a>
+          <a class="ax-btn ax-btn--ghost" href="#owner">オーナーの方へ</a>
+        </div>
+        <p class="ax-status"><span class="ax-dot" aria-hidden="true"></span>来店は予約制・10:00〜18:00（例）</p>
+      </div>
+      <div class="ax-visual">
+        <svg viewBox="0 0 320 200" width="320" height="200" role="img" aria-label="街並みのイラスト">
+          <rect x="0" y="170" width="320" height="30" fill="#CFD9D3"/>
+          <rect x="30" y="80" width="80" height="90" fill="#2F5D4E"/><path d="M24 84 70 46 116 84z" fill="#1C2421"/>
+          <rect x="130" y="50" width="70" height="120" fill="#46524D"/>
+          <g fill="#F5F6F4"><rect x="142" y="64" width="16" height="16"/><rect x="172" y="64" width="16" height="16"/><rect x="142" y="94" width="16" height="16"/><rect x="172" y="94" width="16" height="16"/><rect x="142" y="124" width="16" height="16"/><rect x="172" y="124" width="16" height="16"/></g>
+          <rect x="220" y="100" width="70" height="70" fill="#2F5D4E"/><path d="M214 104 255 72 296 104z" fill="#B96A3C"/>
+          <rect x="58" y="130" width="24" height="40" fill="#F5F6F4"/><rect x="245" y="138" width="20" height="32" fill="#F5F6F4"/>
+          <circle cx="300" cy="40" r="14" fill="#E3B35A"/>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <section class="ax-section ax-section--alt" id="service">
+    <div class="ax-wrap">
+      <div class="ax-section-head">
+        <p class="ax-kicker">Service</p>
+        <h2><span class="ax-nobr">3つのご相談窓口</span></h2>
+      </div>
+      <div class="ax-cards">
+        <article class="ax-card">
+          <div class="ax-card__ill"><svg viewBox="0 0 120 80" width="120" height="80" aria-hidden="true"><rect x="30" y="22" width="60" height="46" fill="none" stroke="#2F5D4E" stroke-width="5"/><path d="M24 26 60 6l36 20" fill="none" stroke="#B96A3C" stroke-width="5"/><rect x="52" y="44" width="16" height="24" fill="#2F5D4E"/></svg></div>
+          <h3>賃貸のお部屋探し</h3>
+          <p class="ax-card__meta">通勤・通学の経路、予算、暮らし方を伺ってからご提案します</p>
+        </article>
+        <article class="ax-card">
+          <div class="ax-card__ill"><svg viewBox="0 0 120 80" width="120" height="80" aria-hidden="true"><path d="M20 58h80" stroke="#2F5D4E" stroke-width="5"/><path d="M34 58V30l26-16 26 16v28" fill="none" stroke="#2F5D4E" stroke-width="5"/><circle cx="92" cy="22" r="10" fill="none" stroke="#B96A3C" stroke-width="5"/></svg></div>
+          <h3>売買のご相談</h3>
+          <p class="ax-card__meta">住み替え・相続などの状況を整理し、進め方をご説明します</p>
+        </article>
+        <article class="ax-card">
+          <div class="ax-card__ill"><svg viewBox="0 0 120 80" width="120" height="80" aria-hidden="true"><rect x="28" y="14" width="64" height="54" rx="6" fill="none" stroke="#2F5D4E" stroke-width="5"/><path d="M40 32h40M40 44h40M40 56h24" stroke="#B96A3C" stroke-width="5" stroke-linecap="round"/></svg></div>
+          <h3>賃貸物件の管理</h3>
+          <p class="ax-card__meta">入居者募集・契約・日々の問い合わせ対応をお引き受けします</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="ax-section" id="search">
+    <div class="ax-wrap">
+      <div class="ax-section-head">
+        <p class="ax-kicker">Search</p>
+        <h2><span class="ax-nobr">物件の探し方</span></h2>
+      </div>
+      <p class="ax-note" style="margin-bottom:var(--ax-s3)">この欄は「探し方の入口」を示すサンプル表示です（架空・実在しない物件）。価格・所在地・間取りなどの物件情報は掲載していません。実際のサイトでは、会社が取り扱う物件を、広告表示のルールに沿って掲載・更新します。</p>
+      <ul class="re-tiles">
+        <li><span class="re-tag">サンプル表示（架空・実在しない物件）</span><h3>駅から歩ける賃貸</h3><p class="ax-card__meta">通勤・通学を重視する方へ</p></li>
+        <li><span class="re-tag">サンプル表示（架空・実在しない物件）</span><h3>ファミリー向けの住まい</h3><p class="ax-card__meta">学区や公園の近さで選ぶ方へ</p></li>
+        <li><span class="re-tag">サンプル表示（架空・実在しない物件）</span><h3>はじめての一人暮らし</h3><p class="ax-card__meta">初期費用や契約の流れから相談したい方へ</p></li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="ax-section ax-section--alt">
+    <div class="ax-wrap">
+      <div class="ax-section-head">
+        <p class="ax-kicker">Our Way</p>
+        <h2><span class="ax-nobr">決める前に、</span><span class="ax-nobr">ていねいに確かめる</span></h2>
+      </div>
+      <div class="ax-points">
+        <div><p class="ax-points__num">01</p><h3>費用は内訳でお伝え</h3><p>初期費用や手数料は、項目ごとに分けてご説明します。</p></div>
+        <div><p class="ax-points__num">02</p><h3>現地を一緒に確認</h3><p>日当たりや周りの音など、図面では分からないところを現地で見ます。</p></div>
+        <div><p class="ax-points__num">03</p><h3>契約の前に重要事項を</h3><p>契約の前に、宅地建物取引士が重要事項をご説明します。</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="ax-section" id="owner">
+    <div class="ax-wrap">
+      <div class="ax-section-head">
+        <p class="ax-kicker">For Owners</p>
+        <h2><span class="ax-nobr">オーナーの方へ：</span><span class="ax-nobr">管理のご依頼の流れ</span></h2>
+      </div>
+      <ol class="ax-steps">
+        <li><p class="ax-steps__label">STEP 1</p><h3>ご相談</h3><p>物件の状況と、お困りのことを伺います。</p></li>
+        <li><p class="ax-steps__label">STEP 2</p><h3>現地確認とご提案</h3><p>建物を拝見し、管理の内容と費用をご提案します。</p></li>
+        <li><p class="ax-steps__label">STEP 3</p><h3>契約と管理開始</h3><p>内容にご納得いただいてから、管理を始めます。</p></li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="ax-section ax-section--alt">
+    <div class="ax-wrap">
+      <div class="ax-section-head">
+        <p class="ax-kicker">FAQ</p>
+        <h2><span class="ax-nobr">よくある質問</span></h2>
+      </div>
+      <div class="ax-faq">
+        <details><summary>相談だけでも来店できますか？</summary><p>はい、ご相談だけでも承ります。予約をいただくとお待たせせずにご案内できます（サンプルの回答例です）。</p></details>
+        <details><summary>オンラインで相談できますか？</summary><p>ビデオ通話でのご相談も承ります（例）。</p></details>
+        <details><summary>他社で管理中の物件も相談できますか？</summary><p>現在の契約内容を確認したうえで、ご案内します（例）。</p></details>
+      </div>
+    </div>
+  </section>
+
+  <section class="ax-section" id="company">
+    <div class="ax-wrap ax-access">
+      <div>
+        <div class="ax-section-head">
+          <p class="ax-kicker">Company</p>
+          <h2><span class="ax-nobr">会社情報</span></h2>
+        </div>
+        <table class="ax-info">
+          <tbody>
+            <tr><th scope="row">商号</th><td>あおば住まい舎（架空）</td></tr>
+            <tr><th scope="row">免許</th><td>宅地建物取引業 免許番号（架空）</td></tr>
+            <tr><th scope="row">営業時間</th><td>10:00〜18:00・来店は予約制（例）</td></tr>
+            <tr><th scope="row">定休日</th><td>水曜（例）</td></tr>
+            <tr><th scope="row">所在地</th><td>〇〇市△△町 5-6-7（架空の住所）</td></tr>
+            <tr><th scope="row">電話</th><td>000-0000-0000（架空）</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="ax-map">
+        <svg viewBox="0 0 400 280" width="400" height="280" role="img" aria-label="駅から店舗までの案内図（架空）">
+          <rect width="400" height="280" rx="12" fill="#E3E9E4"/>
+          <rect x="0" y="120" width="400" height="36" fill="#FFFFFF"/>
+          <rect x="250" y="0" width="36" height="280" fill="#FFFFFF"/>
+          <rect x="30" y="40" width="96" height="44" rx="8" fill="#1C2421"/>
+          <text x="78" y="68" text-anchor="middle" font-size="16" fill="#FFFFFF" font-family="sans-serif">駅</text>
+          <path d="M126 62 H210 V138 H250" fill="none" stroke="#B96A3C" stroke-width="4" stroke-dasharray="8 6"/>
+          <rect x="296" y="176" width="84" height="44" rx="8" fill="#2F5D4E"/>
+          <text x="338" y="204" text-anchor="middle" font-size="16" fill="#FFFFFF" font-family="sans-serif">店舗</text>
+          <text x="200" y="262" text-anchor="middle" font-size="13" fill="#46524D" font-family="sans-serif">駅から徒歩4分（例）</text>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <section class="ax-section ax-section--alt" id="contact">
+    <div class="ax-wrap">
+      <div class="ax-section-head">
+        <p class="ax-kicker">Contact</p>
+        <h2><span class="ax-nobr">住まいの相談</span></h2>
+      </div>
+      <p>ご希望の条件やお困りのことを、フォームかお電話でお知らせください。担当者からご連絡します。</p>
+      <p style="margin-top:var(--ax-s3)"><a class="ax-btn" href="#contact">相談フォームへ（サンプルのため動作しません）</a></p>
+    </div>
+  </section>
+</main>
+
+<footer class="ax-footer">
+  <div class="ax-wrap">
+    <p>あおば住まい舎（架空の会社）</p>
+    <p>これは AXLABO が制作したサンプルサイトです。掲載の会社・人物・物件・内容はすべて架空です。お客様の制作実績ではありません。</p>
+  </div>
+</footer>
+<p class="ax-sample-banner">これは AXLABO が制作したサンプルサイトです。掲載の店舗・人物・内容は架空です。</p>
+</body>
+</html>
