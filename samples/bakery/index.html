@@ -1,0 +1,284 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>パン工房 ヨツカド（架空の店舗）｜AXLABO 制作サンプル</title>
+<meta name="description" content="AXLABO が制作した Web サイトのサンプルです。掲載の店舗・人物・商品・価格・住所はすべて架空です。">
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;700&family=Zen+Kaku+Gothic+New:wght@500;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #FBF7F1;       /* 生成り */
+    --tint: #F1E6D8;     /* 生成りの濃い版（区切り） */
+    --accent: #9A4B1F;   /* 焼き色 */
+    --text: #2B2420;
+    --muted: #5C4F46;
+    --font-heading: "Zen Kaku Gothic New", "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Noto Sans JP", sans-serif;
+    --font-body: "Hiragino Sans", "Noto Sans JP", system-ui, sans-serif;
+    --font-display: "Outfit", "Inter", ui-sans-serif, system-ui, sans-serif;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { margin: 0; background: var(--bg); color: var(--text); font-family: var(--font-body); font-size: 16px; line-height: 1.8; }
+  img, svg { max-width: 100%; height: auto; display: block; }
+  a { color: var(--accent); }
+  a:focus-visible, button:focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; border-radius: 4px; }
+  h1, h2, h3 { font-family: var(--font-heading); line-height: 1.4; margin: 0; }
+  h2 { font-size: 28px; }
+  h3 { font-size: 18px; }
+  p { margin: 0; }
+  .wrap { max-width: 1040px; margin: 0 auto; padding: 0 24px; }
+  .measure { max-width: 26em; }
+  .kicker { font-family: var(--font-display); font-weight: 700; letter-spacing: .12em; font-size: 13px; color: var(--accent); text-transform: uppercase; }
+
+  /* サンプル表示（常に最上部） */
+  .sample-banner { background: var(--text); color: #fff; font-size: 13px; text-align: center; padding: 8px 16px; line-height: 1.6; }
+
+  header.site { position: sticky; top: 0; z-index: 10; background: rgba(251,247,241,.96); border-bottom: 1px solid var(--tint); }
+  header.site .wrap { display: flex; align-items: center; justify-content: space-between; gap: 16px; min-height: 64px; }
+  .logo { display: flex; align-items: center; gap: 10px; text-decoration: none; color: var(--text); font-family: var(--font-heading); font-weight: 700; font-size: 18px; }
+  nav ul { list-style: none; display: flex; gap: 22px; margin: 0; padding: 0; }
+  nav a { color: var(--text); text-decoration: none; font-size: 15px; display: inline-block; padding: 8px 0; }
+  nav a:hover { color: var(--accent); }
+  .btn { display: inline-block; background: var(--accent); color: #fff; text-decoration: none; font-weight: 700; font-family: var(--font-heading); padding: 12px 22px; border-radius: 999px; min-height: 44px; }
+  .btn:hover { background: #7E3C17; }
+  .btn.ghost { background: transparent; color: var(--accent); border: 2px solid var(--accent); padding: 10px 20px; }
+  .btn.ghost:hover { background: var(--tint); }
+
+  section { padding: 88px 0; }
+  section.alt { background: var(--tint); }
+  .section-head { display: grid; gap: 8px; margin-bottom: 40px; }
+
+  /* ヒーロー */
+  .hero .wrap { display: grid; grid-template-columns: 1.1fr .9fr; gap: 48px; align-items: center; }
+  .hero h1 { font-size: 48px; }
+  .hero p.lead { margin-top: 20px; color: var(--muted); }
+  .hero .cta { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 32px; }
+  .hero .today { margin-top: 28px; display: inline-flex; gap: 10px; align-items: center; font-size: 14px; color: var(--muted); }
+  .dot { width: 10px; height: 10px; border-radius: 50%; background: var(--accent); flex: none; }
+
+  /* 今日のパン */
+  .cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+  .card { background: #fff; border-radius: 16px; padding: 24px; display: grid; gap: 12px; }
+  .card .ill { background: var(--tint); border-radius: 12px; padding: 16px; display: grid; place-items: center; height: 140px; }
+  .card .price { font-family: var(--font-display); font-weight: 700; font-size: 18px; }
+  .card .tag { font-size: 13px; color: var(--muted); }
+  .note { margin-top: 20px; font-size: 13px; color: var(--muted); }
+
+  /* こだわり */
+  .points { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; }
+  .points .num { font-family: var(--font-display); font-size: 32px; font-weight: 700; color: var(--accent); line-height: 1; }
+  .points h3 { margin: 12px 0 8px; }
+
+  /* 取り置きの流れ */
+  .steps { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; counter-reset: s; }
+  .steps li { background: #fff; border-radius: 16px; padding: 24px; }
+  .steps .label { font-family: var(--font-display); font-weight: 700; color: var(--accent); font-size: 13px; letter-spacing: .1em; }
+  .steps h3 { margin: 6px 0 8px; }
+
+  /* 季節 */
+  .season { display: grid; grid-template-columns: .9fr 1.1fr; gap: 48px; align-items: center; }
+
+  /* アクセス */
+  .access { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; }
+  table { border-collapse: collapse; width: 100%; }
+  th, td { text-align: left; padding: 12px 0; border-bottom: 1px solid #E3D5C3; vertical-align: top; font-size: 15px; }
+  th { width: 7em; font-family: var(--font-heading); font-weight: 700; }
+  .map { background: #fff; border-radius: 16px; padding: 16px; }
+
+  footer { background: var(--text); color: #F4EEE6; padding: 48px 0; font-size: 14px; }
+  footer p + p { margin-top: 8px; }
+  footer a { color: #F4EEE6; }
+
+  @media (max-width: 860px) {
+    .hero .wrap, .season, .access { grid-template-columns: 1fr; gap: 32px; }
+    .cards, .points, .steps { grid-template-columns: 1fr; }
+    nav ul { display: none; }
+    section { padding: 64px 0; }
+  }
+  @media (max-width: 480px) {
+    .wrap { padding: 0 16px; }
+    .hero h1 { font-size: 32px; }
+    h2 { font-size: 24px; }
+    header .btn { padding: 10px 16px; font-size: 14px; }
+  }
+  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+</style>
+</head>
+<body>
+
+<div class="sample-banner" role="note">
+  これは AXLABO が制作したサンプルサイトです。掲載の店舗・人物・商品・価格・住所はすべて架空です。
+</div>
+
+<header class="site">
+  <div class="wrap">
+    <a class="logo" href="#top" aria-label="パン工房 ヨツカド トップへ">
+      <svg width="32" height="32" viewBox="0 0 32 32" aria-hidden="true"><rect x="3" y="3" width="26" height="26" rx="7" fill="#9A4B1F"/><path d="M10 19c0-4 3-7 6-7s6 3 6 7" stroke="#FBF7F1" stroke-width="2.4" fill="none" stroke-linecap="round"/><path d="M9 21h14" stroke="#FBF7F1" stroke-width="2.4" stroke-linecap="round"/></svg>
+      パン工房 ヨツカド
+    </a>
+    <nav aria-label="メインメニュー">
+      <ul>
+        <li><a href="#bread">今日のパン</a></li>
+        <li><a href="#craft">こだわり</a></li>
+        <li><a href="#reserve">取り置き</a></li>
+        <li><a href="#access">アクセス</a></li>
+      </ul>
+    </nav>
+    <a class="btn" href="#reserve">取り置き予約</a>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero">
+    <div class="wrap">
+      <div>
+        <p class="kicker">Neighborhood Bakery</p>
+        <h1>朝七時、<br>角の工房から。</h1>
+        <p class="lead measure">国産小麦と自家製の酵母で、毎朝少しずつ焼いています。売り切れが早い日は、前日までの取り置きが確実です。</p>
+        <div class="cta">
+          <a class="btn" href="#reserve">取り置きを予約する</a>
+          <a class="btn ghost" href="#access">営業時間と場所</a>
+        </div>
+        <p class="today"><span class="dot" aria-hidden="true"></span>本日 7:00〜17:00 営業（例）</p>
+      </div>
+      <svg viewBox="0 0 400 320" role="img" aria-label="焼き上がったパンが並ぶ棚のイラスト">
+        <rect x="0" y="0" width="400" height="320" rx="24" fill="#F1E6D8"/>
+        <rect x="32" y="120" width="336" height="10" rx="5" fill="#C9A98A"/>
+        <rect x="32" y="232" width="336" height="10" rx="5" fill="#C9A98A"/>
+        <ellipse cx="96" cy="100" rx="52" ry="22" fill="#B8733F"/><path d="M62 94c10-6 20-6 30 0M86 90c10-6 20-6 30 0" stroke="#8A4E24" stroke-width="4" stroke-linecap="round" fill="none"/>
+        <rect x="170" y="70" width="90" height="50" rx="22" fill="#C98A52"/>
+        <circle cx="318" cy="98" r="24" fill="#B8733F"/><circle cx="318" cy="98" r="10" fill="#E2B98C"/>
+        <path d="M60 222c0-26 30-40 60-40s60 14 60 40z" fill="#C98A52"/>
+        <ellipse cx="270" cy="210" rx="70" ry="22" fill="#A8622E"/><path d="M225 206h90" stroke="#E2B98C" stroke-width="4" stroke-linecap="round"/>
+      </svg>
+    </div>
+  </section>
+
+  <section id="bread" class="alt">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="kicker">Today's Bread</p>
+        <h2>今日のパン</h2>
+      </div>
+      <div class="cards">
+        <article class="card">
+          <div class="ill"><svg width="120" height="80" viewBox="0 0 120 80" role="img" aria-label="山型食パンのイラスト"><path d="M16 70V36c0-16 12-26 28-26 6 0 12 2 16 6 4-4 10-6 16-6 16 0 28 10 28 26v34z" fill="#C98A52"/></svg></div>
+          <h3>角の山食パン</h3>
+          <p class="tag">毎朝焼き上げ・1斤</p>
+          <p class="price">¥420</p>
+        </article>
+        <article class="card">
+          <div class="ill"><svg width="120" height="80" viewBox="0 0 120 80" role="img" aria-label="カンパーニュのイラスト"><ellipse cx="60" cy="44" rx="50" ry="28" fill="#A8622E"/><path d="M30 40l20-10M52 46l20-10M74 52l14-8" stroke="#E2B98C" stroke-width="4" stroke-linecap="round"/></svg></div>
+          <h3>週末のカンパーニュ</h3>
+          <p class="tag">金・土のみ・ハーフ</p>
+          <p class="price">¥560</p>
+        </article>
+        <article class="card">
+          <div class="ill"><svg width="120" height="80" viewBox="0 0 120 80" role="img" aria-label="あんパンのイラスト"><circle cx="60" cy="42" r="30" fill="#B8733F"/><circle cx="60" cy="30" r="4" fill="#3A2A20"/></svg></div>
+          <h3>こしあんぱん</h3>
+          <p class="tag">午前中に売り切れやすい</p>
+          <p class="price">¥220</p>
+        </article>
+      </div>
+      <p class="note">※商品・価格はサンプル用の架空のものです。実際の店舗サイトでは、日替わりの内容をお店の方が管理画面から更新できる形にします。</p>
+    </div>
+  </section>
+
+  <section id="craft">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="kicker">Our Craft</p>
+        <h2>毎日の、ふつうのパンのために</h2>
+      </div>
+      <div class="points">
+        <div>
+          <p class="num">01</p>
+          <h3>粉は、国産小麦</h3>
+          <p class="measure">香りの違う三種類の粉を、パンごとに配合を変えて使います。</p>
+        </div>
+        <div>
+          <p class="num">02</p>
+          <h3>自家製の酵母</h3>
+          <p class="measure">ゆっくり発酵させるので、翌日もしっとりしたままです。</p>
+        </div>
+        <div>
+          <p class="num">03</p>
+          <h3>焼くのは少しずつ</h3>
+          <p class="measure">焼きたてを並べるため、一度に焼く量を増やしすぎません。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="alt">
+    <div class="wrap season">
+      <svg viewBox="0 0 360 260" role="img" aria-label="栗をのせた季節のパンのイラスト">
+        <rect width="360" height="260" rx="24" fill="#FBF7F1"/>
+        <ellipse cx="180" cy="160" rx="120" ry="52" fill="#B8733F"/>
+        <path d="M150 112c0-16 12-28 30-28s30 12 30 28z" fill="#7A4A2A"/><path d="M162 112h36" stroke="#E2B98C" stroke-width="5" stroke-linecap="round"/>
+      </svg>
+      <div>
+        <p class="kicker">Seasonal</p>
+        <h2>秋だけの、栗のデニッシュ</h2>
+        <p class="measure" style="margin-top:16px">渋皮煮を一粒ずつのせた季節限定のパンです。十月から十一月の土曜日に焼きます。</p>
+        <p class="note">※季節の内容は例です。お知らせ欄として、お店の方が差し替えられるようにしています。</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="reserve">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="kicker">Reservation</p>
+        <h2>取り置き予約の流れ</h2>
+      </div>
+      <ol class="steps">
+        <li><p class="label">STEP 1</p><h3>パンと数を選ぶ</h3><p>前日の18時までに、フォームから選んでください。</p></li>
+        <li><p class="label">STEP 2</p><h3>受付のお知らせ</h3><p>確認のメールが届きます。お支払いは店頭で。</p></li>
+        <li><p class="label">STEP 3</p><h3>店頭で受け取る</h3><p>お名前をお伝えください。袋に入れてお待ちしています。</p></li>
+      </ol>
+      <p style="margin-top:32px"><a class="btn" href="#reserve" aria-disabled="true">予約フォームへ（サンプルのため動作しません）</a></p>
+    </div>
+  </section>
+
+  <section id="access" class="alt">
+    <div class="wrap access">
+      <div>
+        <div class="section-head">
+          <p class="kicker">Access</p>
+          <h2>営業時間と場所</h2>
+        </div>
+        <table>
+          <tr><th scope="row">営業時間</th><td>7:00〜17:00（売り切れ次第終了）</td></tr>
+          <tr><th scope="row">定休日</th><td>月曜・火曜</td></tr>
+          <tr><th scope="row">住所</th><td>〇〇市△△町 1-2-3（架空の住所）</td></tr>
+          <tr><th scope="row">電話</th><td>000-0000-0000（架空）</td></tr>
+          <tr><th scope="row">駐車場</th><td>2台（店舗前）</td></tr>
+        </table>
+      </div>
+      <div class="map">
+        <svg viewBox="0 0 400 300" role="img" aria-label="店舗周辺の簡略地図（架空）">
+          <rect width="400" height="300" rx="12" fill="#F1E6D8"/>
+          <path d="M0 150h400M200 0v300" stroke="#fff" stroke-width="22"/>
+          <path d="M0 60h400" stroke="#fff" stroke-width="10"/>
+          <rect x="214" y="164" width="60" height="44" rx="6" fill="#9A4B1F"/>
+          <text x="244" y="192" text-anchor="middle" font-size="13" fill="#fff" font-family="sans-serif">店</text>
+          <text x="96" y="140" font-size="12" fill="#5C4F46" font-family="sans-serif">駅から徒歩5分（例）</text>
+        </svg>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <p>パン工房 ヨツカド（架空の店舗）</p>
+    <p>このページは AXLABO の Web 制作サンプルです。実在の店舗・人物・団体とは関係ありません。お客様の制作実績ではありません。</p>
+  </div>
+</footer>
+</body>
+</html>
