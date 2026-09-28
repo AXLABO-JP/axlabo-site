@@ -24,6 +24,9 @@
     window.addEventListener("resize", function () { if (window.innerWidth > 980) setOpen(false); });
   }
   var items = document.querySelectorAll(".reveal");
+  var showAll = function () { items.forEach(function (el) { el.classList.add("in"); }); };
+  window.addEventListener("error", showAll);
+  window.setTimeout(showAll, 2500); /* 監視が効かない環境でも2.5秒後には必ず全表示 */
   if ("IntersectionObserver" in window && !window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
     var io = new IntersectionObserver(function (entries) {
       entries.forEach(function (en) { if (en.isIntersecting) { en.target.classList.add("in"); io.unobserve(en.target); } });

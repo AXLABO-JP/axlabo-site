@@ -4,7 +4,7 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>AXLABO ｜ AIが作る、最短3営業日のWeb・LP制作</title>
-<meta name="description" content="AXLABOはAIを活用した制作フローで、Webサイト・ランディングページを最短3営業日・¥49,800から制作します。24時間365日対応、明快な3プラン。" />
+<meta name="description" content="AXLABOはAIを活用した制作フローで、Webサイト・ランディングページを最短3営業日・¥49,800(税込)から制作します。明快な2プラン。" />
 <meta name="theme-color" content="#c8622c" />
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%23161311'/%3E%3Cpath d='M50 22 L78 78 L61 78 L50 54 L39 78 L22 78 Z' fill='%23c8622c'/%3E%3C/svg%3E" />
 <meta property="og:type" content="website" />
@@ -14,6 +14,7 @@
 <link rel="canonical" href="https://axlabo.com/web-production.html" />
 <meta property="og:site_name" content="AXLABO" />
 <meta name="twitter:card" content="summary" />
+<script>document.documentElement.classList.add("js")</script>
 <!-- 2026-08-07 CEO指示「Release Readiness」GEO対応: 生成AIエンジンからの参照性向上のため
      構造化データ(schema.org)を追加。架空の評価・レビュー・実績数値は含めない
      (AXLABO OS Constitution、実データのみ)。 -->
@@ -37,6 +38,7 @@
       "name": "ライトプラン",
       "price": "49800",
       "priceCurrency": "JPY",
+      "priceSpecification": { "@type": "PriceSpecification", "price": "49800", "priceCurrency": "JPY", "valueAddedTaxIncluded": true },
       "description": "1ページ構成(3〜4セクション)、レスポンシブ対応、文章修正1回無料"
     },
     {
@@ -44,14 +46,8 @@
       "name": "スタンダードプラン",
       "price": "98000",
       "priceCurrency": "JPY",
+      "priceSpecification": { "@type": "PriceSpecification", "price": "98000", "priceCurrency": "JPY", "valueAddedTaxIncluded": true },
       "description": "1ページ構成(5〜8セクション)、お問い合わせフォーム付き、SEO基本対応、文章修正1回無料"
-    },
-    {
-      "@type": "Offer",
-      "name": "プレミアムプラン",
-      "price": "198000",
-      "priceCurrency": "JPY",
-      "description": "1ページ構成(9セクション以上・大規模LP)、複数ページ・特殊機能のご相談可、SEO本格対応、文章修正2回無料"
     }
   ]
 }
@@ -132,10 +128,11 @@
   }
 
   /* ===== Reveal-on-scroll (控えめな演出、prefers-reduced-motionでは即表示) ===== */
-  .reveal { opacity: 0; transform: translateY(14px); transition: opacity 0.6s ease, transform 0.6s ease; }
-  .reveal.in-view { opacity: 1; transform: translateY(0); }
-  @media (prefers-reduced-motion: reduce) { .reveal { opacity: 1; transform: none; transition: none; } }
+  .js .reveal { opacity: 0; transform: translateY(14px); transition: opacity 0.6s ease, transform 0.6s ease; }
+  .js .reveal.in-view { opacity: 1; transform: translateY(0); }
+  @media (prefers-reduced-motion: reduce) { .js .reveal { opacity: 1; transform: none; transition: none; } }
 
+  @media print { .js .reveal { opacity: 1; transform: none; } }
   /* ===== Header ===== */
   header {
     position: sticky; top: 0; z-index: 50; padding: 18px 0;
@@ -169,8 +166,8 @@
     transition: transform 0.15s ease, box-shadow 0.15s ease, border-color 0.15s ease, color 0.15s ease;
     cursor: pointer;
   }
-  .btn-primary { background: var(--accent); color: #fff8f2; }
-  .btn-primary:hover { transform: translateY(-1px); box-shadow: 0 8px 22px rgba(200, 98, 44, 0.32); }
+  .btn-primary { background: #9c4a1f; color: #fff8f2; }
+  .btn-primary:hover { transform: translateY(-1px); box-shadow: 0 8px 22px rgba(200, 98, 44, 0.32); background: #7f3c19; }
   .btn-ghost { border-color: var(--line); color: var(--ink); background: transparent; }
   .btn-ghost:hover { border-color: var(--accent-deep); color: var(--accent-deep); }
   .btn-sm { padding: 10px 18px; font-size: 0.86rem; }
@@ -244,14 +241,14 @@
   .portfolio-card { border: 1px solid var(--line); border-radius: 10px; overflow: hidden; box-shadow: var(--shadow-lg); background: var(--surface); display: flex; flex-direction: column; }
   .portfolio-card iframe { width: 100%; height: 220px; border: 0; display: block; background: var(--surface); pointer-events: none; }
   .portfolio-card .cap { padding: 16px; border-top: 1px solid var(--line); }
-  .portfolio-card .cap h4 { margin: 0 0 6px; font-size: 1.02rem; }
+  .portfolio-card .cap h3 { margin: 0 0 6px; font-size: 1.02rem; }
   .portfolio-card .cap p { margin: 0 0 14px; font-size: 0.85rem; color: var(--ink-soft); }
 
   /* ===== Pricing ===== */
   .plans { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 22px; margin-bottom: 24px; }
   .plan { background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: 34px 30px; box-shadow: var(--shadow); position: relative; }
   .plan.featured { border-color: var(--accent); box-shadow: var(--shadow-lg); }
-  .plan .badge { position: absolute; top: -12px; right: 26px; background: var(--accent); color: #fff8f2; font-size: 0.72rem; font-weight: 700; padding: 5px 14px; border-radius: 20px; }
+  .plan .badge { position: absolute; top: -12px; right: 26px; background: #9c4a1f; color: #fff8f2; font-size: 0.72rem; font-weight: 700; padding: 5px 14px; border-radius: 20px; }
   .plan h3 { margin: 0 0 4px; font-size: 1.08rem; }
   .plan .price { font-size: 2.1rem; font-weight: 800; margin: 12px 0 22px; }
   .plan .price small { font-size: 0.95rem; font-weight: 600; color: var(--ink-soft); }
@@ -288,7 +285,7 @@
   .footer-brand .logo { font-weight: 800; font-size: 1.05rem; color: var(--ink); margin-bottom: 10px; }
   .footer-brand .logo span { color: var(--accent); font-weight: 700; }
   .footer-brand p { max-width: 32ch; margin: 0; }
-  .footer-col h4 { font-size: 0.78rem; letter-spacing: 0.05em; color: var(--ink); margin: 0 0 14px; font-weight: 700; }
+  .footer-col h2 { font-size: 0.78rem; letter-spacing: 0.05em; color: var(--ink); margin: 0 0 14px; font-weight: 700; }
   .footer-col a { display: block; text-decoration: none; color: var(--ink-soft); margin-bottom: 10px; }
   .footer-col a:hover { color: var(--accent-deep); }
   .footer-bottom { border-top: 1px solid var(--line); padding-top: 20px; font-size: 0.8rem; }
@@ -302,13 +299,14 @@
   .menu-toggle[aria-expanded="true"] span:nth-child(2) { opacity: 0; }
   .menu-toggle[aria-expanded="true"] span:nth-child(3) { transform: translateY(-6px) rotate(-45deg); }
   @media (max-width: 860px) {
-    .menu-toggle { display: block; }
+    .js .menu-toggle { display: block; }
     header .wrap { flex-wrap: wrap; }
     nav#primary-nav {
-      display: none; flex-direction: column; align-items: stretch; width: 100%;
+      display: flex; flex-direction: column; align-items: stretch; width: 100%;
       order: 3; padding-top: 14px; margin-top: 14px; border-top: 1px solid var(--line); gap: 2px;
     }
-    nav#primary-nav.open { display: flex; }
+    .js nav#primary-nav { display: none; }
+    .js nav#primary-nav.open { display: flex; }
     nav#primary-nav a { padding: 12px 4px; border-bottom: 1px solid var(--line); border-radius: 0; }
     nav#primary-nav a.btn-primary { margin-top: 8px; text-align: center; justify-content: center; border-bottom: none; }
   }
@@ -349,8 +347,7 @@
       </div>
       <dl class="hero-facts">
         <div><dt class="tabular">3営業日</dt><dd>ヒアリング完了からの標準納期</dd></div>
-        <div><dt class="tabular">¥49,800〜</dt><dd>明朗な3プラン料金</dd></div>
-        <div><dt>24/365</dt><dd>AIによる問い合わせ受付</dd></div>
+        <div><dt class="tabular">¥49,800〜</dt><dd>税込・明朗な2プラン</dd></div>
       </dl>
     </div>
     <div class="hero-media reveal">
@@ -371,7 +368,7 @@
       </div>
       <div class="wide card">
         <h3>制作会社に頼むと高額・長納期になりがち</h3>
-        <p>AIを活用した制作フローにより、通常数週間かかる工程を標準3営業日に短縮。価格も明朗な3プランのみです。</p>
+        <p>AIを活用した制作フローで、ヒアリング完了から3営業日を目安に納品します。料金は明朗な2プランです。</p>
       </div>
       <div class="narrow card">
         <h3>問い合わせが電話・紹介経由に偏っている</h3>
@@ -402,20 +399,20 @@
 <section id="works">
   <div class="wrap reveal">
     <span class="label">制作事例</span>
-    <h2>実際に制作したLPサンプル</h2>
+    <h2>制作サンプル（架空）</h2>
     <p class="section-lead">業種の世界観から設計する。テンプレートの使い回しはせず、業種の素材・所作から配色とレイアウトを個別に設計します。どの業種でも同じ構成にはしません。(いずれも制作イメージのサンプルであり、架空の屋号です)</p>
     <div class="portfolio-grid">
       <div class="portfolio-card">
         <iframe src="portfolio-sample-corp.html" title="制作サンプル: コーポレートサイト" loading="lazy"></iframe>
-        <div class="cap"><h4>コーポレートサイト</h4><p>シンプルで信頼感のある構成</p><a class="btn btn-ghost" href="portfolio-sample-corp.html" target="_blank" rel="noopener">デモを見る</a></div>
+        <div class="cap"><h3>コーポレートサイト</h3><p>シンプルで信頼感のある構成</p><a class="btn btn-ghost" href="portfolio-sample-corp.html" target="_blank" rel="noopener">デモを見る</a></div>
       </div>
       <div class="portfolio-card">
         <iframe src="portfolio-sample-salon.html" title="制作サンプル: 店舗・サービスサイト" loading="lazy"></iframe>
-        <div class="cap"><h4>店舗・サービスサイト</h4><p>サービス内容をわかりやすく訴求</p><a class="btn btn-ghost" href="portfolio-sample-salon.html" target="_blank" rel="noopener">デモを見る</a></div>
+        <div class="cap"><h3>店舗・サービスサイト</h3><p>サービス内容をわかりやすく訴求</p><a class="btn btn-ghost" href="portfolio-sample-salon.html" target="_blank" rel="noopener">デモを見る</a></div>
       </div>
       <div class="portfolio-card">
         <iframe src="portfolio-sample-recruit.html" title="制作サンプル: 採用サイト" loading="lazy"></iframe>
-        <div class="cap"><h4>採用サイト</h4><p>採用に特化した情報設計</p><a class="btn btn-ghost" href="portfolio-sample-recruit.html" target="_blank" rel="noopener">デモを見る</a></div>
+        <div class="cap"><h3>採用サイト</h3><p>採用に特化した情報設計</p><a class="btn btn-ghost" href="portfolio-sample-recruit.html" target="_blank" rel="noopener">デモを見る</a></div>
       </div>
     </div>
     <p class="fine" style="margin-top:18px;">整理収納コンサルティング業を想定したLPサンプルは<a href="portfolio-sample-sumu.html" target="_blank" rel="noopener">こちら</a>(架空の屋号です)。</p>
@@ -425,56 +422,39 @@
 <section id="plans" class="alt">
   <div class="wrap reveal">
     <span class="label">サービス内容</span>
-    <h2>目的やご予算に合わせて選べる、3つのプランをご用意しています。</h2>
+    <h2>目的に合わせて選べる、2つのプランです。</h2>
     <div class="plans">
       <div class="plan">
         <h3>ライトプラン</h3>
-        <p class="fine">まずは基本的なWebサイトを持ちたい方に</p>
+        <p class="fine">まずは1ページのLPを持ちたい方に</p>
         <ul>
-          <li>コーポレートサイト(5ページまで)</li>
-          <li>スマートフォン対応</li>
-          <li>お問い合わせフォーム</li>
-          <li>基本的なSEO設定</li>
-          <li>公開サポート</li>
+          <li>1ページ構成(3〜4セクション)</li>
+          <li>レスポンシブ対応(スマートフォン表示)</li>
+          <li>文章修正1回無料</li>
         </ul>
-        <a class="btn btn-ghost" href="#price">詳細を見る</a>
+        <a class="btn btn-ghost" href="#price">料金を見る</a>
       </div>
       <div class="plan">
         <h3>スタンダードプラン</h3>
-        <p class="fine">集客や信頼性を高めたい方に</p>
+        <p class="fine">Webからのお問い合わせを受けたい方に</p>
         <ul>
-          <li>コーポレートサイト(10ページまで)</li>
-          <li>スマートフォン対応</li>
-          <li>お問い合わせフォーム</li>
-          <li>基本的なSEO設定</li>
-          <li>ブログ機能(お知らせ)</li>
-          <li>公開サポート</li>
+          <li>1ページ構成(5〜8セクション)</li>
+          <li>お問い合わせフォーム付き</li>
+          <li>SEO基本対応</li>
+          <li>文章修正1回無料</li>
         </ul>
-        <a class="btn btn-ghost" href="#price">詳細を見る</a>
-      </div>
-      <div class="plan">
-        <h3>プレミアムプラン</h3>
-        <p class="fine">事業の成長に合わせて本格運用したい方に</p>
-        <ul>
-          <li>コーポレートサイト(15ページまで)</li>
-          <li>スマートフォン対応</li>
-          <li>お問い合わせフォーム</li>
-          <li>基本的なSEO設定</li>
-          <li>ブログ機能(お知らせ)</li>
-          <li>追加機能の実装サポート</li>
-          <li>公開サポート</li>
-        </ul>
-        <a class="btn btn-ghost" href="#price">詳細を見る</a>
+        <a class="btn btn-ghost" href="#price">料金を見る</a>
       </div>
     </div>
+    <p class="fine">複数ページ・特殊機能などのご要望は、個別にお見積りします。</p>
   </div>
 </section>
 
 <section id="price" class="alt">
   <div class="wrap reveal">
     <span class="label">料金プラン</span>
-    <h2>シンプルな3プラン</h2>
-    <p class="section-lead">追加費用が発生しない、明朗な価格です。</p>
+    <h2>シンプルな2プラン</h2>
+    <p class="section-lead">表示価格はすべて税込です。</p>
     <div class="plans">
       <div class="plan">
         <h3>ライト</h3>
@@ -494,16 +474,6 @@
           <li>お問い合わせフォーム付き</li>
           <li>SEO基本対応</li>
           <li>文章修正1回無料</li>
-        </ul>
-      </div>
-      <div class="plan">
-        <h3>プレミアム</h3>
-        <div class="price tabular">¥198,000〜</div>
-        <ul>
-          <li>1ページ構成(9セクション以上・大規模LP)</li>
-          <li>複数ページ・特殊機能のご相談可</li>
-          <li>SEO本格対応</li>
-          <li>文章修正2回無料</li>
         </ul>
       </div>
     </div>
@@ -529,7 +499,7 @@
       </details>
       <details class="faq-item">
         <summary>ページ数を増やしたい・特殊な機能(EC・会員機能等)が必要です。</summary>
-        <p>料金表にある3プラン以外の内容は個別お見積りとなります。まずはご要望をお聞かせください。</p>
+        <p>料金表の2プラン以外の内容は個別お見積りとなります。まずはご要望をお聞かせください。</p>
       </details>
       <details class="faq-item">
         <summary>写真やロゴが用意できません。</summary>
@@ -566,7 +536,7 @@
       <p>中小企業・個人事業主のための、必要十分なWebサイト・LP制作サービス。</p>
     </div>
     <div class="footer-col">
-      <h4>サービス</h4>
+      <h2>サービス</h2>
       <a href="#plans">サービスの特徴</a>
       <a href="#price">料金プラン</a>
       <a href="#flow">制作の流れ</a>
@@ -574,13 +544,13 @@
       <a href="#faq">よくある質問</a>
     </div>
     <div class="footer-col">
-      <h4>会社情報</h4>
+      <h2>会社情報</h2>
       <a href="/company.html">会社概要</a>
       <a href="/businesses.html">事業一覧</a>
       <a href="/company-en.html">English</a>
     </div>
     <div class="footer-col">
-      <h4>その他</h4>
+      <h2>その他</h2>
       <a href="/privacy.html">プライバシーポリシー</a>
       <a href="/terms.html">利用規約</a>
       <a href="/tokushoho.html">特定商取引法に基づく表記</a>
@@ -591,6 +561,7 @@
 </footer>
 
 <script>
+window.addEventListener("error", function () { document.querySelectorAll(".reveal").forEach(function (el) { el.classList.add("in-view"); }); });
 (function () {
   var header = document.getElementById('site-header');
   var onScroll = function () {
@@ -611,6 +582,7 @@
       });
     }, { threshold: 0.12 });
     document.querySelectorAll('.reveal').forEach(function (el) { observer.observe(el); });
+    setTimeout(function () { document.querySelectorAll('.reveal').forEach(function (el) { el.classList.add('in-view'); }); }, 2500);
   } else {
     document.querySelectorAll('.reveal').forEach(function (el) { el.classList.add('in-view'); });
   }
