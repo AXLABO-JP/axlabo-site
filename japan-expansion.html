@@ -129,8 +129,8 @@
   .feature-card h3{font-size:13px;font-weight:700;margin:0 0 5px;}
   .feature-card p{font-size:11.5px;color:var(--ink-soft);margin:0;line-height:1.7;}
 
-  .flow-rail{display:grid;grid-template-columns:repeat(7,1fr);gap:0;position:relative;}
-  .flow-rail::before{content:"";position:absolute;top:19px;left:calc(7.1% + 2px);right:calc(7.1% + 2px);height:1px;background:var(--hair);}
+  .flow-rail{display:grid;grid-template-columns:repeat(3,1fr);gap:0;position:relative;}
+  .flow-rail::before{content:"";position:absolute;top:19px;left:calc(16.7% + 2px);right:calc(16.7% + 2px);height:1px;background:var(--hair);}
   .flow-step{text-align:center;padding:0 5px;position:relative;}
   .flow-step .num{width:36px;height:36px;border-radius:50%;background:var(--card);border:1.5px solid var(--blue);color:var(--blue);font-weight:800;font-size:12.5px;display:flex;align-items:center;justify-content:center;margin:0 auto 9px;position:relative;z-index:1;}
   .flow-step h3{font-size:11px;font-weight:700;margin:0 0 3px;}
@@ -298,8 +298,12 @@
 
   <section class="band alt" id="flow">
     <div class="wrap">
-      <div class="head-block" data-reveal><h2>ご利用の流れ</h2></div>
-      <p class="price-note" data-reveal>ご相談内容を確認のうえ、進め方と納期を個別にご案内します。</p>
+      <div class="head-block" data-reveal><h2>ご利用の流れ（Product A）</h2></div>
+      <div class="flow-rail" data-reveal>
+        <div class="flow-step"><div class="num">1</div><h3>ヒアリング</h3><p>目的・事業内容をうかがいます</p></div>
+        <div class="flow-step"><div class="num">2</div><h3>論点整理</h3><p>法人形態・住所・手続きの論点を整理</p></div>
+        <div class="flow-step"><div class="num">3</div><h3>納品</h3><p>必要書類チェックリストと専門家への確認事項一覧をお渡しします</p></div>
+      </div>
     </div>
   </section>
 
