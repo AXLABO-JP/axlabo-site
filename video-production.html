@@ -89,7 +89,7 @@
   .navlinks a{text-decoration:none;white-space:nowrap;}
   .navcta{display:flex;gap:8px;flex:none;}
   .btn{appearance:none;border:none;cursor:pointer;background:var(--green);color:#0E1116;font-weight:700;font-size:13px;padding:10px 16px;border-radius:8px;text-decoration:none;display:inline-flex;align-items:center;gap:6px;white-space:nowrap;}
-  .btn:hover{background:var(--green2);}
+  .btn:hover{background:color-mix(in srgb, var(--green), #FFFFFF 18%);}
   .btn-ghost{background:transparent;color:var(--ink);border:1px solid var(--hair);font-weight:600;}
   .menu-toggle{display:none;background:none;border:1px solid var(--hair);border-radius:8px;padding:8px 10px;cursor:pointer;flex:none;}
   .menu-toggle span{display:block;width:18px;height:2px;background:var(--ink);margin:4px 0;transition:transform .2s,opacity .2s;}
@@ -241,6 +241,9 @@
     .wrap,.hero-copy,.badge-row{padding-left:20px;padding-right:20px;}
     .final-cta{padding:28px 20px;}
   }
+/* AA是正（配色マスター派生色・中立色）2026-10-01 */
+@media (prefers-color-scheme: dark){ :root:not([data-theme="light"]) .hero h1{color:var(--ink);} :root:not([data-theme="light"]) .hero-body{color:var(--ink-soft);} }
+:root[data-theme="dark"] .hero h1{color:var(--ink);} :root[data-theme="dark"] .hero-body{color:var(--ink-soft);}
 </style>
 </head>
 <body>

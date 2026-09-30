@@ -60,18 +60,18 @@
     --hair:#DDE1E7; --card-line:#DDE1E7;
     --shadow:0 1px 2px rgba(11,19,43,.05), 0 12px 28px -14px rgba(11,19,43,.16);
     --radius:14px; --maxw:1160px; --footer-bg:#0b132b; --footer-ink:#E4E7EC; --footer-soft:#B4AEA6;
-  }
+  --accent-text:#5F4A36;}
   @media (prefers-color-scheme: dark){
     :root{ --bg:#14171C; --alt:#14171C; --card:#1C2027; --ink:#E4E7EC; --ink-soft:#B4AEA6;
       --hair:#333A44; --card-line:#333A44; --orange:#BE936B;
-      --shadow:0 1px 2px rgba(0,0,0,.4), 0 12px 28px -14px rgba(0,0,0,.65); }
+      --shadow:0 1px 2px rgba(0,0,0,.4), 0 12px 28px -14px rgba(0,0,0,.65); --accent-text:var(--orange);}
   }
   :root[data-theme="dark"]{ --bg:#14171C; --alt:#14171C; --card:#1C2027; --ink:#E4E7EC; --ink-soft:#B4AEA6;
     --hair:#333A44; --card-line:#333A44; --orange:#BE936B;
-    --shadow:0 1px 2px rgba(0,0,0,.4), 0 12px 28px -14px rgba(0,0,0,.65); }
+    --shadow:0 1px 2px rgba(0,0,0,.4), 0 12px 28px -14px rgba(0,0,0,.65); --accent-text:var(--orange);}
   :root[data-theme="light"]{ --bg:#FAF7F2; --alt:#EFE8DF; --card:#FFFFFF; --ink:#1B2330; --ink-soft:#5C6675;
     --hair:#DDE1E7; --card-line:#DDE1E7; --orange:#BE936B;
-    --shadow:0 1px 2px rgba(11,19,43,.05), 0 12px 28px -14px rgba(11,19,43,.16); }
+    --shadow:0 1px 2px rgba(11,19,43,.05), 0 12px 28px -14px rgba(11,19,43,.16); --accent-text:#5F4A36;}
 
   *{box-sizing:border-box;}
   body{margin:0;background:var(--bg);color:var(--ink);font-family:"Hiragino Sans","Noto Sans JP",-apple-system,sans-serif;line-height:1.75;overflow-x:hidden;}
@@ -87,7 +87,7 @@
   .navlinks a{text-decoration:none;white-space:nowrap;}
   .navcta{display:flex;gap:8px;flex:none;}
   .btn{appearance:none;border:none;cursor:pointer;background:var(--orange);color:#0E1116;font-weight:700;font-size:13px;padding:10px 16px;border-radius:8px;text-decoration:none;display:inline-flex;align-items:center;gap:6px;white-space:nowrap;}
-  .btn:hover{background:var(--orange2);}
+  .btn:hover{background:color-mix(in srgb, var(--orange), #FFFFFF 18%);}
   .btn-ghost{background:transparent;color:var(--ink);border:1px solid var(--hair);font-weight:600;}
   .menu-toggle{display:none;background:none;border:1px solid var(--hair);border-radius:8px;padding:8px 10px;cursor:pointer;flex:none;}
   .menu-toggle span{display:block;width:18px;height:2px;background:var(--ink);margin:4px 0;transition:transform .2s,opacity .2s;}
@@ -101,9 +101,9 @@
 
   .hero{padding:40px 0 8px;}
   .hero .wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:36px;align-items:center;}
-  .eyebrow{display:inline-block;font-size:11px;font-weight:800;letter-spacing:.03em;color:var(--orange);background:color-mix(in srgb, var(--orange) 12%, transparent);padding:5px 11px;border-radius:99px;margin-bottom:12px;}
+  .eyebrow{display:inline-block;font-size:11px;font-weight:800;letter-spacing:.03em;color:var(--accent-text);background:color-mix(in srgb, var(--orange) 12%, transparent);padding:5px 11px;border-radius:99px;margin-bottom:12px;}
   .hero h1{font-size:clamp(25px,3.5vw,36px);font-weight:800;line-height:1.5;margin:0 0 10px;text-wrap:balance;}
-  .hero h1 em{font-style:normal;color:var(--orange);}
+  .hero h1 em{font-style:normal;color:var(--accent-text);}
   .hero-body{font-size:13.5px;color:var(--ink-soft);max-width:46ch;margin:0 0 20px;}
   .hero-actions{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:20px;}
   .badge-row{display:flex;gap:8px;flex-wrap:wrap;}
@@ -153,7 +153,7 @@
   .flow-rail{display:grid;grid-template-columns:repeat(6,1fr);gap:0;position:relative;}
   .flow-rail::before{content:"";position:absolute;top:19px;left:calc(8% + 2px);right:calc(8% + 2px);height:1px;background:var(--hair);}
   .flow-step{text-align:center;padding:0 6px;position:relative;}
-  .flow-step .num{width:38px;height:38px;border-radius:50%;background:var(--card);border:1.5px solid var(--orange);color:var(--orange);font-weight:800;font-size:13px;display:flex;align-items:center;justify-content:center;margin:0 auto 10px;position:relative;z-index:1;}
+  .flow-step .num{width:38px;height:38px;border-radius:50%;background:var(--card);border:1.5px solid var(--orange);color:var(--accent-text);font-weight:800;font-size:13px;display:flex;align-items:center;justify-content:center;margin:0 auto 10px;position:relative;z-index:1;}
   .flow-step h3{font-size:11.5px;font-weight:700;margin:0 0 3px;}
   .flow-step p{font-size:10px;color:var(--ink-soft);margin:0;}
 
@@ -181,7 +181,7 @@
   .faq{max-width:800px;margin:0 auto;display:flex;flex-direction:column;gap:10px;}
   .faq-item{background:var(--card);border:1px solid var(--card-line);border-radius:10px;overflow:hidden;}
   .faq-q{width:100%;text-align:left;background:none;border:none;cursor:pointer;padding:15px 18px;font-size:13px;font-weight:700;color:var(--ink);display:flex;justify-content:space-between;align-items:center;gap:12px;}
-  .faq-q .plus{width:18px;height:18px;flex:none;border-radius:50%;border:1px solid var(--hair);display:flex;align-items:center;justify-content:center;color:var(--orange);font-size:13px;transition:transform .2s;}
+  .faq-q .plus{width:18px;height:18px;flex:none;border-radius:50%;border:1px solid var(--hair);display:flex;align-items:center;justify-content:center;color:var(--accent-text);font-size:13px;transition:transform .2s;}
   .faq-item[open] .plus{transform:rotate(45deg);}
   .faq-a{padding:0 18px 15px;font-size:12px;color:var(--ink-soft);}
 
@@ -356,7 +356,7 @@
           <div class="note">税別・2時間/30枚(¥30,000)〜1日(¥80,000)を目安</div>
           <div class="trial-box">
             <span>まずは気軽に始めたい方へ: <b>お試し ¥19,800</b>(1時間/15枚・市内)</span>
-            <a class="btn btn-ghost" data-contact-cta href="#" style="color:var(--orange);border-color:var(--orange);">お試しを相談する</a>
+            <a class="btn btn-ghost" data-contact-cta href="#" style="color:var(--accent-text);border-color:var(--orange);">お試しを相談する</a>
           </div>
           <p class="price-note">「1日」は撮影6時間まで(休憩を除く)・納品90枚です(これを超える場合は別途お見積り)。通常の納期は、撮影日から10営業日以内のデータ納品です。雨天など屋外撮影が適切にできない場合は、日程を無料で変更できます(1回まで)。機材不良やデータ破損など当社側の原因による場合は、撮り直しを行います。仕上がりのご好みのみを理由とした全額返金は行っておりません。修正回数・出張エリアの区分は現在調整中のため、詳細はご相談時にご案内します。市内以外への出張は別途費用が発生する場合があります。</p>
         </div>
