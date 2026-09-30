@@ -63,23 +63,23 @@
 <style>
   :root{
     --bg:#fff8f2; --alt:#f7f1e9; --card:#ffffff; --ink:#1c1a17; --ink-soft:#6b6459;
-    --navy:#0b1d34; --navy2:#132a4d; --orange:#e4551a; --orange2:#c2440f;
+    --navy:#0b1d34; --navy2:#132a4d; --orange:#A43D13; --orange2:#c2440f;
     --blue:#1e88e5; --green:#2e7d32; --purple:#8e44ad; --amber:#f6a623; --teal:#00acc1;
     --hair:#ece4d8; --card-line:#ece4d8;
     --shadow:0 1px 2px rgba(28,26,23,.05), 0 12px 28px -14px rgba(28,26,23,.16);
-    --radius:14px; --maxw:1160px; --footer-bg:#0b1d34; --footer-ink:#eef2f8; --footer-soft:#93a3bd;
+    --radius:14px; --maxw:1160px; --footer-bg:#0b1d34; --footer-ink:#eef2f8; --footer-soft:#93a3bd;--orange-text:#A43D13;--on-hover:#FFFFFF;
   }
   @media (prefers-color-scheme: dark){
     :root{ --bg:#181410; --alt:#1e1912; --card:#241d16; --ink:#f3ede4; --ink-soft:#b3a692;
       --hair:#332a20; --card-line:#332a20; --orange:#ff7a3d;
-      --shadow:0 1px 2px rgba(0,0,0,.4), 0 12px 28px -14px rgba(0,0,0,.65); }
+      --shadow:0 1px 2px rgba(0,0,0,.4), 0 12px 28px -14px rgba(0,0,0,.65);--orange-text:#A43D13;--orange2:#FF9C4E;--on-hover:#0E1116; }
   }
   :root[data-theme="dark"]{ --bg:#181410; --alt:#1e1912; --card:#241d16; --ink:#f3ede4; --ink-soft:#b3a692;
     --hair:#332a20; --card-line:#332a20; --orange:#ff7a3d;
-    --shadow:0 1px 2px rgba(0,0,0,.4), 0 12px 28px -14px rgba(0,0,0,.65); }
+    --shadow:0 1px 2px rgba(0,0,0,.4), 0 12px 28px -14px rgba(0,0,0,.65);--orange-text:#A43D13;--orange2:#FF9C4E;--on-hover:#0E1116; }
   :root[data-theme="light"]{ --bg:#fff8f2; --alt:#f7f1e9; --card:#ffffff; --ink:#1c1a17; --ink-soft:#6b6459;
-    --hair:#ece4d8; --card-line:#ece4d8; --orange:#e4551a;
-    --shadow:0 1px 2px rgba(28,26,23,.05), 0 12px 28px -14px rgba(28,26,23,.16); }
+    --hair:#ece4d8; --card-line:#ece4d8; --orange:#A43D13;
+    --shadow:0 1px 2px rgba(28,26,23,.05), 0 12px 28px -14px rgba(28,26,23,.16);--orange-text:#A43D13;--on-hover:#FFFFFF; }
 
   *{box-sizing:border-box;}
   body{margin:0;background:var(--bg);color:var(--ink);font-family:"Hiragino Sans","Noto Sans JP",-apple-system,sans-serif;line-height:1.75;overflow-x:hidden;}
@@ -112,7 +112,7 @@
   :root[data-theme="dark"] .hero-scene, @media (prefers-color-scheme:dark){ .hero-scene{background:linear-gradient(180deg,#1c2e3d 0%,#2a2a24 55%,#241d16 100%);} }
   .hero-scene svg{position:absolute;inset:0;width:100%;height:100%;}
   .hero-copy{position:relative;z-index:2;padding:36px 28px 8px;max-width:var(--maxw);margin:0 auto;}
-  .eyebrow{display:inline-block;font-size:11px;font-weight:800;letter-spacing:.03em;color:var(--orange);background:rgba(255,255,255,.85);padding:5px 11px;border-radius:99px;margin-bottom:12px;}
+  .eyebrow{display:inline-block;font-size:11px;font-weight:800;letter-spacing:.03em;color:var(--orange-text);background:rgba(255,255,255,.85);padding:5px 11px;border-radius:99px;margin-bottom:12px;}
   .hero h1{font-size:clamp(24px,3.6vw,34px);font-weight:800;line-height:1.5;margin:0 0 10px;text-wrap:balance;color:#12233a;text-shadow:0 1px 14px rgba(255,255,255,.5);}
   .hero-body{font-size:13.5px;color:#243549;max-width:44ch;margin:0 0 18px;background:rgba(255,255,255,.55);padding:10px 14px;border-radius:10px;backdrop-filter:blur(2px);}
   .hero-actions{display:flex;gap:10px;flex-wrap:wrap;padding-bottom:22px;}
@@ -240,6 +240,10 @@
     .final-cta{padding:28px 20px;}
     .biz-panel{padding:22px 18px;}
   }
+/* AA是正（配色マスター派生色・中立色）2026-10-01 */
+@media (prefers-color-scheme: dark){ :root:not([data-theme="light"]) .btn:not(.btn-ghost){color:#0E1116;} }
+:root[data-theme="dark"] .btn:not(.btn-ghost){color:#0E1116;}
+.btn.btn-ghost:hover{color:var(--on-hover);}
 </style>
 </head>
 <body>
@@ -298,7 +302,7 @@
       </svg>
     </div>
     <div class="hero-copy">
-      <span class="eyebrow">BIZ-007 Explore Japan</span>
+      <span class="eyebrow">Explore Japan</span>
       <h1>日本の魅力を、もっと身近に。<br>旅も、暮らしも、ビジネスも。</h1>
       <p class="hero-body">観光・文化・ビジネス・生活情報まで、日本をもっと楽しむための情報をわかりやすくお届けします。旅行の予約・手配は行わない、情報メディアです。</p>
       <div class="hero-actions">

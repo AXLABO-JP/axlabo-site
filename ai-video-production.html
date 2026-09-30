@@ -54,7 +54,7 @@
 <style>
   :root{--on-accent:#0E1116;
     --bg:#FAFAF8; --alt:#F1F1F8; --card:#FFFFFF; --ink:#24272D; --ink-soft:#5C6675;
-    --purple:#E27355; --purple2:#4620c9; --navy:var(--main); --blue:#2563eb;
+    --purple:#E27355; --purple2:#A3533D; --navy:var(--main); --blue:var(--main);
     --hair:#DDE1E7; --card-line:#DDE1E7;
     --shadow:0 1px 2px rgba(11,29,42,.05), 0 12px 28px -14px rgba(11,29,42,.14);
     --radius:12px; --maxw:1200px; --footer-bg:#2B2E5A; --footer-ink:#E4E7EC; --footer-soft:#B4AEA6;
@@ -103,7 +103,7 @@
   .hero h1{font-size:clamp(24px,3.2vw,34px);font-weight:800;line-height:1.5;margin:0 0 10px;text-wrap:balance;}
   .hero-body{font-size:13px;color:var(--ink-soft);max-width:42ch;margin:0 0 18px;}
   .hero-actions{display:flex;gap:10px;flex-wrap:wrap;}
-  .hero-visual{aspect-ratio:4/3;border-radius:14px;overflow:hidden;position:relative;background:linear-gradient(150deg,#1a1330,#0b1d2a);box-shadow:var(--shadow);}
+  .hero-visual{aspect-ratio:4/3;border-radius:14px;overflow:hidden;position:relative;background:linear-gradient(150deg,#20232A,#17191E);box-shadow:var(--shadow);}
   .hero-visual svg{width:100%;height:100%;}
   .hero-side{background:var(--navy);border-radius:14px;padding:20px;color:#fff;box-shadow:var(--shadow);}
   .hero-side h3{font-size:12.5px;font-weight:800;margin:0 0 12px;}
@@ -160,11 +160,11 @@
   .sample-card{border-radius:12px;overflow:hidden;border:1px solid var(--card-line);box-shadow:var(--shadow);}
   .sample-visual{aspect-ratio:4/3;display:flex;align-items:center;justify-content:center;color:#fff;position:relative;}
   .sample-visual svg{width:30%;height:30%;}
-  .sample-card:nth-child(1) .sample-visual{background:linear-gradient(135deg,var(--purple),#2563eb);}
-  .sample-card:nth-child(2) .sample-visual{background:linear-gradient(135deg,#0b1d2a,#2c4a76);}
-  .sample-card:nth-child(3) .sample-visual{background:linear-gradient(135deg,#7c3aed,#a78bfa);}
-  .sample-card:nth-child(4) .sample-visual{background:linear-gradient(135deg,#2563eb,#38bdf8);}
-  .sample-card:nth-child(5) .sample-visual{background:linear-gradient(135deg,#0b1d2a,#582cf5);}
+  .sample-card:nth-child(1) .sample-visual{background:linear-gradient(135deg,var(--purple),var(--main));}
+  .sample-card:nth-child(2) .sample-visual{background:linear-gradient(135deg,#20232A,var(--main-deep));}
+  .sample-card:nth-child(3) .sample-visual{background:linear-gradient(135deg,var(--main),#6E77E8);}
+  .sample-card:nth-child(4) .sample-visual{background:linear-gradient(135deg,var(--main-deep),var(--main));}
+  .sample-card:nth-child(5) .sample-visual{background:linear-gradient(135deg,#20232A,var(--main));}
   .sample-tag{position:absolute;top:8px;left:8px;background:rgba(255,255,255,.92);color:var(--navy);font-size:8.5px;font-weight:700;padding:3px 7px;border-radius:99px;}
   .sample-body{padding:10px;background:var(--card);}
   .sample-body h3{font-size:11.5px;font-weight:700;margin:0;}
@@ -261,15 +261,15 @@
       <div data-reveal>
         <div class="hero-visual">
           <svg viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice">
-            <rect width="400" height="300" fill="#0f0a24"/>
-            <rect x="60" y="60" width="280" height="180" rx="8" fill="#1a1330" stroke="#582cf5" stroke-width="2"/>
-            <rect x="76" y="76" width="248" height="120" rx="4" fill="#0b1d2a"/>
-            <circle cx="200" cy="136" r="26" fill="none" stroke="#582cf5" stroke-width="2"/>
-            <path d="M192 124l20 12-20 12z" fill="#582cf5"/>
-            <rect x="76" y="204" width="180" height="6" rx="3" fill="#582cf5" opacity=".6"/>
-            <rect x="76" y="204" width="90" height="6" rx="3" fill="#582cf5"/>
-            <g stroke="#8b6cf7" stroke-width="1.5" opacity=".5"><path d="M340 100l40-20M340 140l45 0M340 180l40 20"/></g>
-            <g fill="#8b6cf7" opacity=".7"><circle cx="380" cy="80" r="3"/><circle cx="385" cy="140" r="3"/><circle cx="380" cy="200" r="3"/></g>
+            <rect width="400" height="300" fill="#17191E"/>
+            <rect x="60" y="60" width="280" height="180" rx="8" fill="#20232A" stroke="#565DB5" stroke-width="2"/>
+            <rect x="76" y="76" width="248" height="120" rx="4" fill="#17191E"/>
+            <circle cx="200" cy="136" r="26" fill="none" stroke="#565DB5" stroke-width="2"/>
+            <path d="M192 124l20 12-20 12z" fill="#565DB5"/>
+            <rect x="76" y="204" width="180" height="6" rx="3" fill="#565DB5" opacity=".6"/>
+            <rect x="76" y="204" width="90" height="6" rx="3" fill="#565DB5"/>
+            <g stroke="#6E77E8" stroke-width="1.5" opacity=".5"><path d="M340 100l40-20M340 140l45 0M340 180l40 20"/></g>
+            <g fill="#6E77E8" opacity=".7"><circle cx="380" cy="80" r="3"/><circle cx="385" cy="140" r="3"/><circle cx="380" cy="200" r="3"/></g>
           </svg>
         </div>
         <div class="hero-side">

@@ -15,7 +15,7 @@
   img{max-width:100%;display:block;}
   .wrap{max-width:1120px;margin:0 auto;padding:0 28px;}
   .demo-flag{background:var(--ink);color:var(--bg);text-align:center;font-size:12px;padding:8px 16px;}
-  .demo-flag b{color:var(--accent2);}
+  .demo-flag b{color:inherit;}
 
   header{position:sticky;top:0;z-index:10;background:color-mix(in srgb, var(--bg) 90%, transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--hair);}
   .nav{display:flex;align-items:center;justify-content:space-between;padding:14px 28px;max-width:1120px;margin:0 auto;}
@@ -60,6 +60,9 @@
     .feat-grid{grid-template-columns:repeat(2,1fr);}
     .hero{min-height:400px;}
   }
+/* AA是正（配色マスター派生色・中立色）2026-10-01 */
+@media (prefers-color-scheme: dark){ :root:not([data-theme="light"]) .btn{color:#0E1116;} }
+:root[data-theme="dark"] .btn{color:#0E1116;}
 </style>
 
 <div class="demo-flag"><b>制作サンプル</b> — AXLABO自身の採用サイト実装例です。掲載メンバーの発言は演出用のサンプルです。</div>

@@ -62,41 +62,41 @@
 </script>
 <style>
   :root {
-    --bg: #f5f3ef;
-    --surface: #ffffff;
-    --surface-alt: #eeece5;
-    --ink: #161311;
-    --ink-soft: #5a5650;
-    --accent: #c8622c;
-    --accent-deep: #9c4a1f;
-    --accent-soft: #f3e2d5;
-    --line: #e1ddd3;
-    --focus: #2b6cb0;
+    --bg:#FFFFFF;
+    --surface:#FFFFFF;
+    --surface-alt:#F3F7FC;
+    --ink:#1B2330;
+    --ink-soft:#5C6675;
+    --accent:#2563A6;
+    --accent-deep:#1B4778;
+    --accent-soft:#E9EFF6;
+    --line:#DDE1E7;
+    --focus:#2563A6;
     --shadow: 0 1px 2px rgba(22, 19, 17, 0.06);
-    --shadow-lg: 0 12px 32px rgba(22, 19, 17, 0.1);
+    --shadow-lg: 0 12px 32px rgba(22, 19, 17, 0.1);--cta:#E58A3A;
   }
   @media (prefers-color-scheme: dark) {
     :root {
-      --bg: #0d1115; --surface: #161b20; --surface-alt: #1d2329;
-      --ink: #f2efe9; --ink-soft: #a3a09a;
-      --accent: #e59660; --accent-deep: #f2b184; --accent-soft: #2a2019;
-      --line: #262c32; --focus: #7cb3f0;
-      --shadow: 0 1px 2px rgba(0, 0, 0, 0.4); --shadow-lg: 0 16px 40px rgba(0, 0, 0, 0.45);
+      --bg:#14171C; --surface:#1C2027; --surface-alt:#1C2027;
+      --ink:#E4E7EC; --ink-soft:#B4AEA6;
+      --accent:#3B9EFF; --accent-deep:#46BCFF; --accent-soft:#123253;
+      --line:#333A44; --focus:#46BCFF;
+      --shadow: 0 1px 2px rgba(0, 0, 0, 0.4); --shadow-lg: 0 16px 40px rgba(0, 0, 0, 0.45);--cta:#E58A3A;
     }
   }
   :root[data-theme="dark"] {
-    --bg: #0d1115; --surface: #161b20; --surface-alt: #1d2329;
-    --ink: #f2efe9; --ink-soft: #a3a09a;
-    --accent: #e59660; --accent-deep: #f2b184; --accent-soft: #2a2019;
-    --line: #262c32; --focus: #7cb3f0;
-    --shadow: 0 1px 2px rgba(0, 0, 0, 0.4); --shadow-lg: 0 16px 40px rgba(0, 0, 0, 0.45);
+    --bg:#14171C; --surface:#1C2027; --surface-alt:#1C2027;
+    --ink:#E4E7EC; --ink-soft:#B4AEA6;
+    --accent:#3B9EFF; --accent-deep:#46BCFF; --accent-soft:#123253;
+    --line:#333A44; --focus:#46BCFF;
+    --shadow: 0 1px 2px rgba(0, 0, 0, 0.4); --shadow-lg: 0 16px 40px rgba(0, 0, 0, 0.45);--cta:#E58A3A;
   }
   :root[data-theme="light"] {
-    --bg: #f5f3ef; --surface: #ffffff; --surface-alt: #eeece5;
-    --ink: #161311; --ink-soft: #5a5650;
-    --accent: #c8622c; --accent-deep: #9c4a1f; --accent-soft: #f3e2d5;
-    --line: #e1ddd3; --focus: #2b6cb0;
-    --shadow: 0 1px 2px rgba(22, 19, 17, 0.06); --shadow-lg: 0 12px 32px rgba(22, 19, 17, 0.1);
+    --bg:#FFFFFF; --surface:#FFFFFF; --surface-alt:#F3F7FC;
+    --ink:#1B2330; --ink-soft:#5C6675;
+    --accent:#2563A6; --accent-deep:#1B4778; --accent-soft:#E9EFF6;
+    --line:#DDE1E7; --focus:#2563A6;
+    --shadow: 0 1px 2px rgba(22, 19, 17, 0.06); --shadow-lg: 0 12px 32px rgba(22, 19, 17, 0.1);--cta:#E58A3A;
   }
 
   * { box-sizing: border-box; }
@@ -164,8 +164,8 @@
     transition: color 0.15s ease, background 0.15s ease;
   }
   nav a:hover { color: var(--accent-deep); background: var(--surface-alt); }
-  nav a.btn-primary { color: #fff8f2; }
-  nav a.btn-primary:hover { color: #fff8f2; }
+  nav a.btn-primary { color: #0E1116; }
+  nav a.btn-primary:hover { color: #0E1116; }
 
   /* ===== Buttons ===== */
   .btn {
@@ -174,8 +174,8 @@
     transition: transform 0.15s ease, box-shadow 0.15s ease, border-color 0.15s ease, color 0.15s ease;
     cursor: pointer;
   }
-  .btn-primary { background: #9c4a1f; color: #fff8f2; }
-  .btn-primary:hover { transform: translateY(-1px); box-shadow: 0 8px 22px rgba(200, 98, 44, 0.32); background: #7f3c19; }
+  .btn-primary { background: var(--cta); color: #0E1116; }
+  .btn-primary:hover { transform: translateY(-1px); box-shadow: 0 8px 22px rgba(229, 138, 58, 0.32); background: color-mix(in srgb, var(--cta), #FFFFFF 18%); }
   .btn-ghost { border-color: var(--line); color: var(--ink); background: transparent; }
   .btn-ghost:hover { border-color: var(--accent-deep); color: var(--accent-deep); }
   .btn-sm { padding: 10px 18px; font-size: 0.86rem; }
@@ -256,7 +256,7 @@
   .plans { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 22px; margin-bottom: 24px; }
   .plan { background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: 34px 30px; box-shadow: var(--shadow); position: relative; }
   .plan.featured { border-color: var(--accent); box-shadow: var(--shadow-lg); }
-  .plan .badge { position: absolute; top: -12px; right: 26px; background: #9c4a1f; color: #fff8f2; font-size: 0.72rem; font-weight: 700; padding: 5px 14px; border-radius: 20px; }
+  .plan .badge { position: absolute; top: -12px; right: 26px; background: var(--accent-deep); color: #FFFFFF; font-size: 0.72rem; font-weight: 700; padding: 5px 14px; border-radius: 20px; }
   .plan h3 { margin: 0 0 4px; font-size: 1.08rem; }
   .plan .price { font-size: 2.1rem; font-weight: 800; margin: 12px 0 22px; }
   .plan .price small { font-size: 0.95rem; font-weight: 600; color: var(--ink-soft); }
@@ -318,6 +318,9 @@
     nav#primary-nav a { padding: 12px 4px; border-bottom: 1px solid var(--line); border-radius: 0; }
     nav#primary-nav a.btn-primary { margin-top: 8px; text-align: center; justify-content: center; border-bottom: none; }
   }
+/* AA是正（配色マスター派生色・中立色）2026-10-01 */
+@media (prefers-color-scheme: dark){ :root:not([data-theme="light"]) .plan .badge{color:#0E1116;} }
+:root[data-theme="dark"] .plan .badge{color:#0E1116;}
 </style>
 </head>
 <body>

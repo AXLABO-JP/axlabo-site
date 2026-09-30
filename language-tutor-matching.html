@@ -62,7 +62,7 @@
 <style>
   :root{--on-accent:#0E1116;
     --bg:#FFFFFF; --alt:#F1F8F7; --card:#FFFFFF; --ink:#1B2330; --ink-soft:#5C6675;
-    --navy:var(--main); --navy2:var(--main-deep); --orange:#E99A4B; --orange2:#d4551a; --blue:#2563eb; --green:#16a34a; --purple:#7c3aed; --sky:#38bdf8; --yellow:#fbbf24;
+    --navy:var(--main); --navy2:var(--main-deep); --orange:#E99A4B; --orange2:#744D26; --blue:var(--main); --green:#16a34a; --purple:#7c3aed; --sky:#38bdf8; --yellow:#fbbf24;
     --hair:#DDE1E7; --card-line:#DDE1E7;
     --shadow:0 1px 2px rgba(15,23,42,.04), 0 12px 28px -14px rgba(15,23,42,.14);
     --radius:14px; --maxw:1160px; --footer-bg:#0C363A; --footer-ink:#E4E7EC; --footer-soft:#B4AEA6;
@@ -93,7 +93,7 @@
   .navlinks a{text-decoration:none;white-space:nowrap;color:inherit;}
   .navcta{display:flex;gap:8px;flex:none;}
   .btn{appearance:none;border:none;cursor:pointer;background:var(--orange);color:#0E1116;font-weight:700;font-size:13px;padding:10px 16px;border-radius:8px;text-decoration:none;display:inline-flex;align-items:center;gap:6px;white-space:nowrap;}
-  .btn:hover{background:var(--orange2);}
+  .btn:hover{background:color-mix(in srgb, var(--orange), #FFFFFF 18%);}
   .btn-ghost{background:transparent;color:var(--ink);border:1px solid var(--hair);font-weight:600;}
   .btn-navy{background:var(--navy);}
   .btn-navy:hover{background:var(--navy2);}
@@ -137,7 +137,7 @@
   .sel-card .btn{font-size:12.5px;padding:9px 14px;}
   .sel-card.individual .btn{background:var(--orange);}
   .sel-card.corporate .btn{background:var(--blue);}
-  .sel-card.corporate .btn:hover{background:#1e4fc4;}
+  .sel-card.corporate .btn:hover{background:var(--main-deep);}
 
   .service-def{padding:0 0 40px;}
   .service-def .wrap{max-width:860px;}
@@ -230,7 +230,7 @@
   .price-card{background:var(--card);border:1px solid var(--card-line);border-radius:16px;padding:26px 24px;box-shadow:var(--shadow);}
   .price-card .tag{display:inline-block;font-size:10.5px;font-weight:800;padding:4px 10px;border-radius:99px;margin-bottom:12px;}
   .price-card.ind .tag{background:color-mix(in srgb, var(--orange) 15%, transparent);color:var(--orange2);}
-  .price-card.corp .tag{background:color-mix(in srgb, var(--blue) 15%, transparent);color:#1e4fc4;}
+  .price-card.corp .tag{background:color-mix(in srgb, var(--blue) 15%, transparent);color:var(--main-text);}
   .price-card h3{font-size:14px;font-weight:700;margin:0 0 6px;}
   .price-card .amt{font-size:24px;font-weight:800;font-variant-numeric:tabular-nums;margin:0 0 4px;}
   .price-card .unit{font-size:11.5px;color:var(--ink-soft);margin-bottom:14px;}
