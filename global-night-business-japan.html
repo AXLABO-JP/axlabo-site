@@ -51,22 +51,22 @@
 <style>
   :root{--on-accent:#0E1116;
     --bg:#141110; --alt:#0F0D0C; --card:#211B17; --ink:#F7F1E8; --ink-soft:#B4AEA6;
-    --navy:#0b1220; --navy2:#16213a; --gold:#E8B45A; --gold2:#a67811; --teal:#0d9488;
-    --hair:#DDE1E7; --card-line:#DDE1E7;
+    --navy:#211B17; --navy2:#0F0D0C; --gold:#E8B45A; --gold2:#D98A3D; --teal:#D98A3D;
+    --hair:#333A44; --card-line:#333A44;
     --shadow:0 1px 2px rgba(11,18,32,.05), 0 12px 28px -14px rgba(11,18,32,.16);
-    --radius:12px; --maxw:1200px; --footer-bg:#0b1220; --footer-ink:#eef1f8; --footer-soft:#8f9ab3;
+    --radius:12px; --maxw:1200px; --footer-bg:#0F0D0C; --footer-ink:#E4E7EC; --footer-soft:#B4AEA6;--main:#D98A3D;--main-deep:#9C632C;--main-text:#D98A3D;
   }
   @media (prefers-color-scheme: dark){
-    :root{ --bg:#14171C; --alt:#14171C; --card:#1C2027; --ink:#f1f2f6; --ink-soft:#B4AEA6;
-      --hair:#2a2f42; --card-line:#2a2f42; --gold:#e8bb3c;
-      --shadow:0 1px 2px rgba(0,0,0,.4), 0 12px 28px -14px rgba(0,0,0,.65); }
+    :root{ --bg:#141110; --alt:#0F0D0C; --card:#211B17; --ink:#F7F1E8; --ink-soft:#B4AEA6;
+      --hair:#333A44; --card-line:#333A44; --gold:#E8B45A;
+      --shadow:0 1px 2px rgba(0,0,0,.4), 0 12px 28px -14px rgba(0,0,0,.65);--main:#D98A3D;--main-deep:#9C632C;--main-text:#D98A3D; }
   }
-  :root[data-theme="dark"]{ --bg:#14171C; --alt:#14171C; --card:#1C2027; --ink:#f1f2f6; --ink-soft:#B4AEA6;
-    --hair:#2a2f42; --card-line:#2a2f42; --gold:#e8bb3c;
-    --shadow:0 1px 2px rgba(0,0,0,.4), 0 12px 28px -14px rgba(0,0,0,.65); }
+  :root[data-theme="dark"]{ --bg:#141110; --alt:#0F0D0C; --card:#211B17; --ink:#F7F1E8; --ink-soft:#B4AEA6;
+    --hair:#333A44; --card-line:#333A44; --gold:#E8B45A;
+    --shadow:0 1px 2px rgba(0,0,0,.4), 0 12px 28px -14px rgba(0,0,0,.65);--main:#D98A3D;--main-deep:#9C632C;--main-text:#D98A3D; }
   :root[data-theme="light"]{ --bg:#141110; --alt:#0F0D0C; --card:#211B17; --ink:#F7F1E8; --ink-soft:#B4AEA6;
-    --hair:#DDE1E7; --card-line:#DDE1E7; --gold:#E8B45A;
-    --shadow:0 1px 2px rgba(11,18,32,.05), 0 12px 28px -14px rgba(11,18,32,.16); }
+    --hair:#333A44; --card-line:#333A44; --gold:#E8B45A;
+    --shadow:0 1px 2px rgba(11,18,32,.05), 0 12px 28px -14px rgba(11,18,32,.16);--main:#D98A3D;--main-deep:#9C632C;--main-text:#D98A3D; }
 
   *{box-sizing:border-box;}
   body{margin:0;background:var(--bg);color:var(--ink);font-family:"Hiragino Sans","Noto Sans JP",-apple-system,sans-serif;line-height:1.75;overflow-x:hidden;}
@@ -85,6 +85,7 @@
   .btn:hover{background:var(--gold2);color:#fff;}
   .btn-ghost{background:transparent;color:var(--ink);border:1px solid var(--hair);font-weight:600;}
   :root[data-theme="dark"] .btn-ghost{color:var(--ink);}
+  @media (prefers-color-scheme: dark){ :root:not([data-theme="light"]) .btn-ghost{color:var(--ink);} }
   .menu-toggle{display:none;background:none;border:1px solid var(--hair);border-radius:8px;padding:8px 10px;cursor:pointer;flex:none;}
   .menu-toggle span{display:block;width:18px;height:2px;background:var(--ink);margin:4px 0;transition:transform .2s,opacity .2s;}
   .menu-toggle[aria-expanded="true"] span:nth-child(1){transform:translateY(6px) rotate(45deg);}
@@ -95,17 +96,17 @@
   .mobile-menu.open{display:flex;}
   .mobile-menu .mm-cta{display:flex;gap:8px;margin-top:10px;}
 
-  .hero{background:linear-gradient(135deg,var(--navy),#1c1233);color:#fff;padding:46px 0;position:relative;overflow:hidden;}
+  .hero{background:linear-gradient(135deg,var(--navy),var(--bg));color:#fff;padding:46px 0;position:relative;overflow:hidden;}
   .hero .wrap{display:grid;grid-template-columns:1.05fr .95fr;gap:36px;align-items:center;position:relative;}
   .eyebrow{display:inline-block;font-size:11px;font-weight:800;letter-spacing:.03em;color:var(--gold);background:rgba(212,160,23,.14);padding:5px 11px;border-radius:99px;margin-bottom:12px;}
   .hero h1{font-size:clamp(24px,3.4vw,34px);font-weight:800;line-height:1.5;margin:0 0 10px;text-wrap:balance;color:#fff;}
-  .hero-body{font-size:13px;color:#c9cfe0;max-width:44ch;margin:0 0 20px;}
+  .hero-body{font-size:13px;color:#B4AEA6;max-width:44ch;margin:0 0 20px;}
   .hero-actions{display:flex;gap:10px;flex-wrap:wrap;}
   .hero-visual{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.14);border-radius:16px;padding:18px;}
   .hero-visual svg{width:100%;height:auto;}
   .hero-strong{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.14);border-radius:12px;padding:16px 18px;margin-top:16px;}
   .hero-strong ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:8px;}
-  .hero-strong li{display:flex;gap:8px;font-size:11.5px;color:#c9cfe0;}
+  .hero-strong li{display:flex;gap:8px;font-size:11.5px;color:#B4AEA6;}
   .hero-strong li svg{width:14px;height:14px;color:var(--gold);flex:none;margin-top:2px;}
 
   .service-def{padding:34px 0 0;}
@@ -166,9 +167,9 @@
   .faq-item[open] .plus{transform:rotate(45deg);}
   .faq-a{padding:0 18px 15px;font-size:12px;color:var(--ink-soft);}
 
-  .final-cta{background:linear-gradient(135deg,var(--navy),#1c1233);border-radius:20px;padding:44px 40px;text-align:center;color:#fff;}
+  .final-cta{background:linear-gradient(135deg,var(--navy),var(--bg));border-radius:20px;padding:44px 40px;text-align:center;color:#fff;}
   .final-cta h2{font-size:20px;font-weight:800;margin:0 0 8px;text-wrap:balance;color:#fff;}
-  .final-cta p{font-size:13px;color:#c9cfe0;margin:0 0 20px;}
+  .final-cta p{font-size:13px;color:#B4AEA6;margin:0 0 20px;}
   .final-cta-actions{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;}
 
   footer{background:var(--footer-bg);color:var(--footer-ink);padding:40px 0 90px;}
@@ -223,10 +224,10 @@
   .agegate-actions{display:flex;flex-direction:column;gap:10px;margin-bottom:16px;}
   .agegate-actions button{appearance:none;border:none;cursor:pointer;border-radius:10px;padding:13px 20px;font-size:14px;font-weight:700;}
   #agegateYes{background:var(--gold,var(--orange,#d4a017));color:#1a1206;}
-  #agegateYes:hover{background:var(--gold2,var(--orange2,#a67811));color:#fff;}
+  #agegateYes:hover{background:var(--gold2,var(--orange2,#a67811));color:#1a1206;}
   #agegateNo{background:transparent;border:1px solid var(--card-line);color:var(--ink);}
   .agegate-note{font-size:10.5px;color:var(--ink-soft);opacity:.8;margin:0;line-height:1.7;}
-  .agegate-actions button:focus-visible,.agegate-lang button:focus-visible{outline:2px solid var(--blue,#2563eb);outline-offset:2px;}
+  .agegate-actions button:focus-visible,.agegate-lang button:focus-visible{outline:2px solid var(--main);outline-offset:2px;}
 </style>
 </head>
 <body>
@@ -283,7 +284,7 @@
       <div data-reveal>
         <div class="hero-visual">
           <svg viewBox="0 0 400 260" preserveAspectRatio="xMidYMid meet">
-            <defs><linearGradient id="skyline" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#1c1233"/><stop offset="1" stop-color="#0b1220"/></linearGradient></defs>
+            <defs><linearGradient id="skyline" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#211B17"/><stop offset="1" stop-color="#0F0D0C"/></linearGradient></defs>
             <rect width="400" height="260" fill="url(#skyline)"/>
             <g fill="#f1e6c8" opacity=".9">
               <circle cx="70" cy="55" r="1.4"/><circle cx="120" cy="35" r="1.2"/><circle cx="180" cy="60" r="1.5"/><circle cx="240" cy="40" r="1.1"/><circle cx="300" cy="58" r="1.3"/><circle cx="340" cy="30" r="1.2"/>

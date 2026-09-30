@@ -56,22 +56,22 @@
 <style>
   :root{--on-accent:#0E1116;
     --bg:#FAF7F2; --alt:#EFE8DF; --card:#FFFFFF; --ink:#1B2330; --ink-soft:#5C6675;
-    --orange:#BE936B; --orange2:#d95700; --navy:#0b132b; --gold:#ffb703; --green:#22c55e;
+    --orange:#BE936B; --orange2:#d95700; --navy:var(--main); --gold:#ffb703; --green:#22c55e;
     --hair:#DDE1E7; --card-line:#DDE1E7;
     --shadow:0 1px 2px rgba(11,19,43,.05), 0 12px 28px -14px rgba(11,19,43,.16);
-    --radius:14px; --maxw:1160px; --footer-bg:#0b132b; --footer-ink:#E4E7EC; --footer-soft:#B4AEA6;
-  --accent-text:#5F4A36;}
+    --radius:14px; --maxw:1160px; --footer-bg:#201D1A; --footer-ink:#E4E7EC; --footer-soft:#B4AEA6;
+  --accent-text:#5F4A36;--main:#403A35;--main-deep:#2E2A26;--main-text:#403A35;}
   @media (prefers-color-scheme: dark){
     :root{ --bg:#14171C; --alt:#14171C; --card:#1C2027; --ink:#E4E7EC; --ink-soft:#B4AEA6;
       --hair:#333A44; --card-line:#333A44; --orange:#BE936B;
-      --shadow:0 1px 2px rgba(0,0,0,.4), 0 12px 28px -14px rgba(0,0,0,.65); --accent-text:var(--orange);}
+      --shadow:0 1px 2px rgba(0,0,0,.4), 0 12px 28px -14px rgba(0,0,0,.65); --accent-text:var(--orange);--main:#403A35;--main-deep:#2E2A26;--main-text:var(--ink);}
   }
   :root[data-theme="dark"]{ --bg:#14171C; --alt:#14171C; --card:#1C2027; --ink:#E4E7EC; --ink-soft:#B4AEA6;
     --hair:#333A44; --card-line:#333A44; --orange:#BE936B;
-    --shadow:0 1px 2px rgba(0,0,0,.4), 0 12px 28px -14px rgba(0,0,0,.65); --accent-text:var(--orange);}
+    --shadow:0 1px 2px rgba(0,0,0,.4), 0 12px 28px -14px rgba(0,0,0,.65); --accent-text:var(--orange);--main:#403A35;--main-deep:#2E2A26;--main-text:var(--ink);}
   :root[data-theme="light"]{ --bg:#FAF7F2; --alt:#EFE8DF; --card:#FFFFFF; --ink:#1B2330; --ink-soft:#5C6675;
     --hair:#DDE1E7; --card-line:#DDE1E7; --orange:#BE936B;
-    --shadow:0 1px 2px rgba(11,19,43,.05), 0 12px 28px -14px rgba(11,19,43,.16); --accent-text:#5F4A36;}
+    --shadow:0 1px 2px rgba(11,19,43,.05), 0 12px 28px -14px rgba(11,19,43,.16); --accent-text:#5F4A36;--main:#403A35;--main-deep:#2E2A26;--main-text:#403A35;}
 
   *{box-sizing:border-box;}
   body{margin:0;background:var(--bg);color:var(--ink);font-family:"Hiragino Sans","Noto Sans JP",-apple-system,sans-serif;line-height:1.75;overflow-x:hidden;}
@@ -84,7 +84,7 @@
   .nav{display:flex;align-items:center;justify-content:space-between;padding:13px 28px;max-width:var(--maxw);margin:0 auto;gap:14px;}
   .brand img{height:19px;width:auto;flex:none;}
   .navlinks{display:flex;gap:16px;font-size:12.5px;color:var(--ink-soft);flex:1;justify-content:center;}
-  .navlinks a{text-decoration:none;white-space:nowrap;}
+  .navlinks a{text-decoration:none;white-space:nowrap;color:inherit;}
   .navcta{display:flex;gap:8px;flex:none;}
   .btn{appearance:none;border:none;cursor:pointer;background:var(--orange);color:#0E1116;font-weight:700;font-size:13px;padding:10px 16px;border-radius:8px;text-decoration:none;display:inline-flex;align-items:center;gap:6px;white-space:nowrap;}
   .btn:hover{background:color-mix(in srgb, var(--orange), #FFFFFF 18%);}
@@ -123,7 +123,7 @@
   .band{padding:50px 0;}
   .band.alt{background:var(--alt);}
   .head-block{max-width:640px;margin:0 auto 32px;text-align:center;}
-  .head-block h2{font-size:clamp(20px,2.2vw,25px);font-weight:800;margin:0 0 8px;text-wrap:balance;}
+  .head-block h2{font-size:clamp(20px,2.2vw,25px);font-weight:800;margin:0 0 8px;text-wrap:balance;color:var(--main-text);}
   .head-block p{font-size:13px;color:var(--ink-soft);margin:0;}
 
   .prob-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;}
@@ -136,7 +136,7 @@
   .scene-card{background:var(--card);border:1px solid var(--card-line);border-radius:16px;overflow:hidden;box-shadow:var(--shadow);}
   .scene-photo{aspect-ratio:4/3;display:flex;align-items:center;justify-content:center;color:#fff;position:relative;}
   .scene-photo svg{width:36%;height:36%;}
-  .scene-card:nth-child(1) .scene-photo{background:linear-gradient(135deg,var(--navy),#2c4a76);}
+  .scene-card:nth-child(1) .scene-photo{background:linear-gradient(135deg,var(--navy),var(--main-deep));}
   .scene-card:nth-child(2) .scene-photo{background:linear-gradient(135deg,#c98a3a,var(--orange));}
   .scene-card:nth-child(3) .scene-photo{background:linear-gradient(135deg,#3a3a4a,#1a1a24);}
   .scene-card:nth-child(4) .scene-photo{background:linear-gradient(135deg,var(--gold),var(--orange2));}

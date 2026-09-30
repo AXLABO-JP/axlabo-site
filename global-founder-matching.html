@@ -62,23 +62,23 @@
 </script>
 <style>
   :root{
-    --bg:#ffffff; --alt:#f5f7fa; --card:#ffffff; --ink:#0b1d2a; --ink-soft:#5C6675;
-    --navy:#081d2a; --navy2:#132a4d; --blue:#2563eb; --blue2:#1d4ed8; --orange:#ff5a00; --orange2:#cc4800;
+    --bg:#FFFFFF; --alt:#F1F6F7; --card:#FFFFFF; --ink:#1B2330; --ink-soft:#5C6675;
+    --navy:var(--main-deep); --navy2:#182C35; --blue:var(--main); --blue2:var(--main-deep); --orange:#DF795F; --orange2:#703C30;
     --hair:#DDE1E7; --card-line:#DDE1E7;
     --shadow:0 1px 2px rgba(11,29,42,.05), 0 12px 28px -14px rgba(11,29,42,.14);
-    --radius:12px; --maxw:1200px; --footer-bg:#081d2a; --footer-ink:#E4E7EC; --footer-soft:#B4AEA6;
+    --radius:12px; --maxw:1200px; --footer-bg:#182C35; --footer-ink:#E4E7EC; --footer-soft:#B4AEA6;--main:#31586A;--main-deep:#233F4C;--main-text:#31586A;--on-hover:#FFFFFF;
   }
   @media (prefers-color-scheme: dark){
-    :root{ --bg:#0f1115; --alt:#151821; --card:#1a1e27; --ink:#f0f2f5; --ink-soft:#a3adc0;
-      --hair:#333A44; --card-line:#333A44; --blue:#4d7dff; --orange:#ff7a33;
-      --shadow:0 1px 2px rgba(0,0,0,.4), 0 12px 28px -14px rgba(0,0,0,.65); }
+    :root{ --bg:#14171C; --alt:#14171C; --card:#1C2027; --ink:#E4E7EC; --ink-soft:#B4AEA6;
+      --hair:#333A44; --card-line:#333A44; --blue:#5DA7C9; --orange:#DF795F;
+      --shadow:0 1px 2px rgba(0,0,0,.4), 0 12px 28px -14px rgba(0,0,0,.65);--main:#31586A;--main-deep:#233F4C;--main-text:var(--ink);--blue2:#4E8DAA;--on-hover:#0E1116; }
   }
-  :root[data-theme="dark"]{ --bg:#0f1115; --alt:#151821; --card:#1a1e27; --ink:#f0f2f5; --ink-soft:#a3adc0;
-    --hair:#333A44; --card-line:#333A44; --blue:#4d7dff; --orange:#ff7a33;
-    --shadow:0 1px 2px rgba(0,0,0,.4), 0 12px 28px -14px rgba(0,0,0,.65); }
-  :root[data-theme="light"]{ --bg:#ffffff; --alt:#f5f7fa; --card:#ffffff; --ink:#0b1d2a; --ink-soft:#5C6675;
-    --hair:#DDE1E7; --card-line:#DDE1E7; --blue:#2563eb; --orange:#ff5a00;
-    --shadow:0 1px 2px rgba(11,29,42,.05), 0 12px 28px -14px rgba(11,29,42,.14); }
+  :root[data-theme="dark"]{ --bg:#14171C; --alt:#14171C; --card:#1C2027; --ink:#E4E7EC; --ink-soft:#B4AEA6;
+    --hair:#333A44; --card-line:#333A44; --blue:#5DA7C9; --orange:#DF795F;
+    --shadow:0 1px 2px rgba(0,0,0,.4), 0 12px 28px -14px rgba(0,0,0,.65);--main:#31586A;--main-deep:#233F4C;--main-text:var(--ink);--blue2:#4E8DAA;--on-hover:#0E1116; }
+  :root[data-theme="light"]{ --bg:#FFFFFF; --alt:#F1F6F7; --card:#FFFFFF; --ink:#1B2330; --ink-soft:#5C6675;
+    --hair:#DDE1E7; --card-line:#DDE1E7; --blue:var(--main); --orange:#DF795F;
+    --shadow:0 1px 2px rgba(11,29,42,.05), 0 12px 28px -14px rgba(11,29,42,.14);--main:#31586A;--main-deep:#233F4C;--main-text:#31586A;--on-hover:#FFFFFF; }
 
   *{box-sizing:border-box;}
   body{margin:0;background:var(--bg);color:var(--ink);font-family:"Hiragino Sans","Noto Sans JP",-apple-system,sans-serif;line-height:1.75;overflow-x:hidden;}
@@ -91,12 +91,13 @@
   .nav{display:flex;align-items:center;justify-content:space-between;padding:13px 28px;max-width:var(--maxw);margin:0 auto;gap:14px;}
   .brand img{height:19px;width:auto;flex:none;}
   .navlinks{display:flex;gap:16px;font-size:12.5px;color:var(--ink-soft);flex:1;justify-content:center;}
-  .navlinks a{text-decoration:none;white-space:nowrap;}
+  .navlinks a{text-decoration:none;white-space:nowrap;color:inherit;}
   .navcta{display:flex;gap:8px;flex:none;}
   .btn{appearance:none;border:none;cursor:pointer;background:var(--blue);color:#fff;font-weight:700;font-size:13px;padding:10px 16px;border-radius:8px;text-decoration:none;display:inline-flex;align-items:center;gap:6px;white-space:nowrap;}
   .btn:hover{background:var(--blue2);}
   .btn-ghost{background:transparent;color:var(--navy);border:1px solid var(--hair);font-weight:600;}
   :root[data-theme="dark"] .btn-ghost{color:var(--ink);}
+  @media (prefers-color-scheme: dark){ :root:not([data-theme="light"]) .btn-ghost{color:var(--ink);} }
   .menu-toggle{display:none;background:none;border:1px solid var(--hair);border-radius:8px;padding:8px 10px;cursor:pointer;flex:none;}
   .menu-toggle span{display:block;width:18px;height:2px;background:var(--ink);margin:4px 0;transition:transform .2s,opacity .2s;}
   .menu-toggle[aria-expanded="true"] span:nth-child(1){transform:translateY(6px) rotate(45deg);}
@@ -107,18 +108,18 @@
   .mobile-menu.open{display:flex;}
   .mobile-menu .mm-cta{display:flex;gap:8px;margin-top:10px;}
 
-  .hero{background:linear-gradient(135deg,var(--navy),#16305a);color:#fff;padding:44px 0;position:relative;overflow:hidden;}
+  .hero{background:linear-gradient(135deg,var(--navy),#182C35);color:#fff;padding:44px 0;position:relative;overflow:hidden;}
   .hero .wrap{display:grid;grid-template-columns:1.05fr .95fr;gap:32px;align-items:center;}
-  .eyebrow{display:inline-block;font-size:11px;font-weight:800;letter-spacing:.03em;color:#93c5fd;background:rgba(37,99,235,.2);padding:5px 11px;border-radius:99px;margin-bottom:12px;}
+  .eyebrow{display:inline-block;font-size:11px;font-weight:800;letter-spacing:.03em;color:#F1F6F7;background:rgba(255,255,255,.14);padding:5px 11px;border-radius:99px;margin-bottom:12px;}
   .hero h1{font-size:clamp(24px,3.2vw,33px);font-weight:800;line-height:1.5;margin:0 0 10px;text-wrap:balance;color:#fff;}
-  .hero-body{font-size:13px;color:#c3d1ea;max-width:46ch;margin:0 0 20px;}
+  .hero-body{font-size:13px;color:#FFFFFF;max-width:46ch;margin:0 0 20px;}
   .hero-actions{display:flex;gap:10px;flex-wrap:wrap;}
   .hero-visual{border-radius:16px;overflow:hidden;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.14);aspect-ratio:16/11;margin-bottom:16px;}
   .hero-visual svg{width:100%;height:100%;display:block;}
   .hero-strong{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.14);border-radius:12px;padding:16px 18px;}
   .hero-strong h4{font-size:11.5px;font-weight:700;margin:0 0 10px;color:#93c5fd;}
   .hero-strong ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:8px;}
-  .hero-strong li{display:flex;gap:8px;font-size:11.5px;color:#c3d1ea;}
+  .hero-strong li{display:flex;gap:8px;font-size:11.5px;color:#FFFFFF;}
   .hero-strong li svg{width:14px;height:14px;color:var(--orange);flex:none;margin-top:2px;}
 
   .service-def{padding:34px 0 0;}
@@ -129,7 +130,7 @@
   .band{padding:52px 0;}
   .band.alt{background:var(--alt);}
   .head-block{max-width:660px;margin:0 auto 32px;text-align:center;}
-  .head-block h2{font-size:clamp(20px,2.2vw,25px);font-weight:800;margin:0 0 8px;text-wrap:balance;}
+  .head-block h2{font-size:clamp(20px,2.2vw,25px);font-weight:800;margin:0 0 8px;text-wrap:balance;color:var(--main-text);}
   .head-block p{font-size:13px;color:var(--ink-soft);margin:0;}
 
   .feature-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:14px;}
@@ -171,9 +172,9 @@
   .faq-item[open] .plus{transform:rotate(45deg);}
   .faq-a{padding:0 18px 15px;font-size:12px;color:var(--ink-soft);}
 
-  .final-cta{background:linear-gradient(135deg,var(--navy),#16305a);border-radius:20px;padding:44px 40px;text-align:center;color:#fff;position:relative;overflow:hidden;}
+  .final-cta{background:linear-gradient(135deg,var(--navy),#182C35);border-radius:20px;padding:44px 40px;text-align:center;color:#fff;position:relative;overflow:hidden;}
   .final-cta h2{font-size:20px;font-weight:800;margin:0 0 8px;text-wrap:balance;color:#fff;position:relative;}
-  .final-cta p{font-size:13px;color:#c3d1ea;margin:0 0 20px;position:relative;}
+  .final-cta p{font-size:13px;color:#FFFFFF;margin:0 0 20px;position:relative;}
   .final-cta-actions{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;position:relative;}
 
   footer{background:var(--footer-bg);color:var(--footer-ink);padding:40px 0 90px;}
@@ -216,6 +217,10 @@
     .final-cta{padding:28px 20px;}
     .hero{padding:32px 0;}
   }
+/* AA是正（配色マスター派生色・中立色）2026-10-01 */
+@media (prefers-color-scheme: dark){ :root:not([data-theme="light"]) .btn:not(.btn-ghost), :root:not([data-theme="light"]) .rec-badge{color:#0E1116;} }
+:root[data-theme="dark"] .btn:not(.btn-ghost), :root[data-theme="dark"] .rec-badge{color:#0E1116;}
+.btn.btn-ghost:hover{color:var(--on-hover);}
 </style>
 </head>
 <body>
