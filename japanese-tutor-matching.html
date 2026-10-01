@@ -12,7 +12,7 @@
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="AXLABO">
 <meta property="og:title" content="国際日本語講師マッチング | 目的に合う日本語の先生を見つける - AXLABO">
-<meta property="og:description" content="会話・仕事・試験・生活。学ぶ理由に合わせて日本語の先生をご紹介します。">
+<meta property="og:description" content="会話・仕事・試験・生活。学ぶ理由に合わせて日本語講師とのマッチングを支援するサービスを準備しています（準備中・提供開始時期は未定）。">
 <meta property="og:url" content="https://axlabo.com/japanese-tutor-matching.html">
 <meta name="twitter:card" content="summary">
 <script type="application/ld+json">
@@ -376,7 +376,7 @@
         <div class="benefit-card"><div class="ic"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="8" r="3.4" stroke="currentColor" stroke-width="1.7"/><path d="M5 20c.8-3.8 3.4-6 7-6s6.2 2.2 7 6" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg></div><h3>目的に合わせて</h3><p>会話・仕事・試験・生活など、学ぶ理由に合わせた学習を想定しています。</p></div>
         <div class="benefit-card"><div class="ic"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="8" stroke="currentColor" stroke-width="1.6"/><circle cx="12" cy="12" r="3.5" stroke="currentColor" stroke-width="1.6"/></svg></div><h3>海外からも</h3><p>海外在住の方も対象として想定しています。</p></div>
         <div class="benefit-card"><div class="ic"><svg viewBox="0 0 24 24" fill="none"><path d="M12 3.5l6.5 2.4V11c0 4.4-2.7 7.7-6.5 9.5C8.2 18.7 5.5 15.4 5.5 11V5.9L12 3.5z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg></div><h3>やさしい日本語+英語でのご案内</h3><p>学習者の方には、わかりやすいご案内を心がけます。</p></div>
-        <div class="benefit-card"><div class="ic"><svg viewBox="0 0 24 24" fill="none"><rect x="4" y="6" width="16" height="12" rx="2.5" stroke="currentColor" stroke-width="1.6"/><path d="M8 10h8M8 13h5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></div><h3>オンラインで、どこからでも</h3><p>場所を問わず、オンラインでレッスンを受けられます。</p></div>
+        <div class="benefit-card"><div class="ic"><svg viewBox="0 0 24 24" fill="none"><rect x="4" y="6" width="16" height="12" rx="2.5" stroke="currentColor" stroke-width="1.6"/><path d="M8 10h8M8 13h5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></div><h3>オンラインで、どこからでも</h3><p>場所を問わず、オンラインでの受講を想定しています。</p></div>
       </div>
     </div>
   </section>
@@ -458,15 +458,11 @@
 
 <script>
   var CONTACT_CONFIG = { type:'mailto', email:'info@axlabo.com', subject:'国際日本語講師マッチングについての相談', formUrl:'' };
-  var SECONDARY_CONFIG = { type:'mailto', email:'info@axlabo.com', subject:'国際日本語講師マッチング 体験レッスン申込', formUrl:'' };
-  var TEACHER_CONFIG = { type:'mailto', email:'info@axlabo.com', subject:'国際日本語講師マッチング 講師登録について', teacherRegistrationFormUrl:'', formUrl:'' };
   function apply(sel, cfg){
     var href = cfg.type==='form' && cfg.formUrl ? cfg.formUrl : 'mailto:'+cfg.email+'?subject='+encodeURIComponent(cfg.subject);
     document.querySelectorAll(sel).forEach(function(el){ el.setAttribute('href', href); });
   }
   apply('[data-contact-cta]', CONTACT_CONFIG);
-  apply('[data-secondary-cta]', SECONDARY_CONFIG);
-  apply('[data-teacher-cta]', TEACHER_CONFIG);
   (function(){
     var els = document.querySelectorAll('[data-reveal]');
     if('IntersectionObserver' in window){
