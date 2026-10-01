@@ -1,0 +1,269 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>営業AI — 納品物サンプル（営業リスト・問い合わせ対応の設定）| AXLABO</title>
+<meta name="description" content="AXLABO の営業AIでお届けする営業リスト（CSV）と、問い合わせ一次対応の設定の見本です。会社・人物・内容はすべて架空です。">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@500;700&family=Outfit:wght@500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="components.css">
+<style>
+  /* 配色: axlabo-biz-color-palette-master.md BIZ-002「白×濃紺×ターコイズ」＋中立色 */
+  :root {
+    --ax-bg: #FFFFFF; --ax-tint: #F2F6F8; --ax-surface: #FFFFFF;
+    --ax-accent: #17324D; --ax-accent-hover: #10243A;
+    --ax-text: #1B2330; --ax-muted: #5C6675; --ax-line: #DDE1E7;
+    --teal: #159A9C;
+  }
+  .ax-section--alt .ax-steps li, .ax-section--alt .doc { box-shadow: none; }
+  .doc { background: var(--ax-surface); border: 1px solid var(--ax-line); border-radius: 10px; padding: var(--ax-s3); }
+  .doc__bar { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px; align-items: baseline; border-bottom: 1px solid var(--ax-line); padding-bottom: var(--ax-s1); margin-bottom: var(--ax-s2); }
+  .doc__bar b { font-family: var(--ax-font-heading); }
+  .doc__bar span { font-size: var(--ax-fs-note); color: var(--ax-muted); }
+  .label { display: inline-block; font-family: var(--ax-font-display); font-weight: 700; font-size: 12px; letter-spacing: .1em; color: #fff; background: var(--ax-accent); border-radius: 999px; padding: 2px 10px; }
+  .scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; border: 1px solid var(--ax-line); border-radius: 8px; }
+  .scroll:focus-visible { outline: 3px solid var(--ax-accent); outline-offset: 3px; }
+  table.list { border-collapse: collapse; min-width: 920px; width: 100%; font-size: 13px; line-height: 1.6; letter-spacing: 0; }
+  table.list th, table.list td { padding: 8px 10px; border-bottom: 1px solid var(--ax-line); text-align: left; vertical-align: top; }
+  table.list thead th { background: var(--ax-tint); font-weight: 700; white-space: nowrap; }
+  table.list td.url { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 12px; word-break: break-all; }
+  pre.csv { margin: 0; padding: var(--ax-s2); background: #141820; color: #E4E7EC; border-radius: 8px; font-size: 12px; line-height: 1.7; overflow-x: auto; letter-spacing: 0; }
+  .rules { display: grid; grid-template-columns: 1fr 1fr; gap: var(--ax-s3); }
+  .rules ul { margin: 0; padding-left: 1.2em; }
+  .rules li + li { margin-top: 4px; }
+  .rules h3 { margin-bottom: var(--ax-s1); }
+  .no { border-left: 4px solid var(--teal); }
+  table.set { border-collapse: collapse; width: 100%; font-size: 14px; }
+  table.set th, table.set td { text-align: left; vertical-align: top; padding: 10px 12px; border-bottom: 1px solid var(--ax-line); }
+  table.set th { width: 11em; background: var(--ax-tint); font-family: var(--ax-font-heading); }
+  table.cls { border-collapse: collapse; width: 100%; font-size: 14px; }
+  table.cls th, table.cls td { text-align: left; vertical-align: top; padding: 8px 10px; border-bottom: 1px solid var(--ax-line); }
+  table.cls thead th { background: var(--ax-tint); }
+  .flow3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: var(--ax-s3); align-items: start; }
+  .mail { font-size: 14px; line-height: 1.8; white-space: pre-wrap; margin: 0; font-family: var(--ax-font-body); letter-spacing: 0; }
+  .tag { display: inline-block; font-size: 12px; border-radius: 999px; padding: 1px 10px; background: var(--ax-tint); margin: 0 4px 4px 0; }
+  .tag--teal { background: #E2F4F4; color: #0D5F60; font-weight: 700; }
+  .stack > * + * { margin-top: var(--ax-s2); }
+  .price-wrap { max-width: 680px; }
+  .back { display: inline-flex; align-items: center; min-height: 44px; color: var(--ax-on-dark) !important; }
+  @media (max-width: 860px) { .rules, .flow3 { grid-template-columns: 1fr; } }
+  @media (max-width: 480px) {
+    .doc { padding: var(--ax-s2); }
+    table.set th, table.set td { display: block; width: 100%; }
+    table.set th { border-bottom: 0; padding-bottom: 4px; }
+  }
+</style>
+</head>
+<body class="ax-page">
+<div class="ax-sample-banner" role="note">これは AXLABO が制作したサンプルサイトです。掲載の会社・人物・問い合わせ・内容はすべて架空で、お客様の制作実績ではありません。</div>
+
+<header class="ax-header">
+  <div class="ax-wrap">
+    <a class="ax-logo" href="#top">AXLABO 営業AI<span class="ax-note">&nbsp;（納品物サンプル）</span></a>
+    <nav class="ax-nav" aria-label="ページ内の移動">
+      <ul>
+        <li><a href="#list">営業リスト</a></li>
+        <li><a href="#reply">問い合わせ対応</a></li>
+        <li><a href="#scope">範囲</a></li>
+        <li><a href="#price">料金</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+  <section class="ax-hero ax-section">
+    <div class="ax-wrap">
+      <div>
+        <p class="ax-kicker">SAMPLE DELIVERABLE · BIZ-002</p>
+        <h1><span class="ax-nobr">営業リストと、</span><span class="ax-nobr">問い合わせの</span><span class="ax-nobr">一次対応。</span></h1>
+        <p class="ax-lead">営業AIでお届けするのは、公開された法人情報だけで作る営業リスト（CSV）と、届いた問い合わせを分類して返信の下書きを作る設定です。このページでは、架空の金属加工会社を例に、実際に受け取るものを並べています。</p>
+        <div class="ax-cta">
+          <a class="ax-btn" href="#list">営業リストの見本</a>
+          <a class="ax-btn ax-btn--ghost" href="#reply">問い合わせ対応の設定</a>
+        </div>
+        <p class="ax-status"><span class="ax-dot" aria-hidden="true"></span>例の会社「サンプル精工株式会社」と、リストの掲載企業はすべて架空です</p>
+      </div>
+      <div class="ax-visual" aria-hidden="true">
+        <svg viewBox="0 0 280 180" width="280" height="180">
+          <rect x="16" y="24" width="140" height="132" rx="8" fill="#fff" stroke="#17324D" stroke-width="3"/>
+          <rect x="16" y="24" width="140" height="22" rx="8" fill="#17324D"/>
+          <g stroke="#DDE1E7" stroke-width="2"><path d="M16 68h140M16 90h140M16 112h140M16 134h140M62 46v110M110 46v110"/></g>
+          <g fill="#159A9C"><rect x="24" y="54" width="30" height="7" rx="3"/><rect x="24" y="76" width="26" height="7" rx="3"/><rect x="24" y="98" width="32" height="7" rx="3"/><rect x="24" y="120" width="24" height="7" rx="3"/></g>
+          <rect x="176" y="48" width="88" height="62" rx="10" fill="#fff" stroke="#17324D" stroke-width="3"/>
+          <path d="M176 52l44 32 44-32" fill="none" stroke="#17324D" stroke-width="3"/>
+          <circle cx="252" cy="116" r="16" fill="#159A9C"/><path d="M244 116l6 6 10-12" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <section class="ax-section ax-section--alt" aria-labelledby="flow-h">
+    <div class="ax-wrap">
+      <div class="ax-section-head"><p class="ax-kicker">WHAT YOU RECEIVE</p><h2 id="flow-h">月額に含まれるもの</h2></div>
+      <ol class="ax-steps">
+        <li><p class="ax-steps__label">01</p><h3>問い合わせの一次対応</h3><p>届いた問い合わせをAIが分類し、返信の下書きを作って記録します。送るかどうかはお客さまが確認して決めます。</p></li>
+        <li><p class="ax-steps__label">02</p><h3>営業リストの自動生成</h3><p>公開された法人情報だけを集め、出典URLを付けたCSVでお届けします。件数・更新頻度はヒアリングで取り決めます。</p></li>
+        <li><p class="ax-steps__label">03</p><h3>応答設定の調整</h3><p>業種や伝えたいトーンに合わせて、分類のしかたや下書きの言い回しを調整します。</p></li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="ax-section" id="list" aria-labelledby="list-h">
+    <div class="ax-wrap">
+      <div class="ax-section-head">
+        <p class="ax-kicker">DELIVERABLE 1 · SALES LIST (CSV)</p>
+        <h2 id="list-h">営業リストの見本</h2>
+        <p class="ax-note">条件の例: 「サンプル県内の食品・機械メーカーで、公式サイトに問い合わせ窓口を公開している法人」。掲載の会社名・所在地・URL はすべて架空です（URL は例示用ドメインです）。</p>
+      </div>
+      <div class="doc stack">
+        <div class="doc__bar"><b>sales-list_2026-11.csv（10件の抜粋）</b><span>作成: 2026-11-02 ／ 条件: 上記の例</span></div>
+        <div class="scroll" tabindex="0" role="region" aria-label="営業リストの表（横にスクロールできます）">
+          <table class="list">
+            <thead><tr><th scope="col">No</th><th scope="col">法人名</th><th scope="col">所在地</th><th scope="col">業種</th><th scope="col">公式サイト</th><th scope="col">公開されている問い合わせ窓口</th><th scope="col">出典URL</th></tr></thead>
+            <tbody>
+              <tr><td>1</td><td>株式会社サンプル製菓（架空）</td><td>サンプル県 東市</td><td>食品製造（焼き菓子）</td><td class="url">https://example.com/a-seika</td><td>公式サイトの問い合わせフォーム</td><td class="url">https://example.com/a-seika/company</td></tr>
+              <tr><td>2</td><td>架空食品工業株式会社</td><td>サンプル県 西市</td><td>食品製造（冷凍食品）</td><td class="url">https://example.net/kakuu-foods</td><td>公式サイトの問い合わせフォーム</td><td class="url">https://example.net/kakuu-foods/about</td></tr>
+              <tr><td>3</td><td>株式会社テスト機工（架空）</td><td>サンプル県 南町</td><td>産業機械製造</td><td class="url">https://example.org/test-kiko</td><td>代表メール（公式サイトに掲載のもの）</td><td class="url">https://example.org/test-kiko/contact</td></tr>
+              <tr><td>4</td><td>見本パッケージ株式会社（架空）</td><td>サンプル県 東市</td><td>包装資材製造</td><td class="url">https://example.com/mihon-pkg</td><td>公式サイトの問い合わせフォーム</td><td class="url">https://example.com/mihon-pkg/company</td></tr>
+              <tr><td>5</td><td>サンプル乳業株式会社（架空）</td><td>サンプル県 北村</td><td>食品製造（乳製品）</td><td class="url">https://example.net/sample-milk</td><td>公式サイトの問い合わせフォーム</td><td class="url">https://example.net/sample-milk/outline</td></tr>
+              <tr><td>6</td><td>株式会社架空ロボテック</td><td>サンプル県 西市</td><td>自動化設備製造</td><td class="url">https://example.org/kakuu-robo</td><td>公式サイトの問い合わせフォーム</td><td class="url">https://example.org/kakuu-robo/company</td></tr>
+              <tr><td>7</td><td>例示醸造株式会社（架空）</td><td>サンプル県 南町</td><td>食品製造（調味料）</td><td class="url">https://example.com/reiji-jozo</td><td>代表メール（公式サイトに掲載のもの）</td><td class="url">https://example.com/reiji-jozo/info</td></tr>
+              <tr><td>8</td><td>テスト精機株式会社（架空）</td><td>サンプル県 東市</td><td>精密機械製造</td><td class="url">https://example.net/test-seiki</td><td>公式サイトの問い合わせフォーム</td><td class="url">https://example.net/test-seiki/about</td></tr>
+              <tr><td>9</td><td>株式会社サンプルベーカリー工房（架空）</td><td>サンプル県 北村</td><td>食品製造（パン）</td><td class="url">https://example.org/sample-bakery</td><td>公式サイトの問い合わせフォーム</td><td class="url">https://example.org/sample-bakery/company</td></tr>
+              <tr><td>10</td><td>見本搬送システム株式会社（架空）</td><td>サンプル県 西市</td><td>搬送装置製造</td><td class="url">https://example.com/mihon-hanso</td><td>公式サイトの問い合わせフォーム</td><td class="url">https://example.com/mihon-hanso/outline</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="ax-note">スマートフォンでは表を横にスクロールしてご覧ください。</p>
+        <div>
+          <p class="io__label"><span class="label">CSV</span>&nbsp;実際のファイルの中身（先頭3件）</p>
+          <pre class="csv" tabindex="0" aria-label="CSVファイルの中身の例">No,法人名,所在地,業種,公式サイト,問い合わせ窓口,出典URL
+1,株式会社サンプル製菓（架空）,サンプル県 東市,食品製造（焼き菓子）,https://example.com/a-seika,公式サイトの問い合わせフォーム,https://example.com/a-seika/company
+2,架空食品工業株式会社,サンプル県 西市,食品製造（冷凍食品）,https://example.net/kakuu-foods,公式サイトの問い合わせフォーム,https://example.net/kakuu-foods/about
+3,株式会社テスト機工（架空）,サンプル県 南町,産業機械製造,https://example.org/test-kiko,代表メール（公式サイトに掲載のもの）,https://example.org/test-kiko/contact</pre>
+        </div>
+      </div>
+      <div class="rules" style="margin-top:var(--ax-s4)">
+        <div class="doc">
+          <h3>リストに入れる情報</h3>
+          <ul>
+            <li>法人名・所在地・業種</li>
+            <li>公式サイト</li>
+            <li>法人として公開している問い合わせ窓口（フォーム・代表メール）</li>
+            <li>情報を確認したページの出典URL（全件に付けます）</li>
+          </ul>
+        </div>
+        <div class="doc no">
+          <h3>リストに入れない情報</h3>
+          <ul>
+            <li>個人名・個人のメールアドレス・個人の電話番号</li>
+            <li>公開されていない情報</li>
+            <li>ログインしないと見られないサイトの情報</li>
+          </ul>
+        </div>
+      </div>
+      <p class="ax-note" style="margin-top:var(--ax-s2)">リストを使った送信・架電は、お客さまご自身の操作と責任で行っていただきます。AXLABO はメールの送信代行を行いません。</p>
+    </div>
+  </section>
+
+  <section class="ax-section ax-section--alt" id="reply" aria-labelledby="reply-h">
+    <div class="ax-wrap">
+      <div class="ax-section-head">
+        <p class="ax-kicker">DELIVERABLE 2 · INQUIRY AUTO-REPLY SETTINGS</p>
+        <h2 id="reply-h">問い合わせ一次対応の設定</h2>
+        <p class="ax-note">架空の「サンプル精工株式会社」（金属部品の加工）向けに用意した設定の見本です。設定はヒアリングのうえで決め、運用しながら調整します。</p>
+      </div>
+      <div class="doc">
+        <div class="doc__bar"><b>応答設定シート（v1）</b><span>対象: 公式サイトの問い合わせフォーム経由のメール</span></div>
+        <table class="set">
+          <tbody>
+            <tr><th scope="row">受付</th><td>AIが随時受け付けて分類・下書き・記録します。お客さまの確認・送信は営業日に行う運用です（返信時間の約束はしません）。</td></tr>
+            <tr><th scope="row">返信の扱い</th><td>AIは返信の<strong>下書き</strong>を作ります。お客さまが内容を確認して送信します。</td></tr>
+            <tr><th scope="row">トーン</th><td>丁寧語・簡潔。専門用語は相手が使った場合のみ使う。署名は「サンプル精工株式会社 営業窓口」。</td></tr>
+            <tr><th scope="row">答えてよい内容</th><td>会社案内に載っている対応材質・加工の種類、見積りに必要な情報（図面・数量・希望納期）、見積りの依頼方法。</td></tr>
+            <tr><th scope="row">答えない内容</th><td>個別の金額・納期の確約、法律・税務・医療などの個別判断にあたる内容。該当する場合は「担当者から改めてご連絡します」と下書きし、要確認にします。</td></tr>
+            <tr><th scope="row">人の確認へ回す条件</th><td>発注の意思表示、キャンセル・変更、不具合・苦情、取引条件の交渉。</td></tr>
+            <tr><th scope="row">記録</th><td>受付日時・分類・要約・下書きの有無・確認状況を、問い合わせ記録表に1件1行で残します。</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3 style="margin:var(--ax-s5) 0 var(--ax-s2)">分類のルール</h3>
+      <div class="doc">
+        <table class="cls">
+          <thead><tr><th scope="col">分類</th><th scope="col">判断の目安</th><th scope="col">AIの対応</th></tr></thead>
+          <tbody>
+            <tr><td><span class="tag tag--teal">見積り依頼</span></td><td>図面・数量・材質のいずれかに触れている</td><td>受付のお礼と、不足している情報の確認を下書き</td></tr>
+            <tr><td><span class="tag tag--teal">技術的な質問</span></td><td>対応できる加工・材質の可否を聞いている</td><td>会社案内の範囲で回答を下書き。範囲外は要確認</td></tr>
+            <tr><td><span class="tag">資料請求</span></td><td>会社案内・設備一覧を求めている</td><td>資料の送付方法を案内する下書き</td></tr>
+            <tr><td><span class="tag">営業・売り込み</span></td><td>自社サービスの紹介が目的</td><td>下書きを作らず、記録のみ</td></tr>
+            <tr><td><span class="tag">要確認</span></td><td>発注・キャンセル・苦情・判断が要る内容</td><td>要約を付けて、お客さまの確認待ちにする</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3 style="margin:var(--ax-s5) 0 var(--ax-s2)">1件の流れ（例）</h3>
+      <div class="flow3">
+        <div class="doc">
+          <p class="ax-note"><span class="label">INPUT</span>&nbsp;届いた問い合わせ（架空）</p>
+          <p class="mail" style="margin-top:var(--ax-s1)">件名: アルミ部品の加工について
+本文: アルミ（A5052）のブラケットを月200個ほどお願いできる会社を探しています。図面はあります。見積りをお願いすることは可能でしょうか。
+（架空の問い合わせ）</p>
+        </div>
+        <div class="doc">
+          <p class="ax-note"><span class="label">CLASSIFY</span>&nbsp;分類と要約</p>
+          <p style="margin-top:var(--ax-s1)"><span class="tag tag--teal">見積り依頼</span></p>
+          <p class="mail">要約: A5052 ブラケット、月200個、図面あり。見積り可否の確認。
+不足情報: 希望納期、表面処理の有無。
+要確認: なし</p>
+        </div>
+        <div class="doc">
+          <p class="ax-note"><span class="label">DRAFT</span>&nbsp;返信の下書き</p>
+          <p class="mail" style="margin-top:var(--ax-s1)">お問い合わせありがとうございます。サンプル精工株式会社 営業窓口です。
+アルミ（A5052）部品のお見積りを承ります。図面をお送りいただく際に、希望納期と表面処理の有無もあわせてお知らせください。内容を確認のうえ、担当者からご連絡します。
+
+サンプル精工株式会社 営業窓口</p>
+        </div>
+      </div>
+      <p class="ax-note" style="margin-top:var(--ax-s2)">このページの下書きは、実際の設定と同じ考え方で作成した見本です（AIの出力をそのまま載せたものではありません）。</p>
+    </div>
+  </section>
+
+  <section class="ax-section" id="scope" aria-labelledby="scope-h">
+    <div class="ax-wrap">
+      <div class="ax-section-head"><p class="ax-kicker">SCOPE</p><h2 id="scope-h">含まれないこと</h2></div>
+      <div class="ax-points">
+        <div><p class="ax-points__num">01</p><h3>送信の代行</h3><p>営業メールや返信の送信代行はしません。送信・架電はお客さまが行います。</p></div>
+        <div><p class="ax-points__num">02</p><h3>営業資料の作成</h3><p>提案書・FAQ文面などの営業資料の作成は、このプランに含まれません。</p></div>
+        <div><p class="ax-points__num">03</p><h3>成果の保証</h3><p>売上・問い合わせ数・アポイント数・成約を保証しません。商談やクロージングの代わりもしません。</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="ax-section ax-section--alt" id="price" aria-labelledby="price-h">
+    <div class="ax-wrap price-wrap">
+      <div class="ax-section-head"><p class="ax-kicker">PRICE</p><h2 id="price-h">料金の目安</h2></div>
+      <table class="ax-info">
+        <tbody>
+          <tr><th scope="row">月額</th><td>¥29,800 / 月（税別・単一プラン）</td></tr>
+          <tr><th scope="row">初期費用</th><td>なし</td></tr>
+        </tbody>
+      </table>
+      <p class="ax-note" style="margin-top:16px">外部のお客さまへの提供実績はまだありません。このページの会社・問い合わせ・リストはすべて架空で、サンプルとして作成したものです。</p>
+    </div>
+  </section>
+</main>
+
+<footer class="ax-footer">
+  <div class="ax-wrap">
+    <p>AXLABO 営業AI — 納品物サンプル</p>
+    <p>このページは AXLABO が制作したサンプルです。掲載の会社・人物・問い合わせ・内容はすべて架空で、お客さまの制作実績ではありません。</p>
+    <p><a class="back" href="/samples/">サンプル一覧へ戻る</a></p>
+  </div>
+</footer>
+<div class="ax-sample-banner" role="note">これは AXLABO が制作したサンプルサイトです。掲載の会社・人物・問い合わせ・内容はすべて架空です。</div>
+</body>
+</html>

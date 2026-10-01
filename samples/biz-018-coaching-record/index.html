@@ -1,0 +1,232 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>AIコーチング — 納品物サンプル（セッション記録と行動計画）| AXLABO</title>
+<meta name="description" content="AXLABO のAIコーチングで受け取るセッション記録と行動計画の見本です。利用者・内容はすべて架空です。">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@500;700&family=Outfit:wght@500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="components.css">
+<style>
+  /* 配色: axlabo-biz-color-palette-master.md BIZ-018「アイボリー×セージグリーン×テラコッタ」＋中立色 */
+  :root {
+    --ax-bg: #F9F8F4; --ax-tint: #EEF2EE; --ax-surface: #FFFFFF;
+    --ax-accent: #3F5F54; --ax-accent-hover: #2F4840;
+    --ax-text: #1B2330; --ax-muted: #5C6675; --ax-line: #DDE1E7;
+    --terra: #D28A5A;
+  }
+  .two { display: grid; grid-template-columns: 1fr 1fr; gap: var(--ax-s4); align-items: start; }
+  .doc { background: var(--ax-surface); border: 1px solid var(--ax-line); border-radius: 8px; padding: var(--ax-s4); box-shadow: 0 8px 24px rgba(27,35,48,.06); }
+  .doc__head { border-bottom: 2px solid var(--ax-accent); padding-bottom: var(--ax-s1); margin-bottom: var(--ax-s2); }
+  .doc__head h3 { font-size: 19px; }
+  .doc__head p { font-size: var(--ax-fs-note); color: var(--ax-muted); }
+  .doc h4 { font-family: var(--ax-font-heading); font-size: 15px; margin: var(--ax-s3) 0 6px; color: var(--ax-accent); }
+  .doc ul, .doc ol { margin: 0; padding-left: 1.3em; }
+  .doc li + li { margin-top: 4px; }
+  .chat { display: grid; gap: 10px; font-size: 14px; line-height: 1.75; }
+  .chat p { padding: 10px 14px; border-radius: 12px; max-width: 92%; }
+  .chat .ai { background: var(--ax-tint); }
+  .chat .me { background: #fff; border: 1px solid var(--ax-line); justify-self: end; }
+  .chat b { display: block; font-size: 11px; font-family: var(--ax-font-display); letter-spacing: .1em; color: var(--ax-muted); }
+  .weeks { display: grid; grid-template-columns: repeat(4, 1fr); gap: var(--ax-s2); margin-top: var(--ax-s1); }
+  .weeks div { background: var(--ax-tint); border-radius: 10px; padding: 12px; font-size: 13.5px; line-height: 1.6; }
+  .weeks b { display: block; font-family: var(--ax-font-display); color: var(--ax-accent); }
+  .scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+  .scroll:focus-visible { outline: 3px solid var(--ax-accent); outline-offset: 3px; }
+  table.habit { border-collapse: collapse; width: 100%; min-width: 460px; font-size: 13px; text-align: center; letter-spacing: 0; }
+  table.habit th, table.habit td { border: 1px solid var(--ax-line); padding: 6px 4px; }
+  table.habit th[scope="row"] { text-align: left; padding-left: 8px; font-weight: 700; white-space: nowrap; }
+  table.habit thead th { background: var(--ax-tint); font-family: var(--ax-font-display); }
+  .ok { color: var(--ax-accent); font-weight: 700; }
+  .miss { color: #8A5A3B; }
+  .tip { border-left: 4px solid var(--terra); background: #fff; padding: var(--ax-s2) var(--ax-s3); border-radius: 0 10px 10px 0; font-size: 14px; }
+  .plans { border-collapse: collapse; width: 100%; font-size: 14px; }
+  .plans th, .plans td { text-align: left; padding: 10px 12px; border-bottom: 1px solid var(--ax-line); vertical-align: top; }
+  .plans thead th { background: var(--ax-tint); }
+  .price-wrap { max-width: 820px; }
+  .back { display: inline-flex; align-items: center; min-height: 44px; color: var(--ax-on-dark) !important; }
+  @media (max-width: 900px) { .two { grid-template-columns: 1fr; } .weeks { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 480px) { .doc { padding: var(--ax-s3) var(--ax-s2); } .weeks { grid-template-columns: 1fr; } .plans th, .plans td { padding: 8px 6px; font-size: 13px; } }
+</style>
+</head>
+<body class="ax-page">
+<div class="ax-sample-banner" role="note">これは AXLABO が制作したサンプルサイトです。掲載の利用者・会話・内容はすべて架空で、お客様の利用事例ではありません。</div>
+
+<header class="ax-header">
+  <div class="ax-wrap">
+    <a class="ax-logo" href="#top">AXLABO AIコーチング<span class="ax-note">&nbsp;（納品物サンプル）</span></a>
+    <nav class="ax-nav" aria-label="ページ内の移動">
+      <ul>
+        <li><a href="#record">セッション記録</a></li>
+        <li><a href="#plan">行動計画</a></li>
+        <li><a href="#notes">ご利用の前に</a></li>
+        <li><a href="#price">料金</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+  <section class="ax-hero ax-section">
+    <div class="ax-wrap">
+      <div>
+        <p class="ax-kicker">SAMPLE DELIVERABLE · BIZ-018</p>
+        <h1><span class="ax-nobr">話した内容が、</span><span class="ax-nobr">記録と行動計画に</span><span class="ax-nobr">なります。</span></h1>
+        <p class="ax-lead">AIコーチングでは、AIとの対話で目標や今週の振り返りを整理し、その内容を「セッション記録」と「行動計画」として残します。架空の利用者の週次の振り返りを例に、受け取る2つの記録を並べました。</p>
+        <div class="ax-cta">
+          <a class="ax-btn" href="#record">セッション記録を見る</a>
+          <a class="ax-btn ax-btn--ghost" href="#plan">行動計画を見る</a>
+        </div>
+        <p class="ax-status"><span class="ax-dot" aria-hidden="true"></span>対応するのはAIです（人間のコーチではありません）</p>
+      </div>
+      <div class="ax-visual" aria-hidden="true">
+        <svg viewBox="0 0 280 180" width="280" height="180">
+          <rect x="20" y="28" width="120" height="40" rx="14" fill="#EEF2EE" stroke="#3F5F54" stroke-width="2"/>
+          <rect x="60" y="80" width="110" height="34" rx="14" fill="#fff" stroke="#DDE1E7" stroke-width="2"/>
+          <rect x="20" y="126" width="100" height="30" rx="14" fill="#EEF2EE" stroke="#3F5F54" stroke-width="2"/>
+          <rect x="186" y="30" width="76" height="124" rx="8" fill="#fff" stroke="#3F5F54" stroke-width="3"/>
+          <g stroke="#3F5F54" stroke-width="3" stroke-linecap="round"><path d="M198 58l5 5 9-10M198 88l5 5 9-10"/></g>
+          <g stroke="#D28A5A" stroke-width="4" stroke-linecap="round"><path d="M220 58h30M220 88h26M198 118h50"/></g>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <section class="ax-section ax-section--alt" aria-labelledby="what-h">
+    <div class="ax-wrap">
+      <div class="ax-section-head"><p class="ax-kicker">WHAT IT SUPPORTS</p><h2 id="what-h">AIコーチングで扱うこと</h2></div>
+      <div class="ax-points">
+        <div><p class="ax-points__num">01</p><h3>目標と進み具合</h3><p>目標を言葉にし、進み具合を記録します。うまくいかなかった週も、そのまま記録に残します。</p></div>
+        <div><p class="ax-points__num">02</p><h3>振り返りと次の一歩</h3><p>週ごとの振り返りから、次に取る行動を一緒に決めます。行動の提案は、利用者が選べる形で出します。</p></div>
+        <div><p class="ax-points__num">03</p><h3>習慣化・学習・タスク整理</h3><p>続けたい習慣の記録、学習の計画、抱えているタスクの優先順位づけを手伝います。</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="ax-section" id="record" aria-labelledby="record-h">
+    <div class="ax-wrap">
+      <div class="ax-section-head">
+        <p class="ax-kicker">DELIVERABLE 1 · SESSION RECORD</p>
+        <h2 id="record-h">セッション記録</h2>
+        <p class="ax-note">例: 架空の利用者「Kさん（会社員・18歳以上）」が、資格の勉強を続けるための週次の振り返りを行った回です。</p>
+      </div>
+      <div class="two">
+        <div>
+          <h3 style="margin-bottom:var(--ax-s2)">対話の一部（抜粋）</h3>
+          <div class="chat" aria-label="AIとの対話の抜粋">
+            <p class="ai"><b>AI</b>今週の目標は「平日に30分ずつ、問題集を5日進める」でしたね。実際はどうでしたか。</p>
+            <p class="me"><b>Kさん</b>月・火・木はできました。水曜は残業で、金曜は疲れて寝てしまいました。</p>
+            <p class="ai"><b>AI</b>5日中3日できたんですね。できた3日に共通していたことはありますか。</p>
+            <p class="me"><b>Kさん</b>朝、出勤前にやった日はできています。夜にやろうとした日はだめでした。</p>
+            <p class="ai"><b>AI</b>朝のほうが続けやすそうですね。来週は、朝に時間を移すのはどうでしょう。あるいは、夜にする日は15分だけにする方法もあります。</p>
+            <p class="me"><b>Kさん</b>朝にしてみます。ただ、毎日は自信がないので、まずは4日にします。</p>
+          </div>
+        </div>
+        <article class="doc" aria-label="セッション記録の見本">
+          <div class="doc__head"><h3>セッション記録 #6 — 週次の振り返り</h3><p>2026-11-08（日）／ テーマ: 資格の勉強を続ける</p></div>
+          <h4>今週の目標と結果</h4>
+          <ul>
+            <li>目標: 平日に30分、問題集を5日進める</li>
+            <li>結果: 3日（月・火・木）。水曜は残業、金曜は疲れて実施できず</li>
+          </ul>
+          <h4>うまくいったこと</h4>
+          <ul><li>出勤前の朝に取り組んだ日は、3日とも実施できた</li></ul>
+          <h4>進まなかったこと・その背景</h4>
+          <ul><li>夜に予定した日は、残業や疲れで実施できなかった</li></ul>
+          <h4>気づき（Kさんの言葉から）</h4>
+          <ul><li>「朝にやった日はできている。夜は難しい」</li></ul>
+          <h4>来週の一歩（Kさんが選んだもの）</h4>
+          <ul>
+            <li>勉強の時間を朝（出勤前）に移す</li>
+            <li>目標を「平日4日・各30分」にする</li>
+            <li>前日の夜に問題集を机に出しておく</li>
+          </ul>
+          <h4>次回</h4>
+          <ul><li>2026-11-15（日）に、朝の時間で続けられたかを振り返る</li></ul>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="ax-section ax-section--alt" id="plan" aria-labelledby="plan-h">
+    <div class="ax-wrap">
+      <div class="ax-section-head">
+        <p class="ax-kicker">DELIVERABLE 2 · ACTION PLAN</p>
+        <h2 id="plan-h">行動計画（4週間）</h2>
+      </div>
+      <article class="doc" aria-label="行動計画の見本">
+        <div class="doc__head"><h3>行動計画 — 資格の勉強を続ける（Kさん・架空）</h3><p>期間: 2026-11-09〜12-06 ／ セッション #6 の内容から作成</p></div>
+        <h4>目標</h4>
+        <p>12月6日までに、問題集の第3章から第6章までを1周する（1章あたり約1週間）。</p>
+        <h4>週ごとの計画</h4>
+        <div class="weeks">
+          <div><b>WEEK 1</b>第3章。朝30分を平日4日。前夜に問題集を出しておく</div>
+          <div><b>WEEK 2</b>第4章。朝の時間が定着したか確認し、日数を決め直す</div>
+          <div><b>WEEK 3</b>第5章。間違えた問題に印をつけ、週末に解き直す</div>
+          <div><b>WEEK 4</b>第6章。4週間の振り返りと、次の目標を決める</div>
+        </div>
+        <h4>習慣の記録（第1週の例）</h4>
+        <div class="scroll" tabindex="0" role="region" aria-label="習慣の記録の表">
+          <table class="habit">
+            <thead><tr><th scope="col">習慣</th><th scope="col">月</th><th scope="col">火</th><th scope="col">水</th><th scope="col">木</th><th scope="col">金</th><th scope="col">土</th><th scope="col">日</th></tr></thead>
+            <tbody>
+              <tr><th scope="row">朝30分の勉強</th><td class="ok">○</td><td class="ok">○</td><td class="miss">×</td><td class="ok">○</td><td class="ok">○</td><td>休</td><td>休</td></tr>
+              <tr><th scope="row">前夜に問題集を出す</th><td class="ok">○</td><td class="ok">○</td><td class="ok">○</td><td class="miss">×</td><td class="ok">○</td><td>—</td><td>—</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="ax-note" style="margin-top:6px">○ 実施 ／ × 未実施 ／ 休・— 予定なし（記録はKさんが入力します）</p>
+        <h4>つまずいたときの代わりの案</h4>
+        <ul>
+          <li>朝に起きられなかった日は、昼休みに10分だけ問題を1つ解く</li>
+          <li>2日続けてできなかったら、次のセッションで計画を見直す</li>
+        </ul>
+        <h4>振り返りの予定</h4>
+        <p>毎週日曜にセッションで振り返り、計画を更新します。</p>
+      </article>
+      <div class="tip" style="margin-top:var(--ax-s3)">記録と計画は、AIとの対話の内容から作られ、利用者が確認して使うものです。このページの記録は、実際の記録と同じ構成で作成した見本です（AIの出力をそのまま載せたものではありません）。</div>
+    </div>
+  </section>
+
+  <section class="ax-section" id="notes" aria-labelledby="notes-h">
+    <div class="ax-wrap">
+      <div class="ax-section-head"><p class="ax-kicker">BEFORE YOU START</p><h2 id="notes-h">ご利用の前に</h2></div>
+      <div class="ax-faq">
+        <details><summary>人間のコーチが対応しますか？</summary><p>いいえ。対応するのはAIです。人間のコーチや講師の紹介・派遣も行っていません。</p></details>
+        <details><summary>悩みの相談や、心の不調の相談にも使えますか？</summary><p>AIコーチングは、医療・治療・診断・カウンセリングではありません。体や心の不調については、医療機関などの専門の窓口にご相談ください。</p></details>
+        <details><summary>年齢の条件はありますか？</summary><p>18歳以上の方がご利用いただけます。お申し込みの際に、18歳以上であることを確認する欄があります。</p></details>
+        <details><summary>続ければ必ず目標を達成できますか？</summary><p>効果や目標の達成はお約束できません。振り返りと次の一歩を決めることを手伝うサービスです。</p></details>
+      </div>
+    </div>
+  </section>
+
+  <section class="ax-section ax-section--alt" id="price" aria-labelledby="price-h">
+    <div class="ax-wrap price-wrap">
+      <div class="ax-section-head"><p class="ax-kicker">PRICE</p><h2 id="price-h">料金の目安</h2></div>
+      <div class="scroll" tabindex="0" role="region" aria-label="料金表">
+        <table class="plans">
+          <thead><tr><th scope="col">プラン</th><th scope="col">月額</th><th scope="col">内容</th></tr></thead>
+          <tbody>
+            <tr><td>ライト</td><td>¥9,800</td><td>目標設定・進捗管理・振り返り・行動提案・習慣化・学習支援・タスク整理</td></tr>
+            <tr><td>スタンダード</td><td>¥19,800</td><td>ライトの内容＋モチベーション維持</td></tr>
+            <tr><td>プレミアム</td><td>¥29,800</td><td>スタンダードの内容＋優先サポート</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="ax-note" style="margin-top:16px">初月は ¥4,900（翌月から通常の月額で自動更新）。AXLABO の他のサービスをご利用中の方は、元のサービスの契約期間中、追加機能として月 ¥3,000 でご利用いただけます（内容はライトと同じ基本機能です。新規の申込手続きが要らない分、低い月額にしています）。外部のお客さまへの提供実績はまだありません。</p>
+    </div>
+  </section>
+</main>
+
+<footer class="ax-footer">
+  <div class="ax-wrap">
+    <p>AXLABO AIコーチング — 納品物サンプル</p>
+    <p>このページは AXLABO が制作したサンプルです。掲載の利用者・会話・内容はすべて架空で、お客さまの利用事例ではありません。</p>
+    <p><a class="back" href="/samples/">サンプル一覧へ戻る</a></p>
+  </div>
+</footer>
+<div class="ax-sample-banner" role="note">これは AXLABO が制作したサンプルサイトです。掲載の利用者・会話・内容はすべて架空です。</div>
+</body>
+</html>

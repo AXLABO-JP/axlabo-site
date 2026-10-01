@@ -1,0 +1,260 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>AI社員導入支援 — 納品物サンプル（業務の棚卸しシートと導入計画書）| AXLABO</title>
+<meta name="description" content="AXLABO のAI社員導入支援でお届けする業務の棚卸しシートと導入計画書の見本です。会社・人物・数値・内容はすべて架空です。">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@500;700&family=Outfit:wght@500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="components.css">
+<style>
+  /* 配色: axlabo-biz-color-palette-master.md BIZ-020「白×インディゴブルー×ターコイズ」＋中立色 */
+  :root {
+    --ax-bg: #FFFFFF; --ax-tint: #F3F4FA; --ax-surface: #FFFFFF;
+    --ax-accent: #344A91; --ax-accent-hover: #283A73;
+    --ax-text: #1B2330; --ax-muted: #5C6675; --ax-line: #DDE1E7;
+    --teal: #1B9E9A;
+  }
+  .doc { background: #fff; border: 1px solid var(--ax-line); border-radius: 8px; padding: var(--ax-s4); box-shadow: 0 8px 24px rgba(27,35,48,.06); }
+  .doc__head { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px; border-bottom: 2px solid var(--ax-accent); padding-bottom: var(--ax-s1); margin-bottom: var(--ax-s3); }
+  .doc__head h3 { font-size: 20px; }
+  .doc__head p { font-size: var(--ax-fs-note); color: var(--ax-muted); }
+  .doc h4 { font-family: var(--ax-font-heading); font-size: 16px; margin: var(--ax-s4) 0 var(--ax-s1); }
+  .doc h4:first-of-type { margin-top: 0; }
+  .doc ul, .doc ol { margin: 0; padding-left: 1.3em; }
+  .doc li + li { margin-top: 4px; }
+  .scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; border: 1px solid var(--ax-line); border-radius: 8px; }
+  .scroll:focus-visible { outline: 3px solid var(--ax-accent); outline-offset: 3px; }
+  table.sheet { border-collapse: collapse; width: 100%; min-width: 980px; font-size: 13px; line-height: 1.6; letter-spacing: 0; }
+  table.sheet th, table.sheet td { padding: 8px 10px; border-bottom: 1px solid var(--ax-line); text-align: left; vertical-align: top; }
+  table.sheet thead th { background: var(--ax-tint); white-space: nowrap; }
+  table.sheet td.n { text-align: right; font-family: var(--ax-font-display); white-space: nowrap; }
+  tr.pick td { background: #EAF6F5; }
+  .fit { display: inline-block; font-size: 12px; font-weight: 700; border-radius: 999px; padding: 1px 10px; white-space: nowrap; }
+  .fit--a { background: #D6EFEE; color: #0D5F5C; }
+  .fit--b { background: var(--ax-tint); color: var(--ax-accent); }
+  .fit--c { background: #F1F2F4; color: #5C6675; }
+  .fit--x { background: #FBECE8; color: #8A2E17; }
+  .worker { display: grid; grid-template-columns: 1fr 1fr; gap: var(--ax-s3); }
+  .card { border: 1px solid var(--ax-line); border-radius: 10px; padding: var(--ax-s3); background: var(--ax-surface); }
+  .card h5 { font-family: var(--ax-font-heading); font-size: 15px; margin: 0 0 var(--ax-s1); color: var(--ax-accent); }
+  table.def { border-collapse: collapse; width: 100%; font-size: 14px; }
+  table.def th, table.def td { text-align: left; vertical-align: top; padding: 8px 10px; border-bottom: 1px solid var(--ax-line); }
+  table.def th { width: 7em; background: var(--ax-tint); font-family: var(--ax-font-heading); }
+  .gantt { display: grid; gap: 6px; font-size: 13px; }
+  .gantt__row { display: grid; grid-template-columns: 11em repeat(6, 1fr); gap: 4px; align-items: center; }
+  .gantt__row > span:first-child { font-weight: 700; }
+  .gantt__h span { font-family: var(--ax-font-display); color: var(--ax-muted); font-size: 12px; text-align: center; }
+  .bar { height: 18px; border-radius: 4px; background: var(--ax-accent); }
+  .bar--t { background: var(--teal); }
+  .bar--l { background: #B8C1E0; }
+  .legend { display: flex; flex-wrap: wrap; gap: 16px; font-size: 12px; color: var(--ax-muted); margin-top: var(--ax-s1); }
+  .legend i { display: inline-block; width: 14px; height: 10px; border-radius: 2px; margin-right: 6px; vertical-align: middle; }
+  .plans { border-collapse: collapse; width: 100%; font-size: 14px; }
+  .plans th, .plans td { text-align: left; padding: 10px 12px; border-bottom: 1px solid var(--ax-line); vertical-align: top; }
+  .plans thead th { background: var(--ax-tint); }
+  .price-wrap { max-width: 820px; }
+  .back { display: inline-flex; align-items: center; min-height: 44px; color: var(--ax-on-dark) !important; }
+  @media (max-width: 860px) { .worker { grid-template-columns: 1fr; } }
+  @media (max-width: 560px) {
+    .doc { padding: var(--ax-s3) var(--ax-s2); }
+    .gantt__row { grid-template-columns: 6.5em repeat(6, 1fr); font-size: 12px; }
+    table.def th, table.def td { display: block; width: 100%; }
+    table.def th { padding-bottom: 4px; }
+    .plans th, .plans td { padding: 8px 6px; font-size: 13px; }
+  }
+</style>
+</head>
+<body class="ax-page">
+<div class="ax-sample-banner" role="note">これは AXLABO が制作したサンプルサイトです。掲載の会社・人物・業務・数値・内容はすべて架空で、お客様の制作実績ではありません。</div>
+
+<header class="ax-header">
+  <div class="ax-wrap">
+    <a class="ax-logo" href="#top">AXLABO AI社員導入支援<span class="ax-note">&nbsp;（納品物サンプル）</span></a>
+    <nav class="ax-nav" aria-label="ページ内の移動">
+      <ul>
+        <li><a href="#sheet">棚卸しシート</a></li>
+        <li><a href="#plan">導入計画書</a></li>
+        <li><a href="#price">料金</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+  <section class="ax-hero ax-section">
+    <div class="ax-wrap">
+      <div>
+        <p class="ax-kicker">SAMPLE DELIVERABLE · BIZ-020</p>
+        <h1><span class="ax-nobr">業務を棚卸しして、</span><span class="ax-nobr">AIに任せる仕事を</span><span class="ax-nobr">決めます。</span></h1>
+        <p class="ax-lead">AI社員導入支援では、最初に社内の繰り返し業務を一覧にした「棚卸しシート」を作り、その中から AI Worker（AIによる業務支援）に任せる業務と進め方を「導入計画書」にまとめます。架空の小さな工務店を例に、2つの書類の見本を載せています。</p>
+        <div class="ax-cta">
+          <a class="ax-btn" href="#sheet">棚卸しシートを見る</a>
+          <a class="ax-btn ax-btn--ghost" href="#plan">導入計画書を見る</a>
+        </div>
+        <p class="ax-status"><span class="ax-dot" aria-hidden="true"></span>例の会社「サンプル住建（架空・従業員6名）」と数値はすべて架空です</p>
+      </div>
+      <div class="ax-visual" aria-hidden="true">
+        <svg viewBox="0 0 280 180" width="280" height="180">
+          <rect x="18" y="22" width="120" height="136" rx="8" fill="#fff" stroke="#344A91" stroke-width="3"/>
+          <g stroke="#DDE1E7" stroke-width="2"><path d="M18 50h120M18 72h120M18 94h120M18 116h120M18 138h120"/></g>
+          <rect x="22" y="76" width="112" height="14" rx="3" fill="#D6EFEE"/><rect x="22" y="120" width="112" height="14" rx="3" fill="#D6EFEE"/>
+          <path d="M148 90h24" stroke="#344A91" stroke-width="4" stroke-linecap="round"/><path d="M166 82l10 8-10 8" fill="none" stroke="#344A91" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+          <rect x="186" y="44" width="76" height="92" rx="12" fill="#fff" stroke="#1B9E9A" stroke-width="3"/>
+          <circle cx="224" cy="78" r="16" fill="none" stroke="#1B9E9A" stroke-width="3"/><circle cx="218" cy="76" r="2.5" fill="#1B9E9A"/><circle cx="230" cy="76" r="2.5" fill="#1B9E9A"/>
+          <path d="M202 120h44" stroke="#344A91" stroke-width="4" stroke-linecap="round"/>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <section class="ax-section ax-section--alt" aria-labelledby="flow-h">
+    <div class="ax-wrap">
+      <div class="ax-section-head"><p class="ax-kicker">FLOW</p><h2 id="flow-h">導入までの流れ</h2></div>
+      <ol class="ax-steps">
+        <li><p class="ax-steps__label">STEP 1</p><h3>業務の棚卸し</h3><p>オンラインのヒアリングで、繰り返し行っている業務を洗い出し、入力・出力・確認者を1つずつ確かめます。</p></li>
+        <li><p class="ax-steps__label">STEP 2</p><h3>導入計画の作成</h3><p>プランの業務数の範囲で、AI Worker に任せる業務を選び、役割・指示書・権限範囲と進め方を決めます。</p></li>
+        <li><p class="ax-steps__label">STEP 3</p><h3>設定と稼働</h3><p>指示書を整えて稼働させ、確認者のチェックを受けながら調整します。稼働後の維持は月額に含まれます。</p></li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="ax-section" id="sheet" aria-labelledby="sheet-h">
+    <div class="ax-wrap">
+      <div class="ax-section-head">
+        <p class="ax-kicker">DELIVERABLE 1 · TASK INVENTORY</p>
+        <h2 id="sheet-h">業務の棚卸しシート</h2>
+        <p class="ax-note">「1業務」は、入力・処理内容・出力・確認者が特定できる、繰り返し行う定型作業1種類です。所要時間はヒアリングで伺った現状の目安で、削減の見込みではありません。</p>
+      </div>
+      <div class="doc">
+        <div class="doc__head"><h3>業務の棚卸しシート — サンプル住建（架空）</h3><p>作成: 2026-11-04 ／ ヒアリング2回（各60分・オンライン）</p></div>
+        <div class="scroll" tabindex="0" role="region" aria-label="業務の棚卸しシートの表（横にスクロールできます）">
+          <table class="sheet">
+            <thead><tr><th scope="col">No</th><th scope="col">業務</th><th scope="col">頻度</th><th scope="col">現在の担当</th><th scope="col">所要時間（月・目安）</th><th scope="col">入力</th><th scope="col">出力</th><th scope="col">確認者</th><th scope="col">AIへの向き</th><th scope="col">メモ</th></tr></thead>
+            <tbody>
+              <tr class="pick"><td>1</td><td>問い合わせメールの一次整理</td><td>毎日</td><td>事務 A</td><td class="n">約10時間</td><td>問い合わせフォームのメール</td><td>分類と要約・返信の下書き</td><td>代表</td><td><span class="fit fit--a">向く</span></td><td>営業だけの案件ではないため本事業で扱う</td></tr>
+              <tr class="pick"><td>2</td><td>現場日報から週次報告を作る</td><td>週1回</td><td>現場監督 B</td><td class="n">約6時間</td><td>各現場の日報（テキスト）</td><td>週次報告（進捗・課題・来週の予定）</td><td>代表</td><td><span class="fit fit--a">向く</span></td><td>日報の書式がそろっている</td></tr>
+              <tr><td>3</td><td>見積書の作成</td><td>週2〜3回</td><td>代表</td><td class="n">約12時間</td><td>現地調査メモ・単価表</td><td>見積書</td><td>代表</td><td><span class="fit fit--b">一部</span></td><td>下書きは可。金額の判断は代表が行う。次の段階で検討</td></tr>
+              <tr><td>4</td><td>施工写真の整理・フォルダ分け</td><td>週1回</td><td>現場監督 B</td><td class="n">約4時間</td><td>写真データ</td><td>現場別のフォルダ</td><td>現場監督 B</td><td><span class="fit fit--b">一部</span></td><td>ファイル名の規則づくりが先</td></tr>
+              <tr><td>5</td><td>資材の発注</td><td>週1回</td><td>現場監督 B</td><td class="n">約3時間</td><td>工程表・在庫</td><td>発注</td><td>代表</td><td><span class="fit fit--c">向かない</span></td><td>仕入先との電話調整が中心</td></tr>
+              <tr><td>6</td><td>お客さまへの工程連絡</td><td>週1回</td><td>事務 A</td><td class="n">約3時間</td><td>工程表</td><td>連絡文</td><td>代表</td><td><span class="fit fit--b">一部</span></td><td>No.2 の週次報告が整った後に検討</td></tr>
+              <tr><td>7</td><td>給与計算・社会保険の手続き</td><td>月1回</td><td>事務 A</td><td class="n">約5時間</td><td>勤怠</td><td>給与・届出</td><td>代表</td><td><span class="fit fit--x">対象外</span></td><td>労務書類は扱いません</td></tr>
+              <tr><td>8</td><td>確定申告・税務の相談</td><td>年1回</td><td>代表</td><td class="n">—</td><td>帳簿</td><td>申告</td><td>税理士</td><td><span class="fit fit--x">対象外</span></td><td>税務相談は扱いません</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="ax-note" style="margin-top:var(--ax-s2)">色付きの行（No.1・No.2）が、Starter プラン（2業務）で AI Worker に任せる業務です。スマートフォンでは表を横にスクロールしてご覧ください。</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="ax-section ax-section--alt" id="plan" aria-labelledby="plan-h">
+    <div class="ax-wrap">
+      <div class="ax-section-head">
+        <p class="ax-kicker">DELIVERABLE 2 · INTRODUCTION PLAN</p>
+        <h2 id="plan-h">導入計画書</h2>
+      </div>
+      <article class="doc" aria-label="導入計画書の見本">
+        <div class="doc__head"><h3>導入計画書 — サンプル住建（架空）</h3><p>プラン: Starter（2業務 / AI Worker 1体） ／ 版: 1.0</p></div>
+
+        <h4>1. 目的と範囲</h4>
+        <ul>
+          <li>繰り返し発生する「問い合わせの一次整理」と「週次報告の作成」を AI Worker が下書きし、代表が確認する形に移します。</li>
+          <li>判断（見積金額・発注・お客さまへの約束）は引き続き人が行います。AI Worker は下書きと整理を担当します。</li>
+        </ul>
+
+        <h4>2. AI Worker の定義（1体）</h4>
+        <table class="def">
+          <tbody>
+            <tr><th scope="row">役割</th><td>事務アシスタント（問い合わせ整理と週次報告の下書き）</td></tr>
+            <tr><th scope="row">指示書</th><td>会社案内・対応エリア・よくある質問・週次報告の書式をまとめた指示書（v1）</td></tr>
+            <tr><th scope="row">権限範囲</th><td>問い合わせメールと日報の<strong>読み取り</strong>、下書きの<strong>作成</strong>まで。メールの送信、見積・発注、顧客情報の外部への持ち出しはしない</td></tr>
+            <tr><th scope="row">確認者</th><td>代表（すべての下書きを確認してから使う）</td></tr>
+          </tbody>
+        </table>
+
+        <h4>3. 業務ごとの設計</h4>
+        <div class="worker">
+          <div class="card">
+            <h5>業務1: 問い合わせメールの一次整理</h5>
+            <ul>
+              <li>入力: 問い合わせフォームから届くメール</li>
+              <li>処理: 「見積依頼・相談・業者からの営業・その他」に分類し、要約する</li>
+              <li>出力: 分類・要約・返信の下書きを1件1行で記録</li>
+              <li>確認: 代表が下書きを確認し、自分で送信する</li>
+            </ul>
+          </div>
+          <div class="card">
+            <h5>業務2: 現場日報から週次報告</h5>
+            <ul>
+              <li>入力: 各現場の日報（毎週金曜の夕方までに提出されたもの）</li>
+              <li>処理: 現場ごとに進捗・課題・来週の予定を抜き出す</li>
+              <li>出力: A4 1枚程度の週次報告（日報に無いことは書かない）</li>
+              <li>確認: 代表が確認し、月曜の朝礼で使う</li>
+            </ul>
+          </div>
+        </div>
+
+        <h4>4. スケジュール（例）</h4>
+        <div class="gantt" role="img" aria-label="6週間のスケジュール。第1〜2週に棚卸しと指示書の作成、第3週に設定、第3〜4週に試行、第5〜6週に本稼働と調整。">
+          <div class="gantt__row gantt__h"><span></span><span>W1</span><span>W2</span><span>W3</span><span>W4</span><span>W5</span><span>W6</span></div>
+          <div class="gantt__row"><span>棚卸し・計画</span><div class="bar" style="grid-column: 2 / span 2"></div></div>
+          <div class="gantt__row"><span>指示書の作成</span><div class="bar" style="grid-column: 3 / span 1"></div></div>
+          <div class="gantt__row"><span>設定・試行</span><div class="bar bar--t" style="grid-column: 4 / span 2"></div></div>
+          <div class="gantt__row"><span>本稼働・調整</span><div class="bar bar--l" style="grid-column: 6 / span 2"></div></div>
+        </div>
+        <div class="legend"><span><i style="background:#344A91"></i>設計</span><span><i style="background:#1B9E9A"></i>試行（代表が全件確認）</span><span><i style="background:#B8C1E0"></i>本稼働</span></div>
+
+        <h4>5. 確認のしかた</h4>
+        <ul>
+          <li>試行期間は、代表が下書きを全件確認し、直した点を指示書に反映します。</li>
+          <li>試行の終わりに「そのまま使えた下書き」「直した下書き」の件数を一緒に振り返り、本稼働に進むかを決めます。</li>
+        </ul>
+
+        <h4>6. 月額に含む範囲・含まない範囲</h4>
+        <ul>
+          <li>含む: 契約した2業務・1体の稼働維持、軽微な指示書の修正、不具合への対応</li>
+          <li>含まない: 3つ目の業務や2体目の追加、新しい業務の設計（別途お見積り）</li>
+        </ul>
+
+        <h4>7. 扱わないこと</h4>
+        <ul>
+          <li>給与計算・社会保険などの労務書類、税務相談、官公署への提出書類、法律事務</li>
+          <li>人材の派遣・常駐（AI Worker はAIによる業務支援で、雇用や人材の提供ではありません）</li>
+        </ul>
+      </article>
+      <p class="ax-note" style="margin-top:var(--ax-s2)">導入による時間の削減や成果は保証しません。どの程度任せられるかは、試行で確かめてから決めます。</p>
+    </div>
+  </section>
+
+  <section class="ax-section" id="price" aria-labelledby="price-h">
+    <div class="ax-wrap price-wrap">
+      <div class="ax-section-head"><p class="ax-kicker">PRICE</p><h2 id="price-h">料金の目安</h2></div>
+      <div class="scroll" tabindex="0" role="region" aria-label="料金表">
+        <table class="plans">
+          <thead><tr><th scope="col">プラン</th><th scope="col">範囲</th><th scope="col">初期費用</th><th scope="col">月額</th></tr></thead>
+          <tbody>
+            <tr><td>Starter</td><td>2業務 / AI Worker 1体</td><td>¥180,000</td><td>¥25,000</td></tr>
+            <tr><td>Standard</td><td>5業務 / AI Worker 3体</td><td>¥480,000</td><td>¥65,000</td></tr>
+            <tr><td>Business</td><td>10業務 / AI Worker 6体</td><td>¥980,000</td><td>¥130,000</td></tr>
+            <tr><td>Pilot</td><td>1業務・1体・4週間</td><td>¥120,000</td><td>なし</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="ax-note" style="margin-top:16px">Pilot は先着3社・2026年11月30日まで。本導入を契約した場合は初期費用から ¥120,000 を差し引きます。Pilot は成果や本導入を約束しない検証期間です。初期費用は着手前の一括払いです。外部のお客さまへの提供実績はまだありません。</p>
+    </div>
+  </section>
+</main>
+
+<footer class="ax-footer">
+  <div class="ax-wrap">
+    <p>AXLABO AI社員導入支援 — 納品物サンプル</p>
+    <p>このページは AXLABO が制作したサンプルです。掲載の会社・人物・業務・数値・内容はすべて架空で、お客さまの制作実績ではありません。</p>
+    <p><a class="back" href="/samples/">サンプル一覧へ戻る</a></p>
+  </div>
+</footer>
+<div class="ax-sample-banner" role="note">これは AXLABO が制作したサンプルサイトです。掲載の会社・人物・業務・数値・内容はすべて架空です。</div>
+</body>
+</html>

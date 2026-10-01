@@ -1,0 +1,213 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>動画制作・編集 — 構成表・絵コンテと納品ページのサンプル | AXLABO</title>
+<meta name="description" content="AXLABO の動画制作・編集で、撮影前にお渡しする構成表・絵コンテ・撮影計画と、完成動画の納品ページの見本です。動画は含みません。会社・人物・内容はすべて架空です。">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@500;700&family=Outfit:wght@500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="components.css">
+<style>
+  /* 配色: axlabo-biz-color-palette-master.md BIZ-013「白×チャコール×赤橙」＋中立色 */
+  :root {
+    --ax-bg: #FFFFFF; --ax-tint: #F3F3F2; --ax-surface: #FFFFFF;
+    --ax-accent: #24272D; --ax-accent-hover: #3A3E46;
+    --ax-text: #1B2330; --ax-muted: #5C6675; --ax-line: #DDE1E7;
+    --red: #DF603E;
+  }
+  .ax-kicker { color: #A0452D; }
+  .notice { background: #fff; border: 2px solid var(--red); border-radius: 12px; padding: var(--ax-s3); max-width: 820px; }
+  .notice h2 { font-size: 20px; margin-bottom: 6px; }
+  .doc { background: #fff; border: 1px solid var(--ax-line); border-radius: 8px; padding: var(--ax-s4); box-shadow: 0 8px 24px rgba(27,35,48,.06); }
+  .doc__head { border-bottom: 2px solid var(--ax-accent); padding-bottom: var(--ax-s1); margin-bottom: var(--ax-s3); display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px; }
+  .doc__head h3 { font-size: 19px; }
+  .doc__head p { font-size: var(--ax-fs-note); color: var(--ax-muted); }
+  .doc h4 { font-family: var(--ax-font-heading); font-size: 15px; margin: var(--ax-s3) 0 6px; }
+  .doc ul { margin: 0; padding-left: 1.3em; }
+  .doc li + li { margin-top: 4px; }
+  .timeline { border-collapse: collapse; width: 100%; min-width: 640px; font-size: 13.5px; letter-spacing: 0; }
+  .timeline th, .timeline td { text-align: left; vertical-align: top; padding: 8px 10px; border-bottom: 1px solid var(--ax-line); }
+  .timeline thead th { background: var(--ax-tint); white-space: nowrap; }
+  .timeline td:first-child { font-family: var(--ax-font-display); white-space: nowrap; }
+  .scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+  .scroll:focus-visible { outline: 3px solid var(--ax-accent); outline-offset: 3px; }
+  .board { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(4, 1fr); gap: var(--ax-s2); }
+  .board li { background: #fff; border: 1px solid var(--ax-line); border-radius: 10px; padding: 12px; display: grid; gap: 6px; align-content: start; }
+  .board svg { width: 100%; height: auto; border-radius: 4px; background: var(--ax-tint); }
+  .board .cut { font-family: var(--ax-font-display); font-weight: 700; font-size: 12.5px; letter-spacing: .06em; }
+  .board p { font-size: 13px; line-height: 1.65; }
+  .board .tel { font-size: 12px; color: var(--ax-muted); }
+  .delivery { background: #fff; border: 1px solid var(--ax-line); border-radius: 10px; overflow: hidden; box-shadow: 0 8px 24px rgba(27,35,48,.06); }
+  .delivery__top { background: var(--ax-accent); color: #fff; padding: var(--ax-s2) var(--ax-s3); }
+  .delivery__top b { font-family: var(--ax-font-heading); font-size: 18px; }
+  .delivery__body { padding: var(--ax-s3); display: grid; gap: var(--ax-s3); }
+  .player { aspect-ratio: 16 / 9; border: 2px dashed #B8BBC2; border-radius: 8px; display: grid; place-items: center; text-align: center; color: var(--ax-muted); font-size: 14px; background: var(--ax-tint); padding: var(--ax-s2); }
+  table.meta { border-collapse: collapse; width: 100%; font-size: 14px; }
+  table.meta th, table.meta td { text-align: left; vertical-align: top; padding: 8px 10px; border-bottom: 1px solid var(--ax-line); }
+  table.meta th { width: 8em; background: var(--ax-tint); font-family: var(--ax-font-heading); }
+  .price-wrap { max-width: 760px; }
+  .back { display: inline-flex; align-items: center; min-height: 44px; color: var(--ax-on-dark) !important; }
+  @media (max-width: 960px) { .board { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 480px) {
+    .board { grid-template-columns: 1fr; }
+    .doc { padding: var(--ax-s3) var(--ax-s2); }
+    .delivery__body { padding: var(--ax-s2); }
+    table.meta th, table.meta td { display: block; width: 100%; }
+    table.meta th { padding-bottom: 4px; }
+  }
+</style>
+</head>
+<body class="ax-page">
+<div class="ax-sample-banner" role="note">これは AXLABO が制作したサンプルサイトです。掲載の会社・人物・内容はすべて架空で、お客様の制作実績ではありません。動画は含みません。</div>
+
+<header class="ax-header">
+  <div class="ax-wrap">
+    <a class="ax-logo" href="#top">AXLABO 動画制作・編集<span class="ax-note">&nbsp;（サンプル）</span></a>
+    <nav class="ax-nav" aria-label="ページ内の移動">
+      <ul>
+        <li><a href="#outline">構成表</a></li>
+        <li><a href="#board">絵コンテ</a></li>
+        <li><a href="#delivery">納品ページ</a></li>
+        <li><a href="#price">料金</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+  <section class="ax-hero ax-section">
+    <div class="ax-wrap">
+      <div>
+        <p class="ax-kicker">SAMPLE · BIZ-013 · STORYBOARD &amp; DELIVERY PAGE</p>
+        <h1><span class="ax-nobr">3分以内の動画を、</span><span class="ax-nobr">撮影から納品まで。</span></h1>
+        <p class="ax-lead">動画制作・編集では、1本3分以内の横型動画を、撮影・編集・納品まで行います。このページでは、架空の町工場の会社紹介動画を例に、撮影前にお渡しする構成表・絵コンテ・撮影計画と、完成動画の納品ページの形を示しています。</p>
+        <div class="ax-cta">
+          <a class="ax-btn" href="#board">絵コンテを見る</a>
+          <a class="ax-btn ax-btn--ghost" href="#delivery">納品ページの形</a>
+        </div>
+        <p class="ax-status"><span class="ax-dot" aria-hidden="true"></span>16:9・フルHD・MP4 の1ファイルでお届けします</p>
+      </div>
+      <div class="ax-visual" aria-hidden="true">
+        <svg viewBox="0 0 280 180" width="280" height="180">
+          <rect x="24" y="36" width="232" height="120" rx="8" fill="#fff" stroke="#24272D" stroke-width="3"/>
+          <path d="M126 74v44l38-22z" fill="#DF603E"/>
+          <rect x="24" y="20" width="232" height="16" fill="#24272D"/>
+          <g fill="#fff"><rect x="34" y="24" width="14" height="8" rx="1"/><rect x="58" y="24" width="14" height="8" rx="1"/><rect x="82" y="24" width="14" height="8" rx="1"/><rect x="106" y="24" width="14" height="8" rx="1"/></g>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <section class="ax-section ax-section--alt" aria-labelledby="why-h">
+    <div class="ax-wrap">
+      <div class="notice">
+        <h2 id="why-h">このサンプルに動画がない理由</h2>
+        <p>撮影と編集の仕上がりは、実際に撮影した映像でしかお見せできません。権利処理済みの素材と同意をいただいた出演者による見本の撮影がまだのため、このページには動画を載せていません。撮影前にお渡しする書類と、納品の形だけを示しています。</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="ax-section" id="outline" aria-labelledby="outline-h">
+    <div class="ax-wrap">
+      <div class="ax-section-head">
+        <p class="ax-kicker">BEFORE SHOOTING 1 · OUTLINE</p>
+        <h2 id="outline-h">構成表</h2>
+        <p class="ax-note">例: 架空の「サンプル製作所（金属加工・従業員12名）」の会社紹介動画。採用ページと展示会で使う想定。</p>
+      </div>
+      <article class="doc" aria-label="構成表の見本">
+        <div class="doc__head"><h3>構成表 — サンプル製作所 会社紹介（架空）</h3><p>尺: 2分50秒 ／ 16:9・1080p ／ 版: 1.0</p></div>
+        <div class="scroll" tabindex="0" role="region" aria-label="構成表（横にスクロールできます）">
+          <table class="timeline">
+            <thead><tr><th scope="col">時間</th><th scope="col">内容</th><th scope="col">映像</th><th scope="col">音</th><th scope="col">テロップ</th></tr></thead>
+            <tbody>
+              <tr><td>0:00–0:15</td><td>オープニング</td><td>工場の外観、朝の始業</td><td>BGM</td><td>会社名</td></tr>
+              <tr><td>0:15–0:50</td><td>何をつくる会社か</td><td>加工機と製品の寄り</td><td>代表の語り（収録）</td><td>事業内容を一行で</td></tr>
+              <tr><td>0:50–1:40</td><td>ものづくりの工程</td><td>図面確認→加工→検査</td><td>現場の音＋BGM</td><td>工程名</td></tr>
+              <tr><td>1:40–2:30</td><td>働く人</td><td>社員2名のインタビュー</td><td>インタビュー音声</td><td>名前・担当</td></tr>
+              <tr><td>2:30–2:50</td><td>エンディング</td><td>全員での集合カット</td><td>BGM</td><td>会社名・所在地（例）</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <h4>撮影計画</h4>
+        <ul>
+          <li>撮影は1回・4時間以内・工場1か所。午前の稼働中に工程を、午後にインタビューを撮ります</li>
+          <li>出演は、同意をいただいた社員の方のみ。取引先の図面・製品など写してはいけないものは事前に確認します</li>
+          <li>ナレーションは、代表または出演者の方の収録音声を使います（AI音声合成は使いません）</li>
+          <li>BGM・効果音・フォントは、商用利用を確認したものだけを使います</li>
+        </ul>
+      </article>
+    </div>
+  </section>
+
+  <section class="ax-section ax-section--alt" id="board" aria-labelledby="board-h">
+    <div class="ax-wrap">
+      <div class="ax-section-head">
+        <p class="ax-kicker">BEFORE SHOOTING 2 · STORYBOARD</p>
+        <h2 id="board-h">絵コンテ（8カット）</h2>
+        <p class="ax-note">絵は構図を伝えるための簡単な線画です。</p>
+      </div>
+      <ol class="board">
+        <li><svg viewBox="0 0 160 90" role="img" aria-label="カット1: 工場の外観"><path d="M10 78V40l30-14v14l30-14v14l30-14v52z" fill="none" stroke="#24272D" stroke-width="2"/><rect x="112" y="18" width="10" height="60" fill="none" stroke="#24272D" stroke-width="2"/><path d="M0 78h160" stroke="#24272D" stroke-width="2"/></svg><p class="cut">CUT 1 · 0:00</p><p>工場の外観。シャッターが開く。</p><p class="tel">テロップ: 会社名</p></li>
+        <li><svg viewBox="0 0 160 90" role="img" aria-label="カット2: 代表の胸から上"><circle cx="80" cy="34" r="13" fill="none" stroke="#24272D" stroke-width="2"/><path d="M52 90c4-26 52-26 56 0" fill="none" stroke="#24272D" stroke-width="2"/></svg><p class="cut">CUT 2 · 0:15</p><p>代表が事業を一言で語る。</p><p class="tel">テロップ: 事業内容</p></li>
+        <li><svg viewBox="0 0 160 90" role="img" aria-label="カット3: 加工機の寄り"><rect x="30" y="20" width="100" height="56" rx="4" fill="none" stroke="#24272D" stroke-width="2"/><circle cx="80" cy="48" r="14" fill="none" stroke="#DF603E" stroke-width="3"/></svg><p class="cut">CUT 3 · 0:35</p><p>加工機の動きの寄り。</p><p class="tel">音: 現場の音</p></li>
+        <li><svg viewBox="0 0 160 90" role="img" aria-label="カット4: 図面を確認する手元"><rect x="30" y="24" width="100" height="48" fill="none" stroke="#24272D" stroke-width="2"/><path d="M42 36h40M42 48h60M42 60h30" stroke="#24272D" stroke-width="2"/></svg><p class="cut">CUT 4 · 0:50</p><p>図面を確認する手元（図面の内容はぼかす）。</p><p class="tel">テロップ: 図面確認</p></li>
+        <li><svg viewBox="0 0 160 90" role="img" aria-label="カット5: 加工中の作業者の横姿"><circle cx="60" cy="30" r="9" fill="none" stroke="#24272D" stroke-width="2"/><path d="M60 39v24M60 46h24" stroke="#24272D" stroke-width="2"/><rect x="88" y="40" width="44" height="30" fill="none" stroke="#24272D" stroke-width="2"/></svg><p class="cut">CUT 5 · 1:05</p><p>加工中の作業者を横から。</p><p class="tel">テロップ: 加工</p></li>
+        <li><svg viewBox="0 0 160 90" role="img" aria-label="カット6: 検査器具で測る手元の寄り"><path d="M40 60h80" stroke="#24272D" stroke-width="2"/><rect x="66" y="30" width="28" height="30" fill="none" stroke="#24272D" stroke-width="2"/><path d="M80 18v12" stroke="#DF603E" stroke-width="3"/></svg><p class="cut">CUT 6 · 1:25</p><p>検査器具で寸法を測る手元。</p><p class="tel">テロップ: 検査</p></li>
+        <li><svg viewBox="0 0 160 90" role="img" aria-label="カット7: 社員インタビュー、人物を画面の左に配置"><circle cx="54" cy="36" r="13" fill="none" stroke="#24272D" stroke-width="2"/><path d="M26 90c4-26 52-26 56 0" fill="none" stroke="#24272D" stroke-width="2"/><rect x="100" y="56" width="50" height="12" fill="#DF603E"/></svg><p class="cut">CUT 7 · 1:40</p><p>社員インタビュー（2名）。仕事のやりがい。</p><p class="tel">テロップ: 名前・担当</p></li>
+        <li><svg viewBox="0 0 160 90" role="img" aria-label="カット8: 工場前での集合"><g fill="none" stroke="#24272D" stroke-width="2"><circle cx="40" cy="42" r="7"/><circle cx="64" cy="40" r="7"/><circle cx="88" cy="40" r="7"/><circle cx="112" cy="42" r="7"/><path d="M30 76c2-18 20-18 20 0M54 76c2-18 20-18 20 0M78 76c2-18 20-18 20 0M102 76c2-18 20-18 20 0"/></g></svg><p class="cut">CUT 8 · 2:30</p><p>工場前で全員の集合カット。</p><p class="tel">テロップ: 会社名・所在地</p></li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="ax-section" id="delivery" aria-labelledby="delivery-h">
+    <div class="ax-wrap">
+      <div class="ax-section-head">
+        <p class="ax-kicker">DELIVERY PAGE</p>
+        <h2 id="delivery-h">納品ページの形</h2>
+      </div>
+      <div class="delivery">
+        <div class="delivery__top"><b>完成動画のお届け — サンプル製作所 様（架空）</b></div>
+        <div class="delivery__body">
+          <div class="player"><span>ここに完成した動画（16:9・約2分50秒）が入ります。<br>このサンプルには動画はありません。</span></div>
+          <table class="meta">
+            <tbody>
+              <tr><th scope="row">ファイル</th><td>横型（16:9）・フルHD（1080p）・MP4 の1ファイル。縦型・ショート版などの派生は含みません</td></tr>
+              <tr><th scope="row">初稿</th><td>撮影日から10営業日以内</td></tr>
+              <tr><th scope="row">修正</th><td>2回まで（文言・カット・テロップ）。各回、ご連絡から5営業日以内</td></tr>
+              <tr><th scope="row">検収</th><td>納品から7日以内にご確認ください</td></tr>
+              <tr><th scope="row">ダウンロード</th><td>このページから30日間。期間の後は AXLABO で保管しません</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <p class="ax-note" style="margin-top:var(--ax-s2)">再生回数・問い合わせ・売上などの成果は保証しません。構成全体の作り直しや再撮影は修正の範囲に含まれません。</p>
+    </div>
+  </section>
+
+  <section class="ax-section ax-section--alt" id="price" aria-labelledby="price-h">
+    <div class="ax-wrap price-wrap">
+      <div class="ax-section-head"><p class="ax-kicker">PRICE</p><h2 id="price-h">料金の目安</h2></div>
+      <table class="ax-info">
+        <tbody>
+          <tr><th scope="row">1本</th><td>¥180,000（税別・撮影・編集・納品）</td></tr>
+          <tr><th scope="row">範囲</th><td>3分以内・撮影1回（4時間以内・1か所）・テロップ・BGM・修正2回</td></tr>
+          <tr><th scope="row">出張費</th><td>名古屋市内は無料。市外は距離に応じて加算、飛行機・新幹線などは実費</td></tr>
+        </tbody>
+      </table>
+      <p class="ax-note" style="margin-top:16px">月額契約・本数割引・お試しはありません。料金は制作着手前の一括払いです。外部のお客さまへの提供実績はまだありません。このページの会社・人物・内容は架空です。</p>
+    </div>
+  </section>
+</main>
+
+<footer class="ax-footer">
+  <div class="ax-wrap">
+    <p>AXLABO 動画制作・編集 — 構成表・絵コンテと納品ページのサンプル</p>
+    <p>このページは AXLABO が制作したサンプルです。掲載の会社・人物・内容はすべて架空で、お客さまの制作実績ではありません。</p>
+    <p><a class="back" href="/samples/">サンプル一覧へ戻る</a></p>
+  </div>
+</footer>
+<div class="ax-sample-banner" role="note">これは AXLABO が制作したサンプルサイトです。掲載の会社・人物・内容はすべて架空です。動画は含みません。</div>
+</body>
+</html>

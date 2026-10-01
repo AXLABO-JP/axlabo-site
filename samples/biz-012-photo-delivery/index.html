@@ -1,0 +1,220 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>出張写真撮影 — 納品ページと撮影の流れのサンプル | AXLABO</title>
+<meta name="description" content="AXLABO の出張写真撮影でお届けする納品ページの構成と、撮影までの流れの見本です。写真は掲載していません。依頼者・内容はすべて架空です。">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@500;700&family=Outfit:wght@500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="components.css">
+<style>
+  /* 配色: axlabo-biz-color-palette-master.md BIZ-012「アイボリー×ダークブラウン×キャメル」＋中立色 */
+  :root {
+    --ax-bg: #FAF7F2; --ax-tint: #EFE8DF; --ax-surface: #FFFFFF;
+    --ax-accent: #403A35; --ax-accent-hover: #2E2A26;
+    --ax-text: #1B2330; --ax-muted: #5C6675; --ax-line: #DDE1E7;
+    --camel: #BE936B;
+  }
+  .notice { background: #fff; border: 2px solid var(--camel); border-radius: 12px; padding: var(--ax-s3); max-width: 820px; }
+  .notice h2 { font-size: 20px; margin-bottom: 6px; }
+  .delivery { background: #fff; border: 1px solid var(--ax-line); border-radius: 10px; overflow: hidden; box-shadow: 0 8px 24px rgba(27,35,48,.06); }
+  .delivery__top { background: var(--ax-accent); color: #fff; padding: var(--ax-s2) var(--ax-s3); display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px; align-items: baseline; }
+  .delivery__top b { font-family: var(--ax-font-heading); font-size: 18px; }
+  .delivery__top span { font-size: 13px; color: #EFE8DF; }
+  .delivery__body { padding: var(--ax-s3); display: grid; gap: var(--ax-s3); }
+  table.meta { border-collapse: collapse; width: 100%; font-size: 14px; }
+  table.meta th, table.meta td { text-align: left; vertical-align: top; padding: 8px 10px; border-bottom: 1px solid var(--ax-line); }
+  table.meta th { width: 8em; background: var(--ax-tint); font-family: var(--ax-font-heading); }
+  .group h3 { font-size: 15px; margin-bottom: var(--ax-s1); }
+  .group h3 span { font-family: var(--ax-font-display); color: var(--ax-muted); font-size: 13px; font-weight: 500; margin-left: 6px; }
+  .grid { display: grid; grid-template-columns: repeat(6, 1fr); gap: 8px; list-style: none; margin: 0; padding: 0; }
+  .grid li { aspect-ratio: 3 / 2; border: 2px dashed #C9BBA9; border-radius: 6px; display: grid; place-items: center; text-align: center; font-size: 11px; line-height: 1.4; color: var(--ax-muted); background: var(--ax-bg); padding: 4px; }
+  .grid li.v { aspect-ratio: 2 / 3; }
+  .grid li b { display: block; font-family: var(--ax-font-display); color: var(--ax-accent); font-size: 12px; }
+  .dl { display: flex; flex-wrap: wrap; gap: var(--ax-s2); align-items: center; }
+  .fake-btn { display: inline-flex; align-items: center; min-height: 44px; padding: 0 var(--ax-s3); border-radius: 999px; border: 2px dashed var(--ax-accent); color: var(--ax-accent); font-weight: 700; font-family: var(--ax-font-heading); font-size: 14px; }
+  .shots { border-collapse: collapse; width: 100%; font-size: 14px; }
+  .shots th, .shots td { text-align: left; vertical-align: top; padding: 8px 10px; border-bottom: 1px solid var(--ax-line); }
+  .shots thead th { background: var(--ax-tint); white-space: nowrap; }
+  .scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+  .scroll:focus-visible { outline: 3px solid var(--ax-accent); outline-offset: 3px; }
+  .ax-steps { grid-template-columns: repeat(3, 1fr); }
+  .price-wrap { max-width: 760px; }
+  .back { display: inline-flex; align-items: center; min-height: 44px; color: var(--ax-on-dark) !important; }
+  @media (max-width: 860px) { .grid { grid-template-columns: repeat(3, 1fr); } }
+  @media (max-width: 480px) {
+    .delivery__body { padding: var(--ax-s2); }
+    table.meta th, table.meta td { display: block; width: 100%; }
+    table.meta th { padding-bottom: 4px; }
+    .shots { min-width: 520px; }
+  }
+</style>
+</head>
+<body class="ax-page">
+<div class="ax-sample-banner" role="note">これは AXLABO が制作したサンプルサイトです。掲載の依頼者・撮影内容・日付はすべて架空で、お客様の制作実績ではありません。写真は掲載していません。</div>
+
+<header class="ax-header">
+  <div class="ax-wrap">
+    <a class="ax-logo" href="#top">AXLABO 出張写真撮影<span class="ax-note">&nbsp;（納品ページのサンプル）</span></a>
+    <nav class="ax-nav" aria-label="ページ内の移動">
+      <ul>
+        <li><a href="#delivery">納品ページ</a></li>
+        <li><a href="#shotlist">撮影リスト</a></li>
+        <li><a href="#flow">流れ</a></li>
+        <li><a href="#price">料金</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+  <section class="ax-hero ax-section">
+    <div class="ax-wrap">
+      <div>
+        <p class="ax-kicker">SAMPLE · BIZ-012 · PROCESS &amp; DELIVERY PAGE</p>
+        <h1><span class="ax-nobr">撮影した写真は、</span><span class="ax-nobr">この形で届きます。</span></h1>
+        <p class="ax-lead">出張写真撮影では、撮影から10営業日以内に、写真をまとめた納品ページでお届けします。このページでは、架空の整体院の撮影を例に、納品ページの構成と、撮影までの流れを示しています。</p>
+        <div class="ax-cta">
+          <a class="ax-btn" href="#delivery">納品ページの構成を見る</a>
+          <a class="ax-btn ax-btn--ghost" href="#flow">撮影までの流れ</a>
+        </div>
+        <p class="ax-status"><span class="ax-dot" aria-hidden="true"></span>写真の枠は空欄です（理由は下記）</p>
+      </div>
+      <div class="ax-visual" aria-hidden="true">
+        <svg viewBox="0 0 280 180" width="280" height="180">
+          <rect x="40" y="46" width="200" height="112" rx="14" fill="#fff" stroke="#403A35" stroke-width="3"/>
+          <rect x="104" y="30" width="72" height="20" rx="6" fill="#403A35"/>
+          <circle cx="140" cy="102" r="34" fill="none" stroke="#403A35" stroke-width="3"/>
+          <circle cx="140" cy="102" r="20" fill="none" stroke="#BE936B" stroke-width="5"/>
+          <circle cx="212" cy="66" r="6" fill="#BE936B"/>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <section class="ax-section ax-section--alt" aria-labelledby="why-h">
+    <div class="ax-wrap">
+      <div class="notice">
+        <h2 id="why-h">このサンプルに写真がない理由</h2>
+        <p>撮影の仕上がりは、実際に撮影した写真でしかお見せできません。AIで生成した写真で代わりにすることはしていません。このページでは写真の枠を空欄のままにし、納品の形と撮影の進め方だけを示しています。撮影した写真の見本は、同意をいただいた撮影ができしだい、別に用意します。</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="ax-section" id="delivery" aria-labelledby="delivery-h">
+    <div class="ax-wrap">
+      <div class="ax-section-head">
+        <p class="ax-kicker">DELIVERY PAGE</p>
+        <h2 id="delivery-h">納品ページの構成</h2>
+        <p class="ax-note">実際の納品ページでは、以下の枠に撮影した写真が入ります。</p>
+      </div>
+      <div class="delivery">
+        <div class="delivery__top"><b>撮影データのお届け — サンプル整体院 様（架空）</b><span>標準プラン（2時間・30枚）</span></div>
+        <div class="delivery__body">
+          <table class="meta">
+            <tbody>
+              <tr><th scope="row">撮影日</th><td>2026年11月10日（火）10:00〜12:00（例）</td></tr>
+              <tr><th scope="row">撮影場所</th><td>院内・外観（名古屋市内・例）</td></tr>
+              <tr><th scope="row">お届け日</th><td>2026年11月20日（金）（撮影から10営業日以内）</td></tr>
+              <tr><th scope="row">枚数</th><td>30枚（下の3つのまとまりに分けて掲載）</td></tr>
+              <tr><th scope="row">用途</th><td>ホームページ・予約ページ・店内掲示（ヒアリングで伺った用途）</td></tr>
+            </tbody>
+          </table>
+
+          <div class="group">
+            <h3>外観・入口<span>10枚</span></h3>
+            <ul class="grid" aria-label="外観・入口の写真枠（空欄）">
+              <li><span><b>01</b>外観 正面</span></li><li><span><b>02</b>外観 斜め</span></li><li><span><b>03</b>看板</span></li><li><span><b>04</b>入口</span></li><li class="v"><span><b>05</b>入口 縦</span></li><li><span><b>06</b>受付</span></li>
+              <li><span><b>07</b>待合</span></li><li><span><b>08</b>待合 縦</span></li><li><span><b>09</b>案内表示</span></li><li><span><b>10</b>周辺の目印</span></li>
+            </ul>
+          </div>
+          <div class="group">
+            <h3>施術室・設備<span>12枚</span></h3>
+            <ul class="grid" aria-label="施術室・設備の写真枠（空欄）">
+              <li><span><b>11</b>施術室 全体</span></li><li><span><b>12</b>施術台</span></li><li><span><b>13</b>照明</span></li><li><span><b>14</b>タオル類</span></li><li><span><b>15</b>器具</span></li><li><span><b>16</b>更衣スペース</span></li>
+              <li><span><b>17</b>窓際</span></li><li><span><b>18</b>手洗い</span></li><li><span><b>19</b>施術室 縦</span></li><li><span><b>20</b>細部 1</span></li><li><span><b>21</b>細部 2</span></li><li><span><b>22</b>細部 3</span></li>
+            </ul>
+          </div>
+          <div class="group">
+            <h3>院長・施術の様子<span>8枚</span></h3>
+            <ul class="grid" aria-label="院長・施術の様子の写真枠（空欄）">
+              <li><span><b>23</b>院長 ポートレート</span></li><li class="v"><span><b>24</b>院長 縦</span></li><li><span><b>25</b>カウンセリング</span></li><li><span><b>26</b>施術 手元</span></li><li><span><b>27</b>施術 全体</span></li><li><span><b>28</b>説明の様子</span></li>
+              <li><span><b>29</b>受付での会話</span></li><li><span><b>30</b>院長 横向き</span></li>
+            </ul>
+          </div>
+
+          <div class="dl">
+            <span class="fake-btn" aria-hidden="true">まとめてダウンロード（見本）</span>
+            <p class="ax-note">実際の納品ページでは、ここから全写真をまとめてダウンロードできます。写真の形式・サイズは、ヒアリングで伺った用途に合わせてお知らせします。</p>
+          </div>
+          <p class="ax-note">人物の写真は、写っている方の同意をいただいたものだけを掲載します。通院中の方など第三者が写り込む場面は撮影しないか、写り込まない構図にします。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="ax-section ax-section--alt" id="shotlist" aria-labelledby="shot-h">
+    <div class="ax-wrap">
+      <div class="ax-section-head">
+        <p class="ax-kicker">SHOT LIST</p>
+        <h2 id="shot-h">撮影リスト（事前にお渡しするもの）</h2>
+        <p class="ax-note">ヒアリングの内容から、撮影前に「何を・どこで・何のために撮るか」を一覧にして確認していただきます。</p>
+      </div>
+      <div class="scroll" tabindex="0" role="region" aria-label="撮影リストの表">
+        <table class="shots" style="background:#fff;border-radius:10px">
+          <thead><tr><th scope="col">時間</th><th scope="col">場所</th><th scope="col">撮るもの</th><th scope="col">使い道</th></tr></thead>
+          <tbody>
+            <tr><td>10:00</td><td>外観</td><td>正面・斜め・看板・入口</td><td>ホームページの最初の画面、予約ページ</td></tr>
+            <tr><td>10:25</td><td>受付・待合</td><td>受付、待合の全体と細部</td><td>「はじめての方へ」のページ</td></tr>
+            <tr><td>10:45</td><td>施術室</td><td>全体・施術台・設備・細部</td><td>施術内容のページ</td></tr>
+            <tr><td>11:20</td><td>施術室</td><td>院長のポートレート、施術の様子（モデルはスタッフ）</td><td>院長紹介・店内掲示</td></tr>
+            <tr><td>11:50</td><td>—</td><td>撮り忘れの確認</td><td>—</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <section class="ax-section" id="flow" aria-labelledby="flow-h">
+    <div class="ax-wrap">
+      <div class="ax-section-head"><p class="ax-kicker">PROCESS</p><h2 id="flow-h">撮影までの流れ</h2></div>
+      <ol class="ax-steps">
+        <li><p class="ax-steps__label">STEP 1</p><h3>ヒアリング・お見積り</h3><p>用途・撮りたいもの・場所を伺います。名古屋市外の場合は出張費を見積書に明記し、同意をいただいてから進めます。</p></li>
+        <li><p class="ax-steps__label">STEP 2</p><h3>撮影リストの確認</h3><p>撮るものと順番を一覧にしてお渡しし、当日の流れを決めます。料金は前払いです。</p></li>
+        <li><p class="ax-steps__label">STEP 3</p><h3>天候の判断</h3><p>屋外の撮影がある場合、前日または当日朝に、天気と現地の様子をもとに一緒に決めます。雨天・悪天候による日程変更は無料です。</p></li>
+        <li><p class="ax-steps__label">STEP 4</p><h3>撮影</h3><p>撮影リストに沿って撮影します。撮影は代表本人が行います。</p></li>
+        <li><p class="ax-steps__label">STEP 5</p><h3>選定・調整</h3><p>撮影した写真から選び、明るさなどを調整します。</p></li>
+        <li><p class="ax-steps__label">STEP 6</p><h3>納品</h3><p>撮影から10営業日以内に、納品ページでお届けします。</p></li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="ax-section ax-section--alt" id="price" aria-labelledby="price-h">
+    <div class="ax-wrap price-wrap">
+      <div class="ax-section-head"><p class="ax-kicker">PRICE</p><h2 id="price-h">料金の目安</h2></div>
+      <table class="ax-info">
+        <tbody>
+          <tr><th scope="row">お試し</th><td>¥19,800（1時間・15枚・名古屋市内／税別）</td></tr>
+          <tr><th scope="row">標準</th><td>¥30,000〜（2時間・30枚／税別）</td></tr>
+          <tr><th scope="row">1日</th><td>〜¥80,000（撮影6時間まで・90枚／税別）</td></tr>
+          <tr><th scope="row">特急</th><td>通常料金の40%増（撮影から5営業日以内に納品）</td></tr>
+          <tr><th scope="row">出張費</th><td>名古屋市内は無料。市外は距離に応じて加算、飛行機・新幹線などは実費</td></tr>
+        </tbody>
+      </table>
+      <p class="ax-note" style="margin-top:16px">機材の不良・データの破損など AXLABO 側の原因で撮影が成り立たなかった場合は、条件に沿って撮り直します。外部のお客さまへの提供実績はまだありません。このページの依頼者・撮影内容は架空です。</p>
+    </div>
+  </section>
+</main>
+
+<footer class="ax-footer">
+  <div class="ax-wrap">
+    <p>AXLABO 出張写真撮影 — 納品ページと撮影の流れのサンプル</p>
+    <p>このページは AXLABO が制作したサンプルです。掲載の依頼者・撮影内容・日付はすべて架空で、お客さまの制作実績ではありません。</p>
+    <p><a class="back" href="/samples/">サンプル一覧へ戻る</a></p>
+  </div>
+</footer>
+<div class="ax-sample-banner" role="note">これは AXLABO が制作したサンプルサイトです。掲載の依頼者・撮影内容はすべて架空です。写真は掲載していません。</div>
+</body>
+</html>
