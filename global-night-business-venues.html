@@ -6,8 +6,6 @@
 <title>Japanese listing pages for overseas venues | AXLABO</title>
 <meta name="description" content="For overseas bars, lounges, clubs and live-music venues: AXLABO creates a Japanese listing page for your venue and lists it on our portal for Japanese travellers. US$200 one-time, US$0 per month. No booking, no commission. Launching: not yet accepting orders.">
 <link rel="canonical" href="https://axlabo.com/global-night-business-venues.html">
-<link rel="alternate" hreflang="en" href="https://axlabo.com/global-night-business-venues.html">
-<link rel="alternate" hreflang="ja" href="https://axlabo.com/global-night-business-overseas.html">
 <meta name="robots" content="index,follow">
 <meta name="theme-color" content="#141110">
 <meta property="og:type" content="website">
@@ -199,21 +197,6 @@
     .legal-links a,.lang-link a,.contact-line a{padding-block:5px;display:inline-block;}
   }
 
-  /* Age gate: same rule and storage key as the Japanese BIZ-035 page */
-  .agegate{position:fixed;inset:0;z-index:100;display:grid;place-items:center;padding:20px;background:rgba(10,9,8,.97);}
-  .agegate[hidden]{display:none;}
-  .agecard{width:min(460px,100%);padding:32px;border-radius:16px;background:var(--card);text-align:center;color:var(--ink);}
-  .agecard [hidden]{display:none !important;}
-  .agebrand{margin-bottom:16px;color:var(--accent);font-weight:800;letter-spacing:.14em;}
-  .agecard h2{margin:0 0 8px;font-size:22px;}
-  .agecard p{margin:0 0 20px;color:var(--ink-soft);font-size:14px;}
-  .ageactions{display:grid;gap:9px;}
-  .ageactions button{min-height:48px;border-radius:9px;font:inherit;font-weight:800;cursor:pointer;}
-  .ageyes{border:0;background:var(--accent);color:var(--on-accent);}
-  .ageno{border:1px solid var(--card-line);background:transparent;color:var(--ink);}
-  .agenote{display:block;margin-top:14px;color:var(--ink-soft);font-size:11px;line-height:1.7;}
-  body.locked{overflow:hidden;}
-
   .skip-to-main{position:absolute;left:-9999px;top:0;z-index:200;background:#141820;color:#FFF;padding:10px 16px;border-radius:0 0 6px 0;text-decoration:none;font-size:14px;}
   .skip-to-main:focus{left:0;}
   a:focus-visible,button:focus-visible,summary:focus-visible{outline:2px solid #FFF;outline-offset:0;box-shadow:0 0 0 4px #141820,0 0 0 6px #FFF;}
@@ -224,20 +207,7 @@
   }
 </style>
 </head>
-<body class="locked">
-<div class="agegate" id="ageGate" role="dialog" aria-modal="true" aria-labelledby="ageTitle" aria-describedby="ageText">
-  <div class="agecard">
-    <div class="agebrand">AXLABO</div>
-    <h2 id="ageTitle">Age check</h2>
-    <p id="ageText">This page is about nightlife venues. Are you 20 or older?</p>
-    <div class="ageactions">
-      <button class="ageyes" id="ageYes" type="button">Yes, I am 20 or older</button>
-      <button class="ageno" id="ageNo" type="button">No</button>
-    </div>
-    <p class="agedenied" id="ageDenied" hidden>Thank you for visiting. This page is intended for people aged 20 or older.</p>
-    <small class="agenote">This is a self-reported check, not a legal age or identity verification.</small>
-  </div>
-</div>
+<body>
 <a class="skip-to-main" href="#main">Skip to content</a>
 
 <div class="status-bar" role="note"><b>Launching (準備中)</b> · Not yet accepting orders. Questions are welcome at info@axlabo.com.</div>
@@ -260,7 +230,7 @@
     <div class="container">
       <p class="eyebrow">For overseas bars, lounges, clubs and live-music venues</p>
       <h1 id="hero-title">A Japanese page for your venue, so Japanese travellers know what to expect.</h1>
-      <p class="lead">AXLABO writes a Japanese listing page for your venue, covering prices, dress code, age and entry rules, and atmosphere, and lists it on our portal for travellers from Japan. Your team reviews the page before anything goes live.</p>
+      <p class="lead">AXLABO writes a Japanese listing page for your venue, covering prices, dress code, age and entry rules, and atmosphere, and lists it on our Japanese-language portal for travellers from Japan once the service opens. Your team reviews the page before anything goes live.</p>
       <div class="button-row">
         <a class="button button-primary" href="mailto:info@axlabo.com?subject=Global%20Night%20Business%20%E2%80%94%20venue%20listing%20enquiry">Email info@axlabo.com</a>
         <a class="button button-secondary" href="/samples/venue-listing/">See a sample listing page (fictional venue)</a>
@@ -315,7 +285,7 @@
         <article class="step">
           <div class="step-number">04</div>
           <h3>It goes live on the portal</h3>
-          <p>The page is listed on AXLABO's Japanese-language portal. Travellers contact your venue directly through your own channels.</p>
+          <p>Once approved, the page is listed on AXLABO's Japanese-language portal, which opens with the first listed venues. Travellers contact your venue directly through your own channels.</p>
         </article>
       </div>
     </div>
@@ -374,7 +344,7 @@
     <div class="container">
       <div class="honest">
         <h2 id="status-title">Where we are today</h2>
-        <p>This service is launching (準備中). There are no listed venues yet, and we have no client results to show. The sample page below uses a fictional venue to show the format; it is not a real client.</p>
+        <p>This service is launching (準備中). There are no listed venues yet, and we have no client results to show. The traveller portal is not public yet. The sample page below uses a fictional venue to show the format; it is not a real client.</p>
         <p><a href="/samples/venue-listing/">See the sample listing page (fictional venue, in Japanese)</a></p>
         <p>AXLABO operates from Japan and is run by its founder with AI support. There is no separate support team. Contact: <a href="mailto:info@axlabo.com">info@axlabo.com</a>.</p>
       </div>
@@ -446,23 +416,5 @@
     </div>
   </div>
 </footer>
-<script>
-(function(){
-  // Same storage key as the Japanese BIZ-035 page, so the check is asked once per device.
-  var key='axlabo_agegate_nightlife_v1';
-  var gate=document.getElementById('ageGate');
-  function verified(){try{return localStorage.getItem(key)==='1'}catch(e){return false}}
-  function closeGate(){gate.hidden=true;document.body.classList.remove('locked');}
-  if(verified()){closeGate();}
-  else{document.getElementById('ageYes').focus();}
-  document.getElementById('ageYes').addEventListener('click',function(){
-    try{localStorage.setItem(key,'1')}catch(e){} closeGate();});
-  document.getElementById('ageNo').addEventListener('click',function(){
-    var denied=document.getElementById('ageDenied');
-    Array.prototype.forEach.call(denied.parentNode.children,function(el){
-      if(el!==denied&&!el.classList.contains('agebrand'))el.hidden=true;});
-    denied.hidden=false;});
-})();
-</script>
 </body>
 </html>

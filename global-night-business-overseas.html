@@ -254,7 +254,7 @@
       <a href="#problems">よくあるお悩み</a><a href="#features">サービス内容</a><a href="#flow">ご利用の流れ</a><a href="#pricing">料金プラン</a><a href="#faq">よくある質問</a>
     </nav>
     <div class="navcta">
-      <a class="btn-ghost btn" data-secondary-cta href="#">掲載ページのサンプルを見る</a>
+      <a class="btn-ghost btn" data-secondary-cta href="/samples/venue-listing/">掲載ページのサンプルを見る</a>
       <a class="btn" data-contact-cta href="#">掲載について相談する</a>
     </div>
     <button class="menu-toggle" aria-label="メニューを開く" aria-expanded="false" aria-controls="mobileMenu"><span></span><span></span><span></span></button>
@@ -262,7 +262,7 @@
   <nav class="mobile-menu" id="mobileMenu">
     <a href="#problems">よくあるお悩み</a><a href="#features">サービス内容</a><a href="#flow">ご利用の流れ</a><a href="#pricing">料金プラン</a><a href="#faq">よくある質問</a>
     <div class="mm-cta">
-      <a class="btn-ghost btn" data-secondary-cta href="#" style="flex:1;justify-content:center;">掲載ページのサンプルを見る</a>
+      <a class="btn-ghost btn" data-secondary-cta href="/samples/venue-listing/" style="flex:1;justify-content:center;">掲載ページのサンプルを見る</a>
       <a class="btn" data-contact-cta href="#" style="flex:1;justify-content:center;">相談する</a>
     </div>
   </nav>
@@ -277,7 +277,7 @@
         <p class="hero-body">海外のバー・クラブ・ライブハウスの情報を、日本語で先に確認。料金・条件・雰囲気を事前に知ったうえで、安心して現地の夜を楽しめます。<br><span style="font-size:.82em;color:var(--ink-soft);">Discover nightlife venues abroad — prices and conditions explained in Japanese, before you go.</span></p>
         <div class="hero-actions">
           <a class="btn" data-contact-cta href="#">掲載について相談する</a>
-          <a class="btn-ghost btn" data-secondary-cta href="#" style="background:rgba(255,255,255,.08);color:#fff;border-color:rgba(255,255,255,.28);">掲載ページのサンプルを見る</a>
+          <a class="btn-ghost btn" data-secondary-cta href="/samples/venue-listing/" style="background:rgba(255,255,255,.08);color:#fff;border-color:rgba(255,255,255,.28);">掲載ページのサンプルを見る</a>
         </div>
         <p style="margin:14px 0 0;font-size:12px;"><a href="/global-night-business-venues.html" lang="en" hreflang="en" style="color:var(--gold);text-underline-offset:3px;">For venues (English)</a></p>
       </div>
@@ -434,7 +434,7 @@
         <p>まずは掲載ページのサンプルをご覧いただき、お気軽にご相談ください。</p>
         <div class="final-cta-actions">
           <a class="btn" data-contact-cta href="#">掲載について相談する</a>
-          <a class="btn-ghost btn" data-secondary-cta href="#" style="background:rgba(255,255,255,.1);color:#fff;border-color:rgba(255,255,255,.3);">掲載ページのサンプルを見る</a>
+          <a class="btn-ghost btn" data-secondary-cta href="/samples/venue-listing/" style="background:rgba(255,255,255,.1);color:#fff;border-color:rgba(255,255,255,.3);">掲載ページのサンプルを見る</a>
         </div>
       </div>
     </div>
@@ -470,13 +470,13 @@
 </footer>
 
 <div class="sticky-cta">
-  <a class="btn-ghost btn" data-secondary-cta href="#">掲載ページのサンプルを見る</a>
+  <a class="btn-ghost btn" data-secondary-cta href="/samples/venue-listing/">掲載ページのサンプルを見る</a>
   <a class="btn" data-contact-cta href="#">掲載について相談する</a>
 </div>
 
 <script>
   var CONTACT_CONFIG = { type:'mailto', email:'info@axlabo.com', subject:'Global Night Business 海外版 掲載について', formUrl:'' };
-  var SECONDARY_CONFIG = { type:'mailto', email:'info@axlabo.com', subject:'Global Night Business 海外版 掲載サンプル希望', formUrl:'' };
+  var SECONDARY_CONFIG = { type:'form', email:'info@axlabo.com', subject:'Global Night Business 海外版 掲載サンプル希望', formUrl:'/samples/venue-listing/' };
   function apply(sel, cfg){
     var href = cfg.type==='form' && cfg.formUrl ? cfg.formUrl : 'mailto:'+cfg.email+'?subject='+encodeURIComponent(cfg.subject);
     document.querySelectorAll(sel).forEach(function(el){ el.setAttribute('href', href); });
