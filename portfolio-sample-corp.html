@@ -58,6 +58,12 @@
 /* AA是正（配色マスター派生色・中立色）2026-10-01 */
 @media (prefers-color-scheme: dark){ :root:not([data-theme="light"]) .btn{color:#0E1116;} }
 :root[data-theme="dark"] .btn{color:#0E1116;}
+/* 狭い画面の横スクロール防止（CSSのみ・デスクトップ表示は不変）2026-10-01 */
+body{overflow-wrap:anywhere;}
+.cols>*,.feat-grid>*,.svc-grid>*,.member-grid>*,.style-grid>*,.news-item>*{min-width:0;}
+.nav{gap:12px;}
+.nav>*{min-width:0;}
+.btn{flex-shrink:0;}
 </style>
 
 <div class="demo-flag"><b>制作サンプル</b> — Next Innovationは架空の企業です。AXLABO Web制作のコーポレートサイト実装例としてご覧ください。</div>
